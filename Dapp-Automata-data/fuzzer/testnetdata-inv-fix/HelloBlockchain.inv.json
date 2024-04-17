@@ -1,0 +1,83 @@
+[
+    {
+        "func": "constructor(message)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [
+            "msg.sender != 0",
+            "ori(Requestor) == 0",
+            "ori(State) == 0",
+            "ori(State) one of [0]",
+            "ori(Responder) == 0",
+            "msg.value == 0",
+            "msg.value one of [0]",
+            "msg.sender != ori(Requestor)",
+            "msg.sender != ori(Responder)",
+            "ori(Requestor) == ori(Responder)"
+        ],
+        "postconditions": [
+            "Requestor != 0",
+            "Responder == 0",
+            "State == 0",
+            "State one of [0]",
+            "Requestor == msg.sender",
+            "Requestor != ori(Requestor)",
+            "Requestor != Responder",
+            "Requestor != ori(Responder)",
+            "msg.sender != Responder",
+            "ori(Requestor) == Responder",
+            "Responder == ori(Responder)"
+        ],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "SendResponse(responseMessage)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [
+            "msg.sender != 0",
+            "ori(Requestor) != 0",
+            "ori(State) == 0",
+            "ori(State) one of [0]",
+            "msg.value == 0",
+            "msg.value one of [0]"
+        ],
+        "postconditions": [
+            "Requestor != 0",
+            "Responder != 0",
+            "State == 1",
+            "State one of [1]",
+            "Requestor == ori(Requestor)",
+            "msg.sender == Responder"
+        ],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "SendRequest(requestMessage)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [
+            "msg.sender != 0",
+            "ori(Requestor) != 0",
+            "ori(State) == 1",
+            "ori(State) one of [1]",
+            "ori(Responder) != 0",
+            "msg.value == 0",
+            "msg.value one of [0]",
+            "msg.sender == ori(Requestor)"
+        ],
+        "postconditions": [
+            "Requestor != 0",
+            "Responder != 0",
+            "State == 0",
+            "State one of [0]",
+            "Requestor == msg.sender",
+            "Requestor == ori(Requestor)",
+            "Responder == ori(Responder)"
+        ],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    }
+]

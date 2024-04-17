@@ -1,0 +1,103 @@
+{
+    "constructor@": [
+        "OfferPrice == 0",
+        "AskingPrice == 0",
+        "State == 0",
+        "InstanceBuyer == 0",
+        "InstanceInspector == 0",
+        "OfferPrice one of [0]",
+        "InstanceOwner == 0",
+        "InstanceAppraiser == 0",
+        "State one of [0]",
+        "AskingPrice one of [0]"
+    ],
+    "MakeOffer@": [
+        "State == 0",
+        "InstanceBuyer == 0",
+        "AskingPrice > 0",
+        "InstanceOwner != 0",
+        "State one of [0]"
+    ],
+    "Terminate@": [
+        "State one of [0,1,2,3,4,9]",
+        "AskingPrice > 0",
+        "InstanceOwner != 0"
+    ],
+    "AcceptOffer@": [
+        "InstanceOwner != 0",
+        "InstanceInspector != 0",
+        "OfferPrice > 0",
+        "AskingPrice > 0",
+        "State == 1",
+        "InstanceBuyer != 0",
+        "State one of [1]",
+        "InstanceAppraiser != 0"
+    ],
+    "RescindOffer@": [
+        "State one of [1,2,4]",
+        "InstanceInspector != 0",
+        "OfferPrice > 0",
+        "AskingPrice > 0",
+        "InstanceBuyer != 0",
+        "InstanceOwner != 0",
+        "InstanceAppraiser != 0"
+    ],
+    "MarkAppraised@": [
+        "State one of [2,3]",
+        "InstanceInspector != 0",
+        "OfferPrice > 0",
+        "AskingPrice > 0",
+        "InstanceBuyer != 0",
+        "InstanceOwner != 0",
+        "InstanceAppraiser != 0"
+    ],
+    "Modify@": [
+        "State == 0",
+        "InstanceBuyer == 0",
+        "AskingPrice > 0",
+        "InstanceOwner != 0",
+        "OfferPrice one of [0,199,45,251,72260542717027431280320546953603881344772961698325839480837693424611434168320,31]",
+        "State one of [0]"
+    ],
+    "Reject@": [
+        "InstanceInspector != 0",
+        "OfferPrice > 0",
+        "AskingPrice > 0",
+        "InstanceBuyer != 0",
+        "InstanceOwner != 0",
+        "State one of [1,2,3,4,5]",
+        "InstanceAppraiser != 0"
+    ],
+    "MarkInspected@": [
+        "OfferPrice one of [51705930606081940789747170495152591734996203929249172845571853628957970661378,111,11319986414251788052356986520895866008941839754498310813808669270463913920512,209,19,244,248,95714020613268725049840116831152229864814059571107251031435029182859813322752,72260542717027431280320546953603881344772961698325839480837693424611434168320,112100528080464701047372591478318571451337686921031582452837717323070755045376]",
+        "AskingPrice one of [3,37,59964486594102044279191253291155888648219522090902827426374441918556480208896,10,95337661565016512069343367593426902112271633854718012803828526393612224692224,55660843376122337986991838794334707133312646728781125742343960597739857772544,177,83,247,60539383205298464543226381644131610627484981066686882094516316465671438336000]",
+        "InstanceInspector != 0",
+        "State one of [2,4]",
+        "OfferPrice > 0",
+        "AskingPrice > 0",
+        "InstanceBuyer != 0",
+        "InstanceOwner != 0",
+        "InstanceAppraiser != 0"
+    ],
+    "ModifyOffer@": [
+        "InstanceInspector != 0",
+        "OfferPrice > 0",
+        "AskingPrice > 0",
+        "State == 1",
+        "InstanceOwner != 0",
+        "InstanceBuyer != 0",
+        "State one of [1]",
+        "InstanceAppraiser != 0"
+    ],
+    "Accept@": [
+        "InstanceInspector != 0",
+        "OfferPrice > 0",
+        "OfferPrice one of [209,112100528080464701047372591478318571451337686921031582452837717323070755045376,95714020613268725049840116831152229864814059571107251031435029182859813322752]",
+        "AskingPrice one of [177,3,247]",
+        "AskingPrice > 0",
+        "InstanceBuyer != 0",
+        "InstanceOwner != 0",
+        "State one of [5,6]",
+        "InstanceAppraiser != 0"
+    ]
+}

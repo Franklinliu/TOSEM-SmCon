@@ -1,0 +1,18 @@
+digraph "Dapp-Automata-data/fuzzer/testnetdata-model-rq1/AssetTransfer/FSM-0" {
+	graph [rankdir=LR]
+	"" [label="" shape=plaintext]
+	1 [label=1 shape=circle]
+	0 [label=0 shape=circle]
+	"" -> 0 [label=""]
+	0 -> 1 [label=constructor]
+	1 -> 1 [label=MakeOffer]
+	1 -> 1 [label=Terminate]
+	1 -> 1 [label=AcceptOffer]
+	1 -> 1 [label=RescindOffer]
+	1 -> 1 [label=MarkAppraised]
+	1 -> 1 [label=Modify]
+	1 -> 1 [label=Reject]
+	1 -> 1 [label=MarkInspected]
+	1 -> 1 [label=ModifyOffer]
+	1 -> 1 [label=Accept]
+}

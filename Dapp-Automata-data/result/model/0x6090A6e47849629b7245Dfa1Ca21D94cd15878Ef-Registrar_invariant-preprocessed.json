@@ -1,0 +1,372 @@
+{
+    "startAuction": [
+        {
+            "parameterBinding": [
+                "_hash"
+            ],
+            "oldstate": [
+                "_entries[bytes32-hash]"
+            ],
+            "newState": [
+                "_entries[_hash]"
+            ],
+            "preconditions": [
+                "ori(_entries$value) one of [0]",
+                "ori(_entries$highestBid) one of [0]",
+                "ori(_entries$highestBid) == 0",
+                "ori(_entries$highestBid) <= ori(_entries$registrationDate)",
+                "ori(_entries$value) >= ori(_entries$highestBid)",
+                "msg.value one of [0]",
+                "ori(_entries$value) <= msg.value",
+                "ori(_entries$deed) != msg.sender",
+                "ori(_entries$registrationDate) >= msg.value",
+                "ori(_entries$value) <= ori(_entries$highestBid)",
+                "ori(_entries$value) >= msg.value",
+                "ori(_entries$highestBid) <= msg.value",
+                "msg.sender != 0",
+                "ori(_entries$value) == msg.value",
+                "ori(_entries$deed) == 0",
+                "ori(_entries$value) == ori(_entries$highestBid)",
+                "ori(_entries$highestBid) >= msg.value",
+                "_hash != \"\"",
+                "ori(_entries$value) <= ori(_entries$registrationDate)",
+                "msg.value == 0",
+                "ori(_entries$value) == 0",
+                "ori(_entries$highestBid) == msg.value"
+            ],
+            "postconditions": [
+                "_entries$highestBid == 0",
+                "_entries$highestBid == msg.value",
+                "ori(_entries$value) == _entries$highestBid",
+                "ori(_entries$highestBid) <= _entries$value",
+                "ori(_entries$value) >= _entries$value",
+                "_entries$highestBid == _entries$value",
+                "_entries$registrationDate != _entries$value",
+                "_entries$highestBid >= msg.value",
+                "msg.value >= _entries$value",
+                "_entries$highestBid <= msg.value",
+                "_entries$highestBid one of [0]",
+                "ori(_entries$highestBid) <= _entries$registrationDate",
+                "ori(_entries$highestBid) == _entries$value",
+                "ori(_entries$deed) == _entries$deed",
+                "_entries$highestBid <= _entries$value",
+                "ori(_entries$registrationDate) >= _entries$value",
+                "ori(_entries$highestBid) >= _entries$highestBid",
+                "_entries$value one of [0]",
+                "_entries$registrationDate >= _entries$value",
+                "ori(_entries$registrationDate) >= _entries$highestBid",
+                "ori(_entries$value) <= _entries$value",
+                "_entries$registrationDate > _entries$value",
+                "ori(_entries$highestBid) != _entries$registrationDate",
+                "ori(_entries$value) == _entries$value",
+                "ori(_entries$value) != _entries$registrationDate",
+                "ori(_entries$highestBid) == _entries$highestBid",
+                "_entries$highestBid >= _entries$value",
+                "msg.value == _entries$value",
+                "_entries$highestBid != _entries$registrationDate",
+                "_entries$deed != msg.sender",
+                "_entries$registrationDate > 0",
+                "_entries$registrationDate > msg.value",
+                "ori(_entries$value) >= _entries$highestBid",
+                "_entries$registrationDate != msg.value",
+                "_entries$highestBid <= _entries$registrationDate",
+                "msg.value <= _entries$value",
+                "ori(_entries$highestBid) >= _entries$value",
+                "ori(_entries$registrationDate) <= _entries$registrationDate",
+                "ori(_entries$value) <= _entries$registrationDate",
+                "ori(_entries$highestBid) < _entries$registrationDate",
+                "_entries$registrationDate >= msg.value",
+                "_entries$value == 0",
+                "ori(_entries$value) <= _entries$highestBid",
+                "_entries$highestBid < _entries$registrationDate",
+                "ori(_entries$value) < _entries$registrationDate",
+                "ori(_entries$highestBid) <= _entries$highestBid",
+                "_entries$deed == 0"
+            ],
+            "slice_pre": [
+                "ori(_entries$value) one of [0]",
+                "ori(_entries$highestBid) one of [0]",
+                "ori(_entries$value) == 0",
+                "ori(_entries$highestBid) == 0",
+                "ori(_entries$deed) == 0"
+            ],
+            "slice_post": [
+                "_entries$highestBid == 0",
+                "_entries$value one of [0]",
+                "_entries$registrationDate > 0",
+                "_entries$value == 0",
+                "_entries$highestBid one of [0]",
+                "_entries$deed == 0"
+            ]
+        }
+    ],
+    "startAuctions": [
+        {
+            "parameterBinding": [
+                "_hashes"
+            ],
+            "oldstate": [
+                "_entries[bytes32-hash]"
+            ],
+            "newState": [
+                "_entries[_hashes]"
+            ],
+            "preconditions": [
+                "ori(_entries$value) one of [0]",
+                "ori(_entries$highestBid) one of [0]",
+                "ori(_entries$highestBid) == 0",
+                "ori(_entries$highestBid) <= ori(_entries$registrationDate)",
+                "_hashes != \"\"",
+                "ori(_entries$value) >= ori(_entries$highestBid)",
+                "msg.value one of [0]",
+                "ori(_entries$value) <= msg.value",
+                "ori(_entries$deed) != msg.sender",
+                "ori(_entries$registrationDate) >= msg.value",
+                "ori(_entries$value) <= ori(_entries$highestBid)",
+                "ori(_entries$value) >= msg.value",
+                "ori(_entries$highestBid) <= msg.value",
+                "msg.sender != 0",
+                "ori(_entries$value) == msg.value",
+                "ori(_entries$deed) == 0",
+                "ori(_entries$value) == ori(_entries$highestBid)",
+                "ori(_entries$highestBid) >= msg.value",
+                "ori(_entries$value) <= ori(_entries$registrationDate)",
+                "msg.value == 0",
+                "ori(_entries$value) == 0",
+                "ori(_entries$highestBid) == msg.value"
+            ],
+            "postconditions": [
+                "_entries$highestBid == 0",
+                "_entries$highestBid == msg.value",
+                "ori(_entries$value) == _entries$highestBid",
+                "ori(_entries$highestBid) <= _entries$value",
+                "ori(_entries$value) >= _entries$value",
+                "_entries$highestBid == _entries$value",
+                "_entries$registrationDate != _entries$value",
+                "_entries$highestBid >= msg.value",
+                "msg.value >= _entries$value",
+                "_entries$highestBid <= msg.value",
+                "_entries$highestBid one of [0]",
+                "ori(_entries$highestBid) <= _entries$registrationDate",
+                "ori(_entries$highestBid) == _entries$value",
+                "ori(_entries$deed) == _entries$deed",
+                "_entries$highestBid <= _entries$value",
+                "ori(_entries$registrationDate) >= _entries$value",
+                "ori(_entries$highestBid) >= _entries$highestBid",
+                "_entries$value one of [0]",
+                "_entries$registrationDate >= _entries$value",
+                "ori(_entries$registrationDate) >= _entries$highestBid",
+                "ori(_entries$value) <= _entries$value",
+                "_entries$registrationDate > _entries$value",
+                "ori(_entries$highestBid) != _entries$registrationDate",
+                "ori(_entries$value) == _entries$value",
+                "ori(_entries$value) != _entries$registrationDate",
+                "ori(_entries$highestBid) == _entries$highestBid",
+                "_entries$highestBid >= _entries$value",
+                "msg.value == _entries$value",
+                "_entries$highestBid != _entries$registrationDate",
+                "_entries$deed != msg.sender",
+                "_entries$registrationDate > 0",
+                "_entries$registrationDate > msg.value",
+                "ori(_entries$value) >= _entries$highestBid",
+                "_entries$registrationDate != msg.value",
+                "_entries$highestBid <= _entries$registrationDate",
+                "msg.value <= _entries$value",
+                "ori(_entries$highestBid) >= _entries$value",
+                "ori(_entries$registrationDate) <= _entries$registrationDate",
+                "ori(_entries$value) <= _entries$registrationDate",
+                "ori(_entries$highestBid) < _entries$registrationDate",
+                "_entries$registrationDate >= msg.value",
+                "_entries$value == 0",
+                "ori(_entries$value) <= _entries$highestBid",
+                "_entries$highestBid < _entries$registrationDate",
+                "ori(_entries$value) < _entries$registrationDate",
+                "ori(_entries$highestBid) <= _entries$highestBid",
+                "_entries$deed == 0"
+            ],
+            "slice_pre": [
+                "ori(_entries$value) one of [0]",
+                "ori(_entries$highestBid) one of [0]",
+                "ori(_entries$value) == 0",
+                "ori(_entries$highestBid) == 0",
+                "ori(_entries$deed) == 0"
+            ],
+            "slice_post": [
+                "_entries$highestBid == 0",
+                "_entries$value one of [0]",
+                "_entries$registrationDate > 0",
+                "_entries$value == 0",
+                "_entries$highestBid one of [0]",
+                "_entries$deed == 0"
+            ]
+        }
+    ],
+    "startAuctionsAndBid": [
+        {
+            "parameterBinding": [
+                "hashes"
+            ],
+            "oldstate": [
+                "_entries[bytes32-hash]"
+            ],
+            "newState": [
+                "_entries[hashes]"
+            ],
+            "preconditions": [
+                "ori(_entries$value) != msg.value",
+                "ori(_entries$registrationDate) < msg.value",
+                "ori(_entries$value) one of [0]",
+                "ori(_entries$highestBid) one of [0]",
+                "msg.value > 0",
+                "ori(_entries$highestBid) < msg.value",
+                "ori(_entries$value) < msg.value",
+                "ori(_entries$highestBid) == 0",
+                "ori(_entries$registrationDate) != msg.value",
+                "ori(_entries$highestBid) <= ori(_entries$registrationDate)",
+                "sealedBid != \"\"",
+                "ori(_entries$value) >= ori(_entries$highestBid)",
+                "ori(_entries$registrationDate) <= msg.value",
+                "ori(_entries$value) <= msg.value",
+                "ori(_entries$highestBid) != msg.value",
+                "ori(_entries$deed) != msg.sender",
+                "hashes != \"\"",
+                "ori(_entries$value) <= ori(_entries$highestBid)",
+                "ori(_entries$highestBid) <= msg.value",
+                "msg.sender != 0",
+                "ori(_entries$deed) == 0",
+                "ori(_entries$value) == ori(_entries$highestBid)",
+                "ori(_entries$value) <= ori(_entries$registrationDate)",
+                "ori(_entries$value) == 0"
+            ],
+            "postconditions": [
+                "_entries$highestBid == 0",
+                "ori(_entries$value) == _entries$highestBid",
+                "ori(_entries$highestBid) <= _entries$value",
+                "ori(_entries$value) >= _entries$value",
+                "_entries$highestBid == _entries$value",
+                "_entries$registrationDate != _entries$value",
+                "msg.value >= _entries$value",
+                "_entries$highestBid <= msg.value",
+                "_entries$highestBid one of [0]",
+                "ori(_entries$highestBid) <= _entries$registrationDate",
+                "ori(_entries$highestBid) == _entries$value",
+                "ori(_entries$deed) == _entries$deed",
+                "_entries$highestBid < msg.value",
+                "_entries$highestBid <= _entries$value",
+                "ori(_entries$registrationDate) >= _entries$value",
+                "ori(_entries$highestBid) >= _entries$highestBid",
+                "_entries$value one of [0]",
+                "_entries$registrationDate >= _entries$value",
+                "ori(_entries$registrationDate) >= _entries$highestBid",
+                "ori(_entries$value) <= _entries$value",
+                "_entries$registrationDate > _entries$value",
+                "ori(_entries$highestBid) != _entries$registrationDate",
+                "ori(_entries$value) == _entries$value",
+                "_entries$registrationDate <= msg.value",
+                "ori(_entries$value) != _entries$registrationDate",
+                "ori(_entries$highestBid) == _entries$highestBid",
+                "_entries$highestBid >= _entries$value",
+                "_entries$highestBid != _entries$registrationDate",
+                "_entries$deed != msg.sender",
+                "_entries$registrationDate > 0",
+                "ori(_entries$value) >= _entries$highestBid",
+                "_entries$registrationDate != msg.value",
+                "_entries$highestBid != msg.value",
+                "msg.value > _entries$value",
+                "_entries$highestBid <= _entries$registrationDate",
+                "ori(_entries$highestBid) >= _entries$value",
+                "msg.value != _entries$value",
+                "ori(_entries$registrationDate) <= _entries$registrationDate",
+                "ori(_entries$value) <= _entries$registrationDate",
+                "ori(_entries$highestBid) < _entries$registrationDate",
+                "_entries$value == 0",
+                "ori(_entries$value) <= _entries$highestBid",
+                "_entries$registrationDate < msg.value",
+                "_entries$highestBid < _entries$registrationDate",
+                "ori(_entries$value) < _entries$registrationDate",
+                "ori(_entries$highestBid) <= _entries$highestBid",
+                "_entries$deed == 0"
+            ],
+            "slice_pre": [
+                "ori(_entries$value) one of [0]",
+                "ori(_entries$highestBid) one of [0]",
+                "ori(_entries$value) == 0",
+                "ori(_entries$highestBid) == 0",
+                "ori(_entries$deed) == 0"
+            ],
+            "slice_post": [
+                "_entries$highestBid == 0",
+                "_entries$value one of [0]",
+                "_entries$registrationDate > 0",
+                "_entries$value == 0",
+                "_entries$highestBid one of [0]",
+                "_entries$deed == 0"
+            ]
+        }
+    ],
+    "unsealBid": [
+        {
+            "parameterBinding": [
+                "_hash"
+            ],
+            "oldstate": [
+                "_entries[bytes32-hash]"
+            ],
+            "newState": [
+                "_entries[_hash]"
+            ]
+        }
+    ],
+    "finalizeAuction": [
+        {
+            "parameterBinding": [
+                "_hash"
+            ],
+            "oldstate": [
+                "_entries[bytes32-hash]"
+            ],
+            "newState": [
+                "_entries[_hash]"
+            ]
+        }
+    ],
+    "transfer": [
+        {
+            "parameterBinding": [
+                "_hash"
+            ],
+            "oldstate": [
+                "_entries[bytes32-hash]"
+            ],
+            "newState": [
+                "_entries[_hash]"
+            ]
+        }
+    ],
+    "releaseDeed": [
+        {
+            "parameterBinding": [
+                "_hash"
+            ],
+            "oldstate": [
+                "_entries[bytes32-hash]"
+            ],
+            "newState": [
+                "_entries[_hash]"
+            ]
+        }
+    ],
+    "transferRegistrars": [
+        {
+            "parameterBinding": [
+                "_hash"
+            ],
+            "oldstate": [
+                "_entries[bytes32-hash]"
+            ],
+            "newState": [
+                "_entries[_hash]"
+            ]
+        }
+    ]
+}

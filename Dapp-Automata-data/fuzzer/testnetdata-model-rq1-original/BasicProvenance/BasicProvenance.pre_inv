@@ -1,0 +1,25 @@
+{
+    "constructor@": [
+        "State == 0",
+        "PreviousCounterparty == 0",
+        "SupplyChainObserver == 0",
+        "SupplyChainOwner == 0",
+        "InitiatingCounterparty == 0",
+        "Counterparty == 0",
+        "State one of [0]"
+    ],
+    "TransferResponsibility@": [
+        "SupplyChainObserver != 0",
+        "InitiatingCounterparty != 0",
+        "Counterparty != 0",
+        "State one of [0,1]",
+        "SupplyChainOwner != 0"
+    ],
+    "Complete@": [
+        "SupplyChainObserver != 0",
+        "InitiatingCounterparty != 0",
+        "Counterparty != 0",
+        "State one of [0,1]",
+        "SupplyChainOwner != 0"
+    ]
+}

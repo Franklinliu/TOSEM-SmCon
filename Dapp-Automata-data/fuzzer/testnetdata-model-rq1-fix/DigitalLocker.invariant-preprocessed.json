@@ -1,0 +1,620 @@
+{
+    "constructor": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "ori(Owner) == 0",
+                "ori(ThirdPartyRequestor) != msg.sender",
+                "ori(CurrentAuthorizedUser) == ori(BankAgent)",
+                "ori(ThirdPartyRequestor) != bankAgent",
+                "ori(BankAgent) == 0",
+                "ori(Owner) != msg.sender",
+                "ori(ThirdPartyRequestor) == ori(Owner)",
+                "msg.value == 0",
+                "ori(Owner) == ori(BankAgent)",
+                "msg.sender != ori(BankAgent)",
+                "ori(Owner) != bankAgent",
+                "ori(CurrentAuthorizedUser) == 0",
+                "msg.value one of [0]",
+                "ori(ThirdPartyRequestor) == 0",
+                "ori(State) == 0",
+                "ori(CurrentAuthorizedUser) == ori(ThirdPartyRequestor)",
+                "ori(BankAgent) != bankAgent",
+                "ori(State) one of [0]",
+                "ori(CurrentAuthorizedUser) != msg.sender",
+                "ori(CurrentAuthorizedUser) != bankAgent",
+                "ori(ThirdPartyRequestor) == ori(BankAgent)",
+                "msg.sender != 0",
+                "bankAgent != 0",
+                "ori(CurrentAuthorizedUser) == ori(Owner)"
+            ],
+            "postconditions": [
+                "State == 0",
+                "BankAgent != 0",
+                "ThirdPartyRequestor != msg.sender",
+                "ThirdPartyRequestor != bankAgent",
+                "Owner == msg.sender",
+                "ThirdPartyRequestor == 0",
+                "BankAgent != ThirdPartyRequestor",
+                "BankAgent == bankAgent",
+                "State one of [0]",
+                "Owner != 0",
+                "Owner != ThirdPartyRequestor"
+            ],
+            "slice_pre": [
+                "ori(State) == 0",
+                "ori(Owner) == 0",
+                "bankAgent != 0",
+                "msg.value == 0",
+                "ori(State) one of [0]",
+                "ori(CurrentAuthorizedUser) == 0",
+                "msg.value one of [0]",
+                "ori(BankAgent) == 0",
+                "ori(ThirdPartyRequestor) == 0",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "State == 0",
+                "BankAgent != 0",
+                "ThirdPartyRequestor == 0",
+                "State one of [0]",
+                "Owner != 0"
+            ]
+        }
+    ],
+    "BeginReviewProcess": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "ori(ThirdPartyRequestor) != ori(BankAgent)",
+                "ori(State) == 0",
+                "ori(CurrentAuthorizedUser) == ori(ThirdPartyRequestor)",
+                "ori(Owner) != 0",
+                "ori(ThirdPartyRequestor) != msg.sender",
+                "ori(BankAgent) != 0",
+                "msg.value == 0",
+                "ori(State) one of [0]",
+                "ori(CurrentAuthorizedUser) == 0",
+                "ori(CurrentAuthorizedUser) != msg.sender",
+                "msg.value one of [0]",
+                "ori(ThirdPartyRequestor) != ori(Owner)",
+                "ori(CurrentAuthorizedUser) != ori(BankAgent)",
+                "ori(CurrentAuthorizedUser) != ori(Owner)",
+                "ori(Owner) != msg.sender",
+                "ori(ThirdPartyRequestor) == 0",
+                "msg.sender != 0"
+            ],
+            "postconditions": [
+                "State one of [1]",
+                "BankAgent != 0",
+                "Owner != msg.sender",
+                "ThirdPartyRequestor != msg.sender",
+                "Owner != BankAgent",
+                "ThirdPartyRequestor == 0",
+                "BankAgent != ThirdPartyRequestor",
+                "State == 1",
+                "Owner != 0",
+                "BankAgent == msg.sender",
+                "Owner != ThirdPartyRequestor"
+            ],
+            "slice_pre": [
+                "ori(State) == 0",
+                "ori(Owner) != 0",
+                "ori(BankAgent) != 0",
+                "msg.value == 0",
+                "ori(State) one of [0]",
+                "ori(CurrentAuthorizedUser) == 0",
+                "msg.value one of [0]",
+                "ori(ThirdPartyRequestor) == 0",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "State one of [1]",
+                "BankAgent != 0",
+                "ThirdPartyRequestor == 0",
+                "State == 1",
+                "Owner != 0"
+            ]
+        }
+    ],
+    "RejectApplication": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "ori(ThirdPartyRequestor) != ori(BankAgent)",
+                "ori(Owner) != 0",
+                "ori(ThirdPartyRequestor) != msg.sender",
+                "ori(BankAgent) != 0",
+                "msg.value == 0",
+                "ori(Owner) != ori(BankAgent)",
+                "ori(CurrentAuthorizedUser) != msg.sender",
+                "msg.sender == ori(BankAgent)",
+                "msg.value one of [0]",
+                "ori(ThirdPartyRequestor) != ori(Owner)",
+                "ori(CurrentAuthorizedUser) != ori(BankAgent)",
+                "ori(State) one of [0,1,2,3,4,5]",
+                "ori(CurrentAuthorizedUser) != ori(Owner)",
+                "ori(Owner) != msg.sender",
+                "msg.sender != 0"
+            ],
+            "postconditions": [
+                "State one of [1]",
+                "BankAgent != 0",
+                "Owner != msg.sender",
+                "ThirdPartyRequestor != msg.sender",
+                "Owner != BankAgent",
+                "BankAgent != ThirdPartyRequestor",
+                "State == 1",
+                "Owner != 0",
+                "BankAgent == msg.sender",
+                "Owner != ThirdPartyRequestor"
+            ],
+            "slice_pre": [
+                "ori(Owner) != 0",
+                "ori(BankAgent) != 0",
+                "msg.value == 0",
+                "msg.value one of [0]",
+                "ori(State) one of [0,1,2,3,4,5]",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "State one of [1]",
+                "State == 1",
+                "BankAgent != 0",
+                "Owner != 0"
+            ]
+        }
+    ],
+    "UploadDocuments": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "ori(State) == 1",
+                "ori(ThirdPartyRequestor) != ori(BankAgent)",
+                "ori(Owner) != 0",
+                "ori(ThirdPartyRequestor) != msg.sender",
+                "ori(BankAgent) != 0",
+                "msg.value == 0",
+                "ori(Owner) != ori(BankAgent)",
+                "ori(CurrentAuthorizedUser) != msg.sender",
+                "msg.sender == ori(BankAgent)",
+                "msg.value one of [0]",
+                "ori(ThirdPartyRequestor) != ori(Owner)",
+                "ori(CurrentAuthorizedUser) != ori(BankAgent)",
+                "ori(State) one of [1]",
+                "ori(CurrentAuthorizedUser) != ori(Owner)",
+                "ori(Owner) != msg.sender",
+                "msg.sender != 0"
+            ],
+            "postconditions": [
+                "BankAgent != 0",
+                "Owner != msg.sender",
+                "ThirdPartyRequestor != msg.sender",
+                "Owner != BankAgent",
+                "State one of [2]",
+                "BankAgent != ThirdPartyRequestor",
+                "Owner != 0",
+                "State == 2",
+                "BankAgent == msg.sender",
+                "Owner != ThirdPartyRequestor"
+            ],
+            "slice_pre": [
+                "ori(State) == 1",
+                "ori(Owner) != 0",
+                "ori(BankAgent) != 0",
+                "msg.value == 0",
+                "msg.value one of [0]",
+                "ori(State) one of [1]",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "State == 2",
+                "State one of [2]",
+                "BankAgent != 0",
+                "Owner != 0"
+            ]
+        }
+    ],
+    "ShareWithThirdParty": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "ori(State) one of [2]",
+                "ori(ThirdPartyRequestor) != msg.sender",
+                "ori(CurrentAuthorizedUser) != ori(BankAgent)",
+                "ori(CurrentAuthorizedUser) != ori(Owner)",
+                "msg.value == 0",
+                "msg.sender != ori(BankAgent)",
+                "ori(CurrentAuthorizedUser) == 0",
+                "msg.value one of [0]",
+                "ori(ThirdPartyRequestor) != ori(Owner)",
+                "ori(Owner) == msg.sender",
+                "ori(ThirdPartyRequestor) == 0",
+                "ori(ThirdPartyRequestor) != thirdPartyRequestor",
+                "ori(ThirdPartyRequestor) != ori(BankAgent)",
+                "ori(CurrentAuthorizedUser) == ori(ThirdPartyRequestor)",
+                "ori(CurrentAuthorizedUser) != thirdPartyRequestor",
+                "ori(CurrentAuthorizedUser) != msg.sender",
+                "thirdPartyRequestor != 0",
+                "msg.sender != 0",
+                "ori(Owner) != 0",
+                "thirdPartyRequestor != msg.sender",
+                "ori(BankAgent) != 0",
+                "ori(State) == 2",
+                "ori(Owner) != ori(BankAgent)",
+                "ori(Owner) != thirdPartyRequestor"
+            ],
+            "postconditions": [
+                "State == 4",
+                "BankAgent != 0",
+                "ThirdPartyRequestor != msg.sender",
+                "Owner != BankAgent",
+                "State one of [4]",
+                "Owner == msg.sender",
+                "BankAgent != msg.sender",
+                "ThirdPartyRequestor != 0",
+                "Owner != 0",
+                "ThirdPartyRequestor == thirdPartyRequestor",
+                "Owner != thirdPartyRequestor",
+                "Owner != ThirdPartyRequestor"
+            ],
+            "slice_pre": [
+                "ori(Owner) != 0",
+                "ori(State) one of [2]",
+                "ori(BankAgent) != 0",
+                "ori(State) == 2",
+                "msg.value == 0",
+                "ori(CurrentAuthorizedUser) == 0",
+                "msg.value one of [0]",
+                "thirdPartyRequestor != 0",
+                "ori(ThirdPartyRequestor) == 0",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "State == 4",
+                "BankAgent != 0",
+                "State one of [4]",
+                "ThirdPartyRequestor != 0",
+                "Owner != 0"
+            ]
+        }
+    ],
+    "RequestLockerAccess": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "ori(Owner) != 0",
+                "ori(State) one of [2]",
+                "ori(BankAgent) != 0",
+                "ori(State) == 2",
+                "msg.value == 0",
+                "ori(Owner) != ori(BankAgent)",
+                "ori(CurrentAuthorizedUser) != msg.sender",
+                "msg.value one of [0]",
+                "ori(ThirdPartyRequestor) != ori(Owner)",
+                "ori(CurrentAuthorizedUser) != ori(BankAgent)",
+                "ori(CurrentAuthorizedUser) != ori(Owner)",
+                "ori(Owner) != msg.sender",
+                "msg.sender != 0"
+            ],
+            "postconditions": [
+                "BankAgent != 0",
+                "Owner != msg.sender",
+                "Owner != BankAgent",
+                "ThirdPartyRequestor == msg.sender",
+                "ThirdPartyRequestor != 0",
+                "Owner != 0",
+                "State == 3",
+                "State one of [3]",
+                "Owner != ThirdPartyRequestor"
+            ],
+            "slice_pre": [
+                "ori(Owner) != 0",
+                "ori(State) one of [2]",
+                "ori(BankAgent) != 0",
+                "ori(State) == 2",
+                "msg.value == 0",
+                "msg.value one of [0]",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "BankAgent != 0",
+                "ThirdPartyRequestor != 0",
+                "Owner != 0",
+                "State == 3",
+                "State one of [3]"
+            ]
+        }
+    ],
+    "Terminate": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "ori(Owner) != 0",
+                "ori(ThirdPartyRequestor) != msg.sender",
+                "ori(BankAgent) != 0",
+                "msg.value == 0",
+                "ori(Owner) != ori(BankAgent)",
+                "ori(State) one of [2,3,4]",
+                "msg.sender != ori(BankAgent)",
+                "ori(CurrentAuthorizedUser) != msg.sender",
+                "msg.value one of [0]",
+                "ori(ThirdPartyRequestor) != ori(Owner)",
+                "ori(Owner) == msg.sender",
+                "ori(CurrentAuthorizedUser) != ori(BankAgent)",
+                "ori(CurrentAuthorizedUser) != ori(Owner)",
+                "msg.sender != 0"
+            ],
+            "postconditions": [
+                "BankAgent != 0",
+                "State one of [5]",
+                "ThirdPartyRequestor != msg.sender",
+                "State == 5",
+                "Owner != BankAgent",
+                "Owner == msg.sender",
+                "BankAgent != msg.sender",
+                "Owner != 0",
+                "Owner != ThirdPartyRequestor"
+            ],
+            "slice_pre": [
+                "ori(Owner) != 0",
+                "ori(BankAgent) != 0",
+                "msg.value == 0",
+                "ori(State) one of [2,3,4]",
+                "msg.value one of [0]",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "State == 5",
+                "BankAgent != 0",
+                "Owner != 0",
+                "State one of [5]"
+            ]
+        }
+    ],
+    "RejectSharingRequest": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "ori(Owner) != 0",
+                "ori(ThirdPartyRequestor) != msg.sender",
+                "ori(BankAgent) != 0",
+                "msg.value == 0",
+                "ori(Owner) != ori(BankAgent)",
+                "ori(State) == 3",
+                "msg.sender != ori(BankAgent)",
+                "ori(State) one of [3]",
+                "ori(CurrentAuthorizedUser) == 0",
+                "ori(CurrentAuthorizedUser) != msg.sender",
+                "msg.value one of [0]",
+                "ori(ThirdPartyRequestor) != ori(Owner)",
+                "ori(Owner) == msg.sender",
+                "ori(CurrentAuthorizedUser) != ori(BankAgent)",
+                "ori(ThirdPartyRequestor) != 0",
+                "ori(CurrentAuthorizedUser) != ori(Owner)",
+                "ori(CurrentAuthorizedUser) != ori(ThirdPartyRequestor)",
+                "msg.sender != 0"
+            ],
+            "postconditions": [
+                "BankAgent != 0",
+                "ThirdPartyRequestor != msg.sender",
+                "Owner != BankAgent",
+                "Owner == msg.sender",
+                "State one of [2]",
+                "BankAgent != msg.sender",
+                "ThirdPartyRequestor != 0",
+                "Owner != 0",
+                "State == 2",
+                "Owner != ThirdPartyRequestor"
+            ],
+            "slice_pre": [
+                "ori(Owner) != 0",
+                "ori(BankAgent) != 0",
+                "msg.value == 0",
+                "ori(State) == 3",
+                "ori(State) one of [3]",
+                "ori(CurrentAuthorizedUser) == 0",
+                "msg.value one of [0]",
+                "ori(ThirdPartyRequestor) != 0",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "BankAgent != 0",
+                "State one of [2]",
+                "ThirdPartyRequestor != 0",
+                "Owner != 0",
+                "State == 2"
+            ]
+        }
+    ],
+    "AcceptSharingRequest": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "ori(ThirdPartyRequestor) != msg.sender",
+                "ori(CurrentAuthorizedUser) != ori(BankAgent)",
+                "ori(CurrentAuthorizedUser) != ori(Owner)",
+                "msg.value == 0",
+                "ori(State) == 3",
+                "msg.sender != ori(BankAgent)",
+                "ori(State) one of [3]",
+                "ori(CurrentAuthorizedUser) == 0",
+                "msg.value one of [0]",
+                "ori(ThirdPartyRequestor) != ori(Owner)",
+                "ori(Owner) == msg.sender",
+                "ori(ThirdPartyRequestor) != ori(BankAgent)",
+                "ori(CurrentAuthorizedUser) != msg.sender",
+                "ori(CurrentAuthorizedUser) != ori(ThirdPartyRequestor)",
+                "msg.sender != 0",
+                "ori(Owner) != 0",
+                "ori(BankAgent) != 0",
+                "ori(Owner) != ori(BankAgent)",
+                "ori(ThirdPartyRequestor) != 0"
+            ],
+            "postconditions": [
+                "State == 4",
+                "BankAgent != 0",
+                "ThirdPartyRequestor != msg.sender",
+                "Owner != BankAgent",
+                "State one of [4]",
+                "Owner == msg.sender",
+                "BankAgent != ThirdPartyRequestor",
+                "BankAgent != msg.sender",
+                "ThirdPartyRequestor != 0",
+                "Owner != 0",
+                "Owner != ThirdPartyRequestor"
+            ],
+            "slice_pre": [
+                "ori(Owner) != 0",
+                "ori(BankAgent) != 0",
+                "msg.value == 0",
+                "ori(State) == 3",
+                "ori(State) one of [3]",
+                "ori(CurrentAuthorizedUser) == 0",
+                "msg.value one of [0]",
+                "ori(ThirdPartyRequestor) != 0",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "State == 4",
+                "BankAgent != 0",
+                "State one of [4]",
+                "ThirdPartyRequestor != 0",
+                "Owner != 0"
+            ]
+        }
+    ],
+    "ReleaseLockerAccess": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "ori(CurrentAuthorizedUser) == ori(ThirdPartyRequestor)",
+                "ori(Owner) != 0",
+                "ori(CurrentAuthorizedUser) != 0",
+                "ori(BankAgent) != 0",
+                "msg.value == 0",
+                "ori(Owner) != ori(BankAgent)",
+                "ori(State) one of [4]",
+                "ori(State) == 4",
+                "ori(CurrentAuthorizedUser) == msg.sender",
+                "msg.value one of [0]",
+                "ori(ThirdPartyRequestor) != ori(Owner)",
+                "ori(ThirdPartyRequestor) == msg.sender",
+                "ori(ThirdPartyRequestor) != 0",
+                "ori(CurrentAuthorizedUser) != ori(Owner)",
+                "ori(Owner) != msg.sender",
+                "msg.sender != 0"
+            ],
+            "postconditions": [
+                "BankAgent != 0",
+                "Owner != msg.sender",
+                "ThirdPartyRequestor != msg.sender",
+                "Owner != BankAgent",
+                "ThirdPartyRequestor == 0",
+                "State one of [2]",
+                "BankAgent != ThirdPartyRequestor",
+                "Owner != 0",
+                "State == 2",
+                "Owner != ThirdPartyRequestor"
+            ],
+            "slice_pre": [
+                "ori(Owner) != 0",
+                "ori(CurrentAuthorizedUser) != 0",
+                "ori(BankAgent) != 0",
+                "msg.value == 0",
+                "ori(State) one of [4]",
+                "ori(State) == 4",
+                "msg.value one of [0]",
+                "ori(ThirdPartyRequestor) != 0",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "BankAgent != 0",
+                "ThirdPartyRequestor == 0",
+                "State one of [2]",
+                "Owner != 0",
+                "State == 2"
+            ]
+        }
+    ]
+}

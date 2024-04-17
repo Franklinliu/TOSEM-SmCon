@@ -1,0 +1,224 @@
+{
+    "createAuction": [
+        {
+            "parameterBinding": [
+                "_nftAddress",
+                "_tokenId"
+            ],
+            "oldstate": [
+                "nftToTokenIdToAuction[address-NFT][uint256-tokenId]"
+            ],
+            "newState": [
+                "nftToTokenIdToAuction[_nftAddress][_tokenId]"
+            ],
+            "preconditions": [
+                "ori(nftToTokenIdToAuction$startedAt) <= _startingPrice",
+                "ori(nftToTokenIdToAuction$startedAt) <= ori(nftToTokenIdToAuction$startingPrice)",
+                "msg.value <= ori(nftToTokenIdToAuction$startingPrice)",
+                "ori(nftToTokenIdToAuction$endingPrice) >= ori(nftToTokenIdToAuction$duration)",
+                "msg.value == 0",
+                "msg.value <= ori(nftToTokenIdToAuction$duration)",
+                "_duration >= msg.value",
+                "ori(nftToTokenIdToAuction$startingPrice) >= ori(nftToTokenIdToAuction$duration)",
+                "msg.value <= _tokenId",
+                "ori(nftToTokenIdToAuction$duration) one of [0,777600,604800,2592000,86400,3024000,31536000]",
+                "ori(nftToTokenIdToAuction$startedAt) >= msg.value",
+                "_nftAddress != 0",
+                "_duration != _endingPrice",
+                "msg.value one of [0]",
+                "msg.value <= ori(nftToTokenIdToAuction$endingPrice)",
+                "msg.value <= _endingPrice",
+                "ori(nftToTokenIdToAuction$duration) <= _startingPrice",
+                "_tokenId != _endingPrice",
+                "ori(nftToTokenIdToAuction$duration) <= _endingPrice",
+                "_nftAddress != msg.sender",
+                "ori(nftToTokenIdToAuction$startedAt) <= ori(nftToTokenIdToAuction$endingPrice)",
+                "msg.value <= _startingPrice",
+                "msg.sender != ori(nftToTokenIdToAuction$nftAddress)",
+                "msg.sender != 0",
+                "_duration != _tokenId",
+                "_duration != _startingPrice",
+                "ori(nftToTokenIdToAuction$startedAt) <= _endingPrice",
+                "_tokenId != _startingPrice",
+                "ori(nftToTokenIdToAuction$startedAt) >= ori(nftToTokenIdToAuction$duration)",
+                "_nftAddress != ori(nftToTokenIdToAuction$seller)"
+            ],
+            "postconditions": [
+                "nftToTokenIdToAuction$endingPrice != _tokenId",
+                "nftToTokenIdToAuction$duration >= ori(nftToTokenIdToAuction$duration)",
+                "msg.value <= nftToTokenIdToAuction$startedAt",
+                "nftToTokenIdToAuction$duration >= msg.value",
+                "nftToTokenIdToAuction$startedAt != _tokenId",
+                "ori(nftToTokenIdToAuction$startedAt) <= nftToTokenIdToAuction$startingPrice",
+                "nftToTokenIdToAuction$startingPrice >= ori(nftToTokenIdToAuction$duration)",
+                "ori(nftToTokenIdToAuction$startedAt) <= nftToTokenIdToAuction$startedAt",
+                "nftToTokenIdToAuction$endingPrice >= msg.value",
+                "nftToTokenIdToAuction$duration != _tokenId",
+                "nftToTokenIdToAuction$duration != _startingPrice",
+                "nftToTokenIdToAuction$endingPrice >= ori(nftToTokenIdToAuction$startedAt)",
+                "nftToTokenIdToAuction$endingPrice >= ori(nftToTokenIdToAuction$endingPrice)",
+                "msg.sender != nftToTokenIdToAuction$nftAddress",
+                "nftToTokenIdToAuction$endingPrice >= ori(nftToTokenIdToAuction$duration)",
+                "msg.value <= nftToTokenIdToAuction$startingPrice",
+                "_tokenId != nftToTokenIdToAuction$startingPrice",
+                "nftToTokenIdToAuction$duration != _endingPrice",
+                "nftToTokenIdToAuction$startedAt >= ori(nftToTokenIdToAuction$duration)",
+                "ori(nftToTokenIdToAuction$startingPrice) <= nftToTokenIdToAuction$startingPrice",
+                "nftToTokenIdToAuction$startedAt != _endingPrice",
+                "_nftAddress != nftToTokenIdToAuction$seller",
+                "nftToTokenIdToAuction$startedAt != _startingPrice"
+            ],
+            "slice_pre": [
+                "ori(nftToTokenIdToAuction$duration) one of [0,777600,604800,2592000,86400,3024000,31536000]"
+            ],
+            "slice_post": []
+        }
+    ],
+    "bid": [
+        {
+            "parameterBinding": [
+                "_nftAddress",
+                "_tokenId"
+            ],
+            "oldstate": [
+                "nftToTokenIdToAuction[address-NFT][uint256-tokenId]"
+            ],
+            "newState": [
+                "nftToTokenIdToAuction[_nftAddress][_tokenId]"
+            ],
+            "preconditions": [
+                "_nftAddress != 0",
+                "ori(nftToTokenIdToAuction$duration) != msg.value",
+                "ori(nftToTokenIdToAuction$duration) != _tokenId",
+                "msg.sender != ori(nftToTokenIdToAuction$seller)",
+                "ori(nftToTokenIdToAuction$endingPrice) != _tokenId",
+                "ori(nftToTokenIdToAuction$duration) <= ori(nftToTokenIdToAuction$startedAt)",
+                "msg.sender != _nftAddress",
+                "ori(nftToTokenIdToAuction$startedAt) <= ori(nftToTokenIdToAuction$startingPrice)",
+                "ori(nftToTokenIdToAuction$nftAddress) != msg.sender",
+                "ori(nftToTokenIdToAuction$startedAt) != msg.value",
+                "ori(nftToTokenIdToAuction$startingPrice) != _tokenId",
+                "msg.sender != 0",
+                "ori(nftToTokenIdToAuction$duration) <= ori(nftToTokenIdToAuction$startingPrice)",
+                "ori(nftToTokenIdToAuction$startedAt) != _tokenId",
+                "_nftAddress != ori(nftToTokenIdToAuction$seller)",
+                "msg.value != _tokenId"
+            ],
+            "postconditions": [
+                "nftToTokenIdToAuction$endingPrice one of [0,4000000000000000,100000000000000000]",
+                "ori(nftToTokenIdToAuction$endingPrice) >= nftToTokenIdToAuction$duration",
+                "ori(nftToTokenIdToAuction$startedAt) >= nftToTokenIdToAuction$duration",
+                "nftToTokenIdToAuction$endingPrice >= nftToTokenIdToAuction$duration",
+                "msg.sender != nftToTokenIdToAuction$seller",
+                "nftToTokenIdToAuction$duration <= nftToTokenIdToAuction$startedAt",
+                "nftToTokenIdToAuction$seller != _nftAddress",
+                "nftToTokenIdToAuction$startedAt <= nftToTokenIdToAuction$startingPrice",
+                "nftToTokenIdToAuction$endingPrice <= msg.value",
+                "nftToTokenIdToAuction$endingPrice >= nftToTokenIdToAuction$startedAt",
+                "nftToTokenIdToAuction$startedAt one of [0,1517406085,1518494822,1518295546,1517775420]",
+                "msg.value >= nftToTokenIdToAuction$duration",
+                "msg.sender != nftToTokenIdToAuction$nftAddress",
+                "ori(nftToTokenIdToAuction$duration) >= nftToTokenIdToAuction$duration",
+                "msg.value >= nftToTokenIdToAuction$startedAt",
+                "nftToTokenIdToAuction$endingPrice <= nftToTokenIdToAuction$startingPrice",
+                "ori(nftToTokenIdToAuction$endingPrice) >= nftToTokenIdToAuction$startedAt",
+                "nftToTokenIdToAuction$startingPrice one of [0,6000000000000000,100000000000000000,150000000000000000,200000000000000000]",
+                "ori(nftToTokenIdToAuction$startedAt) >= nftToTokenIdToAuction$startedAt",
+                "nftToTokenIdToAuction$endingPrice <= ori(nftToTokenIdToAuction$endingPrice)",
+                "nftToTokenIdToAuction$duration <= nftToTokenIdToAuction$startingPrice",
+                "nftToTokenIdToAuction$endingPrice <= ori(nftToTokenIdToAuction$startingPrice)",
+                "ori(nftToTokenIdToAuction$startingPrice) >= nftToTokenIdToAuction$duration",
+                "ori(nftToTokenIdToAuction$startingPrice) >= nftToTokenIdToAuction$startedAt",
+                "nftToTokenIdToAuction$duration one of [0,86400]",
+                "ori(nftToTokenIdToAuction$startingPrice) >= nftToTokenIdToAuction$startingPrice"
+            ],
+            "slice_pre": [],
+            "slice_post": [
+                "nftToTokenIdToAuction$duration one of [0,86400]",
+                "nftToTokenIdToAuction$startingPrice one of [0,6000000000000000,100000000000000000,150000000000000000,200000000000000000]",
+                "nftToTokenIdToAuction$endingPrice one of [0,4000000000000000,100000000000000000]",
+                "nftToTokenIdToAuction$startedAt one of [0,1517406085,1518494822,1518295546,1517775420]"
+            ]
+        }
+    ],
+    "cancelAuction": [
+        {
+            "parameterBinding": [
+                "_nftAddress",
+                "_tokenId"
+            ],
+            "oldstate": [
+                "nftToTokenIdToAuction[address-NFT][uint256-tokenId]"
+            ],
+            "newState": [
+                "nftToTokenIdToAuction[_nftAddress][_tokenId]"
+            ],
+            "preconditions": [
+                "_nftAddress != 0",
+                "ori(nftToTokenIdToAuction$duration) != _tokenId",
+                "ori(nftToTokenIdToAuction$startingPrice) >= msg.value",
+                "msg.value one of [0]",
+                "ori(nftToTokenIdToAuction$endingPrice) != _tokenId",
+                "msg.value <= ori(nftToTokenIdToAuction$endingPrice)",
+                "ori(nftToTokenIdToAuction$duration) <= ori(nftToTokenIdToAuction$startedAt)",
+                "msg.sender != _nftAddress",
+                "ori(nftToTokenIdToAuction$nftAddress) != msg.sender",
+                "ori(nftToTokenIdToAuction$startingPrice) != _tokenId",
+                "msg.value == 0",
+                "ori(nftToTokenIdToAuction$duration) >= msg.value",
+                "msg.sender != 0",
+                "ori(nftToTokenIdToAuction$startedAt) != _tokenId",
+                "msg.value <= _tokenId",
+                "_nftAddress != ori(nftToTokenIdToAuction$seller)",
+                "ori(nftToTokenIdToAuction$startedAt) >= msg.value"
+            ],
+            "postconditions": [
+                "msg.value <= nftToTokenIdToAuction$startedAt",
+                "ori(nftToTokenIdToAuction$endingPrice) >= nftToTokenIdToAuction$duration",
+                "ori(nftToTokenIdToAuction$startedAt) >= nftToTokenIdToAuction$duration",
+                "nftToTokenIdToAuction$endingPrice >= nftToTokenIdToAuction$duration",
+                "nftToTokenIdToAuction$endingPrice one of [0,2210000000000000000,900000000000000000,1000000000000000000,9770000000000000000,2750000000000000000,300000000000000000]",
+                "nftToTokenIdToAuction$duration <= nftToTokenIdToAuction$startedAt",
+                "nftToTokenIdToAuction$seller != _nftAddress",
+                "nftToTokenIdToAuction$startedAt <= nftToTokenIdToAuction$startingPrice",
+                "nftToTokenIdToAuction$endingPrice >= msg.value",
+                "nftToTokenIdToAuction$endingPrice >= nftToTokenIdToAuction$startedAt",
+                "msg.sender != nftToTokenIdToAuction$nftAddress",
+                "msg.value <= nftToTokenIdToAuction$startingPrice",
+                "nftToTokenIdToAuction$startingPrice one of [0,2790000000000000000,100000000000000000,300000000000000000,2750000000000000000,11990000000000000000]",
+                "ori(nftToTokenIdToAuction$duration) >= nftToTokenIdToAuction$duration",
+                "ori(nftToTokenIdToAuction$endingPrice) >= nftToTokenIdToAuction$startedAt",
+                "nftToTokenIdToAuction$duration one of [0,864000,86400,259200]",
+                "ori(nftToTokenIdToAuction$startedAt) >= nftToTokenIdToAuction$startedAt",
+                "msg.value <= nftToTokenIdToAuction$duration",
+                "nftToTokenIdToAuction$endingPrice <= ori(nftToTokenIdToAuction$endingPrice)",
+                "nftToTokenIdToAuction$duration <= nftToTokenIdToAuction$startingPrice",
+                "ori(nftToTokenIdToAuction$startingPrice) >= nftToTokenIdToAuction$duration",
+                "nftToTokenIdToAuction$startedAt one of [0,1517564195,1518288741,1517695689,1517678898,1517682715,1518786524]",
+                "ori(nftToTokenIdToAuction$startingPrice) >= nftToTokenIdToAuction$startedAt",
+                "ori(nftToTokenIdToAuction$startingPrice) >= nftToTokenIdToAuction$startingPrice"
+            ],
+            "slice_pre": [],
+            "slice_post": [
+                "nftToTokenIdToAuction$startingPrice one of [0,2790000000000000000,100000000000000000,300000000000000000,2750000000000000000,11990000000000000000]",
+                "nftToTokenIdToAuction$endingPrice one of [0,2210000000000000000,900000000000000000,1000000000000000000,9770000000000000000,2750000000000000000,300000000000000000]",
+                "nftToTokenIdToAuction$startedAt one of [0,1517564195,1518288741,1517695689,1517678898,1517682715,1518786524]",
+                "nftToTokenIdToAuction$duration one of [0,864000,86400,259200]"
+            ]
+        }
+    ],
+    "cancelAuctionWhenPaused": [
+        {
+            "parameterBinding": [
+                "_nftAddress",
+                "_tokenId"
+            ],
+            "oldstate": [
+                "nftToTokenIdToAuction[address-NFT][uint256-tokenId]"
+            ],
+            "newState": [
+                "nftToTokenIdToAuction[_nftAddress][_tokenId]"
+            ]
+        }
+    ]
+}

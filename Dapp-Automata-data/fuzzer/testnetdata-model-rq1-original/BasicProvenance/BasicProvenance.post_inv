@@ -1,0 +1,29 @@
+{
+    "constructor@": [
+        "SupplyChainOwner != 0",
+        "Counterparty != 0",
+        "State one of [0]",
+        "PreviousCounterparty == 0",
+        "State == 0",
+        "InitiatingCounterparty != 0",
+        "SupplyChainObserver != 0"
+    ],
+    "TransferResponsibility@": [
+        "SupplyChainOwner != 0",
+        "Counterparty != 0",
+        "PreviousCounterparty != 0",
+        "State one of [1]",
+        "State == 1",
+        "InitiatingCounterparty != 0",
+        "SupplyChainObserver != 0"
+    ],
+    "Complete@": [
+        "SupplyChainOwner != 0",
+        "Counterparty == 0",
+        "State one of [2]",
+        "State == 2",
+        "PreviousCounterparty != 0",
+        "InitiatingCounterparty != 0",
+        "SupplyChainObserver != 0"
+    ]
+}

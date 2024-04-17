@@ -1,0 +1,575 @@
+[
+    {
+        "transactionHash": "0xbbb9e28098d8e6628fd88ff5b71087b180b35d06cbc634722b117138e2e6b3b6",
+        "transactionIndex": 0,
+        "blockHash": "0x7c97c93431aba83e6ffee05a09e461cd47a29b8e66ff57f9743be7b88765a5f1",
+        "blockNumber": 73154,
+        "from": "0xD9b8cbfdD0Cf9b695EC69290EECf32ca524677bc",
+        "to": null,
+        "gasUsed": 390506,
+        "cumulativeGasUsed": 390506,
+        "contractAddress": "0x90b76C4d81509C3a911Eb85Ec899132eE67811d2",
+        "logs": [],
+        "status": 1,
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "input": "0x608060405234801561001057600080fd5b506040516040806105c4833981018060405281019080805190602001909291908051906020019092919050505081600060016101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550604660028190555050506104ec806100d86000396000f30060806040526004361061008e576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680631429e26c146100935780632279f6a5146100ea57806328ec9cd2146101015780634a542ae214610158578063b554a62114610185578063b8eef922146101b5578063f1b6dccd146101ee578063f26d4fec14610227575b600080fd5b34801561009f57600080fd5b506100a8610252565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156100f657600080fd5b506100ff610278565b005b34801561010d57600080fd5b50610116610329565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561016457600080fd5b506101836004803603810190808035906020019092919050505061034f565b005b34801561019157600080fd5b506101b3600480360381019080803560ff1690602001909291905050506103e4565b005b3480156101c157600080fd5b506101ca610495565b604051808260038111156101da57fe5b60ff16815260200191505060405180910390f35b3480156101fa57600080fd5b506102036104a8565b6040518082600181111561021357fe5b60ff16815260200191505060405180910390f35b34801561023357600080fd5b5061023c6104ba565b6040518082815260200191505060405180910390f35b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b3373ffffffffffffffffffffffffffffffffffffffff16600060019054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161415806102fa5750600060018111156102dd57fe5b6000809054906101000a900460ff1660018111156102f757fe5b14155b1561030457600080fd5b60016000806101000a81548160ff0219169083600181111561032257fe5b0217905550565b600060019054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b3373ffffffffffffffffffffffffffffffffffffffff16600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161415806103d057506001808111156103b357fe5b6000809054906101000a900460ff1660018111156103cd57fe5b14155b156103da57600080fd5b8060028190555050565b3373ffffffffffffffffffffffffffffffffffffffff16600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16141580610465575060018081111561044857fe5b6000809054906101000a900460ff16600181111561046257fe5b14155b1561046f57600080fd5b80600360006101000a81548160ff0219169083600381111561048d57fe5b021790555050565b600360009054906101000a900460ff1681565b6000809054906101000a900460ff1681565b600254815600a165627a7a723058201243a13b296ce9022e468de6e046ed147be4cd41c5c409c753c576e2bdb4f08e002900000000000000000000000079182b3fa375ce9c8a4c3c611594aaf38a508477000000000000000000000000a8d5f39f3ccd4795b0e38feacb4f2ee22486ca44",
+        "gas": 2000000,
+        "gasPrice": 50000000000,
+        "value": 0,
+        "nonce": 7371,
+        "decode": [
+            {
+                "inputs": [
+                    {
+                        "name": "thermostatInstaller",
+                        "type": "address"
+                    },
+                    {
+                        "name": "thermostatUser",
+                        "type": "address"
+                    }
+                ],
+                "payable": false,
+                "stateMutability": "nonpayable",
+                "type": "constructor"
+            },
+            {
+                "thermostatInstaller": "0x79182b3fa375ce9c8a4c3c611594aaf38a508477",
+                "thermostatUser": "0xa8d5f39f3ccd4795b0e38feacb4f2ee22486ca44"
+            }
+        ],
+        "post_contract_state": {
+            "variables": [
+                {
+                    "contractName": "RoomThermostat",
+                    "varName": "State",
+                    "varType": "enum_RoomThermostat.StateType",
+                    "varBytes": 1,
+                    "varValue": 0,
+                    "varSlot": 0,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "RoomThermostat",
+                    "varName": "Installer",
+                    "varType": "address",
+                    "varBytes": 20,
+                    "varValue": "0x79182b3fa375ce9c8a4c3c611594aaf38a508477",
+                    "varSlot": 0,
+                    "varOffset": 1
+                },
+                {
+                    "contractName": "RoomThermostat",
+                    "varName": "User",
+                    "varType": "address",
+                    "varBytes": 20,
+                    "varValue": "0xa8d5f39f3ccd4795b0e38feacb4f2ee22486ca44",
+                    "varSlot": 1,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "RoomThermostat",
+                    "varName": "TargetTemperature",
+                    "varType": "int256",
+                    "varBytes": 32,
+                    "varValue": 70,
+                    "varSlot": 2,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "RoomThermostat",
+                    "varName": "Mode",
+                    "varType": "enum_RoomThermostat.ModeEnum",
+                    "varBytes": 1,
+                    "varValue": null,
+                    "varSlot": 3,
+                    "varOffset": 0
+                }
+            ]
+        },
+        "stateDiff": {
+            "0x90b76c4d81509c3a911eb85ec899132ee67811d2": {
+                "0x0000000000000000000000000000000000000000000000000000000000000002": [
+                    null,
+                    "0x0000000000000000000000000000000000000000000000000000000000000046"
+                ],
+                "0x0000000000000000000000000000000000000000000000000000000000000001": [
+                    "0x0000000000000000000000000000000000000000000000000000000000000000",
+                    "0x000000000000000000000000a8d5f39f3ccd4795b0e38feacb4f2ee22486ca44"
+                ],
+                "0x0000000000000000000000000000000000000000000000000000000000000000": [
+                    "0x0000000000000000000000000000000000000000000000000000000000000000",
+                    "0x000000000000000000000079182b3fa375ce9c8a4c3c611594aaf38a50847700"
+                ]
+            }
+        }
+    },
+    {
+        "transactionHash": "0xe90087dc07914ffd4889d684857a204592688d9e870fb2a7427b5f6550372d78",
+        "transactionIndex": 0,
+        "blockHash": "0xfa8cbed2b34b49fa5aa4cf420f2dc58c8135b8f667e0585c0df890eced57bea9",
+        "blockNumber": 73162,
+        "from": "0x79182b3fa375cE9c8A4C3c611594aaf38A508477",
+        "to": "0x90b76C4d81509C3a911Eb85Ec899132eE67811d2",
+        "gasUsed": 28951,
+        "cumulativeGasUsed": 28951,
+        "contractAddress": null,
+        "logs": [],
+        "status": 1,
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "input": "0x2279f6a5",
+        "gas": 2000000,
+        "gasPrice": 20000000000,
+        "value": 0,
+        "nonce": 7309,
+        "decode": [
+            {
+                "constant": false,
+                "inputs": [],
+                "name": "StartThermostat",
+                "outputs": [],
+                "payable": false,
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {}
+        ],
+        "post_contract_state": {
+            "variables": [
+                {
+                    "contractName": "RoomThermostat",
+                    "varName": "State",
+                    "varType": "enum_RoomThermostat.StateType",
+                    "varBytes": 1,
+                    "varValue": 1,
+                    "varSlot": 0,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "RoomThermostat",
+                    "varName": "Installer",
+                    "varType": "address",
+                    "varBytes": 20,
+                    "varValue": "0x79182b3fa375ce9c8a4c3c611594aaf38a508477",
+                    "varSlot": 0,
+                    "varOffset": 1
+                },
+                {
+                    "contractName": "RoomThermostat",
+                    "varName": "User",
+                    "varType": "address",
+                    "varBytes": 20,
+                    "varValue": "0xa8d5f39f3ccd4795b0e38feacb4f2ee22486ca44",
+                    "varSlot": 1,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "RoomThermostat",
+                    "varName": "TargetTemperature",
+                    "varType": "int256",
+                    "varBytes": 32,
+                    "varValue": 70,
+                    "varSlot": 2,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "RoomThermostat",
+                    "varName": "Mode",
+                    "varType": "enum_RoomThermostat.ModeEnum",
+                    "varBytes": 1,
+                    "varValue": null,
+                    "varSlot": 3,
+                    "varOffset": 0
+                }
+            ]
+        },
+        "stateDiff": {
+            "0x90b76c4d81509c3a911eb85ec899132ee67811d2": {
+                "0x0000000000000000000000000000000000000000000000000000000000000000": [
+                    "0x000000000000000000000079182b3fa375ce9c8a4c3c611594aaf38a50847700",
+                    "0x000000000000000000000079182b3fa375ce9c8a4c3c611594aaf38a50847701"
+                ]
+            }
+        }
+    },
+    {
+        "transactionHash": "0x7bfe71e8846106e4e5cb97966b550bbf47655d8d9d90f30145bc47eee8b94549",
+        "transactionIndex": 0,
+        "blockHash": "0x72840c69ff6a7a770c7ab70b0a9f8e413c82c3edae2c267aec59cd38c65200f5",
+        "blockNumber": 73171,
+        "from": "0xA8D5f39F3ccD4795B0E38FeAcb4f2EE22486CA44",
+        "to": "0x90b76C4d81509C3a911Eb85Ec899132eE67811d2",
+        "gasUsed": 28390,
+        "cumulativeGasUsed": 28390,
+        "contractAddress": null,
+        "logs": [],
+        "status": 1,
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "input": "0x4a542ae2e495b20f80603800000000000000000010200000002000000000000000000001",
+        "gas": 2000000,
+        "gasPrice": 20000000000,
+        "value": 0,
+        "nonce": 7494,
+        "decode": [
+            {
+                "constant": false,
+                "inputs": [
+                    {
+                        "name": "targetTemperature",
+                        "type": "int256"
+                    }
+                ],
+                "name": "SetTargetTemperature",
+                "outputs": [],
+                "payable": false,
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "targetTemperature": -12400270618910995450249897505365176292978316414739787230650202230355348422655
+            }
+        ],
+        "post_contract_state": {
+            "variables": [
+                {
+                    "contractName": "RoomThermostat",
+                    "varName": "State",
+                    "varType": "enum_RoomThermostat.StateType",
+                    "varBytes": 1,
+                    "varValue": 1,
+                    "varSlot": 0,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "RoomThermostat",
+                    "varName": "Installer",
+                    "varType": "address",
+                    "varBytes": 20,
+                    "varValue": "0x79182b3fa375ce9c8a4c3c611594aaf38a508477",
+                    "varSlot": 0,
+                    "varOffset": 1
+                },
+                {
+                    "contractName": "RoomThermostat",
+                    "varName": "User",
+                    "varType": "address",
+                    "varBytes": 20,
+                    "varValue": "0xa8d5f39f3ccd4795b0e38feacb4f2ee22486ca44",
+                    "varSlot": 1,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "RoomThermostat",
+                    "varName": "TargetTemperature",
+                    "varType": "int256",
+                    "varBytes": 32,
+                    "varValue": 103391818618405199973321087503322731560291668250900776808807381777557781217281,
+                    "varSlot": 2,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "RoomThermostat",
+                    "varName": "Mode",
+                    "varType": "enum_RoomThermostat.ModeEnum",
+                    "varBytes": 1,
+                    "varValue": null,
+                    "varSlot": 3,
+                    "varOffset": 0
+                }
+            ]
+        },
+        "stateDiff": {
+            "0x90b76c4d81509c3a911eb85ec899132ee67811d2": {
+                "0x0000000000000000000000000000000000000000000000000000000000000002": [
+                    null,
+                    "0xe495b20f80603800000000000000000010200000002000000000000000000001"
+                ]
+            }
+        }
+    },
+    {
+        "transactionHash": "0xe720d47d6d6509c98530b917a1ae6180cbe84451fbcde93591f232b0c4643886",
+        "transactionIndex": 0,
+        "blockHash": "0x24e613adb4f5298816faaf368d16c53e07532becab958a121dcd84302828d4e1",
+        "blockNumber": 73204,
+        "from": "0xA8D5f39F3ccD4795B0E38FeAcb4f2EE22486CA44",
+        "to": "0x90b76C4d81509C3a911Eb85Ec899132eE67811d2",
+        "gasUsed": 28270,
+        "cumulativeGasUsed": 28270,
+        "contractAddress": null,
+        "logs": [],
+        "status": 1,
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "input": "0x4a542ae20000000000000000000000000000000000000000000000000000000000000075",
+        "gas": 2000000,
+        "gasPrice": 20000000000,
+        "value": 0,
+        "nonce": 7498,
+        "decode": [
+            {
+                "constant": false,
+                "inputs": [
+                    {
+                        "name": "targetTemperature",
+                        "type": "int256"
+                    }
+                ],
+                "name": "SetTargetTemperature",
+                "outputs": [],
+                "payable": false,
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "targetTemperature": 117
+            }
+        ],
+        "post_contract_state": {
+            "variables": [
+                {
+                    "contractName": "RoomThermostat",
+                    "varName": "State",
+                    "varType": "enum_RoomThermostat.StateType",
+                    "varBytes": 1,
+                    "varValue": 1,
+                    "varSlot": 0,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "RoomThermostat",
+                    "varName": "Installer",
+                    "varType": "address",
+                    "varBytes": 20,
+                    "varValue": "0x79182b3fa375ce9c8a4c3c611594aaf38a508477",
+                    "varSlot": 0,
+                    "varOffset": 1
+                },
+                {
+                    "contractName": "RoomThermostat",
+                    "varName": "User",
+                    "varType": "address",
+                    "varBytes": 20,
+                    "varValue": "0xa8d5f39f3ccd4795b0e38feacb4f2ee22486ca44",
+                    "varSlot": 1,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "RoomThermostat",
+                    "varName": "TargetTemperature",
+                    "varType": "int256",
+                    "varBytes": 32,
+                    "varValue": 117,
+                    "varSlot": 2,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "RoomThermostat",
+                    "varName": "Mode",
+                    "varType": "enum_RoomThermostat.ModeEnum",
+                    "varBytes": 1,
+                    "varValue": null,
+                    "varSlot": 3,
+                    "varOffset": 0
+                }
+            ]
+        },
+        "stateDiff": {
+            "0x90b76c4d81509c3a911eb85ec899132ee67811d2": {
+                "0x0000000000000000000000000000000000000000000000000000000000000002": [
+                    null,
+                    "0x0000000000000000000000000000000000000000000000000000000000000075"
+                ]
+            }
+        }
+    },
+    {
+        "transactionHash": "0x74ce0891b8e137c97c0479e87435863eb878e783973ea481cd95d8cde12ad534",
+        "transactionIndex": 0,
+        "blockHash": "0x756a51bd020c1eb5e6db64c210a40423e067060468cf33e0170a027af0b97624",
+        "blockNumber": 73216,
+        "from": "0xA8D5f39F3ccD4795B0E38FeAcb4f2EE22486CA44",
+        "to": "0x90b76C4d81509C3a911Eb85Ec899132eE67811d2",
+        "gasUsed": 44171,
+        "cumulativeGasUsed": 44171,
+        "contractAddress": null,
+        "logs": [],
+        "status": 1,
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "input": "0xb554a6210000000000000000000000000000000000000000000000000000000000000001",
+        "gas": 2000000,
+        "gasPrice": 20000000000,
+        "value": 0,
+        "nonce": 7499,
+        "decode": [
+            {
+                "constant": false,
+                "inputs": [
+                    {
+                        "name": "mode",
+                        "type": "uint8"
+                    }
+                ],
+                "name": "SetMode",
+                "outputs": [],
+                "payable": false,
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "mode": 1
+            }
+        ],
+        "post_contract_state": {
+            "variables": [
+                {
+                    "contractName": "RoomThermostat",
+                    "varName": "State",
+                    "varType": "enum_RoomThermostat.StateType",
+                    "varBytes": 1,
+                    "varValue": 1,
+                    "varSlot": 0,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "RoomThermostat",
+                    "varName": "Installer",
+                    "varType": "address",
+                    "varBytes": 20,
+                    "varValue": "0x79182b3fa375ce9c8a4c3c611594aaf38a508477",
+                    "varSlot": 0,
+                    "varOffset": 1
+                },
+                {
+                    "contractName": "RoomThermostat",
+                    "varName": "User",
+                    "varType": "address",
+                    "varBytes": 20,
+                    "varValue": "0xa8d5f39f3ccd4795b0e38feacb4f2ee22486ca44",
+                    "varSlot": 1,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "RoomThermostat",
+                    "varName": "TargetTemperature",
+                    "varType": "int256",
+                    "varBytes": 32,
+                    "varValue": 117,
+                    "varSlot": 2,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "RoomThermostat",
+                    "varName": "Mode",
+                    "varType": "enum_RoomThermostat.ModeEnum",
+                    "varBytes": 1,
+                    "varValue": 1,
+                    "varSlot": 3,
+                    "varOffset": 0
+                }
+            ]
+        },
+        "stateDiff": {
+            "0x90b76c4d81509c3a911eb85ec899132ee67811d2": {
+                "0x0000000000000000000000000000000000000000000000000000000000000003": [
+                    "0x0000000000000000000000000000000000000000000000000000000000000000",
+                    "0x0000000000000000000000000000000000000000000000000000000000000001"
+                ]
+            }
+        }
+    },
+    {
+        "transactionHash": "0xeef4e4e71d9ff043b41f82a7492cb5e5d18694bfea368738bb23e9df927e7114",
+        "transactionIndex": 0,
+        "blockHash": "0xcd6b0903936de2c908230302a7f5543c3ed7a420a08b3aad997c68ce43955cc8",
+        "blockNumber": 73220,
+        "from": "0xA8D5f39F3ccD4795B0E38FeAcb4f2EE22486CA44",
+        "to": "0x90b76C4d81509C3a911Eb85Ec899132eE67811d2",
+        "gasUsed": 28270,
+        "cumulativeGasUsed": 28270,
+        "contractAddress": null,
+        "logs": [],
+        "status": 1,
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "input": "0x4a542ae2000000000000000000000000000000000000000000000000000000000000008d",
+        "gas": 2000000,
+        "gasPrice": 20000000000,
+        "value": 0,
+        "nonce": 7501,
+        "decode": [
+            {
+                "constant": false,
+                "inputs": [
+                    {
+                        "name": "targetTemperature",
+                        "type": "int256"
+                    }
+                ],
+                "name": "SetTargetTemperature",
+                "outputs": [],
+                "payable": false,
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "targetTemperature": 141
+            }
+        ],
+        "post_contract_state": {
+            "variables": [
+                {
+                    "contractName": "RoomThermostat",
+                    "varName": "State",
+                    "varType": "enum_RoomThermostat.StateType",
+                    "varBytes": 1,
+                    "varValue": 1,
+                    "varSlot": 0,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "RoomThermostat",
+                    "varName": "Installer",
+                    "varType": "address",
+                    "varBytes": 20,
+                    "varValue": "0x79182b3fa375ce9c8a4c3c611594aaf38a508477",
+                    "varSlot": 0,
+                    "varOffset": 1
+                },
+                {
+                    "contractName": "RoomThermostat",
+                    "varName": "User",
+                    "varType": "address",
+                    "varBytes": 20,
+                    "varValue": "0xa8d5f39f3ccd4795b0e38feacb4f2ee22486ca44",
+                    "varSlot": 1,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "RoomThermostat",
+                    "varName": "TargetTemperature",
+                    "varType": "int256",
+                    "varBytes": 32,
+                    "varValue": 141,
+                    "varSlot": 2,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "RoomThermostat",
+                    "varName": "Mode",
+                    "varType": "enum_RoomThermostat.ModeEnum",
+                    "varBytes": 1,
+                    "varValue": 1,
+                    "varSlot": 3,
+                    "varOffset": 0
+                }
+            ]
+        },
+        "stateDiff": {
+            "0x90b76c4d81509c3a911eb85ec899132ee67811d2": {
+                "0x0000000000000000000000000000000000000000000000000000000000000002": [
+                    null,
+                    "0x000000000000000000000000000000000000000000000000000000000000008d"
+                ]
+            }
+        }
+    }
+]

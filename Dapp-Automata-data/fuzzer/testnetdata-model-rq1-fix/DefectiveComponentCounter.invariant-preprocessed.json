@@ -1,0 +1,100 @@
+{
+    "constructor": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "ori(Manufacturer) != msg.sender",
+                "ori(State) == 0",
+                "ori(Total) == 0",
+                "msg.value == 0",
+                "ori(Total) one of [0]",
+                "ori(Manufacturer) == 0",
+                "ori(State) one of [0]",
+                "msg.value one of [0]",
+                "msg.sender != 0"
+            ],
+            "postconditions": [
+                "State == 0",
+                "Total one of [0]",
+                "msg.sender == Manufacturer",
+                "Total == 0",
+                "State one of [0]",
+                "Manufacturer != 0"
+            ],
+            "slice_pre": [
+                "ori(State) == 0",
+                "ori(Total) == 0",
+                "msg.value == 0",
+                "ori(Total) one of [0]",
+                "ori(Manufacturer) == 0",
+                "ori(State) one of [0]",
+                "msg.value one of [0]",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "State == 0",
+                "Total one of [0]",
+                "Total == 0",
+                "State one of [0]",
+                "Manufacturer != 0"
+            ]
+        }
+    ],
+    "ComputeTotal": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "ori(State) == 0",
+                "ori(Total) == 0",
+                "ori(Manufacturer) == msg.sender",
+                "msg.value == 0",
+                "ori(Total) one of [0]",
+                "ori(State) one of [0]",
+                "msg.value one of [0]",
+                "ori(Manufacturer) != 0",
+                "msg.sender != 0"
+            ],
+            "postconditions": [
+                "Total one of [0]",
+                "State one of [1]",
+                "msg.sender == Manufacturer",
+                "Total == 0",
+                "State == 1",
+                "Manufacturer != 0"
+            ],
+            "slice_pre": [
+                "ori(State) == 0",
+                "ori(Total) == 0",
+                "msg.value == 0",
+                "ori(Total) one of [0]",
+                "ori(State) one of [0]",
+                "msg.value one of [0]",
+                "ori(Manufacturer) != 0",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "Total one of [0]",
+                "State one of [1]",
+                "Total == 0",
+                "State == 1",
+                "Manufacturer != 0"
+            ]
+        }
+    ]
+}

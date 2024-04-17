@@ -1,0 +1,212 @@
+{
+    "constructor": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "ori(PreviousCounterparty) == ori(Counterparty)",
+                "ori(InitiatingCounterparty) == 0",
+                "ori(PreviousCounterparty) == ori(SupplyChainObserver)",
+                "msg.value == 0",
+                "ori(SupplyChainOwner) != supplyChainObserver",
+                "msg.sender != ori(Counterparty)",
+                "ori(PreviousCounterparty) == ori(SupplyChainOwner)",
+                "msg.value one of [0]",
+                "msg.sender != ori(SupplyChainObserver)",
+                "ori(Counterparty) == ori(SupplyChainOwner)",
+                "ori(InitiatingCounterparty) == ori(SupplyChainObserver)",
+                "supplyChainOwner != ori(SupplyChainOwner)",
+                "ori(SupplyChainOwner) == ori(SupplyChainObserver)",
+                "supplyChainOwner != ori(InitiatingCounterparty)",
+                "ori(State) == 0",
+                "supplyChainOwner != ori(PreviousCounterparty)",
+                "ori(PreviousCounterparty) != supplyChainObserver",
+                "ori(State) one of [0]",
+                "ori(PreviousCounterparty) == 0",
+                "supplyChainOwner != ori(Counterparty)",
+                "ori(SupplyChainObserver) != supplyChainObserver",
+                "supplyChainObserver != 0",
+                "ori(Counterparty) == 0",
+                "ori(InitiatingCounterparty) == ori(SupplyChainOwner)",
+                "msg.sender != 0",
+                "msg.sender != ori(SupplyChainOwner)",
+                "ori(Counterparty) == ori(SupplyChainObserver)",
+                "msg.sender != ori(PreviousCounterparty)",
+                "msg.sender != ori(InitiatingCounterparty)",
+                "ori(PreviousCounterparty) == ori(InitiatingCounterparty)",
+                "supplyChainOwner != 0",
+                "supplyChainOwner != ori(SupplyChainObserver)",
+                "ori(Counterparty) != supplyChainObserver",
+                "ori(Counterparty) == ori(InitiatingCounterparty)",
+                "ori(InitiatingCounterparty) != supplyChainObserver",
+                "ori(SupplyChainObserver) == 0",
+                "ori(SupplyChainOwner) == 0"
+            ],
+            "postconditions": [
+                "State == 0",
+                "PreviousCounterparty != supplyChainObserver",
+                "SupplyChainObserver != 0",
+                "InitiatingCounterparty != PreviousCounterparty",
+                "msg.sender != PreviousCounterparty",
+                "supplyChainOwner != PreviousCounterparty",
+                "msg.sender == Counterparty",
+                "SupplyChainOwner != PreviousCounterparty",
+                "SupplyChainOwner == supplyChainOwner",
+                "Counterparty != 0",
+                "InitiatingCounterparty == Counterparty",
+                "SupplyChainOwner != 0",
+                "PreviousCounterparty != SupplyChainObserver",
+                "PreviousCounterparty == 0",
+                "InitiatingCounterparty != 0",
+                "State one of [0]",
+                "PreviousCounterparty != Counterparty",
+                "msg.sender == InitiatingCounterparty",
+                "SupplyChainObserver == supplyChainObserver"
+            ],
+            "slice_pre": [
+                "ori(State) == 0",
+                "ori(SupplyChainOwner) == 0",
+                "msg.value == 0",
+                "supplyChainOwner != 0",
+                "ori(State) one of [0]",
+                "ori(PreviousCounterparty) == 0",
+                "msg.value one of [0]",
+                "supplyChainObserver != 0",
+                "ori(Counterparty) == 0",
+                "ori(InitiatingCounterparty) == 0",
+                "ori(SupplyChainObserver) == 0",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "State == 0",
+                "SupplyChainOwner != 0",
+                "InitiatingCounterparty != 0",
+                "PreviousCounterparty == 0",
+                "SupplyChainObserver != 0",
+                "State one of [0]",
+                "Counterparty != 0"
+            ]
+        }
+    ],
+    "Complete": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "ori(Counterparty) != 0",
+                "msg.value == 0",
+                "ori(SupplyChainOwner) != 0",
+                "ori(InitiatingCounterparty) != 0",
+                "msg.value one of [0]",
+                "ori(SupplyChainObserver) != 0",
+                "msg.sender == ori(SupplyChainOwner)",
+                "ori(State) one of [0,1]",
+                "msg.sender != 0"
+            ],
+            "postconditions": [
+                "InitiatingCounterparty != Counterparty",
+                "SupplyChainOwner != 0",
+                "PreviousCounterparty != 0",
+                "InitiatingCounterparty != 0",
+                "SupplyChainOwner == msg.sender",
+                "SupplyChainObserver != Counterparty",
+                "SupplyChainObserver != 0",
+                "Counterparty == 0",
+                "State one of [2]",
+                "PreviousCounterparty != Counterparty",
+                "SupplyChainOwner != Counterparty",
+                "State == 2",
+                "msg.sender != Counterparty"
+            ],
+            "slice_pre": [
+                "ori(Counterparty) != 0",
+                "msg.value == 0",
+                "ori(SupplyChainOwner) != 0",
+                "ori(InitiatingCounterparty) != 0",
+                "msg.value one of [0]",
+                "ori(SupplyChainObserver) != 0",
+                "ori(State) one of [0,1]",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "SupplyChainOwner != 0",
+                "PreviousCounterparty != 0",
+                "InitiatingCounterparty != 0",
+                "SupplyChainObserver != 0",
+                "Counterparty == 0",
+                "State one of [2]",
+                "State == 2"
+            ]
+        }
+    ],
+    "TransferResponsibility": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "ori(Counterparty) != 0",
+                "msg.value == 0",
+                "ori(SupplyChainOwner) != 0",
+                "msg.sender == ori(Counterparty)",
+                "newCounterparty != 0",
+                "ori(InitiatingCounterparty) != 0",
+                "msg.value one of [0]",
+                "ori(SupplyChainObserver) != 0",
+                "ori(State) one of [0,1]",
+                "msg.sender != 0"
+            ],
+            "postconditions": [
+                "SupplyChainOwner != 0",
+                "State one of [1]",
+                "PreviousCounterparty != 0",
+                "InitiatingCounterparty != 0",
+                "SupplyChainObserver != 0",
+                "msg.sender == PreviousCounterparty",
+                "newCounterparty == Counterparty",
+                "State == 1",
+                "Counterparty != 0"
+            ],
+            "slice_pre": [
+                "ori(Counterparty) != 0",
+                "msg.value == 0",
+                "ori(SupplyChainOwner) != 0",
+                "newCounterparty != 0",
+                "ori(InitiatingCounterparty) != 0",
+                "msg.value one of [0]",
+                "ori(SupplyChainObserver) != 0",
+                "ori(State) one of [0,1]",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "SupplyChainOwner != 0",
+                "State one of [1]",
+                "PreviousCounterparty != 0",
+                "InitiatingCounterparty != 0",
+                "SupplyChainObserver != 0",
+                "State == 1",
+                "Counterparty != 0"
+            ]
+        }
+    ]
+}

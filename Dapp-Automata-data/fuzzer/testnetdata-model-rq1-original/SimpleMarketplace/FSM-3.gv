@@ -1,0 +1,18 @@
+digraph "Dapp-Automata-data/fuzzer/testnetdata-model-rq1/SimpleMarketplace/FSM-3" {
+	graph [rankdir=LR]
+	"" [label="" shape=plaintext]
+	2 [label=2 shape=circle]
+	4 [label=4 shape=circle]
+	3 [label=3 shape=circle]
+	1 [label=1 shape=circle]
+	0 [label=0 shape=circle]
+	"" -> 0 [label=""]
+	0 -> 4 [label=constructor]
+	4 -> 2 [label=MakeOffer]
+	4 -> 1 [label=AcceptOffer]
+	1 -> 1 [label=AcceptOffer]
+	2 -> 1 [label=AcceptOffer]
+	2 -> 3 [label=Reject]
+	3 -> 2 [label=MakeOffer]
+	3 -> 1 [label=AcceptOffer]
+}

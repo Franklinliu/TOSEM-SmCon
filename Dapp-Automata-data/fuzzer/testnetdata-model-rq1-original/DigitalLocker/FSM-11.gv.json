@@ -1,0 +1,671 @@
+{
+  "name": "Dapp-Automata-data\/fuzzer\/testnetdata-model-rq1\/DigitalLocker\/FSM-11",
+  "directed": true,
+  "strict": false,
+  "rankdir": "LR",
+  "_subgraph_cnt": 0,
+  "objects": [
+    {
+      "_gvid": 0,
+      "name": "",
+      "label": "",
+      "shape": "plaintext"
+    },
+    {
+      "_gvid": 1,
+      "name": "2",
+      "label": "2",
+      "shape": "circle"
+    },
+    {
+      "_gvid": 2,
+      "name": "10",
+      "label": "10",
+      "shape": "circle"
+    },
+    {
+      "_gvid": 3,
+      "name": "5",
+      "label": "5",
+      "shape": "circle"
+    },
+    {
+      "_gvid": 4,
+      "name": "6",
+      "label": "6",
+      "shape": "circle"
+    },
+    {
+      "_gvid": 5,
+      "name": "4",
+      "label": "4",
+      "shape": "circle"
+    },
+    {
+      "_gvid": 6,
+      "name": "8",
+      "label": "8",
+      "shape": "circle"
+    },
+    {
+      "_gvid": 7,
+      "name": "3",
+      "label": "3",
+      "shape": "circle"
+    },
+    {
+      "_gvid": 8,
+      "name": "1",
+      "label": "1",
+      "shape": "circle"
+    },
+    {
+      "_gvid": 9,
+      "name": "7",
+      "label": "7",
+      "shape": "circle"
+    },
+    {
+      "_gvid": 10,
+      "name": "0",
+      "label": "0",
+      "shape": "circle"
+    },
+    {
+      "_gvid": 11,
+      "name": "9",
+      "label": "9",
+      "shape": "circle"
+    }
+  ],
+  "edges": [
+    {
+      "_gvid": 0,
+      "tail": 0,
+      "head": 10,
+      "label": ""
+    },
+    {
+      "_gvid": 1,
+      "tail": 1,
+      "head": 1,
+      "label": "RequestLockerAccess"
+    },
+    {
+      "_gvid": 2,
+      "tail": 1,
+      "head": 3,
+      "label": "RevokeAccessFromThirdParty"
+    },
+    {
+      "_gvid": 3,
+      "tail": 1,
+      "head": 3,
+      "label": "RejectSharingRequest"
+    },
+    {
+      "_gvid": 4,
+      "tail": 1,
+      "head": 3,
+      "label": "UploadDocuments"
+    },
+    {
+      "_gvid": 5,
+      "tail": 1,
+      "head": 4,
+      "label": "ShareWithThirdParty"
+    },
+    {
+      "_gvid": 6,
+      "tail": 1,
+      "head": 4,
+      "label": "AcceptSharingRequest"
+    },
+    {
+      "_gvid": 7,
+      "tail": 1,
+      "head": 5,
+      "label": "ReleaseLockerAccess"
+    },
+    {
+      "_gvid": 8,
+      "tail": 1,
+      "head": 8,
+      "label": "BeginReviewProcess"
+    },
+    {
+      "_gvid": 9,
+      "tail": 1,
+      "head": 8,
+      "label": "RejectApplication"
+    },
+    {
+      "_gvid": 10,
+      "tail": 1,
+      "head": 11,
+      "label": "Terminate"
+    },
+    {
+      "_gvid": 11,
+      "tail": 2,
+      "head": 5,
+      "label": "RevokeAccessFromThirdParty"
+    },
+    {
+      "_gvid": 12,
+      "tail": 2,
+      "head": 5,
+      "label": "RejectSharingRequest"
+    },
+    {
+      "_gvid": 13,
+      "tail": 2,
+      "head": 7,
+      "label": "RequestLockerAccess"
+    },
+    {
+      "_gvid": 14,
+      "tail": 2,
+      "head": 9,
+      "label": "BeginReviewProcess"
+    },
+    {
+      "_gvid": 15,
+      "tail": 3,
+      "head": 1,
+      "label": "RequestLockerAccess"
+    },
+    {
+      "_gvid": 16,
+      "tail": 3,
+      "head": 3,
+      "label": "RevokeAccessFromThirdParty"
+    },
+    {
+      "_gvid": 17,
+      "tail": 3,
+      "head": 3,
+      "label": "RejectSharingRequest"
+    },
+    {
+      "_gvid": 18,
+      "tail": 3,
+      "head": 3,
+      "label": "UploadDocuments"
+    },
+    {
+      "_gvid": 19,
+      "tail": 3,
+      "head": 4,
+      "label": "ShareWithThirdParty"
+    },
+    {
+      "_gvid": 20,
+      "tail": 3,
+      "head": 4,
+      "label": "AcceptSharingRequest"
+    },
+    {
+      "_gvid": 21,
+      "tail": 3,
+      "head": 6,
+      "label": "BeginReviewProcess"
+    },
+    {
+      "_gvid": 22,
+      "tail": 3,
+      "head": 6,
+      "label": "RejectApplication"
+    },
+    {
+      "_gvid": 23,
+      "tail": 3,
+      "head": 7,
+      "label": "RequestLockerAccess"
+    },
+    {
+      "_gvid": 24,
+      "tail": 3,
+      "head": 8,
+      "label": "BeginReviewProcess"
+    },
+    {
+      "_gvid": 25,
+      "tail": 3,
+      "head": 8,
+      "label": "RejectApplication"
+    },
+    {
+      "_gvid": 26,
+      "tail": 3,
+      "head": 11,
+      "label": "Terminate"
+    },
+    {
+      "_gvid": 27,
+      "tail": 4,
+      "head": 1,
+      "label": "RequestLockerAccess"
+    },
+    {
+      "_gvid": 28,
+      "tail": 4,
+      "head": 3,
+      "label": "RevokeAccessFromThirdParty"
+    },
+    {
+      "_gvid": 29,
+      "tail": 4,
+      "head": 3,
+      "label": "RejectSharingRequest"
+    },
+    {
+      "_gvid": 30,
+      "tail": 4,
+      "head": 3,
+      "label": "UploadDocuments"
+    },
+    {
+      "_gvid": 31,
+      "tail": 4,
+      "head": 4,
+      "label": "ShareWithThirdParty"
+    },
+    {
+      "_gvid": 32,
+      "tail": 4,
+      "head": 4,
+      "label": "AcceptSharingRequest"
+    },
+    {
+      "_gvid": 33,
+      "tail": 4,
+      "head": 5,
+      "label": "ReleaseLockerAccess"
+    },
+    {
+      "_gvid": 34,
+      "tail": 4,
+      "head": 8,
+      "label": "BeginReviewProcess"
+    },
+    {
+      "_gvid": 35,
+      "tail": 4,
+      "head": 8,
+      "label": "RejectApplication"
+    },
+    {
+      "_gvid": 36,
+      "tail": 4,
+      "head": 11,
+      "label": "Terminate"
+    },
+    {
+      "_gvid": 37,
+      "tail": 5,
+      "head": 1,
+      "label": "RequestLockerAccess"
+    },
+    {
+      "_gvid": 38,
+      "tail": 5,
+      "head": 4,
+      "label": "ShareWithThirdParty"
+    },
+    {
+      "_gvid": 39,
+      "tail": 5,
+      "head": 5,
+      "label": "RejectSharingRequest"
+    },
+    {
+      "_gvid": 40,
+      "tail": 5,
+      "head": 5,
+      "label": "UploadDocuments"
+    },
+    {
+      "_gvid": 41,
+      "tail": 5,
+      "head": 7,
+      "label": "RequestLockerAccess"
+    },
+    {
+      "_gvid": 42,
+      "tail": 5,
+      "head": 8,
+      "label": "BeginReviewProcess"
+    },
+    {
+      "_gvid": 43,
+      "tail": 5,
+      "head": 9,
+      "label": "BeginReviewProcess"
+    },
+    {
+      "_gvid": 44,
+      "tail": 5,
+      "head": 9,
+      "label": "RejectApplication"
+    },
+    {
+      "_gvid": 45,
+      "tail": 5,
+      "head": 11,
+      "label": "Terminate"
+    },
+    {
+      "_gvid": 46,
+      "tail": 6,
+      "head": 3,
+      "label": "RevokeAccessFromThirdParty"
+    },
+    {
+      "_gvid": 47,
+      "tail": 6,
+      "head": 3,
+      "label": "RejectSharingRequest"
+    },
+    {
+      "_gvid": 48,
+      "tail": 6,
+      "head": 3,
+      "label": "UploadDocuments"
+    },
+    {
+      "_gvid": 49,
+      "tail": 6,
+      "head": 4,
+      "label": "ShareWithThirdParty"
+    },
+    {
+      "_gvid": 50,
+      "tail": 6,
+      "head": 4,
+      "label": "AcceptSharingRequest"
+    },
+    {
+      "_gvid": 51,
+      "tail": 6,
+      "head": 6,
+      "label": "BeginReviewProcess"
+    },
+    {
+      "_gvid": 52,
+      "tail": 6,
+      "head": 6,
+      "label": "RejectApplication"
+    },
+    {
+      "_gvid": 53,
+      "tail": 6,
+      "head": 7,
+      "label": "RequestLockerAccess"
+    },
+    {
+      "_gvid": 54,
+      "tail": 6,
+      "head": 11,
+      "label": "Terminate"
+    },
+    {
+      "_gvid": 55,
+      "tail": 7,
+      "head": 3,
+      "label": "RevokeAccessFromThirdParty"
+    },
+    {
+      "_gvid": 56,
+      "tail": 7,
+      "head": 3,
+      "label": "RejectSharingRequest"
+    },
+    {
+      "_gvid": 57,
+      "tail": 7,
+      "head": 3,
+      "label": "UploadDocuments"
+    },
+    {
+      "_gvid": 58,
+      "tail": 7,
+      "head": 4,
+      "label": "ShareWithThirdParty"
+    },
+    {
+      "_gvid": 59,
+      "tail": 7,
+      "head": 4,
+      "label": "AcceptSharingRequest"
+    },
+    {
+      "_gvid": 60,
+      "tail": 7,
+      "head": 6,
+      "label": "BeginReviewProcess"
+    },
+    {
+      "_gvid": 61,
+      "tail": 7,
+      "head": 6,
+      "label": "RejectApplication"
+    },
+    {
+      "_gvid": 62,
+      "tail": 7,
+      "head": 7,
+      "label": "RequestLockerAccess"
+    },
+    {
+      "_gvid": 63,
+      "tail": 7,
+      "head": 11,
+      "label": "Terminate"
+    },
+    {
+      "_gvid": 64,
+      "tail": 8,
+      "head": 1,
+      "label": "RequestLockerAccess"
+    },
+    {
+      "_gvid": 65,
+      "tail": 8,
+      "head": 2,
+      "label": "AcceptSharingRequest"
+    },
+    {
+      "_gvid": 66,
+      "tail": 8,
+      "head": 3,
+      "label": "RevokeAccessFromThirdParty"
+    },
+    {
+      "_gvid": 67,
+      "tail": 8,
+      "head": 3,
+      "label": "RejectSharingRequest"
+    },
+    {
+      "_gvid": 68,
+      "tail": 8,
+      "head": 3,
+      "label": "UploadDocuments"
+    },
+    {
+      "_gvid": 69,
+      "tail": 8,
+      "head": 4,
+      "label": "ShareWithThirdParty"
+    },
+    {
+      "_gvid": 70,
+      "tail": 8,
+      "head": 4,
+      "label": "AcceptSharingRequest"
+    },
+    {
+      "_gvid": 71,
+      "tail": 8,
+      "head": 5,
+      "label": "RevokeAccessFromThirdParty"
+    },
+    {
+      "_gvid": 72,
+      "tail": 8,
+      "head": 5,
+      "label": "UploadDocuments"
+    },
+    {
+      "_gvid": 73,
+      "tail": 8,
+      "head": 5,
+      "label": "ReleaseLockerAccess"
+    },
+    {
+      "_gvid": 74,
+      "tail": 8,
+      "head": 8,
+      "label": "BeginReviewProcess"
+    },
+    {
+      "_gvid": 75,
+      "tail": 8,
+      "head": 8,
+      "label": "RejectApplication"
+    },
+    {
+      "_gvid": 76,
+      "tail": 8,
+      "head": 11,
+      "label": "Terminate"
+    },
+    {
+      "_gvid": 77,
+      "tail": 9,
+      "head": 1,
+      "label": "RequestLockerAccess"
+    },
+    {
+      "_gvid": 78,
+      "tail": 9,
+      "head": 2,
+      "label": "AcceptSharingRequest"
+    },
+    {
+      "_gvid": 79,
+      "tail": 9,
+      "head": 4,
+      "label": "ShareWithThirdParty"
+    },
+    {
+      "_gvid": 80,
+      "tail": 9,
+      "head": 5,
+      "label": "RevokeAccessFromThirdParty"
+    },
+    {
+      "_gvid": 81,
+      "tail": 9,
+      "head": 5,
+      "label": "RejectSharingRequest"
+    },
+    {
+      "_gvid": 82,
+      "tail": 9,
+      "head": 5,
+      "label": "UploadDocuments"
+    },
+    {
+      "_gvid": 83,
+      "tail": 9,
+      "head": 7,
+      "label": "RequestLockerAccess"
+    },
+    {
+      "_gvid": 84,
+      "tail": 9,
+      "head": 8,
+      "label": "BeginReviewProcess"
+    },
+    {
+      "_gvid": 85,
+      "tail": 9,
+      "head": 8,
+      "label": "RejectApplication"
+    },
+    {
+      "_gvid": 86,
+      "tail": 9,
+      "head": 9,
+      "label": "BeginReviewProcess"
+    },
+    {
+      "_gvid": 87,
+      "tail": 9,
+      "head": 9,
+      "label": "RejectApplication"
+    },
+    {
+      "_gvid": 88,
+      "tail": 9,
+      "head": 11,
+      "label": "Terminate"
+    },
+    {
+      "_gvid": 89,
+      "tail": 10,
+      "head": 9,
+      "label": "constructor"
+    },
+    {
+      "_gvid": 90,
+      "tail": 11,
+      "head": 3,
+      "label": "RevokeAccessFromThirdParty"
+    },
+    {
+      "_gvid": 91,
+      "tail": 11,
+      "head": 3,
+      "label": "RejectSharingRequest"
+    },
+    {
+      "_gvid": 92,
+      "tail": 11,
+      "head": 3,
+      "label": "UploadDocuments"
+    },
+    {
+      "_gvid": 93,
+      "tail": 11,
+      "head": 4,
+      "label": "ShareWithThirdParty"
+    },
+    {
+      "_gvid": 94,
+      "tail": 11,
+      "head": 6,
+      "label": "BeginReviewProcess"
+    },
+    {
+      "_gvid": 95,
+      "tail": 11,
+      "head": 7,
+      "label": "RequestLockerAccess"
+    },
+    {
+      "_gvid": 96,
+      "tail": 11,
+      "head": 9,
+      "label": "BeginReviewProcess"
+    },
+    {
+      "_gvid": 97,
+      "tail": 11,
+      "head": 11,
+      "label": "Terminate"
+    }
+  ]
+}

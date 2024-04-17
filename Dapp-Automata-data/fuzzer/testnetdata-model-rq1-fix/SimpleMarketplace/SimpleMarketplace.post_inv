@@ -1,0 +1,35 @@
+{
+    "constructor@": [
+        "State == 0",
+        "AskingPrice > 0",
+        "OfferPrice == 0",
+        "OfferPrice one of [0]",
+        "State one of [0]",
+        "InstanceBuyer == 0",
+        "InstanceOwner != 0"
+    ],
+    "MakeOffer@": [
+        "AskingPrice > 0",
+        "State one of [1]",
+        "OfferPrice > 0",
+        "InstanceBuyer != 0",
+        "State == 1",
+        "InstanceOwner != 0"
+    ],
+    "Reject@": [
+        "State == 0",
+        "AskingPrice > 0",
+        "OfferPrice > 0",
+        "State one of [0]",
+        "InstanceBuyer == 0",
+        "InstanceOwner != 0"
+    ],
+    "AcceptOffer@": [
+        "AskingPrice > 0",
+        "OfferPrice > 0",
+        "InstanceBuyer != 0",
+        "State one of [2]",
+        "State == 2",
+        "InstanceOwner != 0"
+    ]
+}

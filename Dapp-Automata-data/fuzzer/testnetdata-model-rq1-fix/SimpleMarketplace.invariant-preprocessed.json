@@ -1,0 +1,254 @@
+{
+    "constructor": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "price != ori(OfferPrice)",
+                "ori(AskingPrice) == 0",
+                "msg.value == 0",
+                "ori(InstanceOwner) == 0",
+                "price != ori(AskingPrice)",
+                "ori(OfferPrice) one of [0]",
+                "msg.value one of [0]",
+                "msg.sender != ori(InstanceOwner)",
+                "ori(OfferPrice) <= ori(AskingPrice)",
+                "ori(OfferPrice) == ori(AskingPrice)",
+                "ori(State) == 0",
+                "ori(InstanceOwner) == ori(InstanceBuyer)",
+                "ori(State) one of [0]",
+                "ori(InstanceBuyer) == 0",
+                "ori(OfferPrice) >= ori(AskingPrice)",
+                "msg.sender != 0",
+                "ori(OfferPrice) == 0",
+                "ori(AskingPrice) one of [0]",
+                "msg.sender != ori(InstanceBuyer)"
+            ],
+            "postconditions": [
+                "price <= AskingPrice",
+                "State == 0",
+                "AskingPrice > 0",
+                "OfferPrice == 0",
+                "price != OfferPrice",
+                "OfferPrice < AskingPrice",
+                "InstanceOwner != InstanceBuyer",
+                "msg.sender != InstanceBuyer",
+                "OfferPrice != AskingPrice",
+                "InstanceOwner == msg.sender",
+                "OfferPrice one of [0]",
+                "State one of [0]",
+                "OfferPrice <= AskingPrice",
+                "InstanceBuyer == 0",
+                "InstanceOwner != 0"
+            ],
+            "slice_pre": [
+                "ori(AskingPrice) == 0",
+                "ori(State) == 0",
+                "ori(AskingPrice) one of [0]",
+                "msg.value == 0",
+                "ori(InstanceOwner) == 0",
+                "msg.sender != 0",
+                "ori(State) one of [0]",
+                "ori(OfferPrice) one of [0]",
+                "ori(InstanceBuyer) == 0",
+                "msg.value one of [0]",
+                "ori(OfferPrice) == 0"
+            ],
+            "slice_post": [
+                "State == 0",
+                "AskingPrice > 0",
+                "OfferPrice == 0",
+                "OfferPrice one of [0]",
+                "State one of [0]",
+                "InstanceBuyer == 0",
+                "InstanceOwner != 0"
+            ]
+        }
+    ],
+    "MakeOffer": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "ori(State) == 0",
+                "ori(AskingPrice) > 0",
+                "msg.value == 0",
+                "ori(AskingPrice) != offerPrice",
+                "ori(OfferPrice) != ori(AskingPrice)",
+                "ori(State) one of [0]",
+                "ori(InstanceOwner) != 0",
+                "ori(InstanceBuyer) == 0",
+                "msg.value one of [0]",
+                "msg.sender != ori(InstanceOwner)",
+                "msg.sender != ori(InstanceBuyer)",
+                "ori(InstanceOwner) != ori(InstanceBuyer)",
+                "msg.sender != 0",
+                "ori(OfferPrice) != offerPrice"
+            ],
+            "postconditions": [
+                "AskingPrice > 0",
+                "State one of [1]",
+                "AskingPrice != offerPrice",
+                "OfferPrice > 0",
+                "InstanceOwner != InstanceBuyer",
+                "OfferPrice != AskingPrice",
+                "InstanceBuyer != 0",
+                "InstanceOwner != msg.sender",
+                "State == 1",
+                "OfferPrice >= offerPrice",
+                "msg.sender == InstanceBuyer",
+                "InstanceOwner != 0"
+            ],
+            "slice_pre": [
+                "ori(State) == 0",
+                "ori(AskingPrice) > 0",
+                "msg.value == 0",
+                "ori(State) one of [0]",
+                "ori(InstanceOwner) != 0",
+                "ori(InstanceBuyer) == 0",
+                "msg.value one of [0]",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "AskingPrice > 0",
+                "State one of [1]",
+                "OfferPrice > 0",
+                "InstanceBuyer != 0",
+                "State == 1",
+                "InstanceOwner != 0"
+            ]
+        }
+    ],
+    "Reject": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "ori(State) == 1",
+                "ori(AskingPrice) > 0",
+                "msg.value == 0",
+                "ori(OfferPrice) != ori(AskingPrice)",
+                "ori(InstanceBuyer) != 0",
+                "ori(InstanceOwner) != 0",
+                "msg.value one of [0]",
+                "msg.sender != ori(InstanceBuyer)",
+                "ori(State) one of [1]",
+                "ori(InstanceOwner) != ori(InstanceBuyer)",
+                "ori(OfferPrice) > 0",
+                "msg.sender != 0",
+                "msg.sender == ori(InstanceOwner)"
+            ],
+            "postconditions": [
+                "State == 0",
+                "AskingPrice > 0",
+                "OfferPrice > 0",
+                "InstanceOwner != InstanceBuyer",
+                "msg.sender != InstanceBuyer",
+                "OfferPrice != AskingPrice",
+                "InstanceOwner == msg.sender",
+                "State one of [0]",
+                "InstanceBuyer == 0",
+                "InstanceOwner != 0"
+            ],
+            "slice_pre": [
+                "ori(State) == 1",
+                "ori(AskingPrice) > 0",
+                "msg.value == 0",
+                "ori(InstanceBuyer) != 0",
+                "ori(InstanceOwner) != 0",
+                "msg.value one of [0]",
+                "ori(State) one of [1]",
+                "ori(OfferPrice) > 0",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "State == 0",
+                "AskingPrice > 0",
+                "OfferPrice > 0",
+                "State one of [0]",
+                "InstanceBuyer == 0",
+                "InstanceOwner != 0"
+            ]
+        }
+    ],
+    "AcceptOffer": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "ori(State) == 1",
+                "ori(AskingPrice) > 0",
+                "msg.value == 0",
+                "ori(OfferPrice) != ori(AskingPrice)",
+                "ori(InstanceBuyer) != 0",
+                "ori(InstanceOwner) != 0",
+                "msg.value one of [0]",
+                "msg.sender != ori(InstanceBuyer)",
+                "ori(State) one of [1]",
+                "ori(InstanceOwner) != ori(InstanceBuyer)",
+                "ori(OfferPrice) > 0",
+                "msg.sender != 0",
+                "msg.sender == ori(InstanceOwner)"
+            ],
+            "postconditions": [
+                "AskingPrice > 0",
+                "OfferPrice > 0",
+                "InstanceOwner != InstanceBuyer",
+                "msg.sender != InstanceBuyer",
+                "InstanceBuyer != 0",
+                "OfferPrice != AskingPrice",
+                "State one of [2]",
+                "InstanceOwner == msg.sender",
+                "State == 2",
+                "InstanceOwner != 0"
+            ],
+            "slice_pre": [
+                "ori(State) == 1",
+                "ori(AskingPrice) > 0",
+                "msg.value == 0",
+                "ori(InstanceBuyer) != 0",
+                "ori(InstanceOwner) != 0",
+                "msg.value one of [0]",
+                "ori(State) one of [1]",
+                "ori(OfferPrice) > 0",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "AskingPrice > 0",
+                "OfferPrice > 0",
+                "InstanceBuyer != 0",
+                "State one of [2]",
+                "State == 2",
+                "InstanceOwner != 0"
+            ]
+        }
+    ]
+}

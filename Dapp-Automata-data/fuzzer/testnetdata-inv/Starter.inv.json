@@ -1,0 +1,135 @@
+[
+    {
+        "func": "constructor(gameName)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [
+            "ori(PingPongTimes) == 0",
+            "ori(PingPongTimes) one of [0]",
+            "msg.sender != 0",
+            "msg.value == 0",
+            "msg.value one of [0]",
+            "ori(State) == 0",
+            "ori(State) one of [0]",
+            "ori(GameStarter) == 0",
+            "ori(GamePlayer) == 0",
+            "msg.sender != ori(GameStarter)",
+            "msg.sender != ori(GamePlayer)",
+            "ori(GameStarter) == ori(GamePlayer)"
+        ],
+        "postconditions": [
+            "GameStarter != 0",
+            "State == 0",
+            "State one of [0]",
+            "GamePlayer != 0",
+            "PingPongTimes == 0",
+            "PingPongTimes one of [0]",
+            "ori(PingPongTimes) == PingPongTimes",
+            "ori(PingPongTimes) >= PingPongTimes",
+            "ori(PingPongTimes) <= PingPongTimes",
+            "GameStarter == msg.sender",
+            "GameStarter != ori(GameStarter)",
+            "GameStarter != GamePlayer",
+            "GameStarter != ori(GamePlayer)",
+            "msg.sender != GamePlayer",
+            "ori(GameStarter) != GamePlayer",
+            "GamePlayer != ori(GamePlayer)"
+        ],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "FinishGame()",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [
+            "msg.sender != 0",
+            "msg.value == 0",
+            "msg.value one of [0]",
+            "ori(State) one of [0,2]",
+            "ori(GameStarter) != 0",
+            "ori(GamePlayer) != 0",
+            "msg.sender != ori(GamePlayer)",
+            "ori(GameStarter) != ori(GamePlayer)"
+        ],
+        "postconditions": [
+            "GameStarter != 0",
+            "State == 2",
+            "State one of [2]",
+            "GamePlayer != 0",
+            "ori(PingPongTimes) == PingPongTimes",
+            "ori(PingPongTimes) >= PingPongTimes",
+            "ori(PingPongTimes) <= PingPongTimes",
+            "GameStarter == ori(GameStarter)",
+            "GameStarter != GamePlayer",
+            "GameStarter != ori(GamePlayer)",
+            "msg.sender != GamePlayer",
+            "ori(GameStarter) != GamePlayer",
+            "GamePlayer == ori(GamePlayer)"
+        ],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "StartPingPong(pingPongTimes)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [
+            "msg.sender != 0",
+            "msg.value == 0",
+            "msg.value one of [0]",
+            "ori(State) one of [0,2]",
+            "ori(GameStarter) != 0",
+            "ori(GamePlayer) != 0",
+            "msg.sender != ori(GamePlayer)",
+            "ori(GameStarter) != ori(GamePlayer)"
+        ],
+        "postconditions": [
+            "GameStarter != 0",
+            "State == 2",
+            "State one of [2]",
+            "GamePlayer != 0",
+            "GameStarter == ori(GameStarter)",
+            "GameStarter != GamePlayer",
+            "GameStarter != ori(GamePlayer)",
+            "msg.sender != GamePlayer",
+            "ori(GameStarter) != GamePlayer",
+            "GamePlayer == ori(GamePlayer)",
+            "pingPongTimes <= PingPongTimes"
+        ],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "Pong(currentPingPongTimes)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [
+            "msg.sender != 0",
+            "msg.value == 0",
+            "msg.value one of [0]",
+            "ori(State) one of [0,2]",
+            "ori(GameStarter) != 0",
+            "ori(GamePlayer) != 0",
+            "msg.sender != ori(GamePlayer)",
+            "ori(GameStarter) != ori(GamePlayer)"
+        ],
+        "postconditions": [
+            "GameStarter != 0",
+            "State == 2",
+            "State one of [2]",
+            "GamePlayer != 0",
+            "ori(PingPongTimes) == PingPongTimes",
+            "ori(PingPongTimes) >= PingPongTimes",
+            "ori(PingPongTimes) <= PingPongTimes",
+            "GameStarter == ori(GameStarter)",
+            "GameStarter != GamePlayer",
+            "GameStarter != ori(GamePlayer)",
+            "msg.sender != GamePlayer",
+            "ori(GameStarter) != GamePlayer",
+            "GamePlayer == ori(GamePlayer)"
+        ],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    }
+]

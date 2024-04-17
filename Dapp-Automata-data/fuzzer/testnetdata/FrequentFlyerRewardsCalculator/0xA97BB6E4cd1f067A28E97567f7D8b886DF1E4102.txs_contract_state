@@ -1,0 +1,1723 @@
+[
+    {
+        "transactionHash": "0x1a7c70bf30cc3fed49b128500948e9e25685ca03fc27f917ff398bc6f13d2633",
+        "transactionIndex": 0,
+        "blockHash": "0xb487f0ba4f4245cb609c62980ea602e08475775cbf331e766cbefd3a1107a6d0",
+        "blockNumber": 41036,
+        "from": "0x79182b3fa375cE9c8A4C3c611594aaf38A508477",
+        "to": null,
+        "gasUsed": 414354,
+        "cumulativeGasUsed": 414354,
+        "contractAddress": "0xA97BB6E4cd1f067A28E97567f7D8b886DF1E4102",
+        "logs": [],
+        "status": 1,
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "input": "0x608060405234801561001057600080fd5b50604051604080610652833981018060405281019080805190602001909291908051906020019092919050505033600060016101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555081600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550806002819055506000600481905550600060058190555060008060006101000a81548160ff021916908360018111156100f457fe5b021790555050506105488061010a6000396000f30060806040526004361061008e576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063198f54701461009357806327b3eee2146100f9578063b7b65aba14610124578063b91045911461017b578063be2ffb3d146101bc578063c4f2f27f14610228578063f1b6dccd1461027f578063f64bef55146102b8575b600080fd5b34801561009f57600080fd5b506100f7600480360381019080803590602001908201803590602001908080602002602001604051908101604052809392919081815260200183836020028082843782019150505050505091929192905050506102e3565b005b34801561010557600080fd5b5061010e6103ce565b6040518082815260200191505060405180910390f35b34801561013057600080fd5b506101396103d4565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561018757600080fd5b506101a6600480360381019080803590602001909291905050506103fa565b6040518082815260200191505060405180910390f35b3480156101c857600080fd5b506101d161041d565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b838110156102145780820151818401526020810190506101f9565b505050509050019250505060405180910390f35b34801561023457600080fd5b5061023d610475565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561028b57600080fd5b5061029461049b565b604051808260018111156102a457fe5b60ff16815260200191505060405180910390f35b3480156102c457600080fd5b506102cd6104ad565b6040518082815260200191505060405180910390f35b60003373ffffffffffffffffffffffffffffffffffffffff16600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1614151561034157600080fd5b600090505b815181101561039f576003828281518110151561035f57fe5b9060200190602002015190806001815401808255809150509060018203906000526020600020016000909192909190915055508080600101915050610346565b6103a76104b3565b60016000806101000a81548160ff021916908360018111156103c557fe5b02179055505050565b60025481565b600060019054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60038181548110151561040957fe5b906000526020600020016000915090505481565b6060600380548060200260200160405190810160405280929190818152602001828054801561046b57602002820191906000526020600020905b815481526020019060010190808311610457575b5050505050905090565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900460ff1681565b60055481565b600080600380549050915060045490505b81811015610518576003818154811015156104db57fe5b90600052602060002001546002540260056000828254019250508190555060046000815480929190600101919050555080806001019150506104c4565b50505600a165627a7a72305820f58207495e75583113fb901703224ccd8be520f0d215b23c7f41db01f945946d0029000000000000000000000000d9b8cbfdd0cf9b695ec69290eecf32ca524677bc8cd031ce00155000000000000000000000000000000000000000000000000001",
+        "gas": 2000000,
+        "gasPrice": 50000000000,
+        "value": 0,
+        "nonce": 4172,
+        "decode": [
+            {
+                "inputs": [
+                    {
+                        "name": "flyer",
+                        "type": "address"
+                    },
+                    {
+                        "name": "rewardsPerMile",
+                        "type": "int256"
+                    }
+                ],
+                "payable": false,
+                "stateMutability": "nonpayable",
+                "type": "constructor"
+            },
+            {
+                "flyer": "0xd9b8cbfdd0cf9b695ec69290eecf32ca524677bc",
+                "rewardsPerMile": -52100442506856223486125417646521464749253942894317503305256710674976690143231
+            }
+        ],
+        "post_contract_state": {
+            "variables": [
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "State",
+                    "varType": "enum_FrequentFlyerRewardsCalculator.StateType",
+                    "varBytes": 1,
+                    "varValue": 0,
+                    "varSlot": 0,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "AirlineRepresentative",
+                    "varType": "address",
+                    "varBytes": 20,
+                    "varValue": "0x79182b3fa375ce9c8a4c3c611594aaf38a508477",
+                    "varSlot": 0,
+                    "varOffset": 1
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "Flyer",
+                    "varType": "address",
+                    "varBytes": 20,
+                    "varValue": "0xd9b8cbfdd0cf9b695ec69290eecf32ca524677bc",
+                    "varSlot": 1,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "RewardsPerMile",
+                    "varType": "uint256",
+                    "varBytes": 32,
+                    "varValue": 63691646730459971937445567362166443104016041771323060734200873332936439496705,
+                    "varSlot": 2,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "Miles",
+                    "varType": "uint256[]",
+                    "varBytes": 32,
+                    "varValue": null,
+                    "varSlot": 3,
+                    "varOffset": 0,
+                    "item_var_type": {
+                        "contractName": null,
+                        "varName": null,
+                        "varType": "uint256",
+                        "varBytes": 32,
+                        "varValue": null,
+                        "varSlot": null,
+                        "varOffset": null
+                    }
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "IndexCalculatedUpto",
+                    "varType": "uint256",
+                    "varBytes": 32,
+                    "varValue": 0,
+                    "varSlot": 4,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "TotalRewards",
+                    "varType": "uint256",
+                    "varBytes": 32,
+                    "varValue": 0,
+                    "varSlot": 5,
+                    "varOffset": 0
+                }
+            ]
+        },
+        "stateDiff": {
+            "0xa97bb6e4cd1f067a28e97567f7d8b886df1e4102": {
+                "0x0000000000000000000000000000000000000000000000000000000000000000": [
+                    "0x0000000000000000000000000000000000000000000000000000000000000000",
+                    "0x000000000000000000000079182b3fa375ce9c8a4c3c611594aaf38a50847700"
+                ],
+                "0x0000000000000000000000000000000000000000000000000000000000000005": [
+                    null,
+                    "0x0000000000000000000000000000000000000000000000000000000000000000"
+                ],
+                "0x0000000000000000000000000000000000000000000000000000000000000004": [
+                    null,
+                    "0x0000000000000000000000000000000000000000000000000000000000000000"
+                ],
+                "0x0000000000000000000000000000000000000000000000000000000000000002": [
+                    null,
+                    "0x8cd031ce00155000000000000000000000000000000000000000000000000001"
+                ],
+                "0x0000000000000000000000000000000000000000000000000000000000000001": [
+                    "0x0000000000000000000000000000000000000000000000000000000000000000",
+                    "0x000000000000000000000000d9b8cbfdd0cf9b695ec69290eecf32ca524677bc"
+                ]
+            }
+        }
+    },
+    {
+        "transactionHash": "0x17573536c790f6e4b9190813c78f0a4578055b931645aa914642e76ca2f392e2",
+        "transactionIndex": 0,
+        "blockHash": "0x82189789a05672d100e9cca04a53777ad51c539fa7fbc67c52d5687e32cf4271",
+        "blockNumber": 41048,
+        "from": "0xD9b8cbfdD0Cf9b695EC69290EECf32ca524677bc",
+        "to": "0xA97BB6E4cd1f067A28E97567f7D8b886DF1E4102",
+        "gasUsed": 115681,
+        "cumulativeGasUsed": 115681,
+        "contractAddress": null,
+        "logs": [],
+        "status": 1,
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "input": "0x198f547000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000001f2601a2463e77000000000000000000000000000000000000000000000000001",
+        "gas": 2000000,
+        "gasPrice": 20000000000,
+        "value": 0,
+        "nonce": 4143,
+        "decode": [
+            {
+                "constant": false,
+                "inputs": [
+                    {
+                        "name": "miles",
+                        "type": "int256[]"
+                    }
+                ],
+                "name": "AddMiles",
+                "outputs": [],
+                "payable": false,
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "miles": [
+                    -6162582135462783229071617631987142537107393851086833356787113960666147323903
+                ]
+            }
+        ],
+        "post_contract_state": {
+            "variables": [
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "State",
+                    "varType": "enum_FrequentFlyerRewardsCalculator.StateType",
+                    "varBytes": 1,
+                    "varValue": 1,
+                    "varSlot": 0,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "AirlineRepresentative",
+                    "varType": "address",
+                    "varBytes": 20,
+                    "varValue": "0x79182b3fa375ce9c8a4c3c611594aaf38a508477",
+                    "varSlot": 0,
+                    "varOffset": 1
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "Flyer",
+                    "varType": "address",
+                    "varBytes": 20,
+                    "varValue": "0xd9b8cbfdd0cf9b695ec69290eecf32ca524677bc",
+                    "varSlot": 1,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "RewardsPerMile",
+                    "varType": "uint256",
+                    "varBytes": 32,
+                    "varValue": 63691646730459971937445567362166443104016041771323060734200873332936439496705,
+                    "varSlot": 2,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "Miles",
+                    "varType": "uint256[]",
+                    "varBytes": 32,
+                    "varValue": [
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 109629507101853412194499367376700765316162590814553730682670470047246982316033,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037083,
+                            "varOffset": 0
+                        }
+                    ],
+                    "varSlot": 3,
+                    "varOffset": 0,
+                    "item_var_type": {
+                        "contractName": null,
+                        "varName": null,
+                        "varType": "uint256",
+                        "varBytes": 32,
+                        "varValue": null,
+                        "varSlot": null,
+                        "varOffset": null
+                    }
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "IndexCalculatedUpto",
+                    "varType": "uint256",
+                    "varBytes": 32,
+                    "varValue": 1,
+                    "varSlot": 4,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "TotalRewards",
+                    "varType": "uint256",
+                    "varBytes": 32,
+                    "varValue": 57529064594997188708373949730179300566908647920236227377413759372270292172801,
+                    "varSlot": 5,
+                    "varOffset": 0
+                }
+            ]
+        },
+        "stateDiff": {
+            "0xa97bb6e4cd1f067a28e97567f7d8b886df1e4102": {
+                "0x0000000000000000000000000000000000000000000000000000000000000000": [
+                    "0x000000000000000000000079182b3fa375ce9c8a4c3c611594aaf38a50847700",
+                    "0x000000000000000000000079182b3fa375ce9c8a4c3c611594aaf38a50847701"
+                ],
+                "0x0000000000000000000000000000000000000000000000000000000000000004": [
+                    "0x0000000000000000000000000000000000000000000000000000000000000000",
+                    "0x0000000000000000000000000000000000000000000000000000000000000001"
+                ],
+                "0x0000000000000000000000000000000000000000000000000000000000000005": [
+                    "0x0000000000000000000000000000000000000000000000000000000000000000",
+                    "0x7f304bf263fcc000000000000000000000000000000000000000000000000001"
+                ],
+                "0xc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f85b": [
+                    null,
+                    "0xf2601a2463e77000000000000000000000000000000000000000000000000001"
+                ],
+                "0x0000000000000000000000000000000000000000000000000000000000000003": [
+                    "0x0000000000000000000000000000000000000000000000000000000000000000",
+                    "0x0000000000000000000000000000000000000000000000000000000000000001"
+                ]
+            }
+        }
+    },
+    {
+        "transactionHash": "0x2962bef943bd5b083aae650596f42cb151848a0411062e7c10f48e92dc4ec911",
+        "transactionIndex": 0,
+        "blockHash": "0x585db1e0127f2032332891dc0850e295a175f7dea73fd001ccf9cfd724c78b83",
+        "blockNumber": 41078,
+        "from": "0xD9b8cbfdD0Cf9b695EC69290EECf32ca524677bc",
+        "to": "0xA97BB6E4cd1f067A28E97567f7D8b886DF1E4102",
+        "gasUsed": 94334,
+        "cumulativeGasUsed": 94334,
+        "contractAddress": null,
+        "logs": [],
+        "status": 1,
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "input": "0x198f547000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000009eb33f17c22ae8b800000400000000000004000000000000000000000000000401",
+        "gas": 2000000,
+        "gasPrice": 20000000000,
+        "value": 0,
+        "nonce": 4144,
+        "decode": [
+            {
+                "constant": false,
+                "inputs": [
+                    {
+                        "name": "miles",
+                        "type": "int256[]"
+                    }
+                ],
+                "name": "AddMiles",
+                "outputs": [],
+                "payable": false,
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "miles": [
+                    158,
+                    -34716614000915992890786422857458385095553092269255275003201423925382507133951
+                ]
+            }
+        ],
+        "post_contract_state": {
+            "variables": [
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "State",
+                    "varType": "enum_FrequentFlyerRewardsCalculator.StateType",
+                    "varBytes": 1,
+                    "varValue": 1,
+                    "varSlot": 0,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "AirlineRepresentative",
+                    "varType": "address",
+                    "varBytes": 20,
+                    "varValue": "0x79182b3fa375ce9c8a4c3c611594aaf38a508477",
+                    "varSlot": 0,
+                    "varOffset": 1
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "Flyer",
+                    "varType": "address",
+                    "varBytes": 20,
+                    "varValue": "0xd9b8cbfdd0cf9b695ec69290eecf32ca524677bc",
+                    "varSlot": 1,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "RewardsPerMile",
+                    "varType": "uint256",
+                    "varBytes": 32,
+                    "varValue": 63691646730459971937445567362166443104016041771323060734200873332936439496705,
+                    "varSlot": 2,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "Miles",
+                    "varType": "uint256[]",
+                    "varBytes": 32,
+                    "varValue": [
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 109629507101853412194499367376700765316162590814553730682670470047246982316033,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037083,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 158,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037084,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 81075475236400202532784562151229522757716892396385289036256160082530622505985,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037085,
+                            "varOffset": 0
+                        }
+                    ],
+                    "varSlot": 3,
+                    "varOffset": 0,
+                    "item_var_type": {
+                        "contractName": null,
+                        "varName": null,
+                        "varType": "uint256",
+                        "varBytes": 32,
+                        "varValue": null,
+                        "varSlot": null,
+                        "varOffset": null
+                    }
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "IndexCalculatedUpto",
+                    "varType": "uint256",
+                    "varBytes": 32,
+                    "varValue": 3,
+                    "varSlot": 4,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "TotalRewards",
+                    "varType": "uint256",
+                    "varBytes": 32,
+                    "varValue": 105172528472700972494553460668483002896842938459795175286415883167161443681440,
+                    "varSlot": 5,
+                    "varOffset": 0
+                }
+            ]
+        },
+        "stateDiff": {
+            "0xa97bb6e4cd1f067a28e97567f7d8b886df1e4102": {
+                "0x0000000000000000000000000000000000000000000000000000000000000000": [
+                    "0x000000000000000000000079182b3fa375ce9c8a4c3c611594aaf38a50847701",
+                    "0x000000000000000000000079182b3fa375ce9c8a4c3c611594aaf38a50847701"
+                ],
+                "0x0000000000000000000000000000000000000000000000000000000000000004": [
+                    "0x0000000000000000000000000000000000000000000000000000000000000001",
+                    "0x0000000000000000000000000000000000000000000000000000000000000003"
+                ],
+                "0x0000000000000000000000000000000000000000000000000000000000000005": [
+                    "0x7f304bf263fcc000000000000000000000000000000000000000000000000001",
+                    "0xe8858aa6f16228000004000000000000040000000000000000000000000004a0"
+                ],
+                "0xc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f85d": [
+                    null,
+                    "0xb33f17c22ae8b800000400000000000004000000000000000000000000000401"
+                ],
+                "0x0000000000000000000000000000000000000000000000000000000000000003": [
+                    "0x0000000000000000000000000000000000000000000000000000000000000001",
+                    "0x0000000000000000000000000000000000000000000000000000000000000003"
+                ],
+                "0xc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f85c": [
+                    null,
+                    "0x000000000000000000000000000000000000000000000000000000000000009e"
+                ]
+            }
+        }
+    },
+    {
+        "transactionHash": "0x3c17f1191e34a0a7b345b2449a1290457f8d951b47b1f7ec4ac0633cf419a7cf",
+        "transactionIndex": 0,
+        "blockHash": "0x89ef01c8f0039265fd298bbcb19ad64ba20d85f7c8c05c50ee26c41184fdb458",
+        "blockNumber": 41084,
+        "from": "0xD9b8cbfdD0Cf9b695EC69290EECf32ca524677bc",
+        "to": "0xA97BB6E4cd1f067A28E97567f7D8b886DF1E4102",
+        "gasUsed": 150100,
+        "cumulativeGasUsed": 150100,
+        "contractAddress": null,
+        "logs": [],
+        "status": 1,
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "input": "0x198f54700000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000d6be8765aaa01ca800000000000000000000000000000000000000000000000001762cb7b3520b9000004000000000000000000000000000000000000000000009ad008208a5316800000000000000000000000000000000000000000000000001",
+        "gas": 2000000,
+        "gasPrice": 20000000000,
+        "value": 0,
+        "nonce": 4145,
+        "decode": [
+            {
+                "constant": false,
+                "inputs": [
+                    {
+                        "name": "miles",
+                        "type": "int256[]"
+                    }
+                ],
+                "name": "AddMiles",
+                "outputs": [],
+                "payable": false,
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "miles": [
+                    214,
+                    -29613421976316785321132519581889142207579861575336190170886599968375726669823,
+                    53451925257727963285130365700801614246272470661833448317037998807118249984009,
+                    -37541068972309601446792696906025786610486961450335222527035169467345406001151
+                ]
+            }
+        ],
+        "post_contract_state": {
+            "variables": [
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "State",
+                    "varType": "enum_FrequentFlyerRewardsCalculator.StateType",
+                    "varBytes": 1,
+                    "varValue": 1,
+                    "varSlot": 0,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "AirlineRepresentative",
+                    "varType": "address",
+                    "varBytes": 20,
+                    "varValue": "0x79182b3fa375ce9c8a4c3c611594aaf38a508477",
+                    "varSlot": 0,
+                    "varOffset": 1
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "Flyer",
+                    "varType": "address",
+                    "varBytes": 20,
+                    "varValue": "0xd9b8cbfdd0cf9b695ec69290eecf32ca524677bc",
+                    "varSlot": 1,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "RewardsPerMile",
+                    "varType": "uint256",
+                    "varBytes": 32,
+                    "varValue": 63691646730459971937445567362166443104016041771323060734200873332936439496705,
+                    "varSlot": 2,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "Miles",
+                    "varType": "uint256[]",
+                    "varBytes": 32,
+                    "varValue": [
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 109629507101853412194499367376700765316162590814553730682670470047246982316033,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037083,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 158,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037084,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 81075475236400202532784562151229522757716892396385289036256160082530622505985,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037085,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 214,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037086,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 86178667260999410102438465426798765645690123090304373868570984039537402970113,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037087,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 53451925257727963285130365700801614246272470661833448317037998807118249984009,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037088,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": null,
+                            "varSlot": 6,
+                            "varOffset": 0
+                        }
+                    ],
+                    "varSlot": 3,
+                    "varOffset": 0,
+                    "item_var_type": {
+                        "contractName": null,
+                        "varName": null,
+                        "varType": "uint256",
+                        "varBytes": 32,
+                        "varValue": null,
+                        "varSlot": null,
+                        "varOffset": null
+                    }
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "IndexCalculatedUpto",
+                    "varType": "uint256",
+                    "varBytes": 32,
+                    "varValue": 7,
+                    "varSlot": 4,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "TotalRewards",
+                    "varType": "uint256",
+                    "varBytes": 32,
+                    "varValue": 63871411708088002414209125291518812923179886104215935207988195468029372401025,
+                    "varSlot": 5,
+                    "varOffset": 0
+                }
+            ]
+        },
+        "stateDiff": {
+            "0xa97bb6e4cd1f067a28e97567f7d8b886df1e4102": {
+                "0x0000000000000000000000000000000000000000000000000000000000000000": [
+                    "0x000000000000000000000079182b3fa375ce9c8a4c3c611594aaf38a50847701",
+                    "0x000000000000000000000079182b3fa375ce9c8a4c3c611594aaf38a50847701"
+                ],
+                "0x0000000000000000000000000000000000000000000000000000000000000004": [
+                    "0x0000000000000000000000000000000000000000000000000000000000000003",
+                    "0x0000000000000000000000000000000000000000000000000000000000000007"
+                ],
+                "0x0000000000000000000000000000000000000000000000000000000000000005": [
+                    "0xe8858aa6f16228000004000000000000040000000000000000000000000004a0",
+                    "0x8d35f01b9b771800004400000000000004000000000000000000000000000581"
+                ],
+                "0xc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f861": [
+                    null,
+                    "0xad008208a5316800000000000000000000000000000000000000000000000001"
+                ],
+                "0x0000000000000000000000000000000000000000000000000000000000000003": [
+                    "0x0000000000000000000000000000000000000000000000000000000000000003",
+                    "0x0000000000000000000000000000000000000000000000000000000000000007"
+                ],
+                "0xc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f860": [
+                    null,
+                    "0x762cb7b3520b9000004000000000000000000000000000000000000000000009"
+                ],
+                "0xc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f85f": [
+                    null,
+                    "0xbe8765aaa01ca800000000000000000000000000000000000000000000000001"
+                ],
+                "0xc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f85e": [
+                    null,
+                    "0x00000000000000000000000000000000000000000000000000000000000000d6"
+                ]
+            }
+        }
+    },
+    {
+        "transactionHash": "0xf609c609fb33ab932a1802e748e47156d8c4b19a95d7ba562d09bb7e3ce5685e",
+        "transactionIndex": 0,
+        "blockHash": "0x764e1e566b387438751cd0c1064bf5b7e2f15485484d8cd655bee53e54ac6dc3",
+        "blockNumber": 41101,
+        "from": "0xD9b8cbfdD0Cf9b695EC69290EECf32ca524677bc",
+        "to": "0xA97BB6E4cd1f067A28E97567f7D8b886DF1E4102",
+        "gasUsed": 122235,
+        "cumulativeGasUsed": 122235,
+        "contractAddress": null,
+        "logs": [],
+        "status": 1,
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "input": "0x198f5470000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000032dcf25d4fc176800000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000002a8764c14fa45e5800000000000000004000000000000020000000008000000001",
+        "gas": 2000000,
+        "gasPrice": 20000000000,
+        "value": 0,
+        "nonce": 4146,
+        "decode": [
+            {
+                "constant": false,
+                "inputs": [
+                    {
+                        "name": "miles",
+                        "type": "int256[]"
+                    }
+                ],
+                "name": "AddMiles",
+                "outputs": [],
+                "payable": false,
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "miles": [
+                    20720076635327963993056712264192698546354604351442848486073105460675697704961,
+                    42,
+                    -54551835787906650675214053194769294723872000376150598980484742110473757917183
+                ]
+            }
+        ],
+        "post_contract_state": {
+            "variables": [
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "State",
+                    "varType": "enum_FrequentFlyerRewardsCalculator.StateType",
+                    "varBytes": 1,
+                    "varValue": 1,
+                    "varSlot": 0,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "AirlineRepresentative",
+                    "varType": "address",
+                    "varBytes": 20,
+                    "varValue": "0x79182b3fa375ce9c8a4c3c611594aaf38a508477",
+                    "varSlot": 0,
+                    "varOffset": 1
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "Flyer",
+                    "varType": "address",
+                    "varBytes": 20,
+                    "varValue": "0xd9b8cbfdd0cf9b695ec69290eecf32ca524677bc",
+                    "varSlot": 1,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "RewardsPerMile",
+                    "varType": "uint256",
+                    "varBytes": 32,
+                    "varValue": 63691646730459971937445567362166443104016041771323060734200873332936439496705,
+                    "varSlot": 2,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "Miles",
+                    "varType": "uint256[]",
+                    "varBytes": 32,
+                    "varValue": [
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 109629507101853412194499367376700765316162590814553730682670470047246982316033,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037083,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 158,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037084,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 81075475236400202532784562151229522757716892396385289036256160082530622505985,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037085,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 214,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037086,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 86178667260999410102438465426798765645690123090304373868570984039537402970113,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037087,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 53451925257727963285130365700801614246272470661833448317037998807118249984009,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037088,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": null,
+                            "varSlot": 6,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 20720076635327963993056712264192698546354604351442848486073105460675697704961,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037090,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 42,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037091,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": null,
+                            "varSlot": 9,
+                            "varOffset": 0
+                        }
+                    ],
+                    "varSlot": 3,
+                    "varOffset": 0,
+                    "item_var_type": {
+                        "contractName": null,
+                        "varName": null,
+                        "varType": "uint256",
+                        "varBytes": 32,
+                        "varValue": null,
+                        "varSlot": null,
+                        "varOffset": null
+                    }
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "IndexCalculatedUpto",
+                    "varType": "uint256",
+                    "varBytes": 32,
+                    "varValue": 10,
+                    "varSlot": 4,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "TotalRewards",
+                    "varType": "uint256",
+                    "varBytes": 32,
+                    "varValue": 58281925792874823265056343669782606555066072113026008589188710994645805434285,
+                    "varSlot": 5,
+                    "varOffset": 0
+                }
+            ]
+        },
+        "stateDiff": {
+            "0xa97bb6e4cd1f067a28e97567f7d8b886df1e4102": {
+                "0x0000000000000000000000000000000000000000000000000000000000000000": [
+                    "0x000000000000000000000079182b3fa375ce9c8a4c3c611594aaf38a50847701",
+                    "0x000000000000000000000079182b3fa375ce9c8a4c3c611594aaf38a50847701"
+                ],
+                "0x0000000000000000000000000000000000000000000000000000000000000004": [
+                    "0x0000000000000000000000000000000000000000000000000000000000000007",
+                    "0x000000000000000000000000000000000000000000000000000000000000000a"
+                ],
+                "0x0000000000000000000000000000000000000000000000000000000000000005": [
+                    "0x8d35f01b9b771800004400000000000004000000000000000000000000000581",
+                    "0x80da66a83f9698000044000000000040040000000000200000000080000005ad"
+                ],
+                "0xc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f864": [
+                    null,
+                    "0x8764c14fa45e5800000000000000004000000000000020000000008000000001"
+                ],
+                "0x0000000000000000000000000000000000000000000000000000000000000003": [
+                    "0x0000000000000000000000000000000000000000000000000000000000000007",
+                    "0x000000000000000000000000000000000000000000000000000000000000000a"
+                ],
+                "0xc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f863": [
+                    null,
+                    "0x000000000000000000000000000000000000000000000000000000000000002a"
+                ],
+                "0xc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f862": [
+                    null,
+                    "0x2dcf25d4fc176800000000000000000000000000000000000000000000000001"
+                ]
+            }
+        }
+    },
+    {
+        "transactionHash": "0xf9d9075ca9de4ad208bc535e045c53f6bcf373cad72eee29b276875c1e61ec47",
+        "transactionIndex": 0,
+        "blockHash": "0x29aed6225dfc6dca27fd124dae49ed8e10e15249a891bbec667067a45b3c4aad",
+        "blockNumber": 41113,
+        "from": "0xD9b8cbfdD0Cf9b695EC69290EECf32ca524677bc",
+        "to": "0xA97BB6E4cd1f067A28E97567f7D8b886DF1E4102",
+        "gasUsed": 66397,
+        "cumulativeGasUsed": 66397,
+        "contractAddress": null,
+        "logs": [],
+        "status": 1,
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "input": "0x198f547000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000a",
+        "gas": 2000000,
+        "gasPrice": 20000000000,
+        "value": 0,
+        "nonce": 4147,
+        "decode": [
+            {
+                "constant": false,
+                "inputs": [
+                    {
+                        "name": "miles",
+                        "type": "int256[]"
+                    }
+                ],
+                "name": "AddMiles",
+                "outputs": [],
+                "payable": false,
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "miles": [
+                    10
+                ]
+            }
+        ],
+        "post_contract_state": {
+            "variables": [
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "State",
+                    "varType": "enum_FrequentFlyerRewardsCalculator.StateType",
+                    "varBytes": 1,
+                    "varValue": 1,
+                    "varSlot": 0,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "AirlineRepresentative",
+                    "varType": "address",
+                    "varBytes": 20,
+                    "varValue": "0x79182b3fa375ce9c8a4c3c611594aaf38a508477",
+                    "varSlot": 0,
+                    "varOffset": 1
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "Flyer",
+                    "varType": "address",
+                    "varBytes": 20,
+                    "varValue": "0xd9b8cbfdd0cf9b695ec69290eecf32ca524677bc",
+                    "varSlot": 1,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "RewardsPerMile",
+                    "varType": "uint256",
+                    "varBytes": 32,
+                    "varValue": 63691646730459971937445567362166443104016041771323060734200873332936439496705,
+                    "varSlot": 2,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "Miles",
+                    "varType": "uint256[]",
+                    "varBytes": 32,
+                    "varValue": [
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 109629507101853412194499367376700765316162590814553730682670470047246982316033,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037083,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 158,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037084,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 81075475236400202532784562151229522757716892396385289036256160082530622505985,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037085,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 214,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037086,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 86178667260999410102438465426798765645690123090304373868570984039537402970113,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037087,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 53451925257727963285130365700801614246272470661833448317037998807118249984009,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037088,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": null,
+                            "varSlot": 6,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 20720076635327963993056712264192698546354604351442848486073105460675697704961,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037090,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 42,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037091,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": null,
+                            "varSlot": 9,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 10,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037093,
+                            "varOffset": 0
+                        }
+                    ],
+                    "varSlot": 3,
+                    "varOffset": 0,
+                    "item_var_type": {
+                        "contractName": null,
+                        "varName": null,
+                        "varType": "uint256",
+                        "varBytes": 32,
+                        "varValue": null,
+                        "varSlot": null,
+                        "varOffset": null
+                    }
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "IndexCalculatedUpto",
+                    "varType": "uint256",
+                    "varBytes": 32,
+                    "varValue": 11,
+                    "varSlot": 4,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "TotalRewards",
+                    "varType": "uint256",
+                    "varBytes": 32,
+                    "varValue": 445857673577370098086107239319590475606581832413231694451940276531422561719,
+                    "varSlot": 5,
+                    "varOffset": 0
+                }
+            ]
+        },
+        "stateDiff": {
+            "0xa97bb6e4cd1f067a28e97567f7d8b886df1e4102": {
+                "0x0000000000000000000000000000000000000000000000000000000000000000": [
+                    "0x000000000000000000000079182b3fa375ce9c8a4c3c611594aaf38a50847701",
+                    "0x000000000000000000000079182b3fa375ce9c8a4c3c611594aaf38a50847701"
+                ],
+                "0x0000000000000000000000000000000000000000000000000000000000000004": [
+                    "0x000000000000000000000000000000000000000000000000000000000000000a",
+                    "0x000000000000000000000000000000000000000000000000000000000000000b"
+                ],
+                "0x0000000000000000000000000000000000000000000000000000000000000005": [
+                    "0x80da66a83f9698000044000000000040040000000000200000000080000005ad",
+                    "0x00fc58b4406bb8000044000000000040040000000000200000000080000005b7"
+                ],
+                "0xc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f865": [
+                    null,
+                    "0x000000000000000000000000000000000000000000000000000000000000000a"
+                ],
+                "0x0000000000000000000000000000000000000000000000000000000000000003": [
+                    "0x000000000000000000000000000000000000000000000000000000000000000a",
+                    "0x000000000000000000000000000000000000000000000000000000000000000b"
+                ]
+            }
+        }
+    },
+    {
+        "transactionHash": "0xb1b0d041f51af9b1c2a76e75f8563f348a51ce2f412ba67c4af0666031abae3b",
+        "transactionIndex": 0,
+        "blockHash": "0xe9789ec59c7d57bcd5aac67d67093d9711f160022c837398960c81ca309a1eac",
+        "blockNumber": 41124,
+        "from": "0xD9b8cbfdD0Cf9b695EC69290EECf32ca524677bc",
+        "to": "0xA97BB6E4cd1f067A28E97567f7D8b886DF1E4102",
+        "gasUsed": 94406,
+        "cumulativeGasUsed": 94406,
+        "contractAddress": null,
+        "logs": [],
+        "status": 1,
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "input": "0x198f54700000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000217ff4b7869e460000000000000000000000000000000000000000120000000016eca5823f0ac5000000000000000000000000000000000000000000000000001",
+        "gas": 2000000,
+        "gasPrice": 20000000000,
+        "value": 0,
+        "nonce": 4148,
+        "decode": [
+            {
+                "constant": false,
+                "inputs": [
+                    {
+                        "name": "miles",
+                        "type": "int256[]"
+                    }
+                ],
+                "name": "AddMiles",
+                "outputs": [],
+                "payable": false,
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "miles": [
+                    10854262396254962938009091724545907840544877372015013836487535699553241006081,
+                    50111924773867022526989248174467097045724244679333192987775419480404784054273
+                ]
+            }
+        ],
+        "post_contract_state": {
+            "variables": [
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "State",
+                    "varType": "enum_FrequentFlyerRewardsCalculator.StateType",
+                    "varBytes": 1,
+                    "varValue": 1,
+                    "varSlot": 0,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "AirlineRepresentative",
+                    "varType": "address",
+                    "varBytes": 20,
+                    "varValue": "0x79182b3fa375ce9c8a4c3c611594aaf38a508477",
+                    "varSlot": 0,
+                    "varOffset": 1
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "Flyer",
+                    "varType": "address",
+                    "varBytes": 20,
+                    "varValue": "0xd9b8cbfdd0cf9b695ec69290eecf32ca524677bc",
+                    "varSlot": 1,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "RewardsPerMile",
+                    "varType": "uint256",
+                    "varBytes": 32,
+                    "varValue": 63691646730459971937445567362166443104016041771323060734200873332936439496705,
+                    "varSlot": 2,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "Miles",
+                    "varType": "uint256[]",
+                    "varBytes": 32,
+                    "varValue": [
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 109629507101853412194499367376700765316162590814553730682670470047246982316033,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037083,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 158,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037084,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 81075475236400202532784562151229522757716892396385289036256160082530622505985,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037085,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 214,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037086,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 86178667260999410102438465426798765645690123090304373868570984039537402970113,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037087,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 53451925257727963285130365700801614246272470661833448317037998807118249984009,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037088,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": null,
+                            "varSlot": 6,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 20720076635327963993056712264192698546354604351442848486073105460675697704961,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037090,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 42,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037091,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": null,
+                            "varSlot": 9,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 10,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037093,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 10854262396254962938009091724545907840544877372015013836487535699553241006081,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037094,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 50111924773867022526989248174467097045724244679333192987775419480404784054273,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037095,
+                            "varOffset": 0
+                        }
+                    ],
+                    "varSlot": 3,
+                    "varOffset": 0,
+                    "item_var_type": {
+                        "contractName": null,
+                        "varName": null,
+                        "varType": "uint256",
+                        "varBytes": 32,
+                        "varValue": null,
+                        "varSlot": null,
+                        "varOffset": null
+                    }
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "IndexCalculatedUpto",
+                    "varType": "uint256",
+                    "varBytes": 32,
+                    "varValue": 13,
+                    "varSlot": 4,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "TotalRewards",
+                    "varType": "uint256",
+                    "varBytes": 32,
+                    "varValue": 83848156350912827029386876913537607566786898919789545112609476977983297160633,
+                    "varSlot": 5,
+                    "varOffset": 0
+                }
+            ]
+        },
+        "stateDiff": {
+            "0xa97bb6e4cd1f067a28e97567f7d8b886df1e4102": {
+                "0x0000000000000000000000000000000000000000000000000000000000000000": [
+                    "0x000000000000000000000079182b3fa375ce9c8a4c3c611594aaf38a50847701",
+                    "0x000000000000000000000079182b3fa375ce9c8a4c3c611594aaf38a50847701"
+                ],
+                "0x0000000000000000000000000000000000000000000000000000000000000004": [
+                    "0x000000000000000000000000000000000000000000000000000000000000000b",
+                    "0x000000000000000000000000000000000000000000000000000000000000000d"
+                ],
+                "0x0000000000000000000000000000000000000000000000000000000000000005": [
+                    "0x00fc58b4406bb8000044000000000040040000000000200000000080000005b7",
+                    "0xb9605fec9b27080000440000000000400400000000002000000001a0000005b9"
+                ],
+                "0xc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f867": [
+                    null,
+                    "0x6eca5823f0ac5000000000000000000000000000000000000000000000000001"
+                ],
+                "0x0000000000000000000000000000000000000000000000000000000000000003": [
+                    "0x000000000000000000000000000000000000000000000000000000000000000b",
+                    "0x000000000000000000000000000000000000000000000000000000000000000d"
+                ],
+                "0xc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f866": [
+                    null,
+                    "0x17ff4b7869e46000000000000000000000000000000000000000012000000001"
+                ]
+            }
+        }
+    },
+    {
+        "transactionHash": "0xbdb6d6ebbf496a5a86a2e66d4fbd004be445323f3616138e8d45ae4f0cebb424",
+        "transactionIndex": 0,
+        "blockHash": "0xb3050189f6af96d1215aeca845c9d176967f615f586b95a7134ff476184f8d6e",
+        "blockNumber": 41127,
+        "from": "0xD9b8cbfdD0Cf9b695EC69290EECf32ca524677bc",
+        "to": "0xA97BB6E4cd1f067A28E97567f7D8b886DF1E4102",
+        "gasUsed": 122139,
+        "cumulativeGasUsed": 122139,
+        "contractAddress": null,
+        "logs": [],
+        "status": 1,
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "input": "0x198f547000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000003ee28b5c14f9d5000000040000000000000000000000000000000000000100041000000000000000000000000000000000000000000000000000000000000008600000000000000000000000000000000000000000000000000000000000000ba",
+        "gas": 2000000,
+        "gasPrice": 20000000000,
+        "value": 0,
+        "nonce": 4149,
+        "decode": [
+            {
+                "constant": false,
+                "inputs": [
+                    {
+                        "name": "miles",
+                        "type": "int256[]"
+                    }
+                ],
+                "name": "AddMiles",
+                "outputs": [],
+                "payable": false,
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "miles": [
+                    -8069702964164798114683057171093691729998193475541205091212529392670791958463,
+                    134,
+                    186
+                ]
+            }
+        ],
+        "post_contract_state": {
+            "variables": [
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "State",
+                    "varType": "enum_FrequentFlyerRewardsCalculator.StateType",
+                    "varBytes": 1,
+                    "varValue": 1,
+                    "varSlot": 0,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "AirlineRepresentative",
+                    "varType": "address",
+                    "varBytes": 20,
+                    "varValue": "0x79182b3fa375ce9c8a4c3c611594aaf38a508477",
+                    "varSlot": 0,
+                    "varOffset": 1
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "Flyer",
+                    "varType": "address",
+                    "varBytes": 20,
+                    "varValue": "0xd9b8cbfdd0cf9b695ec69290eecf32ca524677bc",
+                    "varSlot": 1,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "RewardsPerMile",
+                    "varType": "uint256",
+                    "varBytes": 32,
+                    "varValue": 63691646730459971937445567362166443104016041771323060734200873332936439496705,
+                    "varSlot": 2,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "Miles",
+                    "varType": "uint256[]",
+                    "varBytes": 32,
+                    "varValue": [
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 109629507101853412194499367376700765316162590814553730682670470047246982316033,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037083,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 158,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037084,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 81075475236400202532784562151229522757716892396385289036256160082530622505985,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037085,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 214,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037086,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 86178667260999410102438465426798765645690123090304373868570984039537402970113,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037087,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 53451925257727963285130365700801614246272470661833448317037998807118249984009,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037088,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": null,
+                            "varSlot": 6,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 20720076635327963993056712264192698546354604351442848486073105460675697704961,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037090,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 42,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037091,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": null,
+                            "varSlot": 9,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 10,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037093,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 10854262396254962938009091724545907840544877372015013836487535699553241006081,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037094,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 50111924773867022526989248174467097045724244679333192987775419480404784054273,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037095,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 107722386273151397308887927837594216123271791190099358948245054615242337681473,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037096,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": 134,
+                            "varSlot": 87903029871075914254377627908054574944891091886930582284385770809450030037097,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": null,
+                            "varName": null,
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": null,
+                            "varSlot": 15,
+                            "varOffset": 0
+                        }
+                    ],
+                    "varSlot": 3,
+                    "varOffset": 0,
+                    "item_var_type": {
+                        "contractName": null,
+                        "varName": null,
+                        "varType": "uint256",
+                        "varBytes": 32,
+                        "varValue": null,
+                        "varSlot": null,
+                        "varOffset": null
+                    }
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "IndexCalculatedUpto",
+                    "varType": "uint256",
+                    "varBytes": 32,
+                    "varValue": 16,
+                    "varSlot": 4,
+                    "varOffset": 0
+                },
+                {
+                    "contractName": "FrequentFlyerRewardsCalculator",
+                    "varName": "TotalRewards",
+                    "varType": "uint256",
+                    "varBytes": 32,
+                    "varValue": 62200068998987425496846337441631844332418858963797969748495500184544368133946,
+                    "varSlot": 5,
+                    "varOffset": 0
+                }
+            ]
+        },
+        "stateDiff": {
+            "0xa97bb6e4cd1f067a28e97567f7d8b886df1e4102": {
+                "0x0000000000000000000000000000000000000000000000000000000000000000": [
+                    "0x000000000000000000000079182b3fa375ce9c8a4c3c611594aaf38a50847701",
+                    "0x000000000000000000000079182b3fa375ce9c8a4c3c611594aaf38a50847701"
+                ],
+                "0x0000000000000000000000000000000000000000000000000000000000000004": [
+                    "0x000000000000000000000000000000000000000000000000000000000000000d",
+                    "0x0000000000000000000000000000000000000000000000000000000000000010"
+                ],
+                "0x0000000000000000000000000000000000000000000000000000000000000005": [
+                    "0xb9605fec9b27080000440000000000400400000000002000000001a0000005b9",
+                    "0x8983fdd10ad1a80000444000000000400400000000002000000001a00010073a"
+                ],
+                "0xc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f86a": [
+                    null,
+                    "0x00000000000000000000000000000000000000000000000000000000000000ba"
+                ],
+                "0x0000000000000000000000000000000000000000000000000000000000000003": [
+                    "0x000000000000000000000000000000000000000000000000000000000000000d",
+                    "0x0000000000000000000000000000000000000000000000000000000000000010"
+                ],
+                "0xc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f869": [
+                    null,
+                    "0x0000000000000000000000000000000000000000000000000000000000000086"
+                ],
+                "0xc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f868": [
+                    null,
+                    "0xee28b5c14f9d5000000040000000000000000000000000000000000000100041"
+                ]
+            }
+        }
+    }
+]

@@ -1,0 +1,32 @@
+[
+    {  
+       "function": "issue",
+       "abstract-types": ["address-account"],
+       "params": ["owner"],
+       "state": ["balances[address-account]", "sum(allowed[address-account][*])", "sum(allowed[*][address-account])"]
+    },
+    {  
+       "function": "redeem",
+       "abstract-types": ["address-account"],
+       "params": ["owner"],
+       "state": ["balances[address-account]", "sum(allowed[address-account][*])", "sum(allowed[*][address-account])"]
+    },
+    {  
+       "function": "transfer",
+       "abstract-types": ["address-account", "address-account"],
+       "params": ["msg.sender", "_to"],
+       "state": ["balances[address-account]", "sum(allowed[address-account][*])", "sum(allowed[*][address-account])"]
+    },
+    { 
+       "function": "transferFrom",
+       "abstract-types": ["address-account", "address-account", "address-account"],
+       "params": ["msg.sender", "_from", "_to"],
+       "state": ["balances[address-account]", "sum(allowed[address-account][*])", "sum(allowed[*][address-account])"]
+    },
+    { 
+       "function": "approve",
+       "abstract-types": ["address-account", "address-account"],
+       "params": ["msg.sender", "_spender"], 
+       "state": ["balances[address-account]", "sum(allowed[address-account][*])", "sum(allowed[*][address-account])"]
+    }
+]

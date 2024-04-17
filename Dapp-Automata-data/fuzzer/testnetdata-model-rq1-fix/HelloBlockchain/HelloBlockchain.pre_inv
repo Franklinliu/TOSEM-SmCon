@@ -1,0 +1,19 @@
+{
+    "constructor@": [
+        "State == 0",
+        "State one of [0]",
+        "Requestor == 0",
+        "Responder == 0"
+    ],
+    "SendResponse@": [
+        "State == 0",
+        "Requestor != 0",
+        "State one of [0]"
+    ],
+    "SendRequest@": [
+        "State == 1",
+        "Requestor != 0",
+        "State one of [1]",
+        "Responder != 0"
+    ]
+}

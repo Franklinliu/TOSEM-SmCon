@@ -1,0 +1,978 @@
+{
+    "constructor": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "price != ori(OfferPrice)",
+                "price >= msg.value",
+                "ori(InstanceInspector) == 0",
+                "price >= ori(OfferPrice)",
+                "price > ori(OfferPrice)",
+                "ori(AskingPrice) == 0",
+                "price >= ori(AskingPrice)",
+                "msg.value == 0",
+                "msg.sender != ori(InstanceAppraiser)",
+                "ori(InstanceOwner) == 0",
+                "ori(AskingPrice) == msg.value",
+                "ori(InstanceInspector) == ori(InstanceAppraiser)",
+                "ori(OfferPrice) one of [0]",
+                "price != ori(AskingPrice)",
+                "msg.value one of [0]",
+                "ori(InstanceInspector) == ori(InstanceBuyer)",
+                "price > ori(AskingPrice)",
+                "ori(OfferPrice) <= ori(AskingPrice)",
+                "ori(InstanceBuyer) == ori(InstanceAppraiser)",
+                "ori(InstanceOwner) != msg.sender",
+                "ori(OfferPrice) == ori(AskingPrice)",
+                "ori(InstanceAppraiser) == 0",
+                "ori(State) == 0",
+                "ori(OfferPrice) >= msg.value",
+                "ori(InstanceOwner) == ori(InstanceBuyer)",
+                "price > 0",
+                "ori(State) one of [0]",
+                "ori(InstanceBuyer) == 0",
+                "ori(InstanceOwner) == ori(InstanceAppraiser)",
+                "price != msg.value",
+                "ori(OfferPrice) >= ori(AskingPrice)",
+                "ori(OfferPrice) <= msg.value",
+                "ori(OfferPrice) == msg.value",
+                "msg.sender != 0",
+                "ori(OfferPrice) == 0",
+                "ori(AskingPrice) one of [0]",
+                "ori(InstanceInspector) != msg.sender",
+                "ori(AskingPrice) >= msg.value",
+                "ori(AskingPrice) <= msg.value",
+                "ori(InstanceOwner) == ori(InstanceInspector)",
+                "price > msg.value",
+                "ori(InstanceBuyer) != msg.sender"
+            ],
+            "postconditions": [
+                "State == 0",
+                "AskingPrice >= msg.value",
+                "OfferPrice != AskingPrice",
+                "InstanceInspector == 0",
+                "InstanceAppraiser == InstanceBuyer",
+                "InstanceInspector == InstanceBuyer",
+                "OfferPrice <= AskingPrice",
+                "price <= AskingPrice",
+                "price == AskingPrice",
+                "AskingPrice != msg.value",
+                "OfferPrice one of [0]",
+                "OfferPrice >= msg.value",
+                "InstanceInspector != msg.sender",
+                "InstanceInspector != InstanceOwner",
+                "InstanceAppraiser != msg.sender",
+                "OfferPrice != price",
+                "OfferPrice < price",
+                "OfferPrice < AskingPrice",
+                "InstanceBuyer != msg.sender",
+                "InstanceAppraiser == InstanceInspector",
+                "OfferPrice == msg.value",
+                "OfferPrice <= msg.value",
+                "InstanceAppraiser == 0",
+                "InstanceBuyer != InstanceOwner",
+                "price >= AskingPrice",
+                "AskingPrice > 0",
+                "OfferPrice == 0",
+                "OfferPrice <= price",
+                "InstanceAppraiser != InstanceOwner",
+                "AskingPrice > msg.value",
+                "InstanceOwner == msg.sender",
+                "State one of [0]",
+                "InstanceBuyer == 0",
+                "InstanceOwner != 0"
+            ],
+            "slice_pre": [
+                "ori(AskingPrice) == 0",
+                "ori(State) == 0",
+                "ori(InstanceAppraiser) == 0",
+                "ori(AskingPrice) one of [0]",
+                "price > 0",
+                "ori(InstanceInspector) == 0",
+                "ori(InstanceOwner) == 0",
+                "msg.sender != 0",
+                "msg.value == 0",
+                "ori(State) one of [0]",
+                "ori(OfferPrice) one of [0]",
+                "ori(InstanceBuyer) == 0",
+                "msg.value one of [0]",
+                "ori(OfferPrice) == 0"
+            ],
+            "slice_post": [
+                "State == 0",
+                "AskingPrice > 0",
+                "OfferPrice == 0",
+                "InstanceInspector == 0",
+                "OfferPrice one of [0]",
+                "State one of [0]",
+                "InstanceBuyer == 0",
+                "InstanceAppraiser == 0",
+                "InstanceOwner != 0"
+            ]
+        }
+    ],
+    "MakeOffer": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "offerPrice != ori(OfferPrice)",
+                "ori(InstanceOwner) != 0",
+                "offerPrice >= msg.value",
+                "ori(OfferPrice) != ori(AskingPrice)",
+                "ori(InstanceOwner) != ori(InstanceBuyer)",
+                "ori(AskingPrice) > 0",
+                "msg.value == 0",
+                "offerPrice != msg.value",
+                "msg.value one of [0]",
+                "offerPrice > msg.value",
+                "ori(InstanceOwner) != msg.sender",
+                "ori(InstanceBuyer) != appraiser",
+                "appraiser != 0",
+                "ori(State) == 0",
+                "inspector != 0",
+                "ori(OfferPrice) >= msg.value",
+                "ori(AskingPrice) > msg.value",
+                "ori(State) one of [0]",
+                "ori(InstanceBuyer) == 0",
+                "msg.sender != 0",
+                "ori(AskingPrice) >= msg.value",
+                "ori(AskingPrice) != msg.value",
+                "ori(InstanceBuyer) != inspector",
+                "ori(InstanceBuyer) != msg.sender",
+                "offerPrice > 0"
+            ],
+            "postconditions": [
+                "AskingPrice >= msg.value",
+                "OfferPrice == offerPrice",
+                "InstanceInspector != 0",
+                "State one of [1]",
+                "OfferPrice != msg.value",
+                "AskingPrice != msg.value",
+                "InstanceOwner != msg.sender",
+                "InstanceInspector == inspector",
+                "OfferPrice >= offerPrice",
+                "InstanceBuyer != InstanceOwner",
+                "AskingPrice > 0",
+                "InstanceAppraiser != 0",
+                "OfferPrice <= offerPrice",
+                "OfferPrice > 0",
+                "InstanceBuyer != 0",
+                "AskingPrice > msg.value",
+                "State == 1",
+                "InstanceBuyer == msg.sender",
+                "OfferPrice > msg.value",
+                "InstanceOwner != 0",
+                "InstanceAppraiser == appraiser",
+                "OfferPrice >= msg.value"
+            ],
+            "slice_pre": [
+                "ori(State) == 0",
+                "inspector != 0",
+                "ori(AskingPrice) > 0",
+                "msg.value == 0",
+                "ori(State) one of [0]",
+                "ori(InstanceOwner) != 0",
+                "ori(InstanceBuyer) == 0",
+                "msg.value one of [0]",
+                "offerPrice > 0",
+                "msg.sender != 0",
+                "appraiser != 0"
+            ],
+            "slice_post": [
+                "AskingPrice > 0",
+                "InstanceAppraiser != 0",
+                "State one of [1]",
+                "OfferPrice > 0",
+                "InstanceBuyer != 0",
+                "InstanceInspector != 0",
+                "State == 1",
+                "InstanceOwner != 0"
+            ]
+        }
+    ],
+    "RescindOffer": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "msg.sender == ori(InstanceBuyer)",
+                "ori(OfferPrice) != msg.value",
+                "ori(InstanceOwner) != 0",
+                "ori(OfferPrice) > msg.value",
+                "ori(OfferPrice) != ori(AskingPrice)",
+                "ori(InstanceOwner) != ori(InstanceBuyer)",
+                "ori(AskingPrice) > 0",
+                "msg.value == 0",
+                "ori(InstanceBuyer) != 0",
+                "msg.value one of [0]",
+                "msg.sender != ori(InstanceOwner)",
+                "ori(State) one of [1,2,3,4]",
+                "ori(OfferPrice) >= msg.value",
+                "ori(AskingPrice) > msg.value",
+                "ori(InstanceInspector) != 0",
+                "ori(OfferPrice) > 0",
+                "msg.sender != 0",
+                "ori(AskingPrice) >= msg.value",
+                "ori(AskingPrice) != msg.value",
+                "ori(InstanceAppraiser) != 0"
+            ],
+            "postconditions": [
+                "State == 0",
+                "AskingPrice >= msg.value",
+                "InstanceOwner != InstanceBuyer",
+                "msg.sender != InstanceBuyer",
+                "OfferPrice != AskingPrice",
+                "InstanceInspector != 0",
+                "OfferPrice <= AskingPrice",
+                "InstanceOwner != msg.sender",
+                "AskingPrice != msg.value",
+                "OfferPrice one of [0]",
+                "OfferPrice < AskingPrice",
+                "InstanceAppraiser != InstanceBuyer",
+                "OfferPrice == msg.value",
+                "OfferPrice <= msg.value",
+                "AskingPrice > 0",
+                "OfferPrice == 0",
+                "InstanceAppraiser != 0",
+                "InstanceInspector != InstanceBuyer",
+                "AskingPrice > msg.value",
+                "State one of [0]",
+                "InstanceBuyer == 0",
+                "InstanceOwner != 0",
+                "OfferPrice >= msg.value"
+            ],
+            "slice_pre": [
+                "ori(AskingPrice) > 0",
+                "msg.value == 0",
+                "ori(InstanceInspector) != 0",
+                "ori(InstanceBuyer) != 0",
+                "ori(InstanceOwner) != 0",
+                "msg.value one of [0]",
+                "ori(InstanceAppraiser) != 0",
+                "ori(State) one of [1,2,3,4]",
+                "ori(OfferPrice) > 0",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "State == 0",
+                "AskingPrice > 0",
+                "OfferPrice == 0",
+                "InstanceAppraiser != 0",
+                "OfferPrice one of [0]",
+                "InstanceInspector != 0",
+                "State one of [0]",
+                "InstanceBuyer == 0",
+                "InstanceOwner != 0"
+            ]
+        }
+    ],
+    "Reject": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "ori(OfferPrice) != msg.value",
+                "ori(InstanceOwner) != 0",
+                "ori(OfferPrice) > msg.value",
+                "ori(OfferPrice) != ori(AskingPrice)",
+                "ori(InstanceOwner) != ori(InstanceBuyer)",
+                "ori(AskingPrice) > 0",
+                "msg.value == 0",
+                "ori(InstanceBuyer) != 0",
+                "msg.value one of [0]",
+                "msg.sender == ori(InstanceOwner)",
+                "ori(OfferPrice) >= msg.value",
+                "ori(AskingPrice) > msg.value",
+                "ori(InstanceInspector) != 0",
+                "ori(OfferPrice) > 0",
+                "msg.sender != 0",
+                "ori(AskingPrice) >= msg.value",
+                "ori(AskingPrice) != msg.value",
+                "ori(State) one of [1,2,3]",
+                "ori(InstanceAppraiser) != 0",
+                "msg.sender != ori(InstanceBuyer)"
+            ],
+            "postconditions": [
+                "State == 0",
+                "AskingPrice >= msg.value",
+                "InstanceOwner != InstanceBuyer",
+                "msg.sender != InstanceBuyer",
+                "OfferPrice != AskingPrice",
+                "InstanceInspector != 0",
+                "OfferPrice != msg.value",
+                "AskingPrice != msg.value",
+                "InstanceBuyer == 0",
+                "InstanceAppraiser != InstanceBuyer",
+                "AskingPrice > 0",
+                "InstanceAppraiser != 0",
+                "OfferPrice > 0",
+                "InstanceInspector != InstanceBuyer",
+                "AskingPrice > msg.value",
+                "InstanceOwner == msg.sender",
+                "State one of [0]",
+                "OfferPrice > msg.value",
+                "InstanceOwner != 0",
+                "OfferPrice >= msg.value"
+            ],
+            "slice_pre": [
+                "ori(AskingPrice) > 0",
+                "msg.value == 0",
+                "ori(InstanceInspector) != 0",
+                "ori(State) one of [1,2,3]",
+                "ori(InstanceBuyer) != 0",
+                "ori(InstanceOwner) != 0",
+                "msg.value one of [0]",
+                "ori(InstanceAppraiser) != 0",
+                "ori(OfferPrice) > 0",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "State == 0",
+                "AskingPrice > 0",
+                "InstanceAppraiser != 0",
+                "OfferPrice > 0",
+                "InstanceInspector != 0",
+                "State one of [0]",
+                "InstanceBuyer == 0",
+                "InstanceOwner != 0"
+            ]
+        }
+    ],
+    "Terminate": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "ori(OfferPrice) >= msg.value",
+                "ori(AskingPrice) > 0",
+                "msg.value == 0",
+                "ori(OfferPrice) != ori(AskingPrice)",
+                "ori(AskingPrice) >= msg.value",
+                "ori(AskingPrice) > msg.value",
+                "ori(AskingPrice) != msg.value",
+                "ori(InstanceOwner) != 0",
+                "ori(State) one of [0,1,2,3,4,9]",
+                "msg.value one of [0]",
+                "msg.sender != ori(InstanceBuyer)",
+                "ori(InstanceOwner) != ori(InstanceBuyer)",
+                "msg.sender != 0",
+                "msg.sender == ori(InstanceOwner)"
+            ],
+            "postconditions": [
+                "State one of [9]",
+                "AskingPrice > 0",
+                "AskingPrice >= msg.value",
+                "InstanceOwner != InstanceBuyer",
+                "msg.sender != InstanceBuyer",
+                "OfferPrice != AskingPrice",
+                "AskingPrice != msg.value",
+                "State == 9",
+                "AskingPrice > msg.value",
+                "InstanceOwner == msg.sender",
+                "OfferPrice >= msg.value",
+                "InstanceOwner != 0"
+            ],
+            "slice_pre": [
+                "ori(AskingPrice) > 0",
+                "msg.value == 0",
+                "ori(InstanceOwner) != 0",
+                "ori(State) one of [0,1,2,3,4,9]",
+                "msg.value one of [0]",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "State one of [9]",
+                "AskingPrice > 0",
+                "State == 9",
+                "InstanceOwner != 0"
+            ]
+        }
+    ],
+    "AcceptOffer": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "ori(State) == 1",
+                "ori(OfferPrice) != msg.value",
+                "ori(InstanceOwner) != 0",
+                "ori(OfferPrice) > msg.value",
+                "ori(State) one of [1]",
+                "ori(OfferPrice) != ori(AskingPrice)",
+                "ori(InstanceOwner) != ori(InstanceBuyer)",
+                "ori(AskingPrice) > 0",
+                "msg.value == 0",
+                "ori(InstanceBuyer) != 0",
+                "msg.value one of [0]",
+                "msg.sender == ori(InstanceOwner)",
+                "ori(InstanceInspector) != ori(InstanceAppraiser)",
+                "ori(OfferPrice) >= msg.value",
+                "ori(AskingPrice) > msg.value",
+                "ori(InstanceInspector) != 0",
+                "ori(OfferPrice) > 0",
+                "msg.sender != 0",
+                "ori(AskingPrice) >= msg.value",
+                "ori(AskingPrice) != msg.value",
+                "ori(InstanceAppraiser) != 0",
+                "msg.sender != ori(InstanceBuyer)"
+            ],
+            "postconditions": [
+                "AskingPrice >= msg.value",
+                "InstanceOwner != InstanceBuyer",
+                "msg.sender != InstanceBuyer",
+                "OfferPrice != AskingPrice",
+                "State one of [2]",
+                "InstanceInspector != 0",
+                "InstanceInspector != InstanceAppraiser",
+                "OfferPrice != msg.value",
+                "AskingPrice != msg.value",
+                "State == 2",
+                "AskingPrice > 0",
+                "InstanceAppraiser != 0",
+                "OfferPrice > 0",
+                "InstanceBuyer != 0",
+                "AskingPrice > msg.value",
+                "InstanceOwner == msg.sender",
+                "OfferPrice > msg.value",
+                "InstanceOwner != 0",
+                "OfferPrice >= msg.value"
+            ],
+            "slice_pre": [
+                "ori(State) == 1",
+                "ori(AskingPrice) > 0",
+                "msg.value == 0",
+                "ori(InstanceInspector) != 0",
+                "ori(InstanceBuyer) != 0",
+                "ori(InstanceOwner) != 0",
+                "msg.value one of [0]",
+                "ori(InstanceAppraiser) != 0",
+                "ori(State) one of [1]",
+                "ori(OfferPrice) > 0",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "AskingPrice > 0",
+                "InstanceAppraiser != 0",
+                "OfferPrice > 0",
+                "InstanceBuyer != 0",
+                "State one of [2]",
+                "InstanceInspector != 0",
+                "State == 2",
+                "InstanceOwner != 0"
+            ]
+        }
+    ],
+    "MarkInspected": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "ori(AskingPrice) one of [19964972182362002221997282634730222142615568933442968766053831973723799814144,42605568235699050532102238709160705043521709992264927539211351009801694871552,165,103,92835426901271472163026013419398396645508649495237289927599375303935640207360,23,28]",
+                "ori(OfferPrice) != msg.value",
+                "ori(InstanceOwner) != 0",
+                "ori(OfferPrice) > msg.value",
+                "msg.sender == ori(InstanceInspector)",
+                "ori(InstanceOwner) != ori(InstanceBuyer)",
+                "ori(OfferPrice) != ori(AskingPrice)",
+                "ori(InstanceOwner) != ori(InstanceInspector)",
+                "ori(AskingPrice) > 0",
+                "msg.value == 0",
+                "msg.sender != ori(InstanceAppraiser)",
+                "ori(InstanceBuyer) != 0",
+                "msg.value one of [0]",
+                "msg.sender != ori(InstanceOwner)",
+                "ori(InstanceInspector) != ori(InstanceAppraiser)",
+                "ori(OfferPrice) >= msg.value",
+                "ori(OfferPrice) one of [128,75112518493618738644230244092472510786460412526490843667608317524160540573696,1857720805903771065707280942715488420617146466886596543124861936394181804032,59893190099667710655255103876224952666833555831509327020663433012411193360384,66301808983792887935241517449648669900633473529735091300089895579963489255424,63040795153563982170140618484971136854202425993001611557239770024005905416192,247]",
+                "ori(AskingPrice) > msg.value",
+                "ori(InstanceInspector) != 0",
+                "ori(OfferPrice) > 0",
+                "msg.sender != 0",
+                "ori(State) one of [2,4]",
+                "ori(InstanceInspector) != ori(InstanceBuyer)",
+                "ori(AskingPrice) >= msg.value",
+                "ori(AskingPrice) != msg.value",
+                "ori(InstanceAppraiser) != 0",
+                "msg.sender != ori(InstanceBuyer)"
+            ],
+            "postconditions": [
+                "AskingPrice >= msg.value",
+                "InstanceOwner != InstanceBuyer",
+                "msg.sender != InstanceBuyer",
+                "OfferPrice != AskingPrice",
+                "InstanceInspector != 0",
+                "InstanceInspector == msg.sender",
+                "InstanceInspector != InstanceAppraiser",
+                "OfferPrice != msg.value",
+                "InstanceOwner != msg.sender",
+                "AskingPrice != msg.value",
+                "InstanceOwner != 0",
+                "InstanceAppraiser != msg.sender",
+                "State one of [3,5]",
+                "AskingPrice > 0",
+                "InstanceAppraiser != 0",
+                "OfferPrice > 0",
+                "InstanceBuyer != 0",
+                "OfferPrice one of [128,75112518493618738644230244092472510786460412526490843667608317524160540573696,1857720805903771065707280942715488420617146466886596543124861936394181804032,59893190099667710655255103876224952666833555831509327020663433012411193360384,66301808983792887935241517449648669900633473529735091300089895579963489255424,63040795153563982170140618484971136854202425993001611557239770024005905416192,247]",
+                "InstanceInspector != InstanceBuyer",
+                "AskingPrice > msg.value",
+                "OfferPrice > msg.value",
+                "InstanceOwner != InstanceInspector",
+                "AskingPrice one of [19964972182362002221997282634730222142615568933442968766053831973723799814144,42605568235699050532102238709160705043521709992264927539211351009801694871552,165,103,92835426901271472163026013419398396645508649495237289927599375303935640207360,23,28]",
+                "OfferPrice >= msg.value"
+            ],
+            "slice_pre": [
+                "ori(State) one of [2,4]",
+                "ori(AskingPrice) one of [19964972182362002221997282634730222142615568933442968766053831973723799814144,42605568235699050532102238709160705043521709992264927539211351009801694871552,165,103,92835426901271472163026013419398396645508649495237289927599375303935640207360,23,28]",
+                "ori(OfferPrice) one of [128,75112518493618738644230244092472510786460412526490843667608317524160540573696,1857720805903771065707280942715488420617146466886596543124861936394181804032,59893190099667710655255103876224952666833555831509327020663433012411193360384,66301808983792887935241517449648669900633473529735091300089895579963489255424,63040795153563982170140618484971136854202425993001611557239770024005905416192,247]",
+                "ori(AskingPrice) > 0",
+                "msg.value == 0",
+                "ori(InstanceInspector) != 0",
+                "ori(InstanceBuyer) != 0",
+                "ori(InstanceOwner) != 0",
+                "msg.value one of [0]",
+                "ori(InstanceAppraiser) != 0",
+                "ori(OfferPrice) > 0",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "AskingPrice > 0",
+                "InstanceAppraiser != 0",
+                "OfferPrice > 0",
+                "InstanceBuyer != 0",
+                "OfferPrice one of [128,75112518493618738644230244092472510786460412526490843667608317524160540573696,1857720805903771065707280942715488420617146466886596543124861936394181804032,59893190099667710655255103876224952666833555831509327020663433012411193360384,66301808983792887935241517449648669900633473529735091300089895579963489255424,63040795153563982170140618484971136854202425993001611557239770024005905416192,247]",
+                "State one of [3,5]",
+                "InstanceInspector != 0",
+                "AskingPrice one of [19964972182362002221997282634730222142615568933442968766053831973723799814144,42605568235699050532102238709160705043521709992264927539211351009801694871552,165,103,92835426901271472163026013419398396645508649495237289927599375303935640207360,23,28]",
+                "InstanceOwner != 0"
+            ]
+        }
+    ],
+    "ModifyOffer": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "ori(State) == 1",
+                "ori(OfferPrice) != msg.value",
+                "offerPrice != ori(OfferPrice)",
+                "ori(InstanceOwner) != 0",
+                "offerPrice >= msg.value",
+                "ori(OfferPrice) > msg.value",
+                "ori(InstanceBuyer) == msg.sender",
+                "ori(State) one of [1]",
+                "ori(InstanceOwner) != ori(InstanceBuyer)",
+                "ori(OfferPrice) != ori(AskingPrice)",
+                "ori(AskingPrice) > 0",
+                "msg.value == 0",
+                "offerPrice != msg.value",
+                "ori(InstanceBuyer) != 0",
+                "msg.value one of [0]",
+                "offerPrice != ori(AskingPrice)",
+                "offerPrice > msg.value",
+                "ori(InstanceOwner) != msg.sender",
+                "ori(OfferPrice) >= msg.value",
+                "ori(AskingPrice) > msg.value",
+                "ori(InstanceInspector) != 0",
+                "ori(OfferPrice) > 0",
+                "msg.sender != 0",
+                "ori(AskingPrice) >= msg.value",
+                "ori(AskingPrice) != msg.value",
+                "ori(InstanceOwner) != ori(InstanceAppraiser)",
+                "offerPrice > 0",
+                "ori(InstanceAppraiser) != 0"
+            ],
+            "postconditions": [
+                "AskingPrice >= msg.value",
+                "OfferPrice != AskingPrice",
+                "offerPrice != AskingPrice",
+                "OfferPrice == offerPrice",
+                "InstanceInspector != 0",
+                "State one of [1]",
+                "OfferPrice != msg.value",
+                "AskingPrice != msg.value",
+                "InstanceOwner != msg.sender",
+                "OfferPrice >= offerPrice",
+                "InstanceBuyer != InstanceOwner",
+                "AskingPrice > 0",
+                "InstanceAppraiser != 0",
+                "OfferPrice <= offerPrice",
+                "OfferPrice > 0",
+                "InstanceBuyer != 0",
+                "InstanceAppraiser != InstanceOwner",
+                "AskingPrice > msg.value",
+                "State == 1",
+                "InstanceBuyer == msg.sender",
+                "OfferPrice > msg.value",
+                "InstanceOwner != 0",
+                "OfferPrice >= msg.value"
+            ],
+            "slice_pre": [
+                "ori(State) == 1",
+                "ori(AskingPrice) > 0",
+                "msg.value == 0",
+                "ori(InstanceInspector) != 0",
+                "ori(InstanceBuyer) != 0",
+                "ori(InstanceOwner) != 0",
+                "msg.value one of [0]",
+                "offerPrice > 0",
+                "ori(InstanceAppraiser) != 0",
+                "ori(State) one of [1]",
+                "ori(OfferPrice) > 0",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "AskingPrice > 0",
+                "InstanceAppraiser != 0",
+                "State one of [1]",
+                "OfferPrice > 0",
+                "InstanceBuyer != 0",
+                "InstanceInspector != 0",
+                "State == 1",
+                "InstanceOwner != 0"
+            ]
+        }
+    ],
+    "MarkAppraised": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "ori(OfferPrice) != msg.value",
+                "ori(InstanceOwner) != 0",
+                "ori(OfferPrice) > msg.value",
+                "msg.sender != ori(InstanceInspector)",
+                "ori(OfferPrice) != ori(AskingPrice)",
+                "ori(InstanceOwner) != ori(InstanceBuyer)",
+                "ori(InstanceOwner) != ori(InstanceInspector)",
+                "ori(AskingPrice) > 0",
+                "msg.value == 0",
+                "ori(InstanceBuyer) != 0",
+                "msg.value one of [0]",
+                "msg.sender == ori(InstanceAppraiser)",
+                "ori(InstanceInspector) != ori(InstanceAppraiser)",
+                "ori(OfferPrice) one of [1857720805903771065707280942715488420617146466886596543124861936394181804032,72608433880381979543581640557604436305768704984537800607633670729428084195328,66301808983792887935241517449648669900633473529735091300089895579963489255424,93595895111314301069193091697571271274572638796257624160504770276318232182784,143,63040795153563982170140618484971136854202425993001611557239770024005905416192,127]",
+                "ori(OfferPrice) >= msg.value",
+                "ori(State) one of [2,3]",
+                "ori(AskingPrice) > msg.value",
+                "ori(InstanceInspector) != 0",
+                "ori(OfferPrice) > 0",
+                "msg.sender != 0",
+                "ori(AskingPrice) >= msg.value",
+                "ori(AskingPrice) != msg.value",
+                "ori(AskingPrice) one of [225,19964972182362002221997282634730222142615568933442968766053831973723799814144,92835426901271472163026013419398396645508649495237289927599375303935640207360,23,183,252]",
+                "ori(InstanceAppraiser) != 0"
+            ],
+            "postconditions": [
+                "AskingPrice >= msg.value",
+                "InstanceOwner != InstanceBuyer",
+                "OfferPrice != AskingPrice",
+                "InstanceInspector != 0",
+                "InstanceInspector != InstanceAppraiser",
+                "AskingPrice one of [225,19964972182362002221997282634730222142615568933442968766053831973723799814144,92835426901271472163026013419398396645508649495237289927599375303935640207360,23,183,252]",
+                "OfferPrice != msg.value",
+                "State one of [4,5]",
+                "AskingPrice != msg.value",
+                "InstanceInspector != msg.sender",
+                "InstanceOwner != 0",
+                "InstanceAppraiser == msg.sender",
+                "OfferPrice one of [1857720805903771065707280942715488420617146466886596543124861936394181804032,72608433880381979543581640557604436305768704984537800607633670729428084195328,66301808983792887935241517449648669900633473529735091300089895579963489255424,93595895111314301069193091697571271274572638796257624160504770276318232182784,143,63040795153563982170140618484971136854202425993001611557239770024005905416192,127]",
+                "AskingPrice > 0",
+                "InstanceAppraiser != 0",
+                "OfferPrice > 0",
+                "InstanceBuyer != 0",
+                "AskingPrice > msg.value",
+                "OfferPrice > msg.value",
+                "InstanceOwner != InstanceInspector",
+                "OfferPrice >= msg.value"
+            ],
+            "slice_pre": [
+                "ori(OfferPrice) one of [1857720805903771065707280942715488420617146466886596543124861936394181804032,72608433880381979543581640557604436305768704984537800607633670729428084195328,66301808983792887935241517449648669900633473529735091300089895579963489255424,93595895111314301069193091697571271274572638796257624160504770276318232182784,143,63040795153563982170140618484971136854202425993001611557239770024005905416192,127]",
+                "ori(State) one of [2,3]",
+                "ori(AskingPrice) > 0",
+                "msg.value == 0",
+                "ori(InstanceInspector) != 0",
+                "ori(InstanceBuyer) != 0",
+                "ori(InstanceOwner) != 0",
+                "msg.value one of [0]",
+                "ori(AskingPrice) one of [225,19964972182362002221997282634730222142615568933442968766053831973723799814144,92835426901271472163026013419398396645508649495237289927599375303935640207360,23,183,252]",
+                "ori(InstanceAppraiser) != 0",
+                "ori(OfferPrice) > 0",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "AskingPrice one of [225,19964972182362002221997282634730222142615568933442968766053831973723799814144,92835426901271472163026013419398396645508649495237289927599375303935640207360,23,183,252]",
+                "AskingPrice > 0",
+                "InstanceAppraiser != 0",
+                "OfferPrice one of [1857720805903771065707280942715488420617146466886596543124861936394181804032,72608433880381979543581640557604436305768704984537800607633670729428084195328,66301808983792887935241517449648669900633473529735091300089895579963489255424,93595895111314301069193091697571271274572638796257624160504770276318232182784,143,63040795153563982170140618484971136854202425993001611557239770024005905416192,127]",
+                "OfferPrice > 0",
+                "State one of [4,5]",
+                "InstanceBuyer != 0",
+                "InstanceInspector != 0",
+                "InstanceOwner != 0"
+            ]
+        }
+    ],
+    "Modify": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "price != ori(OfferPrice)",
+                "price >= msg.value",
+                "ori(OfferPrice) < ori(AskingPrice)",
+                "ori(InstanceOwner) != 0",
+                "price >= ori(OfferPrice)",
+                "ori(InstanceOwner) != ori(InstanceBuyer)",
+                "ori(OfferPrice) != ori(AskingPrice)",
+                "price > ori(OfferPrice)",
+                "ori(AskingPrice) > 0",
+                "msg.value == 0",
+                "price != ori(AskingPrice)",
+                "ori(OfferPrice) one of [0]",
+                "msg.value one of [0]",
+                "ori(OfferPrice) <= ori(AskingPrice)",
+                "ori(State) == 0",
+                "ori(OfferPrice) >= msg.value",
+                "price > 0",
+                "ori(AskingPrice) > msg.value",
+                "ori(State) one of [0]",
+                "ori(InstanceBuyer) == 0",
+                "price != msg.value",
+                "ori(OfferPrice) <= msg.value",
+                "ori(OfferPrice) == msg.value",
+                "msg.sender != 0",
+                "ori(OfferPrice) == 0",
+                "ori(AskingPrice) >= msg.value",
+                "ori(AskingPrice) != msg.value",
+                "price > msg.value",
+                "ori(InstanceBuyer) != msg.sender",
+                "ori(InstanceOwner) == msg.sender"
+            ],
+            "postconditions": [
+                "State == 0",
+                "AskingPrice >= msg.value",
+                "OfferPrice != AskingPrice",
+                "OfferPrice <= AskingPrice",
+                "price <= AskingPrice",
+                "price == AskingPrice",
+                "AskingPrice != msg.value",
+                "OfferPrice one of [0]",
+                "OfferPrice != price",
+                "OfferPrice < price",
+                "OfferPrice < AskingPrice",
+                "InstanceBuyer != msg.sender",
+                "OfferPrice == msg.value",
+                "OfferPrice <= msg.value",
+                "InstanceBuyer != InstanceOwner",
+                "price >= AskingPrice",
+                "AskingPrice > 0",
+                "OfferPrice == 0",
+                "OfferPrice <= price",
+                "AskingPrice > msg.value",
+                "InstanceOwner == msg.sender",
+                "State one of [0]",
+                "InstanceBuyer == 0",
+                "InstanceOwner != 0",
+                "OfferPrice >= msg.value"
+            ],
+            "slice_pre": [
+                "ori(State) == 0",
+                "price > 0",
+                "ori(AskingPrice) > 0",
+                "msg.value == 0",
+                "msg.sender != 0",
+                "ori(State) one of [0]",
+                "ori(OfferPrice) one of [0]",
+                "ori(InstanceOwner) != 0",
+                "ori(InstanceBuyer) == 0",
+                "msg.value one of [0]",
+                "ori(OfferPrice) == 0"
+            ],
+            "slice_post": [
+                "State == 0",
+                "AskingPrice > 0",
+                "OfferPrice == 0",
+                "OfferPrice one of [0]",
+                "State one of [0]",
+                "InstanceBuyer == 0",
+                "InstanceOwner != 0"
+            ]
+        }
+    ],
+    "Accept": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "ori(OfferPrice) != msg.value",
+                "ori(InstanceOwner) != 0",
+                "ori(OfferPrice) > msg.value",
+                "msg.sender != ori(InstanceInspector)",
+                "ori(AskingPrice) one of [19964972182362002221997282634730222142615568933442968766053831973723799814144]",
+                "ori(InstanceOwner) != ori(InstanceBuyer)",
+                "ori(OfferPrice) != ori(AskingPrice)",
+                "ori(InstanceOwner) != ori(InstanceInspector)",
+                "ori(AskingPrice) > 0",
+                "msg.value == 0",
+                "ori(InstanceBuyer) != 0",
+                "ori(OfferPrice) == 66301808983792887935241517449648669900633473529735091300089895579963489255424",
+                "msg.value one of [0]",
+                "ori(InstanceInspector) != ori(InstanceAppraiser)",
+                "ori(OfferPrice) >= msg.value",
+                "ori(InstanceAppraiser) == ori(InstanceBuyer)",
+                "ori(OfferPrice) one of [66301808983792887935241517449648669900633473529735091300089895579963489255424]",
+                "ori(AskingPrice) > msg.value",
+                "ori(InstanceInspector) != 0",
+                "ori(OfferPrice) >= ori(AskingPrice)",
+                "ori(OfferPrice) > 0",
+                "ori(State) one of [5,7]",
+                "msg.sender != 0",
+                "ori(InstanceInspector) != ori(InstanceBuyer)",
+                "ori(AskingPrice) >= msg.value",
+                "ori(AskingPrice) != msg.value",
+                "ori(InstanceOwner) != ori(InstanceAppraiser)",
+                "ori(OfferPrice) > ori(AskingPrice)",
+                "ori(InstanceAppraiser) != 0",
+                "ori(AskingPrice) == 19964972182362002221997282634730222142615568933442968766053831973723799814144"
+            ],
+            "postconditions": [
+                "AskingPrice >= msg.value",
+                "InstanceOwner != InstanceBuyer",
+                "OfferPrice != AskingPrice",
+                "InstanceInspector != 0",
+                "InstanceAppraiser == InstanceBuyer",
+                "InstanceInspector != InstanceAppraiser",
+                "State one of [8,7]",
+                "AskingPrice one of [19964972182362002221997282634730222142615568933442968766053831973723799814144]",
+                "OfferPrice != msg.value",
+                "AskingPrice != msg.value",
+                "OfferPrice >= msg.value",
+                "OfferPrice == 66301808983792887935241517449648669900633473529735091300089895579963489255424",
+                "InstanceInspector != msg.sender",
+                "InstanceOwner != InstanceAppraiser",
+                "OfferPrice >= AskingPrice",
+                "OfferPrice > AskingPrice",
+                "AskingPrice > 0",
+                "InstanceAppraiser != 0",
+                "OfferPrice > 0",
+                "InstanceBuyer != 0",
+                "InstanceInspector != InstanceBuyer",
+                "OfferPrice one of [66301808983792887935241517449648669900633473529735091300089895579963489255424]",
+                "AskingPrice == 19964972182362002221997282634730222142615568933442968766053831973723799814144",
+                "AskingPrice > msg.value",
+                "OfferPrice > msg.value",
+                "InstanceOwner != InstanceInspector",
+                "InstanceOwner != 0"
+            ],
+            "slice_pre": [
+                "ori(AskingPrice) > 0",
+                "msg.value == 0",
+                "ori(OfferPrice) one of [66301808983792887935241517449648669900633473529735091300089895579963489255424]",
+                "ori(InstanceInspector) != 0",
+                "ori(InstanceBuyer) != 0",
+                "ori(InstanceOwner) != 0",
+                "ori(OfferPrice) == 66301808983792887935241517449648669900633473529735091300089895579963489255424",
+                "msg.value one of [0]",
+                "ori(State) one of [5,7]",
+                "ori(InstanceAppraiser) != 0",
+                "ori(AskingPrice) one of [19964972182362002221997282634730222142615568933442968766053831973723799814144]",
+                "ori(AskingPrice) == 19964972182362002221997282634730222142615568933442968766053831973723799814144",
+                "ori(OfferPrice) > 0",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "AskingPrice > 0",
+                "InstanceAppraiser != 0",
+                "OfferPrice > 0",
+                "InstanceBuyer != 0",
+                "State one of [8,7]",
+                "OfferPrice one of [66301808983792887935241517449648669900633473529735091300089895579963489255424]",
+                "AskingPrice == 19964972182362002221997282634730222142615568933442968766053831973723799814144",
+                "InstanceInspector != 0",
+                "OfferPrice == 66301808983792887935241517449648669900633473529735091300089895579963489255424",
+                "AskingPrice one of [19964972182362002221997282634730222142615568933442968766053831973723799814144]",
+                "InstanceOwner != 0"
+            ]
+        }
+    ]
+}

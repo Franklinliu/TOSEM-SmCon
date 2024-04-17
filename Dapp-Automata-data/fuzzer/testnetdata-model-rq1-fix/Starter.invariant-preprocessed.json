@@ -1,0 +1,212 @@
+{
+    "constructor": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "ori(State) == 0",
+                "ori(PingPongTimes) one of [0]",
+                "ori(GamePlayer) == 0",
+                "msg.value == 0",
+                "ori(State) one of [0]",
+                "msg.sender != ori(GamePlayer)",
+                "msg.value one of [0]",
+                "ori(GameStarter) == 0",
+                "ori(GameStarter) == ori(GamePlayer)",
+                "msg.sender != ori(GameStarter)",
+                "ori(PingPongTimes) == 0",
+                "msg.sender != 0"
+            ],
+            "postconditions": [
+                "GameStarter != GamePlayer",
+                "State == 0",
+                "msg.sender != GamePlayer",
+                "PingPongTimes == 0",
+                "GameStarter == msg.sender",
+                "GamePlayer != 0",
+                "State one of [0]",
+                "GameStarter != 0",
+                "PingPongTimes one of [0]"
+            ],
+            "slice_pre": [
+                "ori(State) == 0",
+                "ori(PingPongTimes) one of [0]",
+                "ori(GamePlayer) == 0",
+                "msg.value == 0",
+                "ori(State) one of [0]",
+                "msg.value one of [0]",
+                "ori(GameStarter) == 0",
+                "ori(PingPongTimes) == 0",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "State == 0",
+                "PingPongTimes == 0",
+                "GamePlayer != 0",
+                "State one of [0]",
+                "GameStarter != 0",
+                "PingPongTimes one of [0]"
+            ]
+        }
+    ],
+    "FinishGame": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "ori(GameStarter) != 0",
+                "msg.value == 0",
+                "ori(GameStarter) != ori(GamePlayer)",
+                "msg.sender != ori(GamePlayer)",
+                "ori(GamePlayer) != 0",
+                "msg.value one of [0]",
+                "ori(State) one of [0,1]",
+                "msg.sender != 0"
+            ],
+            "postconditions": [
+                "GameStarter != GamePlayer",
+                "msg.sender != GamePlayer",
+                "GamePlayer != 0",
+                "State one of [2]",
+                "State == 2",
+                "GameStarter != 0"
+            ],
+            "slice_pre": [
+                "ori(GameStarter) != 0",
+                "msg.value == 0",
+                "ori(GamePlayer) != 0",
+                "msg.value one of [0]",
+                "ori(State) one of [0,1]",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "State == 2",
+                "GameStarter != 0",
+                "State one of [2]",
+                "GamePlayer != 0"
+            ]
+        }
+    ],
+    "StartPingPong": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "ori(State) == 0",
+                "ori(GameStarter) != 0",
+                "ori(PingPongTimes) one of [0]",
+                "msg.value == 0",
+                "ori(GameStarter) != ori(GamePlayer)",
+                "ori(State) one of [0]",
+                "ori(GamePlayer) != 0",
+                "msg.sender != ori(GamePlayer)",
+                "msg.value one of [0]",
+                "ori(PingPongTimes) != pingPongTimes",
+                "ori(PingPongTimes) == 0",
+                "msg.sender != 0"
+            ],
+            "postconditions": [
+                "GameStarter != GamePlayer",
+                "msg.sender != GamePlayer",
+                "State one of [1]",
+                "GamePlayer != 0",
+                "PingPongTimes >= pingPongTimes",
+                "State == 1",
+                "GameStarter != 0",
+                "PingPongTimes > 0"
+            ],
+            "slice_pre": [
+                "ori(State) == 0",
+                "ori(GameStarter) != 0",
+                "ori(PingPongTimes) one of [0]",
+                "msg.value == 0",
+                "ori(State) one of [0]",
+                "ori(GamePlayer) != 0",
+                "msg.value one of [0]",
+                "ori(PingPongTimes) == 0",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "State one of [1]",
+                "GamePlayer != 0",
+                "State == 1",
+                "GameStarter != 0",
+                "PingPongTimes > 0"
+            ]
+        }
+    ],
+    "Pong": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "ori(State) == 1",
+                "ori(GameStarter) != 0",
+                "msg.value == 0",
+                "ori(GameStarter) != ori(GamePlayer)",
+                "msg.sender != 0",
+                "msg.sender != ori(GamePlayer)",
+                "ori(GamePlayer) != 0",
+                "msg.value one of [0]",
+                "ori(State) one of [1]",
+                "currentPingPongTimes != ori(PingPongTimes)",
+                "ori(PingPongTimes) > 0"
+            ],
+            "postconditions": [
+                "GameStarter != GamePlayer",
+                "msg.sender != GamePlayer",
+                "GamePlayer != 0",
+                "State one of [2]",
+                "State == 2",
+                "GameStarter != 0",
+                "currentPingPongTimes != PingPongTimes",
+                "PingPongTimes > 0"
+            ],
+            "slice_pre": [
+                "ori(State) == 1",
+                "ori(GameStarter) != 0",
+                "msg.value == 0",
+                "msg.sender != 0",
+                "ori(GamePlayer) != 0",
+                "msg.value one of [0]",
+                "ori(State) one of [1]",
+                "ori(PingPongTimes) > 0"
+            ],
+            "slice_post": [
+                "GamePlayer != 0",
+                "State one of [2]",
+                "State == 2",
+                "GameStarter != 0",
+                "PingPongTimes > 0"
+            ]
+        }
+    ]
+}

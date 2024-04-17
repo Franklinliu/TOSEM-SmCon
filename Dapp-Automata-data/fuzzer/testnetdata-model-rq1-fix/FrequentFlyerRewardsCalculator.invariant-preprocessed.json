@@ -1,0 +1,173 @@
+{
+    "constructor": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "ori(State) == 0",
+                "ori(TotalRewards) == 0",
+                "ori(TotalRewards) <= ori(IndexCalculatedUpto)",
+                "flyer != 0",
+                "ori(AirlineRepresentative) != flyer",
+                "ori(IndexCalculatedUpto) == ori(RewardsPerMile)",
+                "ori(TotalRewards) == ori(IndexCalculatedUpto)",
+                "msg.sender != ori(AirlineRepresentative)",
+                "msg.sender != 0",
+                "ori(IndexCalculatedUpto) >= msg.value",
+                "ori(TotalRewards) one of [0]",
+                "msg.value <= ori(RewardsPerMile)",
+                "ori(TotalRewards) >= ori(IndexCalculatedUpto)",
+                "ori(TotalRewards) <= msg.value",
+                "ori(State) one of [0]",
+                "ori(AirlineRepresentative) == ori(Flyer)",
+                "ori(Flyer) != flyer",
+                "msg.value == 0",
+                "msg.value >= ori(RewardsPerMile)",
+                "ori(IndexCalculatedUpto) one of [0]",
+                "ori(IndexCalculatedUpto) == 0",
+                "ori(TotalRewards) >= msg.value",
+                "ori(IndexCalculatedUpto) == msg.value",
+                "ori(RewardsPerMile) == 0",
+                "ori(RewardsPerMile) one of [0]",
+                "ori(Flyer) == 0",
+                "ori(TotalRewards) <= ori(RewardsPerMile)",
+                "msg.value == ori(RewardsPerMile)",
+                "ori(TotalRewards) == ori(RewardsPerMile)",
+                "msg.sender != ori(Flyer)",
+                "ori(TotalRewards) >= ori(RewardsPerMile)",
+                "ori(IndexCalculatedUpto) >= ori(RewardsPerMile)",
+                "ori(AirlineRepresentative) == 0",
+                "ori(TotalRewards) == msg.value",
+                "ori(IndexCalculatedUpto) <= ori(RewardsPerMile)",
+                "ori(IndexCalculatedUpto) <= msg.value",
+                "msg.value one of [0]"
+            ],
+            "postconditions": [
+                "TotalRewards == IndexCalculatedUpto",
+                "State one of [0]",
+                "RewardsPerMile > 0",
+                "TotalRewards == 0",
+                "TotalRewards == msg.value",
+                "AirlineRepresentative == msg.sender",
+                "RewardsPerMile != msg.value",
+                "RewardsPerMile >= IndexCalculatedUpto",
+                "RewardsPerMile != IndexCalculatedUpto",
+                "TotalRewards <= IndexCalculatedUpto",
+                "RewardsPerMile > IndexCalculatedUpto",
+                "IndexCalculatedUpto >= msg.value",
+                "AirlineRepresentative != 0",
+                "IndexCalculatedUpto == 0",
+                "TotalRewards >= msg.value",
+                "TotalRewards >= IndexCalculatedUpto",
+                "RewardsPerMile != TotalRewards",
+                "TotalRewards one of [0]",
+                "RewardsPerMile >= TotalRewards",
+                "RewardsPerMile > TotalRewards",
+                "IndexCalculatedUpto one of [0]",
+                "Flyer != 0",
+                "State == 0",
+                "RewardsPerMile > msg.value",
+                "RewardsPerMile >= msg.value",
+                "Flyer == flyer",
+                "TotalRewards <= msg.value",
+                "IndexCalculatedUpto <= msg.value",
+                "IndexCalculatedUpto == msg.value"
+            ],
+            "slice_pre": [
+                "ori(TotalRewards) one of [0]",
+                "ori(State) == 0",
+                "ori(TotalRewards) == 0",
+                "msg.value == 0",
+                "ori(IndexCalculatedUpto) one of [0]",
+                "ori(IndexCalculatedUpto) == 0",
+                "flyer != 0",
+                "ori(AirlineRepresentative) == 0",
+                "ori(RewardsPerMile) == 0",
+                "ori(RewardsPerMile) one of [0]",
+                "ori(Flyer) == 0",
+                "msg.value one of [0]",
+                "ori(State) one of [0]",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "AirlineRepresentative != 0",
+                "IndexCalculatedUpto one of [0]",
+                "IndexCalculatedUpto == 0",
+                "State one of [0]",
+                "Flyer != 0",
+                "RewardsPerMile > 0",
+                "TotalRewards == 0",
+                "State == 0",
+                "TotalRewards one of [0]"
+            ]
+        }
+    ],
+    "AddMiles": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "msg.value <= ori(RewardsPerMile)",
+                "msg.value != ori(RewardsPerMile)",
+                "ori(TotalRewards) >= ori(IndexCalculatedUpto)",
+                "msg.value == 0",
+                "msg.sender == ori(Flyer)",
+                "msg.value < ori(RewardsPerMile)",
+                "ori(TotalRewards) >= msg.value",
+                "ori(TotalRewards) != ori(RewardsPerMile)",
+                "ori(RewardsPerMile) > 0",
+                "ori(AirlineRepresentative) != 0",
+                "ori(State) one of [0,1]",
+                "msg.value one of [0]",
+                "ori(Flyer) != 0",
+                "msg.sender != 0",
+                "ori(IndexCalculatedUpto) >= msg.value"
+            ],
+            "postconditions": [
+                "AirlineRepresentative != 0",
+                "State one of [1]",
+                "TotalRewards >= msg.value",
+                "msg.sender == Flyer",
+                "TotalRewards >= IndexCalculatedUpto",
+                "Flyer != 0",
+                "RewardsPerMile > 0",
+                "RewardsPerMile != TotalRewards",
+                "RewardsPerMile > msg.value",
+                "State == 1",
+                "RewardsPerMile >= msg.value",
+                "IndexCalculatedUpto >= msg.value",
+                "RewardsPerMile != msg.value"
+            ],
+            "slice_pre": [
+                "msg.value == 0",
+                "ori(RewardsPerMile) > 0",
+                "ori(AirlineRepresentative) != 0",
+                "ori(State) one of [0,1]",
+                "msg.value one of [0]",
+                "ori(Flyer) != 0",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "AirlineRepresentative != 0",
+                "State one of [1]",
+                "Flyer != 0",
+                "RewardsPerMile > 0",
+                "State == 1"
+            ]
+        }
+    ]
+}

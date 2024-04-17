@@ -1,0 +1,32 @@
+[
+    {  
+       "function": "mint",
+       "abstract-types": ["address-account"],
+       "params": ["dst"],
+       "state": ["balances[address-account]", "sum(allowances[address-account][*])", "sum(allowances[*][address-account])"]
+    },
+    {  
+       "function": "transfer",
+       "abstract-types": ["address-account", "address-account"],
+       "params": ["msg.sender", "dst"],
+       "state": ["balances[address-account]", "sum(allowances[address-account][*])", "sum(allowances[*][address-account])"]
+    },
+    { 
+       "function": "transferFrom",
+       "abstract-types": ["address-account", "address-account", "address-account"],
+       "params": ["msg.sender", "src", "dst"],
+       "state": ["balances[address-account]", "sum(allowances[address-account][*])", "sum(allowances[*][address-account])"]
+    },
+    { 
+       "function": "approve",
+       "abstract-types": ["address-account", "address-account"],
+       "params": ["msg.sender", "spender"], 
+       "state": ["balances[address-account]", "sum(allowances[address-account][*])", "sum(allowances[*][address-account])"]
+    },
+    { 
+        "function": "permit",
+        "abstract-types": ["address-account", "address-account"],
+        "params": ["owner", "spender"], 
+        "state": ["balances[address-account]", "sum(allowances[address-account][*])", "sum(allowances[*][address-account])"]
+     }
+]

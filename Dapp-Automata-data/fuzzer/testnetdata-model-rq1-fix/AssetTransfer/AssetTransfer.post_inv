@@ -1,0 +1,114 @@
+{
+    "constructor@": [
+        "State == 0",
+        "AskingPrice > 0",
+        "OfferPrice == 0",
+        "InstanceInspector == 0",
+        "OfferPrice one of [0]",
+        "State one of [0]",
+        "InstanceBuyer == 0",
+        "InstanceAppraiser == 0",
+        "InstanceOwner != 0"
+    ],
+    "MakeOffer@": [
+        "AskingPrice > 0",
+        "InstanceAppraiser != 0",
+        "State one of [1]",
+        "OfferPrice > 0",
+        "InstanceBuyer != 0",
+        "InstanceInspector != 0",
+        "State == 1",
+        "InstanceOwner != 0"
+    ],
+    "RescindOffer@": [
+        "State == 0",
+        "AskingPrice > 0",
+        "OfferPrice == 0",
+        "InstanceAppraiser != 0",
+        "OfferPrice one of [0]",
+        "InstanceInspector != 0",
+        "State one of [0]",
+        "InstanceBuyer == 0",
+        "InstanceOwner != 0"
+    ],
+    "Reject@": [
+        "State == 0",
+        "AskingPrice > 0",
+        "InstanceAppraiser != 0",
+        "OfferPrice > 0",
+        "InstanceInspector != 0",
+        "State one of [0]",
+        "InstanceBuyer == 0",
+        "InstanceOwner != 0"
+    ],
+    "Terminate@": [
+        "State one of [9]",
+        "AskingPrice > 0",
+        "State == 9",
+        "InstanceOwner != 0"
+    ],
+    "AcceptOffer@": [
+        "AskingPrice > 0",
+        "InstanceAppraiser != 0",
+        "OfferPrice > 0",
+        "InstanceBuyer != 0",
+        "State one of [2]",
+        "InstanceInspector != 0",
+        "State == 2",
+        "InstanceOwner != 0"
+    ],
+    "MarkInspected@": [
+        "AskingPrice > 0",
+        "InstanceAppraiser != 0",
+        "OfferPrice > 0",
+        "InstanceBuyer != 0",
+        "OfferPrice one of [128,75112518493618738644230244092472510786460412526490843667608317524160540573696,1857720805903771065707280942715488420617146466886596543124861936394181804032,59893190099667710655255103876224952666833555831509327020663433012411193360384,66301808983792887935241517449648669900633473529735091300089895579963489255424,63040795153563982170140618484971136854202425993001611557239770024005905416192,247]",
+        "State one of [3,5]",
+        "InstanceInspector != 0",
+        "AskingPrice one of [19964972182362002221997282634730222142615568933442968766053831973723799814144,42605568235699050532102238709160705043521709992264927539211351009801694871552,165,103,92835426901271472163026013419398396645508649495237289927599375303935640207360,23,28]",
+        "InstanceOwner != 0"
+    ],
+    "ModifyOffer@": [
+        "AskingPrice > 0",
+        "InstanceAppraiser != 0",
+        "State one of [1]",
+        "OfferPrice > 0",
+        "InstanceBuyer != 0",
+        "InstanceInspector != 0",
+        "State == 1",
+        "InstanceOwner != 0"
+    ],
+    "MarkAppraised@": [
+        "AskingPrice one of [225,19964972182362002221997282634730222142615568933442968766053831973723799814144,92835426901271472163026013419398396645508649495237289927599375303935640207360,23,183,252]",
+        "AskingPrice > 0",
+        "InstanceAppraiser != 0",
+        "OfferPrice one of [1857720805903771065707280942715488420617146466886596543124861936394181804032,72608433880381979543581640557604436305768704984537800607633670729428084195328,66301808983792887935241517449648669900633473529735091300089895579963489255424,93595895111314301069193091697571271274572638796257624160504770276318232182784,143,63040795153563982170140618484971136854202425993001611557239770024005905416192,127]",
+        "OfferPrice > 0",
+        "State one of [4,5]",
+        "InstanceBuyer != 0",
+        "InstanceInspector != 0",
+        "InstanceOwner != 0"
+    ],
+    "Modify@": [
+        "State == 0",
+        "AskingPrice > 0",
+        "OfferPrice == 0",
+        "OfferPrice one of [0]",
+        "State one of [0]",
+        "InstanceBuyer == 0",
+        "InstanceOwner != 0"
+    ],
+    "Accept@": [
+        "AskingPrice > 0",
+        "InstanceAppraiser != 0",
+        "OfferPrice > 0",
+        "InstanceBuyer != 0",
+        "State one of [8,7]",
+        "OfferPrice one of [66301808983792887935241517449648669900633473529735091300089895579963489255424]",
+        "AskingPrice == 19964972182362002221997282634730222142615568933442968766053831973723799814144",
+        "InstanceInspector != 0",
+        "OfferPrice == 66301808983792887935241517449648669900633473529735091300089895579963489255424",
+        "AskingPrice one of [19964972182362002221997282634730222142615568933442968766053831973723799814144]",
+        "InstanceOwner != 0"
+    ]
+}

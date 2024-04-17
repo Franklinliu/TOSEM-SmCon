@@ -1,0 +1,130 @@
+{
+    "constructor": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "msg.sender != ori(Requestor)",
+                "ori(Requestor) == 0",
+                "msg.value == 0",
+                "ori(Responder) == 0",
+                "ori(State) == 0",
+                "msg.value one of [0]",
+                "msg.sender != ori(Responder)",
+                "ori(Requestor) == ori(Responder)",
+                "msg.sender != 0",
+                "ori(State) one of [0]"
+            ],
+            "postconditions": [
+                "Responder != msg.sender",
+                "Requestor == msg.sender",
+                "State one of [0]",
+                "State == 0",
+                "Requestor != 0",
+                "Responder == 0",
+                "Requestor != Responder"
+            ],
+            "slice_pre": [
+                "ori(Requestor) == 0",
+                "msg.value == 0",
+                "ori(Responder) == 0",
+                "ori(State) == 0",
+                "msg.value one of [0]",
+                "msg.sender != 0",
+                "ori(State) one of [0]"
+            ],
+            "slice_post": [
+                "State == 0",
+                "Requestor != 0",
+                "State one of [0]",
+                "Responder == 0"
+            ]
+        }
+    ],
+    "SendResponse": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "msg.value == 0",
+                "ori(Requestor) != 0",
+                "msg.value one of [0]",
+                "ori(State) one of [0,1]",
+                "msg.sender != 0"
+            ],
+            "postconditions": [
+                "Responder == msg.sender",
+                "Requestor != 0",
+                "State one of [1]",
+                "State == 1",
+                "Responder != 0"
+            ],
+            "slice_pre": [
+                "msg.value == 0",
+                "ori(Requestor) != 0",
+                "msg.value one of [0]",
+                "ori(State) one of [0,1]",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "Responder != 0",
+                "Requestor != 0",
+                "State one of [1]",
+                "State == 1"
+            ]
+        }
+    ],
+    "SendRequest": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "msg.value == 0",
+                "ori(Requestor) != 0",
+                "msg.value one of [0]",
+                "msg.sender == ori(Requestor)",
+                "ori(State) one of [0,1]",
+                "msg.sender != 0"
+            ],
+            "postconditions": [
+                "Requestor == msg.sender",
+                "State == 0",
+                "Requestor != 0",
+                "State one of [0]"
+            ],
+            "slice_pre": [
+                "msg.value == 0",
+                "ori(Requestor) != 0",
+                "msg.value one of [0]",
+                "ori(State) one of [0,1]",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "State == 0",
+                "Requestor != 0",
+                "State one of [0]"
+            ]
+        }
+    ]
+}

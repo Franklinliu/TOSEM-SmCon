@@ -1,0 +1,17 @@
+digraph "Dapp-Automata-data/fuzzer/testnetdata-model-rq1/RoomThermostat/contractorplus" {
+	graph [rankdir=LR]
+	"" [label="" shape=plaintext]
+	4 [label=4 shape=circle]
+	2 [label=2 shape=circle]
+	1 [label=1 shape=circle]
+	0 [label=0 shape=circle]
+	"" -> 4 [label=""]
+	0 -> 2 [label=SetTargetTemperature]
+	0 -> 0 [label=SetTargetTemperature]
+	0 -> 2 [label=SetMode]
+	0 -> 0 [label=SetMode]
+	1 -> 0 [label=StartThermostat]
+	2 -> 2 [label=SetTargetTemperature]
+	2 -> 0 [label=SetTargetTemperature]
+	4 -> 1 [label=constructor]
+}

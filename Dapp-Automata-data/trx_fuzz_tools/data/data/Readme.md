@@ -1,0 +1,11 @@
+1-hello-blockchain
+2-asset-transfer
+3-basic-provenance
+4-simple-marketplace
+5-digital-locker
+6-defective-component-counter
+7-room-thermostat
+8-frequent-flyer-rewards-calculator
+9-ping-pong-game
+10-bazaar-item-listing
+11-refrigerated-transportation

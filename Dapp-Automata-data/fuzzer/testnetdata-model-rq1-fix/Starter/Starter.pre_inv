@@ -1,0 +1,30 @@
+{
+    "constructor@": [
+        "State == 0",
+        "PingPongTimes one of [0]",
+        "GamePlayer == 0",
+        "State one of [0]",
+        "GameStarter == 0",
+        "PingPongTimes == 0"
+    ],
+    "FinishGame@": [
+        "GameStarter != 0",
+        "GamePlayer != 0",
+        "State one of [0,1]"
+    ],
+    "StartPingPong@": [
+        "State == 0",
+        "GameStarter != 0",
+        "PingPongTimes one of [0]",
+        "State one of [0]",
+        "GamePlayer != 0",
+        "PingPongTimes == 0"
+    ],
+    "Pong@": [
+        "State == 1",
+        "GameStarter != 0",
+        "GamePlayer != 0",
+        "State one of [1]",
+        "PingPongTimes > 0"
+    ]
+}

@@ -1,0 +1,257 @@
+{
+    "constructor": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "ori(TargetTemperature) one of [0]",
+                "msg.sender != ori(User)",
+                "ori(TargetTemperature) == 0",
+                "ori(Installer) != msg.sender",
+                "thermostatInstaller != 0",
+                "ori(Installer) == ori(User)",
+                "ori(Installer) != thermostatUser",
+                "msg.value == 0",
+                "msg.value one of [0]",
+                "ori(Installer) == 0",
+                "ori(Mode) one of [0]",
+                "thermostatInstaller != ori(User)",
+                "ori(User) == 0",
+                "ori(State) == 0",
+                "ori(User) != thermostatUser",
+                "ori(State) one of [0]",
+                "thermostatUser != 0",
+                "msg.sender != 0",
+                "ori(Mode) == 0",
+                "ori(Installer) != thermostatInstaller"
+            ],
+            "postconditions": [
+                "Installer != 0",
+                "State == 0",
+                "TargetTemperature == 70",
+                "thermostatInstaller == Installer",
+                "User == thermostatUser",
+                "TargetTemperature > 0",
+                "Mode one of [0]",
+                "State one of [0]",
+                "User != 0",
+                "Mode == 0",
+                "TargetTemperature one of [70]"
+            ],
+            "slice_pre": [
+                "ori(State) == 0",
+                "ori(Mode) == 0",
+                "ori(TargetTemperature) one of [0]",
+                "msg.value == 0",
+                "thermostatUser != 0",
+                "ori(State) one of [0]",
+                "msg.value one of [0]",
+                "ori(TargetTemperature) == 0",
+                "ori(Installer) == 0",
+                "ori(Mode) one of [0]",
+                "thermostatInstaller != 0",
+                "ori(User) == 0",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "Installer != 0",
+                "State == 0",
+                "TargetTemperature == 70",
+                "TargetTemperature > 0",
+                "Mode one of [0]",
+                "State one of [0]",
+                "User != 0",
+                "Mode == 0",
+                "TargetTemperature one of [70]"
+            ]
+        }
+    ],
+    "StartThermostat": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "ori(State) == 0",
+                "ori(Mode) == 0",
+                "ori(User) != 0",
+                "ori(TargetTemperature) one of [70]",
+                "msg.value == 0",
+                "ori(Installer) == msg.sender",
+                "ori(TargetTemperature) == 70",
+                "ori(State) one of [0]",
+                "ori(TargetTemperature) > 0",
+                "msg.value one of [0]",
+                "ori(Installer) != 0",
+                "ori(Mode) one of [0]",
+                "msg.sender != 0"
+            ],
+            "postconditions": [
+                "Installer != 0",
+                "State one of [1]",
+                "TargetTemperature == 70",
+                "msg.sender == Installer",
+                "TargetTemperature > 0",
+                "Mode one of [0]",
+                "State == 1",
+                "User != 0",
+                "Mode == 0",
+                "TargetTemperature one of [70]"
+            ],
+            "slice_pre": [
+                "ori(State) == 0",
+                "ori(Mode) == 0",
+                "ori(User) != 0",
+                "ori(TargetTemperature) one of [70]",
+                "msg.value == 0",
+                "ori(TargetTemperature) == 70",
+                "ori(State) one of [0]",
+                "ori(TargetTemperature) > 0",
+                "msg.value one of [0]",
+                "ori(Installer) != 0",
+                "ori(Mode) one of [0]",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "Installer != 0",
+                "State one of [1]",
+                "TargetTemperature == 70",
+                "TargetTemperature > 0",
+                "Mode one of [0]",
+                "State == 1",
+                "User != 0",
+                "Mode == 0",
+                "TargetTemperature one of [70]"
+            ]
+        }
+    ],
+    "SetTargetTemperature": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "ori(State) == 1",
+                "ori(Mode) == 0",
+                "msg.sender == ori(User)",
+                "ori(User) != 0",
+                "msg.value == 0",
+                "ori(State) one of [1]",
+                "msg.value one of [0]",
+                "ori(Installer) != 0",
+                "ori(Mode) one of [0]",
+                "msg.sender != 0"
+            ],
+            "postconditions": [
+                "Mode one of [0]",
+                "State one of [1]",
+                "User == msg.sender",
+                "State == 1",
+                "Installer != 0",
+                "User != 0",
+                "Mode == 0",
+                "targetTemperature <= TargetTemperature"
+            ],
+            "slice_pre": [
+                "ori(State) == 1",
+                "ori(Mode) == 0",
+                "ori(User) != 0",
+                "msg.value == 0",
+                "ori(State) one of [1]",
+                "msg.value one of [0]",
+                "ori(Installer) != 0",
+                "ori(Mode) one of [0]",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "Mode one of [0]",
+                "State one of [1]",
+                "State == 1",
+                "Installer != 0",
+                "User != 0",
+                "Mode == 0"
+            ]
+        }
+    ],
+    "SetMode": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "ori(State) == 1",
+                "ori(Mode) == 0",
+                "msg.sender == ori(User)",
+                "ori(User) != 0",
+                "msg.value == 0",
+                "mode one of [0,1,2,3]",
+                "ori(State) one of [1]",
+                "ori(TargetTemperature) > 0",
+                "ori(TargetTemperature) one of [58,165,70,91708704084470408412392593603745794318101449275514826783328203081024173899777]",
+                "msg.value one of [0]",
+                "mode >= msg.value",
+                "ori(Installer) != 0",
+                "ori(Mode) one of [0]",
+                "msg.sender != 0"
+            ],
+            "postconditions": [
+                "State one of [1]",
+                "Mode one of [0,1,2,3]",
+                "User == msg.sender",
+                "State == 1",
+                "Installer != 0",
+                "User != 0",
+                "TargetTemperature > 0",
+                "TargetTemperature one of [58,165,70,91708704084470408412392593603745794318101449275514826783328203081024173899777]"
+            ],
+            "slice_pre": [
+                "ori(State) == 1",
+                "ori(Mode) == 0",
+                "ori(User) != 0",
+                "msg.value == 0",
+                "mode one of [0,1,2,3]",
+                "ori(State) one of [1]",
+                "ori(TargetTemperature) > 0",
+                "ori(TargetTemperature) one of [58,165,70,91708704084470408412392593603745794318101449275514826783328203081024173899777]",
+                "msg.value one of [0]",
+                "ori(Installer) != 0",
+                "ori(Mode) one of [0]",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "State one of [1]",
+                "Mode one of [0,1,2,3]",
+                "State == 1",
+                "Installer != 0",
+                "User != 0",
+                "TargetTemperature > 0",
+                "TargetTemperature one of [58,165,70,91708704084470408412392593603745794318101449275514826783328203081024173899777]"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,53 @@
+[
+    {
+        "func": "mintApe(numberOfTokens)@ori(size(_tokenOwners))",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [
+            "numberOfTokens > 0",
+            "ori(_tokenApprovals$address) == 0",
+            "ori(_tokenOwners$_value) == \"\"",
+            "msg.sender != 0",
+            "msg.value > 0",
+            "numberOfTokens <= msg.value",
+            "numberOfTokens < msg.value",
+            "numberOfTokens != msg.value",
+            "ori(_tokenApprovals$address) != msg.sender"
+        ],
+        "postconditions": [
+            "_tokenOwners$_value == \"\"",
+            "_tokenApprovals$address == 0",
+            "ori(_tokenApprovals$address) == _tokenApprovals$address",
+            "msg.sender != _tokenApprovals$address"
+        ]
+    },
+    {
+        "func": "transferFrom(from,to,tokenId)@tokenId",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [
+            "ori(_tokenApprovals$address) == 0",
+            "from != 0",
+            "ori(_tokenOwners$_value) == \"\"",
+            "msg.sender != 0",
+            "to != 0",
+            "msg.value == 0",
+            "msg.value == 0",
+            "msg.value one of [0]",
+            "ori(_tokenApprovals$address) != from",
+            "ori(_tokenApprovals$address) != msg.sender",
+            "ori(_tokenApprovals$address) != to",
+            "from != to",
+            "tokenId >= msg.value",
+            "msg.sender != to"
+        ],
+        "postconditions": [
+            "_tokenOwners$_value == \"\"",
+            "_tokenApprovals$address == 0",
+            "ori(_tokenApprovals$address) == _tokenApprovals$address",
+            "from != _tokenApprovals$address",
+            "_tokenApprovals$address != msg.sender",
+            "_tokenApprovals$address != to"
+        ]
+    }
+]

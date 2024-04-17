@@ -1,0 +1,138 @@
+{
+    "constructor": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "ori(State) == 0",
+                "ori(Requestor) == ori(Responder)",
+                "msg.value == 0",
+                "msg.sender != 0",
+                "ori(State) one of [0]",
+                "ori(Requestor) == 0",
+                "msg.value one of [0]",
+                "msg.sender != ori(Requestor)",
+                "msg.sender != ori(Responder)",
+                "ori(Responder) == 0"
+            ],
+            "postconditions": [
+                "State == 0",
+                "Requestor != Responder",
+                "msg.sender != Responder",
+                "Requestor != 0",
+                "State one of [0]",
+                "Responder == 0",
+                "Requestor == msg.sender"
+            ],
+            "slice_pre": [
+                "ori(State) == 0",
+                "msg.value == 0",
+                "msg.sender != 0",
+                "ori(State) one of [0]",
+                "ori(Requestor) == 0",
+                "msg.value one of [0]",
+                "ori(Responder) == 0"
+            ],
+            "slice_post": [
+                "State == 0",
+                "Requestor != 0",
+                "State one of [0]",
+                "Responder == 0"
+            ]
+        }
+    ],
+    "SendResponse": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "ori(State) == 0",
+                "msg.value == 0",
+                "ori(Requestor) != 0",
+                "ori(State) one of [0]",
+                "msg.value one of [0]",
+                "msg.sender != 0"
+            ],
+            "postconditions": [
+                "Responder != 0",
+                "State one of [1]",
+                "msg.sender == Responder",
+                "Requestor != 0",
+                "State == 1"
+            ],
+            "slice_pre": [
+                "ori(State) == 0",
+                "msg.value == 0",
+                "ori(Requestor) != 0",
+                "ori(State) one of [0]",
+                "msg.value one of [0]",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "Responder != 0",
+                "Requestor != 0",
+                "State one of [1]",
+                "State == 1"
+            ]
+        }
+    ],
+    "SendRequest": [
+        {
+            "parameterBinding": [
+                ""
+            ],
+            "oldstate": [
+                ""
+            ],
+            "newState": [
+                ""
+            ],
+            "preconditions": [
+                "ori(State) == 1",
+                "msg.value == 0",
+                "ori(Requestor) != 0",
+                "msg.value one of [0]",
+                "ori(State) one of [1]",
+                "msg.sender == ori(Requestor)",
+                "ori(Responder) != 0",
+                "msg.sender != 0"
+            ],
+            "postconditions": [
+                "Responder != 0",
+                "State == 0",
+                "Requestor != 0",
+                "State one of [0]",
+                "Requestor == msg.sender"
+            ],
+            "slice_pre": [
+                "ori(State) == 1",
+                "msg.value == 0",
+                "ori(Requestor) != 0",
+                "msg.value one of [0]",
+                "ori(State) one of [1]",
+                "ori(Responder) != 0",
+                "msg.sender != 0"
+            ],
+            "slice_post": [
+                "Responder != 0",
+                "Requestor != 0",
+                "State one of [0]",
+                "State == 0"
+            ]
+        }
+    ]
+}

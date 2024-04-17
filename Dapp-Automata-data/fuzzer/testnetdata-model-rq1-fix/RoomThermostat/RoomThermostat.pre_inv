@@ -1,0 +1,41 @@
+{
+    "constructor@": [
+        "State == 0",
+        "Mode == 0",
+        "TargetTemperature one of [0]",
+        "State one of [0]",
+        "TargetTemperature == 0",
+        "Installer == 0",
+        "Mode one of [0]",
+        "User == 0"
+    ],
+    "StartThermostat@": [
+        "State == 0",
+        "Mode == 0",
+        "User != 0",
+        "TargetTemperature one of [70]",
+        "TargetTemperature == 70",
+        "State one of [0]",
+        "TargetTemperature > 0",
+        "Installer != 0",
+        "Mode one of [0]"
+    ],
+    "SetTargetTemperature@": [
+        "State == 1",
+        "Mode == 0",
+        "User != 0",
+        "State one of [1]",
+        "Installer != 0",
+        "Mode one of [0]"
+    ],
+    "SetMode@": [
+        "State == 1",
+        "Mode == 0",
+        "User != 0",
+        "State one of [1]",
+        "TargetTemperature > 0",
+        "TargetTemperature one of [58,165,70,91708704084470408412392593603745794318101449275514826783328203081024173899777]",
+        "Installer != 0",
+        "Mode one of [0]"
+    ]
+}

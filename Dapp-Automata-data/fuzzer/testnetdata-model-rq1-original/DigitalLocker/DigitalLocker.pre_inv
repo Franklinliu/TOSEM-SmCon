@@ -1,0 +1,62 @@
+{
+    "constructor@": [
+        "BankAgent == 0",
+        "State == 0",
+        "CurrentAuthorizedUser == 0",
+        "Owner == 0",
+        "ThirdPartyRequestor == 0",
+        "State one of [0]"
+    ],
+    "BeginReviewProcess@": [
+        "BankAgent != 0",
+        "Owner != 0",
+        "State one of [1,2,3,4,5]"
+    ],
+    "RequestLockerAccess@": [
+        "BankAgent != 0",
+        "Owner != 0",
+        "State one of [1,2,3,4,5]"
+    ],
+    "ShareWithThirdParty@": [
+        "BankAgent != 0",
+        "Owner != 0",
+        "State one of [1,2,3,4,5]"
+    ],
+    "RevokeAccessFromThirdParty@": [
+        "BankAgent != 0",
+        "Owner != 0",
+        "State one of [1,2,3,4,5]"
+    ],
+    "AcceptSharingRequest@": [
+        "BankAgent != 0",
+        "Owner != 0",
+        "State one of [1,2,3,4,5]"
+    ],
+    "RejectSharingRequest@": [
+        "BankAgent != 0",
+        "Owner != 0",
+        "State one of [1,2,3,4,5]"
+    ],
+    "UploadDocuments@": [
+        "BankAgent != 0",
+        "Owner != 0",
+        "State one of [1,2,3,4,5]"
+    ],
+    "Terminate@": [
+        "BankAgent != 0",
+        "Owner != 0",
+        "State one of [1,2,3,4,5]"
+    ],
+    "RejectApplication@": [
+        "BankAgent != 0",
+        "Owner != 0",
+        "State one of [1,2,3,4,5]"
+    ],
+    "ReleaseLockerAccess@": [
+        "CurrentAuthorizedUser != 0",
+        "State one of [1,3,4]",
+        "ThirdPartyRequestor != 0",
+        "BankAgent != 0",
+        "Owner != 0"
+    ]
+}

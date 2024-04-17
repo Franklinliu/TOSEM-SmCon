@@ -1,0 +1,55 @@
+{
+    "constructor@": [
+        "InstanceBazaarMaintainer != 0",
+        "ItemPrice == 0",
+        "currentItemListing == 0",
+        "ItemPrice one of [0]",
+        "PartyABalance > 0",
+        "State one of [0]",
+        "CurrentSeller == 0",
+        "CurrentContractAddress != 0",
+        "State == 0",
+        "InstancePartyB != 0",
+        "InstancePartyA != 0"
+    ],
+    "ChangeBalance@": [
+        "State one of [0,1,2]",
+        "ItemPrice one of [0]",
+        "PartyABalance > 0",
+        "CurrentContractAddress != 0",
+        "InstancePartyB != 0",
+        "ItemPrice == 0",
+        "InstancePartyA != 0"
+    ],
+    "HasBalance@": [
+        "State one of [0,1,2]",
+        "ItemPrice one of [0]",
+        "PartyABalance > 0",
+        "CurrentContractAddress != 0",
+        "InstancePartyB != 0",
+        "ItemPrice == 0",
+        "InstancePartyA != 0"
+    ],
+    "UpdateBalance@": [
+        "State one of [2]",
+        "ItemPrice one of [0]",
+        "PartyABalance > 0",
+        "State == 2",
+        "CurrentContractAddress != 0",
+        "InstancePartyB != 0",
+        "ItemPrice == 0",
+        "InstancePartyA != 0"
+    ],
+    "ListItem@": [
+        "CurrentSeller != 0",
+        "ItemPrice one of [0]",
+        "PartyABalance > 0",
+        "CurrentContractAddress != 0",
+        "State one of [1]",
+        "State == 1",
+        "InstancePartyB != 0",
+        "ItemPrice == 0",
+        "PartyBBalance one of [0,47219736118171679016481614208494153725245902603978864281390662590579859259402]",
+        "InstancePartyA != 0"
+    ]
+}

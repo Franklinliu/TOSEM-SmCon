@@ -1,0 +1,62 @@
+[
+    {
+        "func": "constructor(defectiveComponentsCount)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [
+            "ori(Manufacturer) == 0",
+            "ori(State) == 0",
+            "ori(State) one of [0]",
+            "ori(Total) == 0",
+            "ori(Total) one of [0]",
+            "msg.sender != 0",
+            "msg.value == 0",
+            "msg.value one of [0]",
+            "ori(Manufacturer) != msg.sender"
+        ],
+        "postconditions": [
+            "State == 0",
+            "State one of [0]",
+            "Manufacturer != 0",
+            "Total == 0",
+            "Total one of [0]",
+            "ori(Manufacturer) != Manufacturer",
+            "ori(Total) == Total",
+            "ori(Total) >= Total",
+            "ori(Total) <= Total",
+            "msg.sender == Manufacturer"
+        ],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "ComputeTotal()",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [
+            "ori(Manufacturer) != 0",
+            "ori(State) == 0",
+            "ori(State) one of [0]",
+            "ori(Total) == 0",
+            "ori(Total) one of [0]",
+            "msg.sender != 0",
+            "msg.value == 0",
+            "msg.value one of [0]",
+            "ori(Manufacturer) == msg.sender"
+        ],
+        "postconditions": [
+            "State == 1",
+            "State one of [1]",
+            "Manufacturer != 0",
+            "Total == 0",
+            "Total one of [0]",
+            "ori(Manufacturer) == Manufacturer",
+            "ori(Total) == Total",
+            "ori(Total) >= Total",
+            "ori(Total) <= Total",
+            "msg.sender == Manufacturer"
+        ],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    }
+]

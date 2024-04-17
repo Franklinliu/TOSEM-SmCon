@@ -1,0 +1,41 @@
+[
+    { 
+        "function": "transfer",
+        "abstract-types": ["uint256-tokenId"],
+        "params": ["_tokenId"], 
+        "state": ["_tokenOwners[uint256-tokenId]", "_tokenApprovals[uint256-tokenId]", "_tokenURIs[uint256-tokenId]"]
+    },
+    { 
+        "function": "transferFrom",
+        "abstract-types": ["uint256-tokenId"],
+        "params": ["tokenId"], 
+        "state": ["_tokenOwners[uint256-tokenId]", "_tokenApprovals[uint256-tokenId]", "_tokenURIs[uint256-tokenId]"]
+    },
+    { 
+        "function": "safeTransferFrom",
+        "sizeofparams": 3,
+        "abstract-types": ["uint256-tokenId"],
+        "params": ["tokenId"], 
+        "state": ["_tokenOwners[uint256-tokenId]", "_tokenApprovals[uint256-tokenId]", "_tokenURIs[uint256-tokenId]"]
+    },
+    { 
+        "function": "safeTransferFrom",
+        "sizeofparams": 4,
+        "abstract-types": ["uint256-tokenId"],
+        "params": ["tokenId"], 
+        "state": ["_tokenOwners[uint256-tokenId]", "_tokenApprovals[uint256-tokenId]", "_tokenURIs[uint256-tokenId]"]
+    },
+    { 
+        "function": "approve",
+        "abstract-types": ["uint256-tokenId"],
+        "params": ["_tokenId"], 
+        "state": ["_tokenOwners[uint256-tokenId]", "_tokenApprovals[uint256-tokenId]", "_tokenURIs[uint256-tokenId]"]
+    },
+    { 
+        "function": "mintApe",
+        "abstract-types": ["uint256-tokenId"],
+        "params": ["ori(size(_tokenOwners))"], 
+        "range": [0, "numberOfTokens"],
+        "state": ["_tokenOwners[uint256-tokenId]", "_tokenApprovals[uint256-tokenId]", "_tokenURIs[uint256-tokenId]"]
+    }
+]
