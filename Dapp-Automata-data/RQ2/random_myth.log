@@ -1,0 +1,548 @@
+./contracts_buginjection/CryptoPunksMarket-4.sol:59:5: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+    function CryptoPunksMarket() payable {
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts_buginjection/CryptoPunksMarket-4.sol:70:34: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (msg.sender != owner) throw;
+                                 ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:71:31: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (allPunksAssigned) throw;
+                              ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:72:33: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndex >= 10000) throw;
+                                ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:88:34: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (msg.sender != owner) throw;
+                                 ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:97:34: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (msg.sender != owner) throw;
+                                 ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:102:32: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (!allPunksAssigned) throw;
+                               ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:103:42: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punksRemainingToAssign == 0) throw;
+                                         ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:104:51: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndexToAddress[punkIndex] != 0x0) throw;
+                                                  ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:105:33: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndex >= 10000) throw;
+                                ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:115:32: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (!allPunksAssigned) throw;
+                               ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:116:58: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndexToAddress[punkIndex] != msg.sender) throw;
+                                                         ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:117:33: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndex >= 10000) throw;
+                                ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:138:32: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (!allPunksAssigned) throw;
+                               ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:139:58: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndexToAddress[punkIndex] != msg.sender) throw;
+                                                         ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:140:33: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndex >= 10000) throw;
+                                ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:146:32: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (!allPunksAssigned) throw;
+                               ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:147:58: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndexToAddress[punkIndex] != msg.sender) throw;
+                                                         ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:148:33: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndex >= 10000) throw;
+                                ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:154:32: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (!allPunksAssigned) throw;
+                               ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:155:58: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndexToAddress[punkIndex] != msg.sender) throw;
+                                                         ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:156:33: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndex >= 10000) throw;
+                                ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:162:32: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (!allPunksAssigned) throw;
+                               ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:164:33: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndex >= 10000) throw;
+                                ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:165:31: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (!offer.isForSale) throw;                // punk not actually for sale
+                              ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:166:72: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (offer.onlySellTo != 0x0 && offer.onlySellTo != msg.sender) throw;  // punk not supposed to be sold to this user
+                                                                       ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:167:41: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (msg.value < offer.minValue) throw;      // Didn't send enough ETH
+                                        ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:168:60: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (offer.seller != punkIndexToAddress[punkIndex]) throw; // Seller no longer owner of punk
+                                                           ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:192:32: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (!allPunksAssigned) throw;
+                               ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:201:33: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndex >= 10000) throw;
+                                ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:202:32: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (!allPunksAssigned) throw;                
+                               ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:203:51: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndexToAddress[punkIndex] == 0x0) throw;
+                                                  ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:204:58: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndexToAddress[punkIndex] == msg.sender) throw;
+                                                         ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:205:29: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (msg.value == 0) throw;
+                            ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:207:42: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (msg.value <= existing.value) throw;
+                                         ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:217:33: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndex >= 10000) throw;
+                                ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:218:32: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (!allPunksAssigned) throw;                
+                               ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:219:58: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndexToAddress[punkIndex] != msg.sender) throw;
+                                                         ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:222:29: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (bid.value == 0) throw;
+                            ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:223:35: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (bid.value < minPrice) throw;
+                                  ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:238:33: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndex >= 10000) throw;
+                                ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:239:32: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (!allPunksAssigned) throw;                
+                               ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:240:51: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndexToAddress[punkIndex] == 0x0) throw;
+                                                  ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:241:58: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndexToAddress[punkIndex] == msg.sender) throw;
+                                                         ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:243:39: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (bid.bidder != msg.sender) throw;
+                                      ^---^
+./contracts_buginjection/CryptoPunksMarket-4.sol:128:9: Warning: Variable is declared as a storage pointer. Use an explicit "storage" keyword to silence this warning.
+        Bid bid = punkBids[punkIndex];
+        ^-----^
+./contracts_buginjection/CryptoPunksMarket-4.sol:163:9: Warning: Variable is declared as a storage pointer. Use an explicit "storage" keyword to silence this warning.
+        Offer offer = punksOfferedForSale[punkIndex];
+        ^---------^
+./contracts_buginjection/CryptoPunksMarket-4.sol:183:9: Warning: Variable is declared as a storage pointer. Use an explicit "storage" keyword to silence this warning.
+        Bid bid = punkBids[punkIndex];
+        ^-----^
+./contracts_buginjection/CryptoPunksMarket-4.sol:206:9: Warning: Variable is declared as a storage pointer. Use an explicit "storage" keyword to silence this warning.
+        Bid existing = punkBids[punkIndex];
+        ^----------^
+./contracts_buginjection/CryptoPunksMarket-4.sol:221:9: Warning: Variable is declared as a storage pointer. Use an explicit "storage" keyword to silence this warning.
+        Bid bid = punkBids[punkIndex];
+        ^-----^
+./contracts_buginjection/CryptoPunksMarket-4.sol:242:9: Warning: Variable is declared as a storage pointer. Use an explicit "storage" keyword to silence this warning.
+        Bid bid = punkBids[punkIndex];
+        ^-----^
+./contracts_buginjection/CryptoPunksMarket-4.sol:81:13: Warning: Invoking events without "emit" prefix is deprecated.
+            Assign(to, punkIndex);
+            ^-------------------^
+./contracts_buginjection/CryptoPunksMarket-4.sol:109:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Assign(msg.sender, punkIndex);
+        ^---------------------------^
+./contracts_buginjection/CryptoPunksMarket-4.sol:124:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Transfer(msg.sender, to, 1);
+        ^-------------------------^
+./contracts_buginjection/CryptoPunksMarket-4.sol:125:9: Warning: Invoking events without "emit" prefix is deprecated.
+        PunkTransfer(msg.sender, to, punkIndex);
+        ^-------------------------------------^
+./contracts_buginjection/CryptoPunksMarket-4.sol:142:9: Warning: Invoking events without "emit" prefix is deprecated.
+        PunkNoLongerForSale(punkIndex);
+        ^----------------------------^
+./contracts_buginjection/CryptoPunksMarket-4.sol:150:9: Warning: Invoking events without "emit" prefix is deprecated.
+        PunkOffered(punkIndex, minSalePriceInWei, 0x0);
+        ^--------------------------------------------^
+./contracts_buginjection/CryptoPunksMarket-4.sol:158:9: Warning: Invoking events without "emit" prefix is deprecated.
+        PunkOffered(punkIndex, minSalePriceInWei, toAddress);
+        ^--------------------------------------------------^
+./contracts_buginjection/CryptoPunksMarket-4.sol:175:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Transfer(seller, msg.sender, 1);
+        ^-----------------------------^
+./contracts_buginjection/CryptoPunksMarket-4.sol:179:9: Warning: Invoking events without "emit" prefix is deprecated.
+        PunkBought(punkIndex, msg.value, seller, msg.sender);
+        ^--------------------------------------------------^
+./contracts_buginjection/CryptoPunksMarket-4.sol:213:9: Warning: Invoking events without "emit" prefix is deprecated.
+        PunkBidEntered(punkIndex, msg.value, msg.sender);
+        ^----------------------------------------------^
+./contracts_buginjection/CryptoPunksMarket-4.sol:228:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Transfer(seller, bid.bidder, 1);
+        ^-----------------------------^
+./contracts_buginjection/CryptoPunksMarket-4.sol:234:9: Warning: Invoking events without "emit" prefix is deprecated.
+        PunkBought(punkIndex, bid.value, seller, bid.bidder);
+        ^--------------------------------------------------^
+./contracts_buginjection/CryptoPunksMarket-4.sol:244:9: Warning: Invoking events without "emit" prefix is deprecated.
+        PunkBidWithdrawn(punkIndex, bid.value, msg.sender);
+        ^------------------------------------------------^
+./contracts_buginjection/CryptoPunksMarket-4.sol:59:5: Warning: No visibility specified. Defaulting to "public". 
+    function CryptoPunksMarket() payable {
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts_buginjection/CryptoPunksMarket-4.sol:69:5: Warning: No visibility specified. Defaulting to "public". 
+    function setInitialOwner(address to, uint punkIndex) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts_buginjection/CryptoPunksMarket-4.sol:87:5: Warning: No visibility specified. Defaulting to "public". 
+    function setInitialOwners(address[] addresses, uint[] indices) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts_buginjection/CryptoPunksMarket-4.sol:96:5: Warning: No visibility specified. Defaulting to "public". 
+    function allInitialOwnersAssigned() {
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts_buginjection/CryptoPunksMarket-4.sol:101:5: Warning: No visibility specified. Defaulting to "public". 
+    function getPunk(uint punkIndex) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts_buginjection/CryptoPunksMarket-4.sol:114:5: Warning: No visibility specified. Defaulting to "public". 
+    function transferPunk(address to, uint punkIndex) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts_buginjection/CryptoPunksMarket-4.sol:137:5: Warning: No visibility specified. Defaulting to "public". 
+    function punkNoLongerForSale(uint punkIndex) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts_buginjection/CryptoPunksMarket-4.sol:145:5: Warning: No visibility specified. Defaulting to "public". 
+    function offerPunkForSale(uint punkIndex, uint minSalePriceInWei) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts_buginjection/CryptoPunksMarket-4.sol:153:5: Warning: No visibility specified. Defaulting to "public". 
+    function offerPunkForSaleToAddress(uint punkIndex, uint minSalePriceInWei, address toAddress) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts_buginjection/CryptoPunksMarket-4.sol:161:5: Warning: No visibility specified. Defaulting to "public". 
+    function buyPunk(uint punkIndex) payable {
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts_buginjection/CryptoPunksMarket-4.sol:191:5: Warning: No visibility specified. Defaulting to "public". 
+    function withdraw() {
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts_buginjection/CryptoPunksMarket-4.sol:200:5: Warning: No visibility specified. Defaulting to "public". 
+    function enterBidForPunk(uint punkIndex) payable {
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts_buginjection/CryptoPunksMarket-4.sol:216:5: Warning: No visibility specified. Defaulting to "public". 
+    function acceptBidForPunk(uint punkIndex, uint minPrice) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts_buginjection/CryptoPunksMarket-4.sol:237:5: Warning: No visibility specified. Defaulting to "public". 
+    function withdrawBidForPunk(uint punkIndex) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+{'mbt': False, 'random': True, 'contract_name': 'CryptoPunksMarket', 'model_file': None, 'abi_file': None, 'contract_file': './contracts_buginjection/CryptoPunksMarket-4.sol'}
+solc ./contracts_buginjection/CryptoPunksMarket-4.sol --overwrite --bin --abi -o Dapp-Automata-data/RQ2/artifacts
+0
+enterBidForPunk(uint256) 0x091dbfd2
+acceptBidForPunk(uint256,uint256) 0x23165b75
+setInitialOwners(address[],uint256[]) 0x39c5dde6
+withdraw() 0x3ccfd60b
+allInitialOwnersAssigned() 0x7ecedac9
+buyPunk(uint256) 0x8264fe98
+transferPunk(address,uint256) 0x8b72a2ec
+withdrawBidForPunk(uint256) 0x979bc638
+setInitialOwner(address,uint256) 0xa75a9049
+offerPunkForSaleToAddress(uint256,uint256,address) 0xbf31196f
+offerPunkForSale(uint256,uint256) 0xc44193c3
+getPunk(uint256) 0xc81d1d5b
+punkNoLongerForSale(uint256) 0xf6eeff1e
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[['withdrawBidForPunk(uint256)'], ['offerPunkForSaleToAddress(uint256,uint256,address)'], ['allInitialOwnersAssigned()'], ['punkNoLongerForSale(uint256)'], ['punkNoLongerForSale(uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[[0x979bc638],[0xbf31196f],[0x7ecedac9],[0xf6eeff1e],[0xf6eeff1e]]" --parallel-solving
+['myth', '-v', '2', 'analyze', './contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket', '--transaction-sequences', '[[0x979bc638],[0xbf31196f],[0x7ecedac9],[0xf6eeff1e],[0xf6eeff1e]]', '--parallel-solving']
+The analysis was completed successfully. No issues were detected.
+
+
+time used (seconds): 18.42996883392334
+
+
+
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[['acceptBidForPunk(uint256,uint256)'], ['offerPunkForSaleToAddress(uint256,uint256,address)'], ['buyPunk(uint256)'], ['punkNoLongerForSale(uint256)'], ['enterBidForPunk(uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[[0x23165b75],[0xbf31196f],[0x8264fe98],[0xf6eeff1e],[0x091dbfd2]]" --parallel-solving
+['myth', '-v', '2', 'analyze', './contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket', '--transaction-sequences', '[[0x23165b75],[0xbf31196f],[0x8264fe98],[0xf6eeff1e],[0x091dbfd2]]', '--parallel-solving']
+The analysis was completed successfully. No issues were detected.
+
+
+time used (seconds): 36.39073872566223
+
+
+
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[['enterBidForPunk(uint256)'], ['buyPunk(uint256)'], ['withdraw()'], ['getPunk(uint256)'], ['withdraw()'], ['offerPunkForSaleToAddress(uint256,uint256,address)']]" --parallel-solving
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[[0x091dbfd2],[0x8264fe98],[0x3ccfd60b],[0xc81d1d5b],[0x3ccfd60b],[0xbf31196f]]" --parallel-solving
+['myth', '-v', '2', 'analyze', './contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket', '--transaction-sequences', '[[0x091dbfd2],[0x8264fe98],[0x3ccfd60b],[0xc81d1d5b],[0x3ccfd60b],[0xbf31196f]]', '--parallel-solving']
+The analysis was completed successfully. No issues were detected.
+
+
+time used (seconds): 54.132572889328
+
+
+
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[['offerPunkForSaleToAddress(uint256,uint256,address)'], ['setInitialOwner(address,uint256)'], ['offerPunkForSaleToAddress(uint256,uint256,address)'], ['getPunk(uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[[0xbf31196f],[0xa75a9049],[0xbf31196f],[0xc81d1d5b]]" --parallel-solving
+['myth', '-v', '2', 'analyze', './contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket', '--transaction-sequences', '[[0xbf31196f],[0xa75a9049],[0xbf31196f],[0xc81d1d5b]]', '--parallel-solving']
+The analysis was completed successfully. No issues were detected.
+
+
+time used (seconds): 74.51492667198181
+
+
+
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[['setInitialOwner(address,uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[[0xa75a9049]]" --parallel-solving
+['myth', '-v', '2', 'analyze', './contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket', '--transaction-sequences', '[[0xa75a9049]]', '--parallel-solving']
+The analysis was completed successfully. No issues were detected.
+
+
+time used (seconds): 94.00653791427612
+
+
+
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[['withdraw()'], ['setInitialOwner(address,uint256)'], ['punkNoLongerForSale(uint256)'], ['enterBidForPunk(uint256)'], ['offerPunkForSale(uint256,uint256)'], ['getPunk(uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[[0x3ccfd60b],[0xa75a9049],[0xf6eeff1e],[0x091dbfd2],[0xc44193c3],[0xc81d1d5b]]" --parallel-solving
+['myth', '-v', '2', 'analyze', './contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket', '--transaction-sequences', '[[0x3ccfd60b],[0xa75a9049],[0xf6eeff1e],[0x091dbfd2],[0xc44193c3],[0xc81d1d5b]]', '--parallel-solving']
+The analysis was completed successfully. No issues were detected.
+
+
+time used (seconds): 111.62035393714905
+
+
+
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[['acceptBidForPunk(uint256,uint256)'], ['getPunk(uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[[0x23165b75],[0xc81d1d5b]]" --parallel-solving
+['myth', '-v', '2', 'analyze', './contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket', '--transaction-sequences', '[[0x23165b75],[0xc81d1d5b]]', '--parallel-solving']
+The analysis was completed successfully. No issues were detected.
+
+
+time used (seconds): 129.4519920349121
+
+
+
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[['setInitialOwner(address,uint256)'], ['buyPunk(uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[[0xa75a9049],[0x8264fe98]]" --parallel-solving
+['myth', '-v', '2', 'analyze', './contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket', '--transaction-sequences', '[[0xa75a9049],[0x8264fe98]]', '--parallel-solving']
+The analysis was completed successfully. No issues were detected.
+
+
+time used (seconds): 150.11260271072388
+
+
+
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[['allInitialOwnersAssigned()'], ['acceptBidForPunk(uint256,uint256)'], ['acceptBidForPunk(uint256,uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[[0x7ecedac9],[0x23165b75],[0x23165b75]]" --parallel-solving
+['myth', '-v', '2', 'analyze', './contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket', '--transaction-sequences', '[[0x7ecedac9],[0x23165b75],[0x23165b75]]', '--parallel-solving']
+The analysis was completed successfully. No issues were detected.
+
+
+time used (seconds): 169.3670358657837
+
+
+
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[['setInitialOwner(address,uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[[0xa75a9049]]" --parallel-solving
+['myth', '-v', '2', 'analyze', './contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket', '--transaction-sequences', '[[0xa75a9049]]', '--parallel-solving']
+The analysis was completed successfully. No issues were detected.
+
+
+time used (seconds): 188.25111389160156
+
+
+
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[['enterBidForPunk(uint256)'], ['offerPunkForSaleToAddress(uint256,uint256,address)'], ['setInitialOwners(address[],uint256[])']]" --parallel-solving
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[[0x091dbfd2],[0xbf31196f],[0x39c5dde6]]" --parallel-solving
+['myth', '-v', '2', 'analyze', './contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket', '--transaction-sequences', '[[0x091dbfd2],[0xbf31196f],[0x39c5dde6]]', '--parallel-solving']
+The analysis was completed successfully. No issues were detected.
+
+
+time used (seconds): 205.52804565429688
+
+
+
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[['offerPunkForSale(uint256,uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[[0xc44193c3]]" --parallel-solving
+['myth', '-v', '2', 'analyze', './contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket', '--transaction-sequences', '[[0xc44193c3]]', '--parallel-solving']
+The analysis was completed successfully. No issues were detected.
+
+
+time used (seconds): 224.06227564811707
+
+
+
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[['buyPunk(uint256)'], ['withdrawBidForPunk(uint256)'], ['offerPunkForSaleToAddress(uint256,uint256,address)'], ['withdrawBidForPunk(uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[[0x8264fe98],[0x979bc638],[0xbf31196f],[0x979bc638]]" --parallel-solving
+['myth', '-v', '2', 'analyze', './contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket', '--transaction-sequences', '[[0x8264fe98],[0x979bc638],[0xbf31196f],[0x979bc638]]', '--parallel-solving']
+The analysis was completed successfully. No issues were detected.
+
+
+time used (seconds): 241.7773597240448
+
+
+
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[['buyPunk(uint256)'], ['acceptBidForPunk(uint256,uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[[0x8264fe98],[0x23165b75]]" --parallel-solving
+['myth', '-v', '2', 'analyze', './contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket', '--transaction-sequences', '[[0x8264fe98],[0x23165b75]]', '--parallel-solving']
+The analysis was completed successfully. No issues were detected.
+
+
+time used (seconds): 259.42387771606445
+
+
+
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[['getPunk(uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[[0xc81d1d5b]]" --parallel-solving
+['myth', '-v', '2', 'analyze', './contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket', '--transaction-sequences', '[[0xc81d1d5b]]', '--parallel-solving']
+The analysis was completed successfully. No issues were detected.
+
+
+time used (seconds): 277.87620091438293
+
+
+
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[['punkNoLongerForSale(uint256)'], ['setInitialOwners(address[],uint256[])'], ['offerPunkForSaleToAddress(uint256,uint256,address)'], ['withdraw()'], ['setInitialOwner(address,uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[[0xf6eeff1e],[0x39c5dde6],[0xbf31196f],[0x3ccfd60b],[0xa75a9049]]" --parallel-solving
+['myth', '-v', '2', 'analyze', './contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket', '--transaction-sequences', '[[0xf6eeff1e],[0x39c5dde6],[0xbf31196f],[0x3ccfd60b],[0xa75a9049]]', '--parallel-solving']
+The analysis was completed successfully. No issues were detected.
+
+
+time used (seconds): 296.92857599258423
+
+
+
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[['getPunk(uint256)'], ['withdraw()'], ['withdrawBidForPunk(uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[[0xc81d1d5b],[0x3ccfd60b],[0x979bc638]]" --parallel-solving
+['myth', '-v', '2', 'analyze', './contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket', '--transaction-sequences', '[[0xc81d1d5b],[0x3ccfd60b],[0x979bc638]]', '--parallel-solving']
+The analysis was completed successfully. No issues were detected.
+
+
+time used (seconds): 315.80426478385925
+
+
+
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[['offerPunkForSaleToAddress(uint256,uint256,address)'], ['allInitialOwnersAssigned()'], ['allInitialOwnersAssigned()']]" --parallel-solving
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[[0xbf31196f],[0x7ecedac9],[0x7ecedac9]]" --parallel-solving
+['myth', '-v', '2', 'analyze', './contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket', '--transaction-sequences', '[[0xbf31196f],[0x7ecedac9],[0x7ecedac9]]', '--parallel-solving']
+The analysis was completed successfully. No issues were detected.
+
+
+time used (seconds): 334.3553469181061
+
+
+
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[['acceptBidForPunk(uint256,uint256)'], ['setInitialOwners(address[],uint256[])'], ['acceptBidForPunk(uint256,uint256)'], ['acceptBidForPunk(uint256,uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[[0x23165b75],[0x39c5dde6],[0x23165b75],[0x23165b75]]" --parallel-solving
+['myth', '-v', '2', 'analyze', './contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket', '--transaction-sequences', '[[0x23165b75],[0x39c5dde6],[0x23165b75],[0x23165b75]]', '--parallel-solving']
+The analysis was completed successfully. No issues were detected.
+
+
+time used (seconds): 352.35818886756897
+
+
+
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[['allInitialOwnersAssigned()'], ['punkNoLongerForSale(uint256)'], ['setInitialOwner(address,uint256)'], ['enterBidForPunk(uint256)'], ['setInitialOwners(address[],uint256[])'], ['withdraw()']]" --parallel-solving
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[[0x7ecedac9],[0xf6eeff1e],[0xa75a9049],[0x091dbfd2],[0x39c5dde6],[0x3ccfd60b]]" --parallel-solving
+['myth', '-v', '2', 'analyze', './contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket', '--transaction-sequences', '[[0x7ecedac9],[0xf6eeff1e],[0xa75a9049],[0x091dbfd2],[0x39c5dde6],[0x3ccfd60b]]', '--parallel-solving']
+The analysis was completed successfully. No issues were detected.
+
+
+time used (seconds): 370.9822268486023
+
+
+
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[['enterBidForPunk(uint256)'], ['buyPunk(uint256)'], ['offerPunkForSale(uint256,uint256)'], ['acceptBidForPunk(uint256,uint256)'], ['punkNoLongerForSale(uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[[0x091dbfd2],[0x8264fe98],[0xc44193c3],[0x23165b75],[0xf6eeff1e]]" --parallel-solving
+['myth', '-v', '2', 'analyze', './contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket', '--transaction-sequences', '[[0x091dbfd2],[0x8264fe98],[0xc44193c3],[0x23165b75],[0xf6eeff1e]]', '--parallel-solving']
+The analysis was completed successfully. No issues were detected.
+
+
+time used (seconds): 388.8102288246155
+
+
+
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[['punkNoLongerForSale(uint256)'], ['acceptBidForPunk(uint256,uint256)'], ['withdraw()'], ['setInitialOwners(address[],uint256[])']]" --parallel-solving
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[[0xf6eeff1e],[0x23165b75],[0x3ccfd60b],[0x39c5dde6]]" --parallel-solving
+['myth', '-v', '2', 'analyze', './contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket', '--transaction-sequences', '[[0xf6eeff1e],[0x23165b75],[0x3ccfd60b],[0x39c5dde6]]', '--parallel-solving']
+The analysis was completed successfully. No issues were detected.
+
+
+time used (seconds): 406.89282393455505
+
+
+
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[['withdraw()'], ['offerPunkForSaleToAddress(uint256,uint256,address)'], ['offerPunkForSaleToAddress(uint256,uint256,address)'], ['offerPunkForSale(uint256,uint256)'], ['setInitialOwner(address,uint256)'], ['offerPunkForSale(uint256,uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[[0x3ccfd60b],[0xbf31196f],[0xbf31196f],[0xc44193c3],[0xa75a9049],[0xc44193c3]]" --parallel-solving
+['myth', '-v', '2', 'analyze', './contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket', '--transaction-sequences', '[[0x3ccfd60b],[0xbf31196f],[0xbf31196f],[0xc44193c3],[0xa75a9049],[0xc44193c3]]', '--parallel-solving']
+The analysis was completed successfully. No issues were detected.
+
+
+time used (seconds): 423.9979178905487
+
+
+
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[['enterBidForPunk(uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[[0x091dbfd2]]" --parallel-solving
+['myth', '-v', '2', 'analyze', './contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket', '--transaction-sequences', '[[0x091dbfd2]]', '--parallel-solving']
+The analysis was completed successfully. No issues were detected.
+
+
+time used (seconds): 441.91883993148804
+
+
+
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[['enterBidForPunk(uint256)'], ['punkNoLongerForSale(uint256)'], ['buyPunk(uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[[0x091dbfd2],[0xf6eeff1e],[0x8264fe98]]" --parallel-solving
+['myth', '-v', '2', 'analyze', './contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket', '--transaction-sequences', '[[0x091dbfd2],[0xf6eeff1e],[0x8264fe98]]', '--parallel-solving']
+The analysis was completed successfully. No issues were detected.
+
+
+time used (seconds): 459.54121494293213
+
+
+
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[['buyPunk(uint256)'], ['setInitialOwner(address,uint256)'], ['allInitialOwnersAssigned()']]" --parallel-solving
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[[0x8264fe98],[0xa75a9049],[0x7ecedac9]]" --parallel-solving
+['myth', '-v', '2', 'analyze', './contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket', '--transaction-sequences', '[[0x8264fe98],[0xa75a9049],[0x7ecedac9]]', '--parallel-solving']
+The analysis was completed successfully. No issues were detected.
+
+
+time used (seconds): 477.67690086364746
+
+
+
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[['setInitialOwner(address,uint256)'], ['setInitialOwners(address[],uint256[])'], ['withdraw()'], ['punkNoLongerForSale(uint256)'], ['enterBidForPunk(uint256)'], ['buyPunk(uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket --transaction-sequences "[[0xa75a9049],[0x39c5dde6],[0x3ccfd60b],[0xf6eeff1e],[0x091dbfd2],[0x8264fe98]]" --parallel-solving
+['myth', '-v', '2', 'analyze', './contracts_buginjection/CryptoPunksMarket-4.sol:CryptoPunksMarket', '--transaction-sequences', '[[0xa75a9049],[0x39c5dde6],[0x3ccfd60b],[0xf6eeff1e],[0x091dbfd2],[0x8264fe98]]', '--parallel-solving']
+==== Exception State ====
+SWC ID: 110
+Severity: Medium
+Contract: CryptoPunksMarket
+Function name: setInitialOwners(address[],uint256[])
+PC address: 5148
+Estimated Gas Usage: 4628 - 12151
+An assertion violation was triggered.
+It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
+--------------------
+In file: ./contracts_buginjection/CryptoPunksMarket-4.sol:90
+
+for (uint i = 0; i < n; i++) {
+            setInitialOwner(addresses[i], indices[i]);
+        }
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x8, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: setInitialOwner(address,uint256), txdata: 0xa75a904900000000000000000000000020, value: 0x0
+Caller: [CREATOR], function: setInitialOwners(address[],uint256[]), txdata: 0x39c5dde6ee2b6dcff417c0f4cdefe6624ce7c0371f0000000000000000000000006ad200ff, value: 0x0
+
+
+
+time used (seconds): 4095.910301923752
+
+
+
+timeout!!! exceed 600 secons

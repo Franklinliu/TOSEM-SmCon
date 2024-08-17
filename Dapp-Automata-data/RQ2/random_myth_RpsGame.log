@@ -1,0 +1,3167 @@
+./contracts/RpsGame.sol:22:25: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (!assertion) throw;
+                        ^---^
+./contracts/RpsGame.sol:193:5: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+    function RpsGame() {
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts/RpsGame.sol:21:5: Warning: This declaration shadows a builtin symbol.
+    function assert(bool assertion) internal {
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts/RpsGame.sol:272:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Reveal(gameid, msg.sender, choice);
+        ^--------------------------------^
+./contracts/RpsGame.sol:306:16: Warning: "sha3" has been deprecated in favour of "keccak256"
+        return sha3(sender, choice, randomSecret);
+               ^--------------------------------^
+./contracts/RpsGame.sol:306:16: Warning: This function only accepts a single "bytes" argument. Please use "abi.encodePacked(...)" or a similar function to encode the data.
+        return sha3(sender, choice, randomSecret);
+               ^--------------------------------^
+./contracts/RpsGame.sol:193:5: Warning: No visibility specified. Defaulting to "public". 
+    function RpsGame() {
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts/RpsGame.sol:21:5: Warning: Function state mutability can be restricted to pure
+    function assert(bool assertion) internal {
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts/RpsGame.sol:305:5: Warning: Function state mutability can be restricted to pure
+    function getProof(address sender, uint8 choice, bytes32 randomSecret) public view returns (bytes32){
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts/RpsGame.sol:313:5: Warning: Function state mutability can be restricted to pure
+    function checkChoice(uint8 choice) public view returns (bool){
+    ^ (Relevant source part starts here and spans across multiple lines).
+{'mbt': False, 'random': True, 'contract_name': 'RpsGame', 'model_file': None, 'abi_file': None, 'contract_file': './contracts/RpsGame.sol'}
+solc ./contracts/RpsGame.sol --overwrite --bin --abi -o Dapp-Automata-data/RQ2/artifacts
+0
+close(uint256) 0x0aebeb4e
+setCEO(address) 0x27d7874c
+setCOO(address) 0x2ba73c15
+unpause() 0x3f4ba83a
+withdrawTip(uint256) 0x4811647c
+setCFO(address) 0x4e0a3379
+setNewAddress(address) 0x71587988
+pause() 0x8456cb59
+reveal(uint256,uint8,bytes32) 0x9a42f3aa
+joinGame(uint256,uint8) 0xca6649c5
+createGame(bytes32,address) 0xfe1f6a0b
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['createGame(bytes32,address)'], ['setCOO(address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0xfe1f6a0b],[0x2ba73c15]]" --parallel-solving
+Used 21.843573093414307 seconds
+coverage file: ./myth_code_coverage/9ff59b43-0126-42c9-8ea3-89087e84ffed.json
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: RpsGame
+Function name: createGame(bytes32,address)
+PC address: 7812
+Estimated Gas Usage: 58022 - 241250
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./contracts/RpsGame.sol:227
+
+expireTimeLimit + now
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
+
+
+
+overall time used (seconds): 31.77205729484558
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setCFO(address)'], ['withdrawTip(uint256)'], ['setNewAddress(address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x4e0a3379],[0x4811647c],[0x71587988]]" --parallel-solving
+Used 18.319823026657104 seconds
+coverage file: ./myth_code_coverage/27192578-d829-45ec-b04d-e779db49f6d6.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 53.16483998298645
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['createGame(bytes32,address)'], ['setCOO(address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0xfe1f6a0b],[0x2ba73c15]]" --parallel-solving
+Used 21.222384929656982 seconds
+coverage file: ./myth_code_coverage/b2734878-67a8-4f84-a0cd-8af7bd9f0718.json
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: RpsGame
+Function name: createGame(bytes32,address)
+PC address: 7812
+Estimated Gas Usage: 58022 - 241250
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./contracts/RpsGame.sol:227
+
+expireTimeLimit + now
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
+
+
+
+overall time used (seconds): 77.38899731636047
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setCFO(address)'], ['setNewAddress(address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x4e0a3379],[0x71587988]]" --parallel-solving
+Used 18.207897186279297 seconds
+coverage file: ./myth_code_coverage/048599cc-3a9d-4b8a-9266-bd3c3539e915.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 98.51209616661072
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['reveal(uint256,uint8,bytes32)'], ['createGame(bytes32,address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x9a42f3aa],[0xfe1f6a0b]]" --parallel-solving
+Used 17.888341903686523 seconds
+coverage file: ./myth_code_coverage/ac5bf1d6-a1d3-4077-94fa-06d76cbba7e9.json
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: reveal(uint256,uint8,bytes32)
+PC address: 6094
+Estimated Gas Usage: 2733 - 3819
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:264
+
+require(now < game.expireTime)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: reveal(uint256,uint8,bytes32), txdata: 0x9a42f3aa, value: 0x0
+
+
+
+overall time used (seconds): 119.26364612579346
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setCFO(address)'], ['unpause()'], ['reveal(uint256,uint8,bytes32)'], ['setCOO(address)'], ['pause()']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x4e0a3379],[0x3f4ba83a],[0x9a42f3aa],[0x2ba73c15],[0x8456cb59]]" --parallel-solving
+Used 17.36596393585205 seconds
+coverage file: ./myth_code_coverage/24550a93-0a3e-4556-9859-a24f3f2444ef.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 139.45554733276367
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['createGame(bytes32,address)'], ['setNewAddress(address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0xfe1f6a0b],[0x71587988]]" --parallel-solving
+Used 21.61860990524292 seconds
+coverage file: ./myth_code_coverage/7af5856a-5c15-4d19-af89-ec0bac49cd1b.json
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: RpsGame
+Function name: createGame(bytes32,address)
+PC address: 7812
+Estimated Gas Usage: 58022 - 241250
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./contracts/RpsGame.sol:227
+
+expireTimeLimit + now
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
+
+
+
+overall time used (seconds): 164.1710720062256
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setCEO(address)'], ['close(uint256)'], ['setCFO(address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x27d7874c],[0x0aebeb4e],[0x4e0a3379]]" --parallel-solving
+Used 33.34237098693848 seconds
+coverage file: ./myth_code_coverage/b3cdc2fb-ae58-47df-b68b-9c06ed960787.json
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 2816
+Estimated Gas Usage: 2007 - 2622
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:284
+
+now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: setCEO(address), txdata: 0x27d7874c01010101010101010101010101, value: 0x0
+Caller: [ATTACKER], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 2888
+Estimated Gas Usage: 2027 - 2642
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:284
+
+require(now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE))
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: setCEO(address), txdata: 0x27d7874c00000000000000000000000008, decoded_data: ('0x0800000000000000000000000000000000000000',), value: 0x0
+Caller: [ATTACKER], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Transaction Order Dependence ====
+SWC ID: 114
+Severity: Medium
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 3378
+Estimated Gas Usage: 25024 - 138794
+The value of the call is dependent on balance or storage write
+This can lead to race conditions. An attacker may be able to run a transaction after our transaction which can change the value of the call
+--------------------
+In file: ./contracts/RpsGame.sol:293
+
+game.dealer.send(game.dealerValue)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: setCEO(address), txdata: 0x27d7874c00000000000000000000000010, decoded_data: ('0x1000000000000000000000000000000000000000',), value: 0x0
+Caller: [ATTACKER], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Multiple Calls in a Single Transaction ====
+SWC ID: 113
+Severity: Low
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 3478
+Estimated Gas Usage: 25024 - 138794
+Multiple calls are executed in the same transaction.
+This call is executed following another call within the same transaction. It is possible that the call never gets executed if a prior call fails permanently. This might be caused intentionally by a malicious callee. If possible, refactor the code such that each transaction only executes one external call or make sure that all callees can be trusted (i.e. they’re part of your own codebase).
+--------------------
+In file: ./contracts/RpsGame.sol:293
+
+game.player.send(game.playerValue)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: setCEO(address), txdata: 0x27d7874c00000000000000000000000010, decoded_data: ('0x1000000000000000000000000000000000000000',), value: 0x0
+Caller: [ATTACKER], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Transaction Order Dependence ====
+SWC ID: 114
+Severity: Medium
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 3478
+Estimated Gas Usage: 25024 - 138794
+The value of the call is dependent on balance or storage write
+This can lead to race conditions. An attacker may be able to run a transaction after our transaction which can change the value of the call
+--------------------
+In file: ./contracts/RpsGame.sol:293
+
+game.player.send(game.playerValue)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: setCEO(address), txdata: 0x27d7874c00000000000000000000000010, decoded_data: ('0x1000000000000000000000000000000000000000',), value: 0x0
+Caller: [ATTACKER], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+
+
+overall time used (seconds): 200.80907130241394
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['reveal(uint256,uint8,bytes32)'], ['pause()'], ['close(uint256)'], ['close(uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x9a42f3aa],[0x8456cb59],[0x0aebeb4e],[0x0aebeb4e]]" --parallel-solving
+Used 18.352916955947876 seconds
+coverage file: ./myth_code_coverage/2c798292-b893-4566-885d-0a1c8f17ba12.json
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: reveal(uint256,uint8,bytes32)
+PC address: 6094
+Estimated Gas Usage: 2733 - 3819
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:264
+
+require(now < game.expireTime)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: reveal(uint256,uint8,bytes32), txdata: 0x9a42f3aa, value: 0x0
+
+
+
+overall time used (seconds): 222.4068901538849
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setCFO(address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x4e0a3379]]" --parallel-solving
+Used 16.509368181228638 seconds
+coverage file: ./myth_code_coverage/0b5b499c-876f-4779-ad0b-3dbfc98c7bfb.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 241.78562307357788
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['pause()'], ['setCFO(address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x8456cb59],[0x4e0a3379]]" --parallel-solving
+Used 17.885303020477295 seconds
+coverage file: ./myth_code_coverage/a86f507b-1c1b-43de-a105-9abebf842431.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 262.5753390789032
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['unpause()']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x3f4ba83a]]" --parallel-solving
+Used 16.75840926170349 seconds
+coverage file: ./myth_code_coverage/75f1bf0b-b691-43cb-908c-04608bbdf4b7.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 282.0730481147766
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['createGame(bytes32,address)'], ['reveal(uint256,uint8,bytes32)'], ['close(uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0xfe1f6a0b],[0x9a42f3aa],[0x0aebeb4e]]" --parallel-solving
+Used 48.15519595146179 seconds
+coverage file: ./myth_code_coverage/55517e45-c307-45bc-99f9-5f6e6b81ce1a.json
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: reveal(uint256,uint8,bytes32)
+PC address: 6094
+Estimated Gas Usage: 2733 - 3819
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:264
+
+require(now < game.expireTime)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x1, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [ATTACKER], function: createGame(bytes32,address), txdata: 0xfe1f6a0b20, value: 0x0
+Caller: [SOMEGUY], function: reveal(uint256,uint8,bytes32), txdata: 0x9a42f3aa, value: 0x0
+
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: RpsGame
+Function name: createGame(bytes32,address)
+PC address: 7812
+Estimated Gas Usage: 58022 - 241250
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./contracts/RpsGame.sol:227
+
+expireTimeLimit + now
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
+
+
+
+overall time used (seconds): 333.327867269516
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setNewAddress(address)'], ['setNewAddress(address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x71587988],[0x71587988]]" --parallel-solving
+Used 16.463266849517822 seconds
+coverage file: ./myth_code_coverage/b20375fa-e999-4d10-bf1f-ac7265f4861f.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 352.7290840148926
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['pause()'], ['joinGame(uint256,uint8)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x8456cb59],[0xca6649c5]]" --parallel-solving
+Used 18.862952947616577 seconds
+coverage file: ./myth_code_coverage/ba3396b9-7bc3-4006-9fa2-27ebd874f2bd.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 374.4996440410614
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setCEO(address)'], ['withdrawTip(uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x27d7874c],[0x4811647c]]" --parallel-solving
+Used 18.205533981323242 seconds
+coverage file: ./myth_code_coverage/c8679f47-b02b-4047-aa4f-7aa2c6bbb95a.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 395.7441861629486
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['pause()'], ['withdrawTip(uint256)'], ['close(uint256)'], ['unpause()'], ['joinGame(uint256,uint8)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x8456cb59],[0x4811647c],[0x0aebeb4e],[0x3f4ba83a],[0xca6649c5]]" --parallel-solving
+Used 18.583486080169678 seconds
+coverage file: ./myth_code_coverage/85161af2-55bc-4fda-be07-45e056887700.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 417.2986419200897
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setNewAddress(address)'], ['withdrawTip(uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x71587988],[0x4811647c]]" --parallel-solving
+Used 16.56467318534851 seconds
+coverage file: ./myth_code_coverage/0d565637-ac1a-4408-a32a-4ccebf39d4f5.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 436.8437693119049
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setCEO(address)'], ['joinGame(uint256,uint8)'], ['pause()']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x27d7874c],[0xca6649c5],[0x8456cb59]]" --parallel-solving
+Used 19.670201778411865 seconds
+coverage file: ./myth_code_coverage/3cde74f6-6162-4431-8247-9fc5eaf32da3.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 459.60081219673157
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setCEO(address)'], ['unpause()'], ['unpause()'], ['pause()'], ['setCEO(address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x27d7874c],[0x3f4ba83a],[0x3f4ba83a],[0x8456cb59],[0x27d7874c]]" --parallel-solving
+Used 17.466575145721436 seconds
+coverage file: ./myth_code_coverage/df749c7f-6915-4a44-a0cf-b1cff8aafeed.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 480.2503230571747
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['reveal(uint256,uint8,bytes32)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x9a42f3aa]]" --parallel-solving
+Used 18.374913930892944 seconds
+coverage file: ./myth_code_coverage/798f151e-f07b-48bb-8dfd-43132d26bbad.json
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: reveal(uint256,uint8,bytes32)
+PC address: 6094
+Estimated Gas Usage: 2733 - 3819
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:264
+
+require(now < game.expireTime)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: reveal(uint256,uint8,bytes32), txdata: 0x9a42f3aa, value: 0x0
+
+
+
+overall time used (seconds): 501.5631802082062
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['joinGame(uint256,uint8)'], ['unpause()']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0xca6649c5],[0x3f4ba83a]]" --parallel-solving
+Used 17.862995386123657 seconds
+coverage file: ./myth_code_coverage/4c41efab-71a0-4672-a555-c684d8163d88.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 522.5830421447754
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['unpause()'], ['createGame(bytes32,address)'], ['createGame(bytes32,address)'], ['withdrawTip(uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x3f4ba83a],[0xfe1f6a0b],[0xfe1f6a0b],[0x4811647c]]" --parallel-solving
+Used 16.35180401802063 seconds
+coverage file: ./myth_code_coverage/9639820d-a003-4211-b1fe-c5b9d90377b1.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 541.7760322093964
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['createGame(bytes32,address)'], ['close(uint256)'], ['setCOO(address)'], ['pause()']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0xfe1f6a0b],[0x0aebeb4e],[0x2ba73c15],[0x8456cb59]]" --parallel-solving
+Process killed due to timeout!
+Process timed out and was killed.
+overall time used (seconds): 661.8199081420898
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setCFO(address)'], ['setCEO(address)'], ['createGame(bytes32,address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x4e0a3379],[0x27d7874c],[0xfe1f6a0b]]" --parallel-solving
+Used 22.60040807723999 seconds
+coverage file: ./myth_code_coverage/46499e0d-a0b0-4f33-9448-862a60baaf71.json
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: RpsGame
+Function name: createGame(bytes32,address)
+PC address: 7812
+Estimated Gas Usage: 58022 - 241250
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./contracts/RpsGame.sol:227
+
+expireTimeLimit + now
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: setCFO(address), txdata: 0x4e0a337901010101010101010101010101, value: 0x0
+Caller: [CREATOR], function: setCEO(address), txdata: 0x27d7874c01010101010101010101010101, value: 0x0
+Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
+
+
+
+overall time used (seconds): 687.8309361934662
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['reveal(uint256,uint8,bytes32)'], ['reveal(uint256,uint8,bytes32)'], ['joinGame(uint256,uint8)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x9a42f3aa],[0x9a42f3aa],[0xca6649c5]]" --parallel-solving
+Used 18.245316743850708 seconds
+coverage file: ./myth_code_coverage/53d4d758-d640-4a64-be39-62027e50c508.json
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: reveal(uint256,uint8,bytes32)
+PC address: 6094
+Estimated Gas Usage: 2733 - 3819
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:264
+
+require(now < game.expireTime)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: reveal(uint256,uint8,bytes32), txdata: 0x9a42f3aa, value: 0x0
+
+
+
+overall time used (seconds): 708.9944231510162
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['close(uint256)'], ['reveal(uint256,uint8,bytes32)'], ['reveal(uint256,uint8,bytes32)'], ['joinGame(uint256,uint8)'], ['pause()']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x0aebeb4e],[0x9a42f3aa],[0x9a42f3aa],[0xca6649c5],[0x8456cb59]]" --parallel-solving
+Used 30.760211944580078 seconds
+coverage file: ./myth_code_coverage/17b1d29c-575e-4a83-9498-1805082e9585.json
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 2816
+Estimated Gas Usage: 2007 - 2622
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:284
+
+now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 2888
+Estimated Gas Usage: 2027 - 2642
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:284
+
+require(now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE))
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Transaction Order Dependence ====
+SWC ID: 114
+Severity: Medium
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 3378
+Estimated Gas Usage: 25024 - 138794
+The value of the call is dependent on balance or storage write
+This can lead to race conditions. An attacker may be able to run a transaction after our transaction which can change the value of the call
+--------------------
+In file: ./contracts/RpsGame.sol:293
+
+game.dealer.send(game.dealerValue)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [ATTACKER], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Multiple Calls in a Single Transaction ====
+SWC ID: 113
+Severity: Low
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 3478
+Estimated Gas Usage: 25024 - 138794
+Multiple calls are executed in the same transaction.
+This call is executed following another call within the same transaction. It is possible that the call never gets executed if a prior call fails permanently. This might be caused intentionally by a malicious callee. If possible, refactor the code such that each transaction only executes one external call or make sure that all callees can be trusted (i.e. they’re part of your own codebase).
+--------------------
+In file: ./contracts/RpsGame.sol:293
+
+game.player.send(game.playerValue)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Transaction Order Dependence ====
+SWC ID: 114
+Severity: Medium
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 3478
+Estimated Gas Usage: 25024 - 138794
+The value of the call is dependent on balance or storage write
+This can lead to race conditions. An attacker may be able to run a transaction after our transaction which can change the value of the call
+--------------------
+In file: ./contracts/RpsGame.sol:293
+
+game.player.send(game.playerValue)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [ATTACKER], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: reveal(uint256,uint8,bytes32)
+PC address: 6094
+Estimated Gas Usage: 2733 - 3819
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:264
+
+require(now < game.expireTime)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+Caller: [ATTACKER], function: reveal(uint256,uint8,bytes32), txdata: 0x9a42f3aa02, value: 0x0
+
+
+
+overall time used (seconds): 742.865287065506
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setCEO(address)'], ['setCEO(address)'], ['createGame(bytes32,address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x27d7874c],[0x27d7874c],[0xfe1f6a0b]]" --parallel-solving
+Used 22.54743981361389 seconds
+coverage file: ./myth_code_coverage/e0bced2c-41cc-41cb-976c-59e2b064998b.json
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: RpsGame
+Function name: createGame(bytes32,address)
+PC address: 7812
+Estimated Gas Usage: 58022 - 241250
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./contracts/RpsGame.sol:227
+
+expireTimeLimit + now
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: setCEO(address), txdata: 0x27d7874cadadadadadadadadadadadaddeadbeefdeadbeefdeadbeefdeadbeefdeadbeef, value: 0x0
+Caller: [ATTACKER], function: setCEO(address), txdata: 0x27d7874c01010101010101010101010101, value: 0x0
+Caller: [ATTACKER], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
+
+
+
+overall time used (seconds): 768.5215301513672
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setNewAddress(address)'], ['setNewAddress(address)'], ['withdrawTip(uint256)'], ['close(uint256)'], ['unpause()']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x71587988],[0x71587988],[0x4811647c],[0x0aebeb4e],[0x3f4ba83a]]" --parallel-solving
+Used 17.450129747390747 seconds
+coverage file: ./myth_code_coverage/149276d3-be1b-400f-8eea-89b37ad4a846.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 788.7951760292053
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setCFO(address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x4e0a3379]]" --parallel-solving
+Used 16.571068286895752 seconds
+coverage file: ./myth_code_coverage/b5c48d9c-d46d-4c5d-9e45-228c1b2db236.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 808.2700333595276
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setNewAddress(address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x71587988]]" --parallel-solving
+Used 16.568197011947632 seconds
+coverage file: ./myth_code_coverage/777cfbf6-da20-4c40-af49-5669f2f35816.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 827.6241250038147
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['joinGame(uint256,uint8)'], ['setNewAddress(address)'], ['withdrawTip(uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0xca6649c5],[0x71587988],[0x4811647c]]" --parallel-solving
+Used 17.773683071136475 seconds
+coverage file: ./myth_code_coverage/7ec44827-284e-4d5a-a3d1-d5a3fe70b5b7.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 848.277467250824
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['unpause()'], ['joinGame(uint256,uint8)'], ['pause()'], ['createGame(bytes32,address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x3f4ba83a],[0xca6649c5],[0x8456cb59],[0xfe1f6a0b]]" --parallel-solving
+Used 16.09392213821411 seconds
+coverage file: ./myth_code_coverage/57042905-babb-44ed-b1ae-f0220488da84.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 867.144522190094
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['close(uint256)'], ['createGame(bytes32,address)'], ['setNewAddress(address)'], ['setCEO(address)'], ['joinGame(uint256,uint8)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x0aebeb4e],[0xfe1f6a0b],[0x71587988],[0x27d7874c],[0xca6649c5]]" --parallel-solving
+Used 51.773547887802124 seconds
+coverage file: ./myth_code_coverage/86768ee7-6871-4e51-ae4b-0cca8df2c1af.json
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 2816
+Estimated Gas Usage: 2007 - 2622
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:284
+
+now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 2888
+Estimated Gas Usage: 2027 - 2642
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:284
+
+require(now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE))
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Transaction Order Dependence ====
+SWC ID: 114
+Severity: Medium
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 3378
+Estimated Gas Usage: 25024 - 138794
+The value of the call is dependent on balance or storage write
+This can lead to race conditions. An attacker may be able to run a transaction after our transaction which can change the value of the call
+--------------------
+In file: ./contracts/RpsGame.sol:293
+
+game.dealer.send(game.dealerValue)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [ATTACKER], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Multiple Calls in a Single Transaction ====
+SWC ID: 113
+Severity: Low
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 3478
+Estimated Gas Usage: 25024 - 138794
+Multiple calls are executed in the same transaction.
+This call is executed following another call within the same transaction. It is possible that the call never gets executed if a prior call fails permanently. This might be caused intentionally by a malicious callee. If possible, refactor the code such that each transaction only executes one external call or make sure that all callees can be trusted (i.e. they’re part of your own codebase).
+--------------------
+In file: ./contracts/RpsGame.sol:293
+
+game.player.send(game.playerValue)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Transaction Order Dependence ====
+SWC ID: 114
+Severity: Medium
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 3478
+Estimated Gas Usage: 25024 - 138794
+The value of the call is dependent on balance or storage write
+This can lead to race conditions. An attacker may be able to run a transaction after our transaction which can change the value of the call
+--------------------
+In file: ./contracts/RpsGame.sol:293
+
+game.player.send(game.playerValue)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [ATTACKER], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: RpsGame
+Function name: createGame(bytes32,address)
+PC address: 7812
+Estimated Gas Usage: 58022 - 241250
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./contracts/RpsGame.sol:227
+
+expireTimeLimit + now
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x1, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [ATTACKER], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+Caller: [ATTACKER], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
+
+
+
+overall time used (seconds): 922.1981902122498
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['joinGame(uint256,uint8)'], ['close(uint256)'], ['setNewAddress(address)'], ['pause()']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0xca6649c5],[0x0aebeb4e],[0x71587988],[0x8456cb59]]" --parallel-solving
+Used 18.367077827453613 seconds
+coverage file: ./myth_code_coverage/c537f14d-de5f-43b3-a22e-1fa319bfeecd.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 943.7269539833069
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['reveal(uint256,uint8,bytes32)'], ['withdrawTip(uint256)'], ['createGame(bytes32,address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x9a42f3aa],[0x4811647c],[0xfe1f6a0b]]" --parallel-solving
+Used 17.949694395065308 seconds
+coverage file: ./myth_code_coverage/570e5d21-2a94-4cc4-a015-5b1154300697.json
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: reveal(uint256,uint8,bytes32)
+PC address: 6094
+Estimated Gas Usage: 2733 - 3819
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:264
+
+require(now < game.expireTime)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: reveal(uint256,uint8,bytes32), txdata: 0x9a42f3aa, value: 0x0
+
+
+
+overall time used (seconds): 964.6208431720734
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['close(uint256)'], ['reveal(uint256,uint8,bytes32)'], ['pause()']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x0aebeb4e],[0x9a42f3aa],[0x8456cb59]]" --parallel-solving
+Used 33.2775399684906 seconds
+coverage file: ./myth_code_coverage/77aea81f-0ecb-40a8-a6e0-f4c743694b7e.json
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 2816
+Estimated Gas Usage: 2007 - 2622
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:284
+
+now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 2888
+Estimated Gas Usage: 2027 - 2642
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:284
+
+require(now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE))
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Transaction Order Dependence ====
+SWC ID: 114
+Severity: Medium
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 3378
+Estimated Gas Usage: 25024 - 138794
+The value of the call is dependent on balance or storage write
+This can lead to race conditions. An attacker may be able to run a transaction after our transaction which can change the value of the call
+--------------------
+In file: ./contracts/RpsGame.sol:293
+
+game.dealer.send(game.dealerValue)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [ATTACKER], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Multiple Calls in a Single Transaction ====
+SWC ID: 113
+Severity: Low
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 3478
+Estimated Gas Usage: 25024 - 138794
+Multiple calls are executed in the same transaction.
+This call is executed following another call within the same transaction. It is possible that the call never gets executed if a prior call fails permanently. This might be caused intentionally by a malicious callee. If possible, refactor the code such that each transaction only executes one external call or make sure that all callees can be trusted (i.e. they’re part of your own codebase).
+--------------------
+In file: ./contracts/RpsGame.sol:293
+
+game.player.send(game.playerValue)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Transaction Order Dependence ====
+SWC ID: 114
+Severity: Medium
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 3478
+Estimated Gas Usage: 25024 - 138794
+The value of the call is dependent on balance or storage write
+This can lead to race conditions. An attacker may be able to run a transaction after our transaction which can change the value of the call
+--------------------
+In file: ./contracts/RpsGame.sol:293
+
+game.player.send(game.playerValue)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [ATTACKER], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: reveal(uint256,uint8,bytes32)
+PC address: 6094
+Estimated Gas Usage: 2733 - 3819
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:264
+
+require(now < game.expireTime)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+Caller: [CREATOR], function: reveal(uint256,uint8,bytes32), txdata: 0x9a42f3aa08, value: 0x0
+
+
+
+overall time used (seconds): 1001.045380115509
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['close(uint256)'], ['setCOO(address)'], ['setCEO(address)'], ['reveal(uint256,uint8,bytes32)'], ['createGame(bytes32,address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x0aebeb4e],[0x2ba73c15],[0x27d7874c],[0x9a42f3aa],[0xfe1f6a0b]]" --parallel-solving
+Used 41.8679780960083 seconds
+coverage file: ./myth_code_coverage/de549a6a-ff71-44b7-854e-0df66d6d2712.json
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 2816
+Estimated Gas Usage: 2007 - 2622
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:284
+
+now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 2888
+Estimated Gas Usage: 2027 - 2642
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:284
+
+require(now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE))
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Transaction Order Dependence ====
+SWC ID: 114
+Severity: Medium
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 3378
+Estimated Gas Usage: 25024 - 138794
+The value of the call is dependent on balance or storage write
+This can lead to race conditions. An attacker may be able to run a transaction after our transaction which can change the value of the call
+--------------------
+In file: ./contracts/RpsGame.sol:293
+
+game.dealer.send(game.dealerValue)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [ATTACKER], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Multiple Calls in a Single Transaction ====
+SWC ID: 113
+Severity: Low
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 3478
+Estimated Gas Usage: 25024 - 138794
+Multiple calls are executed in the same transaction.
+This call is executed following another call within the same transaction. It is possible that the call never gets executed if a prior call fails permanently. This might be caused intentionally by a malicious callee. If possible, refactor the code such that each transaction only executes one external call or make sure that all callees can be trusted (i.e. they’re part of your own codebase).
+--------------------
+In file: ./contracts/RpsGame.sol:293
+
+game.player.send(game.playerValue)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Transaction Order Dependence ====
+SWC ID: 114
+Severity: Medium
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 3478
+Estimated Gas Usage: 25024 - 138794
+The value of the call is dependent on balance or storage write
+This can lead to race conditions. An attacker may be able to run a transaction after our transaction which can change the value of the call
+--------------------
+In file: ./contracts/RpsGame.sol:293
+
+game.player.send(game.playerValue)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [ATTACKER], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: reveal(uint256,uint8,bytes32)
+PC address: 6094
+Estimated Gas Usage: 2733 - 3819
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:264
+
+require(now < game.expireTime)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+Caller: [CREATOR], function: setCOO(address), txdata: 0x2ba73c1566666666666666666666666680, value: 0x0
+Caller: [CREATOR], function: setCEO(address), txdata: 0x27d7874cfefefefefefefefefefefefe40, value: 0x0
+Caller: [CREATOR], function: reveal(uint256,uint8,bytes32), txdata: 0x9a42f3aa01, value: 0x0
+
+
+
+overall time used (seconds): 1046.396369934082
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['pause()'], ['joinGame(uint256,uint8)'], ['withdrawTip(uint256)'], ['reveal(uint256,uint8,bytes32)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x8456cb59],[0xca6649c5],[0x4811647c],[0x9a42f3aa]]" --parallel-solving
+Used 19.336493015289307 seconds
+coverage file: ./myth_code_coverage/38d08c82-06e3-43a2-9c1c-102906df5c14.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1068.911101102829
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setCEO(address)'], ['createGame(bytes32,address)'], ['withdrawTip(uint256)'], ['setCOO(address)'], ['setCFO(address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x27d7874c],[0xfe1f6a0b],[0x4811647c],[0x2ba73c15],[0x4e0a3379]]" --parallel-solving
+Used 23.105007886886597 seconds
+coverage file: ./myth_code_coverage/c8228437-77a6-48d9-9f07-4758996a6235.json
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: RpsGame
+Function name: createGame(bytes32,address)
+PC address: 7812
+Estimated Gas Usage: 58022 - 241250
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./contracts/RpsGame.sol:227
+
+expireTimeLimit + now
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: setCEO(address), txdata: 0x27d7874c01010101010101010101010101, value: 0x0
+Caller: [ATTACKER], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
+
+
+
+overall time used (seconds): 1095.0548660755157
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setCEO(address)'], ['setCFO(address)'], ['joinGame(uint256,uint8)'], ['close(uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x27d7874c],[0x4e0a3379],[0xca6649c5],[0x0aebeb4e]]" --parallel-solving
+Used 21.33552575111389 seconds
+coverage file: ./myth_code_coverage/07a4d2c9-b9a3-490c-8042-c0f80ad4de5e.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1119.4263010025024
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['close(uint256)'], ['pause()'], ['joinGame(uint256,uint8)'], ['unpause()']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x0aebeb4e],[0x8456cb59],[0xca6649c5],[0x3f4ba83a]]" --parallel-solving
+Used 30.736019134521484 seconds
+coverage file: ./myth_code_coverage/45bf8812-6d34-45bb-ad7b-764487a5bf15.json
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 2816
+Estimated Gas Usage: 2007 - 2622
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:284
+
+now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 2888
+Estimated Gas Usage: 2027 - 2642
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:284
+
+require(now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE))
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Transaction Order Dependence ====
+SWC ID: 114
+Severity: Medium
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 3378
+Estimated Gas Usage: 25024 - 138794
+The value of the call is dependent on balance or storage write
+This can lead to race conditions. An attacker may be able to run a transaction after our transaction which can change the value of the call
+--------------------
+In file: ./contracts/RpsGame.sol:293
+
+game.dealer.send(game.dealerValue)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [ATTACKER], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Multiple Calls in a Single Transaction ====
+SWC ID: 113
+Severity: Low
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 3478
+Estimated Gas Usage: 25024 - 138794
+Multiple calls are executed in the same transaction.
+This call is executed following another call within the same transaction. It is possible that the call never gets executed if a prior call fails permanently. This might be caused intentionally by a malicious callee. If possible, refactor the code such that each transaction only executes one external call or make sure that all callees can be trusted (i.e. they’re part of your own codebase).
+--------------------
+In file: ./contracts/RpsGame.sol:293
+
+game.player.send(game.playerValue)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Transaction Order Dependence ====
+SWC ID: 114
+Severity: Medium
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 3478
+Estimated Gas Usage: 25024 - 138794
+The value of the call is dependent on balance or storage write
+This can lead to race conditions. An attacker may be able to run a transaction after our transaction which can change the value of the call
+--------------------
+In file: ./contracts/RpsGame.sol:293
+
+game.player.send(game.playerValue)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [ATTACKER], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+
+
+overall time used (seconds): 1153.2451372146606
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['withdrawTip(uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x4811647c]]" --parallel-solving
+Used 16.400010108947754 seconds
+coverage file: ./myth_code_coverage/76f53025-513b-4bbc-a01b-a2b6433fcd7e.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1172.532504081726
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setCOO(address)'], ['setNewAddress(address)'], ['reveal(uint256,uint8,bytes32)'], ['pause()'], ['createGame(bytes32,address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x2ba73c15],[0x71587988],[0x9a42f3aa],[0x8456cb59],[0xfe1f6a0b]]" --parallel-solving
+Used 17.85040807723999 seconds
+coverage file: ./myth_code_coverage/9f78563b-8fd2-440a-ac98-ed2b8b46a1e9.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1193.1988351345062
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setNewAddress(address)'], ['reveal(uint256,uint8,bytes32)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x71587988],[0x9a42f3aa]]" --parallel-solving
+Used 16.669186115264893 seconds
+coverage file: ./myth_code_coverage/5417b861-73d1-4d96-bd87-fbe3c42aa315.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1212.5503642559052
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['close(uint256)'], ['setNewAddress(address)'], ['close(uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x0aebeb4e],[0x71587988],[0x0aebeb4e]]" --parallel-solving
+Used 26.76681613922119 seconds
+coverage file: ./myth_code_coverage/20c67565-a0c8-404f-ab74-a34eed74c6c9.json
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 2816
+Estimated Gas Usage: 2007 - 2622
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:284
+
+now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 2888
+Estimated Gas Usage: 2027 - 2642
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:284
+
+require(now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE))
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Transaction Order Dependence ====
+SWC ID: 114
+Severity: Medium
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 3378
+Estimated Gas Usage: 25024 - 138794
+The value of the call is dependent on balance or storage write
+This can lead to race conditions. An attacker may be able to run a transaction after our transaction which can change the value of the call
+--------------------
+In file: ./contracts/RpsGame.sol:293
+
+game.dealer.send(game.dealerValue)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [ATTACKER], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Multiple Calls in a Single Transaction ====
+SWC ID: 113
+Severity: Low
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 3478
+Estimated Gas Usage: 25024 - 138794
+Multiple calls are executed in the same transaction.
+This call is executed following another call within the same transaction. It is possible that the call never gets executed if a prior call fails permanently. This might be caused intentionally by a malicious callee. If possible, refactor the code such that each transaction only executes one external call or make sure that all callees can be trusted (i.e. they’re part of your own codebase).
+--------------------
+In file: ./contracts/RpsGame.sol:293
+
+game.player.send(game.playerValue)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Transaction Order Dependence ====
+SWC ID: 114
+Severity: Medium
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 3478
+Estimated Gas Usage: 25024 - 138794
+The value of the call is dependent on balance or storage write
+This can lead to race conditions. An attacker may be able to run a transaction after our transaction which can change the value of the call
+--------------------
+In file: ./contracts/RpsGame.sol:293
+
+game.player.send(game.playerValue)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [ATTACKER], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+
+
+overall time used (seconds): 1242.2598462104797
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['withdrawTip(uint256)'], ['setCEO(address)'], ['createGame(bytes32,address)'], ['unpause()']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x4811647c],[0x27d7874c],[0xfe1f6a0b],[0x3f4ba83a]]" --parallel-solving
+Used 16.329022884368896 seconds
+coverage file: ./myth_code_coverage/0de2f168-4204-453a-adb7-7582a27aab51.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1261.393800020218
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['joinGame(uint256,uint8)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0xca6649c5]]" --parallel-solving
+Used 17.59186816215515 seconds
+coverage file: ./myth_code_coverage/c6e11bfb-cc26-4d63-922e-da3693b38902.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1281.7532482147217
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['unpause()'], ['pause()']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x3f4ba83a],[0x8456cb59]]" --parallel-solving
+Used 15.941121101379395 seconds
+coverage file: ./myth_code_coverage/3d357a4d-934e-4f8c-8f66-c209df9ceb81.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1300.39746427536
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setCEO(address)'], ['reveal(uint256,uint8,bytes32)'], ['joinGame(uint256,uint8)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x27d7874c],[0x9a42f3aa],[0xca6649c5]]" --parallel-solving
+Used 19.593785047531128 seconds
+coverage file: ./myth_code_coverage/475a7838-804b-42c3-b160-0d6442359c0f.json
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: reveal(uint256,uint8,bytes32)
+PC address: 6094
+Estimated Gas Usage: 2733 - 3819
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:264
+
+require(now < game.expireTime)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: setCEO(address), txdata: 0x27d7874c01010101010101010101010101, value: 0x0
+Caller: [ATTACKER], function: reveal(uint256,uint8,bytes32), txdata: 0x9a42f3aa, value: 0x0
+
+
+
+overall time used (seconds): 1322.7928819656372
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['withdrawTip(uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x4811647c]]" --parallel-solving
+Used 16.657960414886475 seconds
+coverage file: ./myth_code_coverage/81dbee4f-4adf-4736-aefc-59dbe2f95582.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1342.2551712989807
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['withdrawTip(uint256)'], ['setCFO(address)'], ['setCEO(address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x4811647c],[0x4e0a3379],[0x27d7874c]]" --parallel-solving
+Used 16.286581993103027 seconds
+coverage file: ./myth_code_coverage/65bd537f-3962-490c-8d7c-16eeb613bb6f.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1361.306892156601
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['reveal(uint256,uint8,bytes32)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x9a42f3aa]]" --parallel-solving
+Used 17.799434185028076 seconds
+coverage file: ./myth_code_coverage/8d9eae05-b28c-4d8d-84ce-e7ad902b12df.json
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: reveal(uint256,uint8,bytes32)
+PC address: 6094
+Estimated Gas Usage: 2733 - 3819
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:264
+
+require(now < game.expireTime)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: reveal(uint256,uint8,bytes32), txdata: 0x9a42f3aa, value: 0x0
+
+
+
+overall time used (seconds): 1381.9735360145569
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['reveal(uint256,uint8,bytes32)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x9a42f3aa]]" --parallel-solving
+Used 17.63861346244812 seconds
+coverage file: ./myth_code_coverage/7c63202e-00c8-4f59-afb4-3a2aeeff430a.json
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: reveal(uint256,uint8,bytes32)
+PC address: 6094
+Estimated Gas Usage: 2733 - 3819
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:264
+
+require(now < game.expireTime)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: reveal(uint256,uint8,bytes32), txdata: 0x9a42f3aa, value: 0x0
+
+
+
+overall time used (seconds): 1402.4416892528534
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['createGame(bytes32,address)'], ['joinGame(uint256,uint8)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0xfe1f6a0b],[0xca6649c5]]" --parallel-solving
+Process killed due to timeout!
+Process timed out and was killed.
+overall time used (seconds): 1522.4933230876923
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['unpause()']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x3f4ba83a]]" --parallel-solving
+Used 15.947613954544067 seconds
+coverage file: ./myth_code_coverage/3201f4cb-b6d4-43cf-a0d6-f89400fcb538.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1541.4135570526123
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['pause()'], ['pause()']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x8456cb59],[0x8456cb59]]" --parallel-solving
+Used 17.637755155563354 seconds
+coverage file: ./myth_code_coverage/231a6b6f-8047-4519-bb98-4f3c0095eb54.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1561.783801317215
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['reveal(uint256,uint8,bytes32)'], ['pause()'], ['close(uint256)'], ['close(uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x9a42f3aa],[0x8456cb59],[0x0aebeb4e],[0x0aebeb4e]]" --parallel-solving
+Used 17.834218978881836 seconds
+coverage file: ./myth_code_coverage/8f460394-98f5-4732-a2eb-26b19a0db1a0.json
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: reveal(uint256,uint8,bytes32)
+PC address: 6094
+Estimated Gas Usage: 2733 - 3819
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:264
+
+require(now < game.expireTime)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: reveal(uint256,uint8,bytes32), txdata: 0x9a42f3aa, value: 0x0
+
+
+
+overall time used (seconds): 1582.413151025772
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['close(uint256)'], ['withdrawTip(uint256)'], ['setCEO(address)'], ['setNewAddress(address)'], ['setNewAddress(address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x0aebeb4e],[0x4811647c],[0x27d7874c],[0x71587988],[0x71587988]]" --parallel-solving
+Used 26.698546886444092 seconds
+coverage file: ./myth_code_coverage/1da3939d-38bb-4002-90bd-8e244f84fd11.json
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 2816
+Estimated Gas Usage: 2007 - 2622
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:284
+
+now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 2888
+Estimated Gas Usage: 2027 - 2642
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:284
+
+require(now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE))
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Transaction Order Dependence ====
+SWC ID: 114
+Severity: Medium
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 3378
+Estimated Gas Usage: 25024 - 138794
+The value of the call is dependent on balance or storage write
+This can lead to race conditions. An attacker may be able to run a transaction after our transaction which can change the value of the call
+--------------------
+In file: ./contracts/RpsGame.sol:293
+
+game.dealer.send(game.dealerValue)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [ATTACKER], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Multiple Calls in a Single Transaction ====
+SWC ID: 113
+Severity: Low
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 3478
+Estimated Gas Usage: 25024 - 138794
+Multiple calls are executed in the same transaction.
+This call is executed following another call within the same transaction. It is possible that the call never gets executed if a prior call fails permanently. This might be caused intentionally by a malicious callee. If possible, refactor the code such that each transaction only executes one external call or make sure that all callees can be trusted (i.e. they’re part of your own codebase).
+--------------------
+In file: ./contracts/RpsGame.sol:293
+
+game.player.send(game.playerValue)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Transaction Order Dependence ====
+SWC ID: 114
+Severity: Medium
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 3478
+Estimated Gas Usage: 25024 - 138794
+The value of the call is dependent on balance or storage write
+This can lead to race conditions. An attacker may be able to run a transaction after our transaction which can change the value of the call
+--------------------
+In file: ./contracts/RpsGame.sol:293
+
+game.player.send(game.playerValue)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [ATTACKER], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+
+
+overall time used (seconds): 1612.0355341434479
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['unpause()']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x3f4ba83a]]" --parallel-solving
+Used 15.879018068313599 seconds
+coverage file: ./myth_code_coverage/af2f3bed-51a6-48e4-8e43-5386a87dee16.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1630.639246225357
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setCEO(address)'], ['pause()'], ['close(uint256)'], ['setNewAddress(address)'], ['joinGame(uint256,uint8)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x27d7874c],[0x8456cb59],[0x0aebeb4e],[0x71587988],[0xca6649c5]]" --parallel-solving
+Process killed due to timeout!
+Process timed out and was killed.
+overall time used (seconds): 1750.690063238144
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['pause()'], ['joinGame(uint256,uint8)'], ['setCOO(address)'], ['joinGame(uint256,uint8)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x8456cb59],[0xca6649c5],[0x2ba73c15],[0xca6649c5]]" --parallel-solving
+Used 18.265894889831543 seconds
+coverage file: ./myth_code_coverage/26a3e05a-f833-4c7e-bd86-101d1f0873cf.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1771.8291611671448
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['createGame(bytes32,address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0xfe1f6a0b]]" --parallel-solving
+Used 18.96024179458618 seconds
+coverage file: ./myth_code_coverage/0445ae2e-6de9-475c-9073-f97460bea1ac.json
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: RpsGame
+Function name: createGame(bytes32,address)
+PC address: 7812
+Estimated Gas Usage: 58022 - 241250
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./contracts/RpsGame.sol:227
+
+expireTimeLimit + now
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
+
+
+
+overall time used (seconds): 1793.6344273090363
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['createGame(bytes32,address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0xfe1f6a0b]]" --parallel-solving
+Used 18.7551748752594 seconds
+coverage file: ./myth_code_coverage/fb37c960-73db-4ab1-91ab-304d102878a6.json
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: RpsGame
+Function name: createGame(bytes32,address)
+PC address: 7812
+Estimated Gas Usage: 58022 - 241250
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./contracts/RpsGame.sol:227
+
+expireTimeLimit + now
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
+
+
+
+overall time used (seconds): 1815.2538170814514
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['reveal(uint256,uint8,bytes32)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x9a42f3aa]]" --parallel-solving
+Used 17.7071270942688 seconds
+coverage file: ./myth_code_coverage/25a26baa-5476-4eb9-8dee-809424205e93.json
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: reveal(uint256,uint8,bytes32)
+PC address: 6094
+Estimated Gas Usage: 2733 - 3819
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:264
+
+require(now < game.expireTime)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: reveal(uint256,uint8,bytes32), txdata: 0x9a42f3aa, value: 0x0
+
+
+
+overall time used (seconds): 1835.7767219543457
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['joinGame(uint256,uint8)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0xca6649c5]]" --parallel-solving
+Used 17.769273042678833 seconds
+coverage file: ./myth_code_coverage/453b91af-b4a7-48f7-b8d8-d0d063b368d5.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1856.3519749641418
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setCFO(address)'], ['setCEO(address)'], ['withdrawTip(uint256)'], ['setCEO(address)'], ['setCFO(address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x4e0a3379],[0x27d7874c],[0x4811647c],[0x27d7874c],[0x4e0a3379]]" --parallel-solving
+Used 19.234286785125732 seconds
+coverage file: ./myth_code_coverage/c4bdfbdf-90a4-409e-b9be-570002ab12b5.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1878.4002282619476
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['reveal(uint256,uint8,bytes32)'], ['joinGame(uint256,uint8)'], ['setCFO(address)'], ['withdrawTip(uint256)'], ['createGame(bytes32,address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x9a42f3aa],[0xca6649c5],[0x4e0a3379],[0x4811647c],[0xfe1f6a0b]]" --parallel-solving
+Used 17.865480184555054 seconds
+coverage file: ./myth_code_coverage/889349a7-3db8-4ed3-a077-073e90f37602.json
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: reveal(uint256,uint8,bytes32)
+PC address: 6094
+Estimated Gas Usage: 2733 - 3819
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:264
+
+require(now < game.expireTime)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: reveal(uint256,uint8,bytes32), txdata: 0x9a42f3aa, value: 0x0
+
+
+
+overall time used (seconds): 1899.0560410022736
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['pause()'], ['setCFO(address)'], ['setCEO(address)'], ['pause()']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x8456cb59],[0x4e0a3379],[0x27d7874c],[0x8456cb59]]" --parallel-solving
+Used 21.36697292327881 seconds
+coverage file: ./myth_code_coverage/c9ef0a62-fae0-446c-b9d7-7e50b00fb1d4.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1923.2526342868805
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['reveal(uint256,uint8,bytes32)'], ['unpause()']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x9a42f3aa],[0x3f4ba83a]]" --parallel-solving
+Used 17.676310062408447 seconds
+coverage file: ./myth_code_coverage/db699e14-44ea-4314-96a9-de8e5402d1da.json
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: reveal(uint256,uint8,bytes32)
+PC address: 6094
+Estimated Gas Usage: 2733 - 3819
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:264
+
+require(now < game.expireTime)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: reveal(uint256,uint8,bytes32), txdata: 0x9a42f3aa, value: 0x0
+
+
+
+overall time used (seconds): 1943.7125391960144
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['unpause()'], ['joinGame(uint256,uint8)'], ['setNewAddress(address)'], ['withdrawTip(uint256)'], ['reveal(uint256,uint8,bytes32)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x3f4ba83a],[0xca6649c5],[0x71587988],[0x4811647c],[0x9a42f3aa]]" --parallel-solving
+Used 15.969320297241211 seconds
+coverage file: ./myth_code_coverage/d6425fbd-208f-4573-bc39-fcf101d94fa5.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1962.4014611244202
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setNewAddress(address)'], ['reveal(uint256,uint8,bytes32)'], ['reveal(uint256,uint8,bytes32)'], ['unpause()'], ['unpause()']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x71587988],[0x9a42f3aa],[0x9a42f3aa],[0x3f4ba83a],[0x3f4ba83a]]" --parallel-solving
+Used 16.525430917739868 seconds
+coverage file: ./myth_code_coverage/f1559ca1-6f62-4e04-8552-5ae22c64beac.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1981.639748096466
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['createGame(bytes32,address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0xfe1f6a0b]]" --parallel-solving
+Used 18.952971935272217 seconds
+coverage file: ./myth_code_coverage/3361051a-6465-4115-bdf8-09dc2dc8d207.json
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: RpsGame
+Function name: createGame(bytes32,address)
+PC address: 7812
+Estimated Gas Usage: 58022 - 241250
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./contracts/RpsGame.sol:227
+
+expireTimeLimit + now
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
+
+
+
+overall time used (seconds): 2003.4612290859222
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['pause()'], ['setNewAddress(address)'], ['setCOO(address)'], ['reveal(uint256,uint8,bytes32)'], ['setCOO(address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x8456cb59],[0x71587988],[0x2ba73c15],[0x9a42f3aa],[0x2ba73c15]]" --parallel-solving
+Used 22.663419246673584 seconds
+coverage file: ./myth_code_coverage/f82aec45-1abe-4cf2-ab52-3b71528dd1c1.json
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: reveal(uint256,uint8,bytes32)
+PC address: 6094
+Estimated Gas Usage: 2733 - 3819
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:264
+
+require(now < game.expireTime)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: pause(), txdata: 0x8456cb59, value: 0x0
+Caller: [CREATOR], function: setNewAddress(address), txdata: 0x71587988, value: 0x0
+Caller: [CREATOR], function: setCOO(address), txdata: 0x2ba73c1501010101010101010101010101, value: 0x0
+Caller: [ATTACKER], function: reveal(uint256,uint8,bytes32), txdata: 0x9a42f3aa, value: 0x0
+
+
+
+overall time used (seconds): 2028.976930141449
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['createGame(bytes32,address)'], ['setCOO(address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0xfe1f6a0b],[0x2ba73c15]]" --parallel-solving
+Used 20.646422147750854 seconds
+coverage file: ./myth_code_coverage/2a776cb4-7e98-4ab6-9d71-d380f46b1066.json
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: RpsGame
+Function name: createGame(bytes32,address)
+PC address: 7812
+Estimated Gas Usage: 58022 - 241250
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./contracts/RpsGame.sol:227
+
+expireTimeLimit + now
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
+
+
+
+overall time used (seconds): 2052.5501730442047
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['createGame(bytes32,address)'], ['unpause()'], ['joinGame(uint256,uint8)'], ['setCOO(address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0xfe1f6a0b],[0x3f4ba83a],[0xca6649c5],[0x2ba73c15]]" --parallel-solving
+Used 20.214488983154297 seconds
+coverage file: ./myth_code_coverage/2c042078-2918-4edb-a579-07e4c6002804.json
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: RpsGame
+Function name: createGame(bytes32,address)
+PC address: 7812
+Estimated Gas Usage: 58022 - 241250
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./contracts/RpsGame.sol:227
+
+expireTimeLimit + now
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
+
+
+
+overall time used (seconds): 2075.6468889713287
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['close(uint256)'], ['setCOO(address)'], ['reveal(uint256,uint8,bytes32)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x0aebeb4e],[0x2ba73c15],[0x9a42f3aa]]" --parallel-solving
+Used 35.27157139778137 seconds
+coverage file: ./myth_code_coverage/934aaf82-21e5-409c-9f5d-d32beda6332b.json
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 2816
+Estimated Gas Usage: 2007 - 2622
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:284
+
+now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 2888
+Estimated Gas Usage: 2027 - 2642
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:284
+
+require(now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE))
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Transaction Order Dependence ====
+SWC ID: 114
+Severity: Medium
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 3378
+Estimated Gas Usage: 25024 - 138794
+The value of the call is dependent on balance or storage write
+This can lead to race conditions. An attacker may be able to run a transaction after our transaction which can change the value of the call
+--------------------
+In file: ./contracts/RpsGame.sol:293
+
+game.dealer.send(game.dealerValue)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [ATTACKER], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Multiple Calls in a Single Transaction ====
+SWC ID: 113
+Severity: Low
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 3478
+Estimated Gas Usage: 25024 - 138794
+Multiple calls are executed in the same transaction.
+This call is executed following another call within the same transaction. It is possible that the call never gets executed if a prior call fails permanently. This might be caused intentionally by a malicious callee. If possible, refactor the code such that each transaction only executes one external call or make sure that all callees can be trusted (i.e. they’re part of your own codebase).
+--------------------
+In file: ./contracts/RpsGame.sol:293
+
+game.player.send(game.playerValue)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Transaction Order Dependence ====
+SWC ID: 114
+Severity: Medium
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 3478
+Estimated Gas Usage: 25024 - 138794
+The value of the call is dependent on balance or storage write
+This can lead to race conditions. An attacker may be able to run a transaction after our transaction which can change the value of the call
+--------------------
+In file: ./contracts/RpsGame.sol:293
+
+game.player.send(game.playerValue)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [ATTACKER], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: reveal(uint256,uint8,bytes32)
+PC address: 6094
+Estimated Gas Usage: 2733 - 3819
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:264
+
+require(now < game.expireTime)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+Caller: [CREATOR], function: setCOO(address), txdata: 0x2ba73c1566666666666666666666666680, value: 0x0
+Caller: [ATTACKER], function: reveal(uint256,uint8,bytes32), txdata: 0x9a42f3aa01, value: 0x0
+
+
+
+overall time used (seconds): 2113.9628303050995
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['createGame(bytes32,address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0xfe1f6a0b]]" --parallel-solving
+Used 19.00821304321289 seconds
+coverage file: ./myth_code_coverage/33487b1b-8e35-4e2f-93ed-a4e39304c97c.json
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: RpsGame
+Function name: createGame(bytes32,address)
+PC address: 7812
+Estimated Gas Usage: 58022 - 241250
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./contracts/RpsGame.sol:227
+
+expireTimeLimit + now
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
+
+
+
+overall time used (seconds): 2135.9730281829834
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['unpause()']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x3f4ba83a]]" --parallel-solving
+Used 15.821715116500854 seconds
+coverage file: ./myth_code_coverage/d1cb5b0e-8d7f-4028-a08c-6c587d4389e5.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2154.493365049362
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['pause()'], ['withdrawTip(uint256)'], ['joinGame(uint256,uint8)'], ['unpause()'], ['unpause()']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x8456cb59],[0x4811647c],[0xca6649c5],[0x3f4ba83a],[0x3f4ba83a]]" --parallel-solving
+Used 17.71797227859497 seconds
+coverage file: ./myth_code_coverage/2bbbbda5-ab22-4511-ad91-523ce7cd5005.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2175.0205721855164
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['joinGame(uint256,uint8)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0xca6649c5]]" --parallel-solving
+Used 17.80161714553833 seconds
+coverage file: ./myth_code_coverage/43ac6fcb-40d4-410b-979c-a3db11c9a98a.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2195.632467985153
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setCFO(address)'], ['setCOO(address)'], ['setCOO(address)'], ['withdrawTip(uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x4e0a3379],[0x2ba73c15],[0x2ba73c15],[0x4811647c]]" --parallel-solving
+Used 21.47413206100464 seconds
+coverage file: ./myth_code_coverage/8ccfc4a3-a833-4bc3-897c-08d951d00468.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2220.1861612796783
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['pause()'], ['unpause()']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x8456cb59],[0x3f4ba83a]]" --parallel-solving
+Used 18.823822021484375 seconds
+coverage file: ./myth_code_coverage/1e0d2edb-58d5-430d-8c22-8c295372b017.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2241.7762150764465
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['unpause()'], ['setCOO(address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x3f4ba83a],[0x2ba73c15]]" --parallel-solving
+Used 17.036369800567627 seconds
+coverage file: ./myth_code_coverage/a5ca15a0-3082-4ccf-b2fc-9bfe569d30e0.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2261.5138261318207
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setCEO(address)'], ['withdrawTip(uint256)'], ['joinGame(uint256,uint8)'], ['setNewAddress(address)'], ['createGame(bytes32,address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x27d7874c],[0x4811647c],[0xca6649c5],[0x71587988],[0xfe1f6a0b]]" --parallel-solving
+Used 17.709170818328857 seconds
+coverage file: ./myth_code_coverage/8e08ef76-e61e-4422-902e-169475defbab.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2282.0012810230255
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['createGame(bytes32,address)'], ['setNewAddress(address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0xfe1f6a0b],[0x71587988]]" --parallel-solving
+Used 20.87642788887024 seconds
+coverage file: ./myth_code_coverage/01de5590-e6fd-4c5d-aefe-3147c8db6d48.json
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: RpsGame
+Function name: createGame(bytes32,address)
+PC address: 7812
+Estimated Gas Usage: 58022 - 241250
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./contracts/RpsGame.sol:227
+
+expireTimeLimit + now
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
+
+
+
+overall time used (seconds): 2305.7519590854645
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['createGame(bytes32,address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0xfe1f6a0b]]" --parallel-solving
+Used 19.56324791908264 seconds
+coverage file: ./myth_code_coverage/64306beb-3343-4d85-b3fd-d7737afb8819.json
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: RpsGame
+Function name: createGame(bytes32,address)
+PC address: 7812
+Estimated Gas Usage: 58022 - 241250
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./contracts/RpsGame.sol:227
+
+expireTimeLimit + now
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
+
+
+
+overall time used (seconds): 2328.1620161533356
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['reveal(uint256,uint8,bytes32)'], ['setNewAddress(address)'], ['close(uint256)'], ['setNewAddress(address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x9a42f3aa],[0x71587988],[0x0aebeb4e],[0x71587988]]" --parallel-solving
+Used 17.920146942138672 seconds
+coverage file: ./myth_code_coverage/7fe59b6a-fa9e-448c-8285-399218863389.json
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: reveal(uint256,uint8,bytes32)
+PC address: 6094
+Estimated Gas Usage: 2733 - 3819
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:264
+
+require(now < game.expireTime)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: reveal(uint256,uint8,bytes32), txdata: 0x9a42f3aa, value: 0x0
+
+
+
+overall time used (seconds): 2348.8923511505127
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['joinGame(uint256,uint8)'], ['withdrawTip(uint256)'], ['reveal(uint256,uint8,bytes32)'], ['setCFO(address)'], ['setCFO(address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0xca6649c5],[0x4811647c],[0x9a42f3aa],[0x4e0a3379],[0x4e0a3379]]" --parallel-solving
+Used 17.5589759349823 seconds
+coverage file: ./myth_code_coverage/5cfd5ac7-3681-49f1-9504-996140e1dcec.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2369.2293603420258
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setCFO(address)'], ['setCEO(address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x4e0a3379],[0x27d7874c]]" --parallel-solving
+Used 17.795305967330933 seconds
+coverage file: ./myth_code_coverage/578f876b-39f3-414b-9a52-fbddb370c5d0.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2389.8286101818085
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setCOO(address)'], ['setCFO(address)'], ['reveal(uint256,uint8,bytes32)'], ['joinGame(uint256,uint8)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x2ba73c15],[0x4e0a3379],[0x9a42f3aa],[0xca6649c5]]" --parallel-solving
+Used 21.361860990524292 seconds
+coverage file: ./myth_code_coverage/a74aa9b6-5ded-43f0-a00a-1e4ea1c51442.json
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: reveal(uint256,uint8,bytes32)
+PC address: 6094
+Estimated Gas Usage: 2733 - 3819
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:264
+
+require(now < game.expireTime)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: setCOO(address), txdata: 0x2ba73c1501010101010101010101010101, value: 0x0
+Caller: [CREATOR], function: setCFO(address), txdata: 0x4e0a337901010101010101010101010101, value: 0x0
+Caller: [CREATOR], function: reveal(uint256,uint8,bytes32), txdata: 0x9a42f3aa, value: 0x0
+
+
+
+overall time used (seconds): 2414.0332581996918
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['reveal(uint256,uint8,bytes32)'], ['setCOO(address)'], ['withdrawTip(uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x9a42f3aa],[0x2ba73c15],[0x4811647c]]" --parallel-solving
+Used 17.99759292602539 seconds
+coverage file: ./myth_code_coverage/00011196-5164-4619-ae6c-f13db7b6eb01.json
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: reveal(uint256,uint8,bytes32)
+PC address: 6094
+Estimated Gas Usage: 2733 - 3819
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:264
+
+require(now < game.expireTime)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: reveal(uint256,uint8,bytes32), txdata: 0x9a42f3aa, value: 0x0
+
+
+
+overall time used (seconds): 2434.8335540294647
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['pause()'], ['setCFO(address)'], ['setCOO(address)'], ['setCFO(address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x8456cb59],[0x4e0a3379],[0x2ba73c15],[0x4e0a3379]]" --parallel-solving
+Used 20.298407316207886 seconds
+coverage file: ./myth_code_coverage/deb8e751-35c2-4083-be4a-ec05b5778b36.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2457.9088010787964
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setCOO(address)'], ['setCEO(address)'], ['setCFO(address)'], ['setCOO(address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x2ba73c15],[0x27d7874c],[0x4e0a3379],[0x2ba73c15]]" --parallel-solving
+Used 21.125437021255493 seconds
+coverage file: ./myth_code_coverage/1b045669-9584-423b-9c8a-d69e3a710075.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2481.908629179001
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setNewAddress(address)'], ['unpause()'], ['setCOO(address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x71587988],[0x3f4ba83a],[0x2ba73c15]]" --parallel-solving
+Used 16.55279779434204 seconds
+coverage file: ./myth_code_coverage/a1271b96-9629-4129-a434-2f4abb807f8d.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2501.163305044174
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['unpause()'], ['setCFO(address)'], ['setNewAddress(address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x3f4ba83a],[0x4e0a3379],[0x71587988]]" --parallel-solving
+Used 15.994999885559082 seconds
+coverage file: ./myth_code_coverage/5d6576e7-2b0e-4d38-a5fa-c5bb5618ae08.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2519.8854200839996
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['createGame(bytes32,address)'], ['close(uint256)'], ['withdrawTip(uint256)'], ['setCOO(address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0xfe1f6a0b],[0x0aebeb4e],[0x4811647c],[0x2ba73c15]]" --parallel-solving
+Process killed due to timeout!
+Process timed out and was killed.
+overall time used (seconds): 2639.9365961551666
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['unpause()'], ['setCFO(address)'], ['setNewAddress(address)'], ['setNewAddress(address)'], ['setCEO(address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x3f4ba83a],[0x4e0a3379],[0x71587988],[0x71587988],[0x27d7874c]]" --parallel-solving
+Used 16.93769669532776 seconds
+coverage file: ./myth_code_coverage/25653b40-e0be-49ab-9125-574b0b6f60ad.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2659.6608521938324
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setCEO(address)'], ['setCFO(address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0x27d7874c],[0x4e0a3379]]" --parallel-solving
+Used 17.8216392993927 seconds
+coverage file: ./myth_code_coverage/4bef586d-e387-4d3f-be62-b68eeb4c1379.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2680.2740631103516
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['joinGame(uint256,uint8)'], ['withdrawTip(uint256)'], ['setNewAddress(address)'], ['close(uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0xca6649c5],[0x4811647c],[0x71587988],[0x0aebeb4e]]" --parallel-solving
+Used 17.847631692886353 seconds
+coverage file: ./myth_code_coverage/09d31d21-7a46-4eea-9b49-263650f18687.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2700.916785955429
+
+
+

@@ -1,0 +1,565 @@
+./contracts/RpsGame.sol:1:1: Error: Source file requires different compiler version (current compiler is 0.5.0+commit.1d4f565a.Darwin.appleclang - note that nightly builds are considered to be strictly less than the released version
+pragma solidity ^0.4.24;
+^----------------------^
+./contracts/RpsGame.sol:22:25: Error: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (!assertion) throw;
+                        ^---^
+./contracts/RpsGame.sol:193:5: Error: Functions are not allowed to have the same name as the contract. If you intend this to be a constructor, use "constructor(...) { ... }" to define it.
+    function RpsGame() {
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts/RpsGame.sol:193:5: Error: No visibility specified. Did you intend to add "public"?
+    function RpsGame() {
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts/RpsGame.sol:21:5: Warning: This declaration shadows a builtin symbol.
+    function assert(bool assertion) internal {
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts/RpsGame.sol:193:5: Warning: This declaration shadows an existing declaration.
+    function RpsGame() {
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts/RpsGame.sol:152:1: The shadowed declaration is here:
+contract RpsGame is SafeMath , AccessControl{
+^ (Relevant source part starts here and spans across multiple lines).
+
+./contracts/RpsGame.sol:71:5: Error: Fallback function must be defined as "external".
+    function () public payable{
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts/RpsGame.sol:273:9: Error: Event invocations have to be prefixed by "emit".
+        Reveal(gameid, msg.sender, choice);
+        ^--------------------------------^
+./contracts/RpsGame.sol:290:21: Error: Member "send" not found or not visible after argument-dependent lookup in address.
+            require(game.dealer.send(amountWithTip(safeAdd(game.dealerValue, game.playerValue))));
+                    ^--------------^
+{'mbt': True, 'random': False, 'contract_name': 'RpsGame', 'model_file': '../result/model-fix/0xa8f9c7ff9f605f401bde6659fd18d9a0d0a802c5/RpsGame/FSM-4.json', 'abi_file': None, 'contract_file': './contracts/RpsGame.sol'}
+solc ./contracts/RpsGame.sol --overwrite --bin --abi -o Dapp-Automata-data/RQ2/artifacts
+256
+close(uint256) 0x0aebeb4e
+setCEO(address) 0x27d7874c
+setCOO(address) 0x2ba73c15
+unpause() 0x3f4ba83a
+withdrawTip(uint256) 0x4811647c
+setCFO(address) 0x4e0a3379
+setNewAddress(address) 0x71587988
+pause() 0x8456cb59
+reveal(uint256,uint8,bytes32) 0x9a42f3aa
+joinGame(uint256,uint8) 0xca6649c5
+createGame(bytes32,address) 0xfe1f6a0b
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setCEO(address)']]" --parallel-solving
+Used 16.824354648590088 seconds
+coverage file: ./myth_code_coverage/29d3e178-b156-4271-a48e-f837d80d1f78.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 20.310472011566162
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setCOO(address)']]" --parallel-solving
+Used 16.526639938354492 seconds
+coverage file: ./myth_code_coverage/fd0d32c8-a0f5-4000-8bab-42834005ef53.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 39.892762899398804
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['unpause()']]" --parallel-solving
+Used 16.016527891159058 seconds
+coverage file: ./myth_code_coverage/5c06aaff-adb9-4c12-b7f8-4f103ded4712.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 58.70260000228882
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['withdrawTip(uint256)']]" --parallel-solving
+Used 16.872748851776123 seconds
+coverage file: ./myth_code_coverage/3260e0e6-19fd-4064-8eb8-4b7db85e6a17.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 78.38608908653259
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setCFO(address)']]" --parallel-solving
+Used 16.923723936080933 seconds
+coverage file: ./myth_code_coverage/1ad19a5c-a8de-4d27-b87b-c77bdb23350d.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 98.24516725540161
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setNewAddress(address)']]" --parallel-solving
+Used 17.09528398513794 seconds
+coverage file: ./myth_code_coverage/906646d5-1c92-49cb-8e76-862f00e51222.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 118.16011190414429
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['pause()']]" --parallel-solving
+Used 16.531683921813965 seconds
+coverage file: ./myth_code_coverage/9ba6b361-b472-4f89-86ca-876a01847ab4.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 137.50234293937683
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['createGame(bytes32,address)'], ['joinGame(uint256,uint8)'], ['reveal(uint256,uint8,bytes32)']]" --parallel-solving
+Process killed due to timeout!
+Process timed out and was killed.
+overall time used (seconds): 737.5750961303711
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setCEO(address)'], ['createGame(bytes32,address)'], ['joinGame(uint256,uint8)'], ['reveal(uint256,uint8,bytes32)']]" --parallel-solving
+Process killed due to timeout!
+Process timed out and was killed.
+overall time used (seconds): 1337.6433410644531
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['createGame(bytes32,address)'], ['joinGame(uint256,uint8)']]" --parallel-solving
+Used 184.44153118133545 seconds
+coverage file: ./myth_code_coverage/444c2f9b-8309-4efa-9c35-f2cb7513eec9.json
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: joinGame(uint256,uint8)
+PC address: 7010
+Estimated Gas Usage: 7800 - 10065
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:243
+
+require(now < game.expireTime)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x240000010000000, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x480000000, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b40, value: 0x0
+Caller: [SOMEGUY], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001, value: 0x0
+
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: RpsGame
+Function name: joinGame(uint256,uint8)
+PC address: 7145
+Estimated Gas Usage: 45043 - 169921
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./contracts/RpsGame.sol:249
+
+expireTimeLimit + now
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x3fef, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x56abac7bf5ddd59e8, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [ATTACKER], function: createGame(bytes32,address), txdata: 0xfe1f6a0b0001000101010002800001000102010010010000000002000002000000002001000000000000000000000000affeaffeaffeaffeaffeaffeaffeaffeaffeaffe, decoded_data: ('0001000101010002800001000102010010010000000002000002000000002001', '0xaffeaffeaffeaffeaffeaffeaffeaffeaffeaffe'), value: 0x0
+Caller: [CREATOR], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001808080808080808080808080808080808080808080808080808080808080801e, value: 0x0
+
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: RpsGame
+Function name: createGame(bytes32,address)
+PC address: 7773
+Estimated Gas Usage: 58022 - 241250
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./contracts/RpsGame.sol:227
+
+expireTimeLimit + now
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
+
+
+
+overall time used (seconds): 1526.4599890708923
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setNewAddress(address)'], ['createGame(bytes32,address)'], ['joinGame(uint256,uint8)']]" --parallel-solving
+Used 16.636104106903076 seconds
+coverage file: ./myth_code_coverage/64a857a5-218e-4fd2-9097-b4be06afad1f.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1546.0445640087128
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['createGame(bytes32,address)'], ['close(uint256)']]" --parallel-solving
+Used 113.43483018875122 seconds
+coverage file: ./myth_code_coverage/3597a91a-c26d-45c8-b912-c7c4c0150cd1.json
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 2816
+Estimated Gas Usage: 2007 - 2622
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:285
+
+now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x8, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [ATTACKER], function: createGame(bytes32,address), txdata: 0xfe1f6a0b10, value: 0x0
+Caller: [ATTACKER], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 2888
+Estimated Gas Usage: 2027 - 2642
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:285
+
+require(now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE))
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x8, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [ATTACKER], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
+Caller: [SOMEGUY], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Transaction Order Dependence ====
+SWC ID: 114
+Severity: Medium
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 3378
+Estimated Gas Usage: 25024 - 138794
+The value of the call is dependent on balance or storage write
+This can lead to race conditions. An attacker may be able to run a transaction after our transaction which can change the value of the call
+--------------------
+In file: ./contracts/RpsGame.sol:294
+
+game.dealer.send(game.dealerValue)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x1a87d010800257340, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: createGame(bytes32,address), txdata: 0xfe1f6a0b04, value: 0x0
+Caller: [ATTACKER], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Multiple Calls in a Single Transaction ====
+SWC ID: 113
+Severity: Low
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 3478
+Estimated Gas Usage: 25024 - 138794
+Multiple calls are executed in the same transaction.
+This call is executed following another call within the same transaction. It is possible that the call never gets executed if a prior call fails permanently. This might be caused intentionally by a malicious callee. If possible, refactor the code such that each transaction only executes one external call or make sure that all callees can be trusted (i.e. they’re part of your own codebase).
+--------------------
+In file: ./contracts/RpsGame.sol:294
+
+game.player.send(game.playerValue)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x1000000000000000, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x5810808080000, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [ATTACKER], function: createGame(bytes32,address), txdata: 0xfe1f6a0b40, value: 0x0
+Caller: [CREATOR], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Transaction Order Dependence ====
+SWC ID: 114
+Severity: Medium
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 3478
+Estimated Gas Usage: 25024 - 138794
+The value of the call is dependent on balance or storage write
+This can lead to race conditions. An attacker may be able to run a transaction after our transaction which can change the value of the call
+--------------------
+In file: ./contracts/RpsGame.sol:294
+
+game.player.send(game.playerValue)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x21, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b20, value: 0x0
+Caller: [ATTACKER], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
+
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: RpsGame
+Function name: createGame(bytes32,address)
+PC address: 7773
+Estimated Gas Usage: 58022 - 241250
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./contracts/RpsGame.sol:227
+
+expireTimeLimit + now
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
+
+
+
+overall time used (seconds): 1662.6616399288177
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['unpause()'], ['createGame(bytes32,address)'], ['close(uint256)']]" --parallel-solving
+Used 16.142307996749878 seconds
+coverage file: ./myth_code_coverage/a2350e1f-75ce-4fe7-b51f-d7c345b08322.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1681.5722451210022
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['withdrawTip(uint256)'], ['unpause()'], ['createGame(bytes32,address)'], ['close(uint256)']]" --parallel-solving
+Used 16.600568771362305 seconds
+coverage file: ./myth_code_coverage/8b330884-0e0f-4f80-84da-77631605038b.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1700.9672620296478
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setCOO(address)'], ['withdrawTip(uint256)'], ['unpause()'], ['createGame(bytes32,address)'], ['close(uint256)']]" --parallel-solving
+Used 18.255533933639526 seconds
+coverage file: ./myth_code_coverage/5ef656c7-f38e-41fd-b35d-e286622cd84a.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1722.083930015564
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['pause()'], ['setCOO(address)'], ['withdrawTip(uint256)'], ['unpause()'], ['createGame(bytes32,address)'], ['close(uint256)']]" --parallel-solving
+Used 19.330684900283813 seconds
+coverage file: ./myth_code_coverage/cae5c92b-cb42-4aa8-9e30-b19428223746.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1744.4182488918304
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['createGame(bytes32,address)']]" --parallel-solving
+Used 19.20555019378662 seconds
+coverage file: ./myth_code_coverage/15a55681-bd00-4083-89d7-b589c004bcc2.json
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: RpsGame
+Function name: createGame(bytes32,address)
+PC address: 7773
+Estimated Gas Usage: 58022 - 241250
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./contracts/RpsGame.sol:227
+
+expireTimeLimit + now
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
+
+
+
+overall time used (seconds): 1766.6499330997467
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setCFO(address)'], ['createGame(bytes32,address)']]" --parallel-solving
+Used 22.54303479194641 seconds
+coverage file: ./myth_code_coverage/163418a1-dc51-42c5-a41b-494be47283f0.json
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: RpsGame
+Function name: createGame(bytes32,address)
+PC address: 7773
+Estimated Gas Usage: 58022 - 241250
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./contracts/RpsGame.sol:227
+
+expireTimeLimit + now
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: setCFO(address), txdata: 0x4e0a337901010101010101010101010101, value: 0x0
+Caller: [ATTACKER], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
+
+
+
+overall time used (seconds): 1792.1159369945526
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['withdrawTip(uint256)'], ['setCFO(address)'], ['createGame(bytes32,address)']]" --parallel-solving
+Used 16.46681499481201 seconds
+coverage file: ./myth_code_coverage/60a3678a-c5be-46c4-846d-6effff4c5da3.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1811.403885126114
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['unpause()'], ['withdrawTip(uint256)'], ['setCFO(address)'], ['createGame(bytes32,address)']]" --parallel-solving
+Used 16.250502109527588 seconds
+coverage file: ./myth_code_coverage/fb301a23-ea92-4c50-a34e-b1e840fa5f68.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1830.4136068820953
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setCFO(address)'], ['unpause()'], ['withdrawTip(uint256)'], ['setCFO(address)'], ['createGame(bytes32,address)']]" --parallel-solving
+Used 17.632920742034912 seconds
+coverage file: ./myth_code_coverage/96e17c69-6348-48e3-8288-ad3fb46696b3.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1851.0111320018768
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setNewAddress(address)'], ['setCFO(address)'], ['unpause()'], ['withdrawTip(uint256)'], ['setCFO(address)'], ['createGame(bytes32,address)']]" --parallel-solving
+Used 16.870599031448364 seconds
+coverage file: ./myth_code_coverage/f95cae94-7858-4552-9e57-4c003b702908.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1870.6544630527496
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['setCFO(address)'], ['setNewAddress(address)'], ['setCFO(address)'], ['unpause()'], ['withdrawTip(uint256)'], ['setCFO(address)'], ['createGame(bytes32,address)']]" --parallel-solving
+Used 17.919986963272095 seconds
+coverage file: ./myth_code_coverage/1d1258c3-9299-4054-b9e0-d48c492f94ab.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1891.4091131687164
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['createGame(bytes32,address)'], ['joinGame(uint256,uint8)'], ['close(uint256)']]" --parallel-solving
+Process killed due to timeout!
+Process timed out and was killed.
+overall time used (seconds): 2491.483206987381
+
+
+
+myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[['unpause()'], ['createGame(bytes32,address)'], ['joinGame(uint256,uint8)'], ['close(uint256)']]" --parallel-solving
+Used 16.189765214920044 seconds
+coverage file: ./myth_code_coverage/3655442d-7286-4333-8fc2-9c97106e677c.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2510.710592031479
+
+
+

@@ -1,0 +1,693 @@
+./contracts/CryptoPunksMarket.sol:59:5: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+    function CryptoPunksMarket() payable {
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts/CryptoPunksMarket.sol:70:34: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (msg.sender != owner) throw;
+                                 ^---^
+./contracts/CryptoPunksMarket.sol:71:31: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (allPunksAssigned) throw;
+                              ^---^
+./contracts/CryptoPunksMarket.sol:72:33: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndex >= 10000) throw;
+                                ^---^
+./contracts/CryptoPunksMarket.sol:87:34: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (msg.sender != owner) throw;
+                                 ^---^
+./contracts/CryptoPunksMarket.sol:95:34: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (msg.sender != owner) throw;
+                                 ^---^
+./contracts/CryptoPunksMarket.sol:100:32: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (!allPunksAssigned) throw;
+                               ^---^
+./contracts/CryptoPunksMarket.sol:101:42: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punksRemainingToAssign == 0) throw;
+                                         ^---^
+./contracts/CryptoPunksMarket.sol:102:51: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndexToAddress[punkIndex] != 0x0) throw;
+                                                  ^---^
+./contracts/CryptoPunksMarket.sol:103:33: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndex >= 10000) throw;
+                                ^---^
+./contracts/CryptoPunksMarket.sol:112:32: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (!allPunksAssigned) throw;
+                               ^---^
+./contracts/CryptoPunksMarket.sol:113:58: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndexToAddress[punkIndex] != msg.sender) throw;
+                                                         ^---^
+./contracts/CryptoPunksMarket.sol:114:33: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndex >= 10000) throw;
+                                ^---^
+./contracts/CryptoPunksMarket.sol:134:32: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (!allPunksAssigned) throw;
+                               ^---^
+./contracts/CryptoPunksMarket.sol:135:58: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndexToAddress[punkIndex] != msg.sender) throw;
+                                                         ^---^
+./contracts/CryptoPunksMarket.sol:136:33: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndex >= 10000) throw;
+                                ^---^
+./contracts/CryptoPunksMarket.sol:142:32: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (!allPunksAssigned) throw;
+                               ^---^
+./contracts/CryptoPunksMarket.sol:143:58: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndexToAddress[punkIndex] != msg.sender) throw;
+                                                         ^---^
+./contracts/CryptoPunksMarket.sol:144:33: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndex >= 10000) throw;
+                                ^---^
+./contracts/CryptoPunksMarket.sol:150:32: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (!allPunksAssigned) throw;
+                               ^---^
+./contracts/CryptoPunksMarket.sol:151:58: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndexToAddress[punkIndex] != msg.sender) throw;
+                                                         ^---^
+./contracts/CryptoPunksMarket.sol:152:33: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndex >= 10000) throw;
+                                ^---^
+./contracts/CryptoPunksMarket.sol:158:32: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (!allPunksAssigned) throw;
+                               ^---^
+./contracts/CryptoPunksMarket.sol:160:33: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndex >= 10000) throw;
+                                ^---^
+./contracts/CryptoPunksMarket.sol:161:31: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (!offer.isForSale) throw;                // punk not actually for sale
+                              ^---^
+./contracts/CryptoPunksMarket.sol:162:72: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (offer.onlySellTo != 0x0 && offer.onlySellTo != msg.sender) throw;  // punk not supposed to be sold to this user
+                                                                       ^---^
+./contracts/CryptoPunksMarket.sol:163:41: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (msg.value < offer.minValue) throw;      // Didn't send enough ETH
+                                        ^---^
+./contracts/CryptoPunksMarket.sol:164:60: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (offer.seller != punkIndexToAddress[punkIndex]) throw; // Seller no longer owner of punk
+                                                           ^---^
+./contracts/CryptoPunksMarket.sol:188:32: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (!allPunksAssigned) throw;
+                               ^---^
+./contracts/CryptoPunksMarket.sol:197:33: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndex >= 10000) throw;
+                                ^---^
+./contracts/CryptoPunksMarket.sol:198:32: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (!allPunksAssigned) throw;                
+                               ^---^
+./contracts/CryptoPunksMarket.sol:199:51: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndexToAddress[punkIndex] == 0x0) throw;
+                                                  ^---^
+./contracts/CryptoPunksMarket.sol:200:58: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndexToAddress[punkIndex] == msg.sender) throw;
+                                                         ^---^
+./contracts/CryptoPunksMarket.sol:201:29: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (msg.value == 0) throw;
+                            ^---^
+./contracts/CryptoPunksMarket.sol:203:42: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (msg.value <= existing.value) throw;
+                                         ^---^
+./contracts/CryptoPunksMarket.sol:213:33: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndex >= 10000) throw;
+                                ^---^
+./contracts/CryptoPunksMarket.sol:214:32: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (!allPunksAssigned) throw;                
+                               ^---^
+./contracts/CryptoPunksMarket.sol:215:58: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndexToAddress[punkIndex] != msg.sender) throw;
+                                                         ^---^
+./contracts/CryptoPunksMarket.sol:218:29: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (bid.value == 0) throw;
+                            ^---^
+./contracts/CryptoPunksMarket.sol:219:35: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (bid.value < minPrice) throw;
+                                  ^---^
+./contracts/CryptoPunksMarket.sol:234:33: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndex >= 10000) throw;
+                                ^---^
+./contracts/CryptoPunksMarket.sol:235:32: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (!allPunksAssigned) throw;                
+                               ^---^
+./contracts/CryptoPunksMarket.sol:236:51: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndexToAddress[punkIndex] == 0x0) throw;
+                                                  ^---^
+./contracts/CryptoPunksMarket.sol:237:58: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (punkIndexToAddress[punkIndex] == msg.sender) throw;
+                                                         ^---^
+./contracts/CryptoPunksMarket.sol:239:39: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (bid.bidder != msg.sender) throw;
+                                      ^---^
+./contracts/CryptoPunksMarket.sol:125:9: Warning: Variable is declared as a storage pointer. Use an explicit "storage" keyword to silence this warning.
+        Bid bid = punkBids[punkIndex];
+        ^-----^
+./contracts/CryptoPunksMarket.sol:159:9: Warning: Variable is declared as a storage pointer. Use an explicit "storage" keyword to silence this warning.
+        Offer offer = punksOfferedForSale[punkIndex];
+        ^---------^
+./contracts/CryptoPunksMarket.sol:179:9: Warning: Variable is declared as a storage pointer. Use an explicit "storage" keyword to silence this warning.
+        Bid bid = punkBids[punkIndex];
+        ^-----^
+./contracts/CryptoPunksMarket.sol:202:9: Warning: Variable is declared as a storage pointer. Use an explicit "storage" keyword to silence this warning.
+        Bid existing = punkBids[punkIndex];
+        ^----------^
+./contracts/CryptoPunksMarket.sol:217:9: Warning: Variable is declared as a storage pointer. Use an explicit "storage" keyword to silence this warning.
+        Bid bid = punkBids[punkIndex];
+        ^-----^
+./contracts/CryptoPunksMarket.sol:238:9: Warning: Variable is declared as a storage pointer. Use an explicit "storage" keyword to silence this warning.
+        Bid bid = punkBids[punkIndex];
+        ^-----^
+./contracts/CryptoPunksMarket.sol:82:13: Warning: Invoking events without "emit" prefix is deprecated.
+            Assign(to, punkIndex);
+            ^-------------------^
+./contracts/CryptoPunksMarket.sol:107:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Assign(msg.sender, punkIndex);
+        ^---------------------------^
+./contracts/CryptoPunksMarket.sol:121:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Transfer(msg.sender, to, 1);
+        ^-------------------------^
+./contracts/CryptoPunksMarket.sol:122:9: Warning: Invoking events without "emit" prefix is deprecated.
+        PunkTransfer(msg.sender, to, punkIndex);
+        ^-------------------------------------^
+./contracts/CryptoPunksMarket.sol:138:9: Warning: Invoking events without "emit" prefix is deprecated.
+        PunkNoLongerForSale(punkIndex);
+        ^----------------------------^
+./contracts/CryptoPunksMarket.sol:146:9: Warning: Invoking events without "emit" prefix is deprecated.
+        PunkOffered(punkIndex, minSalePriceInWei, 0x0);
+        ^--------------------------------------------^
+./contracts/CryptoPunksMarket.sol:154:9: Warning: Invoking events without "emit" prefix is deprecated.
+        PunkOffered(punkIndex, minSalePriceInWei, toAddress);
+        ^--------------------------------------------------^
+./contracts/CryptoPunksMarket.sol:171:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Transfer(seller, msg.sender, 1);
+        ^-----------------------------^
+./contracts/CryptoPunksMarket.sol:175:9: Warning: Invoking events without "emit" prefix is deprecated.
+        PunkBought(punkIndex, msg.value, seller, msg.sender);
+        ^--------------------------------------------------^
+./contracts/CryptoPunksMarket.sol:209:9: Warning: Invoking events without "emit" prefix is deprecated.
+        PunkBidEntered(punkIndex, msg.value, msg.sender);
+        ^----------------------------------------------^
+./contracts/CryptoPunksMarket.sol:224:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Transfer(seller, bid.bidder, 1);
+        ^-----------------------------^
+./contracts/CryptoPunksMarket.sol:230:9: Warning: Invoking events without "emit" prefix is deprecated.
+        PunkBought(punkIndex, bid.value, seller, bid.bidder);
+        ^--------------------------------------------------^
+./contracts/CryptoPunksMarket.sol:240:9: Warning: Invoking events without "emit" prefix is deprecated.
+        PunkBidWithdrawn(punkIndex, bid.value, msg.sender);
+        ^------------------------------------------------^
+./contracts/CryptoPunksMarket.sol:59:5: Warning: No visibility specified. Defaulting to "public". 
+    function CryptoPunksMarket() payable {
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts/CryptoPunksMarket.sol:69:5: Warning: No visibility specified. Defaulting to "public". 
+    function setInitialOwner(address to, uint punkIndex) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts/CryptoPunksMarket.sol:86:5: Warning: No visibility specified. Defaulting to "public". 
+    function setInitialOwners(address[] addresses, uint[] indices) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts/CryptoPunksMarket.sol:94:5: Warning: No visibility specified. Defaulting to "public". 
+    function allInitialOwnersAssigned() {
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts/CryptoPunksMarket.sol:99:5: Warning: No visibility specified. Defaulting to "public". 
+    function getPunk(uint punkIndex) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts/CryptoPunksMarket.sol:111:5: Warning: No visibility specified. Defaulting to "public". 
+    function transferPunk(address to, uint punkIndex) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts/CryptoPunksMarket.sol:133:5: Warning: No visibility specified. Defaulting to "public". 
+    function punkNoLongerForSale(uint punkIndex) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts/CryptoPunksMarket.sol:141:5: Warning: No visibility specified. Defaulting to "public". 
+    function offerPunkForSale(uint punkIndex, uint minSalePriceInWei) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts/CryptoPunksMarket.sol:149:5: Warning: No visibility specified. Defaulting to "public". 
+    function offerPunkForSaleToAddress(uint punkIndex, uint minSalePriceInWei, address toAddress) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts/CryptoPunksMarket.sol:157:5: Warning: No visibility specified. Defaulting to "public". 
+    function buyPunk(uint punkIndex) payable {
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts/CryptoPunksMarket.sol:187:5: Warning: No visibility specified. Defaulting to "public". 
+    function withdraw() {
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts/CryptoPunksMarket.sol:196:5: Warning: No visibility specified. Defaulting to "public". 
+    function enterBidForPunk(uint punkIndex) payable {
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts/CryptoPunksMarket.sol:212:5: Warning: No visibility specified. Defaulting to "public". 
+    function acceptBidForPunk(uint punkIndex, uint minPrice) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts/CryptoPunksMarket.sol:233:5: Warning: No visibility specified. Defaulting to "public". 
+    function withdrawBidForPunk(uint punkIndex) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+{'mbt': True, 'random': False, 'contract_name': 'CryptoPunksMarket', 'model_file': '../result/model-fix/0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb/CryptoPunksMarket/FSM-21.json', 'abi_file': None, 'contract_file': './contracts/CryptoPunksMarket.sol'}
+solc ./contracts/CryptoPunksMarket.sol --overwrite --bin --abi -o Dapp-Automata-data/RQ2/artifacts
+0
+enterBidForPunk(uint256) 0x091dbfd2
+acceptBidForPunk(uint256,uint256) 0x23165b75
+setInitialOwners(address[],uint256[]) 0x39c5dde6
+withdraw() 0x3ccfd60b
+allInitialOwnersAssigned() 0x7ecedac9
+buyPunk(uint256) 0x8264fe98
+transferPunk(address,uint256) 0x8b72a2ec
+withdrawBidForPunk(uint256) 0x979bc638
+setInitialOwner(address,uint256) 0xa75a9049
+offerPunkForSaleToAddress(uint256,uint256,address) 0xbf31196f
+offerPunkForSale(uint256,uint256) 0xc44193c3
+getPunk(uint256) 0xc81d1d5b
+punkNoLongerForSale(uint256) 0xf6eeff1e
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['setInitialOwner(address,uint256)'], ['setInitialOwner(address,uint256)'], ['setInitialOwners(address[],uint256[])'], ['transferPunk(address,uint256)'], ['offerPunkForSale(uint256,uint256)'], ['enterBidForPunk(uint256)'], ['punkNoLongerForSale(uint256)'], ['withdrawBidForPunk(uint256)']]" --parallel-solving
+Process killed due to timeout!
+Process timed out and was killed.
+overall time used (seconds): 600.0931041240692
+
+
+
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['setInitialOwners(address[],uint256[])'], ['enterBidForPunk(uint256)'], ['acceptBidForPunk(uint256,uint256)'], ['punkNoLongerForSale(uint256)'], ['buyPunk(uint256)'], ['offerPunkForSale(uint256,uint256)']]" --parallel-solving
+Process killed due to timeout!
+Process timed out and was killed.
+overall time used (seconds): 1200.183336019516
+
+
+
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['getPunk(uint256)'], ['offerPunkForSaleToAddress(uint256,uint256,address)'], ['buyPunk(uint256)'], ['enterBidForPunk(uint256)'], ['withdrawBidForPunk(uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['getPunk(uint256)'], ['offerPunkForSaleToAddress(uint256,uint256,address)'], ['buyPunk(uint256)'], ['enterBidForPunk(uint256)'], ['withdrawBidForPunk(uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[[0xc81d1d5b],[0xbf31196f],[0x8264fe98],[0x091dbfd2],[0x979bc638]]" --parallel-solving
+done! 
+Used 15.238598108291626 seconds
+coverage file: ./myth_code_coverage/771b0c4b-8212-4e85-bdea-034ce24eb29d.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 18.415781021118164
+
+
+
+Used 15.238598108291626 seconds
+coverage file: ./myth_code_coverage/771b0c4b-8212-4e85-bdea-034ce24eb29d.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1218.5993852615356
+
+
+
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['getPunk(uint256)'], ['offerPunkForSaleToAddress(uint256,uint256,address)'], ['buyPunk(uint256)'], ['enterBidForPunk(uint256)'], ['offerPunkForSale(uint256,uint256)'], ['transferPunk(address,uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['getPunk(uint256)'], ['offerPunkForSaleToAddress(uint256,uint256,address)'], ['buyPunk(uint256)'], ['enterBidForPunk(uint256)'], ['offerPunkForSale(uint256,uint256)'], ['transferPunk(address,uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[[0xc81d1d5b],[0xbf31196f],[0x8264fe98],[0x091dbfd2],[0xc44193c3],[0x8b72a2ec]]" --parallel-solving
+done! 
+Used 15.015008926391602 seconds
+coverage file: ./myth_code_coverage/e4dda760-ee51-4ed5-8031-c78f5735fcbc.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 17.766996145248413
+
+
+
+Used 15.015008926391602 seconds
+coverage file: ./myth_code_coverage/e4dda760-ee51-4ed5-8031-c78f5735fcbc.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1236.3666660785675
+
+
+
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['getPunk(uint256)'], ['enterBidForPunk(uint256)'], ['offerPunkForSale(uint256,uint256)'], ['withdrawBidForPunk(uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['getPunk(uint256)'], ['enterBidForPunk(uint256)'], ['offerPunkForSale(uint256,uint256)'], ['withdrawBidForPunk(uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[[0xc81d1d5b],[0x091dbfd2],[0xc44193c3],[0x979bc638]]" --parallel-solving
+done! 
+Used 15.130346059799194 seconds
+coverage file: ./myth_code_coverage/303de8ad-3225-4d64-9221-9881a72cd16f.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 17.88063907623291
+
+
+
+Used 15.130346059799194 seconds
+coverage file: ./myth_code_coverage/303de8ad-3225-4d64-9221-9881a72cd16f.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1254.247584104538
+
+
+
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['allInitialOwnersAssigned()'], ['allInitialOwnersAssigned()'], ['setInitialOwners(address[],uint256[])'], ['offerPunkForSale(uint256,uint256)'], ['buyPunk(uint256)'], ['offerPunkForSaleToAddress(uint256,uint256,address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['allInitialOwnersAssigned()'], ['allInitialOwnersAssigned()'], ['setInitialOwners(address[],uint256[])'], ['offerPunkForSale(uint256,uint256)'], ['buyPunk(uint256)'], ['offerPunkForSaleToAddress(uint256,uint256,address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[[0x7ecedac9],[0x7ecedac9],[0x39c5dde6],[0xc44193c3],[0x8264fe98],[0xbf31196f]]" --parallel-solving
+done! 
+Used 19.76791286468506 seconds
+coverage file: ./myth_code_coverage/c7b7886c-8d7c-439b-891b-24d2113f152e.json
+==== Exception State ====
+SWC ID: 110
+Severity: Medium
+Contract: CryptoPunksMarket
+Function name: setInitialOwners(address[],uint256[])
+PC address: 5148
+Estimated Gas Usage: 1700 - 7671
+An assertion violation was triggered.
+It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
+--------------------
+In file: ./contracts/CryptoPunksMarket.sol:86
+
+function setInitialOwners(address[] addresses, uint[] indices) {
+        if (msg.sender != owner) throw;
+        uint n = addresses.length;
+        for (uint i = 0; i < n; i++) {
+            setInitialOwner(addresses[i], indices[i]);
+        }
+    }
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x42081600000408060, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: allInitialOwnersAssigned(), txdata: 0x7ecedac9, value: 0x0
+Caller: [CREATOR], function: allInitialOwnersAssigned(), txdata: 0x7ecedac9, value: 0x0
+Caller: [CREATOR], function: setInitialOwners(address[],uint256[]), txdata: 0x39c5dde68000000000000000000000000000000000000000000000000000000000000000ff, value: 0x0
+
+
+
+overall time used (seconds): 22.602071046829224
+
+
+
+Used 19.76791286468506 seconds
+coverage file: ./myth_code_coverage/c7b7886c-8d7c-439b-891b-24d2113f152e.json
+==== Exception State ====
+SWC ID: 110
+Severity: Medium
+Contract: CryptoPunksMarket
+Function name: setInitialOwners(address[],uint256[])
+PC address: 5148
+Estimated Gas Usage: 1700 - 7671
+An assertion violation was triggered.
+It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
+--------------------
+In file: ./contracts/CryptoPunksMarket.sol:86
+
+function setInitialOwners(address[] addresses, uint[] indices) {
+        if (msg.sender != owner) throw;
+        uint n = addresses.length;
+        for (uint i = 0; i < n; i++) {
+            setInitialOwner(addresses[i], indices[i]);
+        }
+    }
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x42081600000408060, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: allInitialOwnersAssigned(), txdata: 0x7ecedac9, value: 0x0
+Caller: [CREATOR], function: allInitialOwnersAssigned(), txdata: 0x7ecedac9, value: 0x0
+Caller: [CREATOR], function: setInitialOwners(address[],uint256[]), txdata: 0x39c5dde68000000000000000000000000000000000000000000000000000000000000000ff, value: 0x0
+
+
+
+overall time used (seconds): 1276.8509728908539
+
+
+
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['setInitialOwner(address,uint256)'], ['setInitialOwners(address[],uint256[])'], ['enterBidForPunk(uint256)'], ['offerPunkForSaleToAddress(uint256,uint256,address)'], ['offerPunkForSale(uint256,uint256)'], ['transferPunk(address,uint256)'], ['acceptBidForPunk(uint256,uint256)']]" --parallel-solving
+Process killed due to timeout!
+Process timed out and was killed.
+overall time used (seconds): 1876.9354271888733
+
+
+
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['getPunk(uint256)'], ['offerPunkForSale(uint256,uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['getPunk(uint256)'], ['offerPunkForSale(uint256,uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[[0xc81d1d5b],[0xc44193c3]]" --parallel-solving
+done! 
+Used 15.130651950836182 seconds
+coverage file: ./myth_code_coverage/0622ffe9-8fd8-4346-a18a-24683be4dbcd.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 18.302634954452515
+
+
+
+Used 15.130651950836182 seconds
+coverage file: ./myth_code_coverage/0622ffe9-8fd8-4346-a18a-24683be4dbcd.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1895.238296031952
+
+
+
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['withdraw()'], ['allInitialOwnersAssigned()'], ['setInitialOwners(address[],uint256[])'], ['offerPunkForSale(uint256,uint256)'], ['punkNoLongerForSale(uint256)'], ['transferPunk(address,uint256)'], ['enterBidForPunk(uint256)'], ['acceptBidForPunk(uint256,uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['withdraw()'], ['allInitialOwnersAssigned()'], ['setInitialOwners(address[],uint256[])'], ['offerPunkForSale(uint256,uint256)'], ['punkNoLongerForSale(uint256)'], ['transferPunk(address,uint256)'], ['enterBidForPunk(uint256)'], ['acceptBidForPunk(uint256,uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[[0x3ccfd60b],[0x7ecedac9],[0x39c5dde6],[0xc44193c3],[0xf6eeff1e],[0x8b72a2ec],[0x091dbfd2],[0x23165b75]]" --parallel-solving
+done! 
+Used 13.861325025558472 seconds
+coverage file: ./myth_code_coverage/91fd49de-d78d-44cd-bcd5-833decf8151f.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 16.58565402030945
+
+
+
+Used 13.861325025558472 seconds
+coverage file: ./myth_code_coverage/91fd49de-d78d-44cd-bcd5-833decf8151f.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1911.824243068695
+
+
+
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['getPunk(uint256)'], ['offerPunkForSaleToAddress(uint256,uint256,address)'], ['offerPunkForSale(uint256,uint256)'], ['enterBidForPunk(uint256)'], ['withdrawBidForPunk(uint256)'], ['transferPunk(address,uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['getPunk(uint256)'], ['offerPunkForSaleToAddress(uint256,uint256,address)'], ['offerPunkForSale(uint256,uint256)'], ['enterBidForPunk(uint256)'], ['withdrawBidForPunk(uint256)'], ['transferPunk(address,uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[[0xc81d1d5b],[0xbf31196f],[0xc44193c3],[0x091dbfd2],[0x979bc638],[0x8b72a2ec]]" --parallel-solving
+done! 
+Used 14.544753313064575 seconds
+coverage file: ./myth_code_coverage/b34acd28-eb8d-46c2-9cc7-01d660e8d7b0.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 17.296699047088623
+
+
+
+Used 14.544753313064575 seconds
+coverage file: ./myth_code_coverage/b34acd28-eb8d-46c2-9cc7-01d660e8d7b0.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1929.1212010383606
+
+
+
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['withdraw()'], ['withdraw()'], ['getPunk(uint256)'], ['offerPunkForSaleToAddress(uint256,uint256,address)'], ['offerPunkForSale(uint256,uint256)'], ['enterBidForPunk(uint256)'], ['transferPunk(address,uint256)'], ['acceptBidForPunk(uint256,uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['withdraw()'], ['withdraw()'], ['getPunk(uint256)'], ['offerPunkForSaleToAddress(uint256,uint256,address)'], ['offerPunkForSale(uint256,uint256)'], ['enterBidForPunk(uint256)'], ['transferPunk(address,uint256)'], ['acceptBidForPunk(uint256,uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[[0x3ccfd60b],[0x3ccfd60b],[0xc81d1d5b],[0xbf31196f],[0xc44193c3],[0x091dbfd2],[0x8b72a2ec],[0x23165b75]]" --parallel-solving
+done! 
+Used 15.165767908096313 seconds
+coverage file: ./myth_code_coverage/f799e4f7-6967-48e4-a848-1f116cca8eb4.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 17.926281929016113
+
+
+
+Used 15.165767908096313 seconds
+coverage file: ./myth_code_coverage/f799e4f7-6967-48e4-a848-1f116cca8eb4.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1947.047816991806
+
+
+
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['setInitialOwner(address,uint256)'], ['withdraw()'], ['getPunk(uint256)'], ['offerPunkForSale(uint256,uint256)'], ['buyPunk(uint256)'], ['transferPunk(address,uint256)'], ['punkNoLongerForSale(uint256)'], ['enterBidForPunk(uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['setInitialOwner(address,uint256)'], ['withdraw()'], ['getPunk(uint256)'], ['offerPunkForSale(uint256,uint256)'], ['buyPunk(uint256)'], ['transferPunk(address,uint256)'], ['punkNoLongerForSale(uint256)'], ['enterBidForPunk(uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[[0xa75a9049],[0x3ccfd60b],[0xc81d1d5b],[0xc44193c3],[0x8264fe98],[0x8b72a2ec],[0xf6eeff1e],[0x091dbfd2]]" --parallel-solving
+done! 
+Used 16.638850927352905 seconds
+coverage file: ./myth_code_coverage/93de9745-081c-4959-8fd1-5527f390d345.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 19.45779585838318
+
+
+
+Used 16.638850927352905 seconds
+coverage file: ./myth_code_coverage/93de9745-081c-4959-8fd1-5527f390d345.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1966.5059552192688
+
+
+
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['setInitialOwner(address,uint256)'], ['setInitialOwner(address,uint256)'], ['getPunk(uint256)'], ['enterBidForPunk(uint256)'], ['acceptBidForPunk(uint256,uint256)'], ['offerPunkForSaleToAddress(uint256,uint256,address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['setInitialOwner(address,uint256)'], ['setInitialOwner(address,uint256)'], ['getPunk(uint256)'], ['enterBidForPunk(uint256)'], ['acceptBidForPunk(uint256,uint256)'], ['offerPunkForSaleToAddress(uint256,uint256,address)']]" --parallel-solving
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[[0xa75a9049],[0xa75a9049],[0xc81d1d5b],[0x091dbfd2],[0x23165b75],[0xbf31196f]]" --parallel-solving
+done! 
+Used 27.99150586128235 seconds
+coverage file: ./myth_code_coverage/ca9c438a-70d4-4fb2-9bee-dd3a672bb3f7.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 30.773504972457886
+
+
+
+Used 27.99150586128235 seconds
+coverage file: ./myth_code_coverage/ca9c438a-70d4-4fb2-9bee-dd3a672bb3f7.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1997.2797601222992
+
+
+
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['allInitialOwnersAssigned()'], ['withdraw()'], ['setInitialOwners(address[],uint256[])'], ['enterBidForPunk(uint256)'], ['offerPunkForSale(uint256,uint256)'], ['punkNoLongerForSale(uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['allInitialOwnersAssigned()'], ['withdraw()'], ['setInitialOwners(address[],uint256[])'], ['enterBidForPunk(uint256)'], ['offerPunkForSale(uint256,uint256)'], ['punkNoLongerForSale(uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[[0x7ecedac9],[0x3ccfd60b],[0x39c5dde6],[0x091dbfd2],[0xc44193c3],[0xf6eeff1e]]" --parallel-solving
+done! 
+Used 21.430321216583252 seconds
+coverage file: ./myth_code_coverage/5b960d4b-7dcf-4e0a-aaa3-f19ab04dbfa8.json
+==== Exception State ====
+SWC ID: 110
+Severity: Medium
+Contract: CryptoPunksMarket
+Function name: setInitialOwners(address[],uint256[])
+PC address: 5148
+Estimated Gas Usage: 1700 - 7671
+An assertion violation was triggered.
+It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
+--------------------
+In file: ./contracts/CryptoPunksMarket.sol:86
+
+function setInitialOwners(address[] addresses, uint[] indices) {
+        if (msg.sender != owner) throw;
+        uint n = addresses.length;
+        for (uint i = 0; i < n; i++) {
+            setInitialOwner(addresses[i], indices[i]);
+        }
+    }
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x330006825816c63a2, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: allInitialOwnersAssigned(), txdata: 0x7ecedac9, value: 0x0
+Caller: [CREATOR], function: withdraw(), txdata: 0x3ccfd60b, value: 0x0
+Caller: [CREATOR], function: setInitialOwners(address[],uint256[]), txdata: 0x39c5dde6ffffffffffffffffffffffffffffffffffffffffffffbfff02ff16ffffdf0000ff, value: 0x0
+
+==== Transaction Order Dependence ====
+SWC ID: 114
+Severity: Medium
+Contract: CryptoPunksMarket
+Function name: withdraw()
+PC address: 5395
+Estimated Gas Usage: 7957 - 62948
+The value of the call is dependent on balance or storage write
+This can lead to race conditions. An attacker may be able to run a transaction after our transaction which can change the value of the call
+--------------------
+In file: ./contracts/CryptoPunksMarket.sol:193
+
+msg.sender.transfer(amount)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x100000000, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: allInitialOwnersAssigned(), txdata: 0x7ecedac9, value: 0x0
+Caller: [ATTACKER], function: withdraw(), txdata: 0x3ccfd60b, value: 0x0
+
+
+
+overall time used (seconds): 24.2013943195343
+
+
+
+Used 21.430321216583252 seconds
+coverage file: ./myth_code_coverage/5b960d4b-7dcf-4e0a-aaa3-f19ab04dbfa8.json
+==== Exception State ====
+SWC ID: 110
+Severity: Medium
+Contract: CryptoPunksMarket
+Function name: setInitialOwners(address[],uint256[])
+PC address: 5148
+Estimated Gas Usage: 1700 - 7671
+An assertion violation was triggered.
+It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
+--------------------
+In file: ./contracts/CryptoPunksMarket.sol:86
+
+function setInitialOwners(address[] addresses, uint[] indices) {
+        if (msg.sender != owner) throw;
+        uint n = addresses.length;
+        for (uint i = 0; i < n; i++) {
+            setInitialOwner(addresses[i], indices[i]);
+        }
+    }
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x330006825816c63a2, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: allInitialOwnersAssigned(), txdata: 0x7ecedac9, value: 0x0
+Caller: [CREATOR], function: withdraw(), txdata: 0x3ccfd60b, value: 0x0
+Caller: [CREATOR], function: setInitialOwners(address[],uint256[]), txdata: 0x39c5dde6ffffffffffffffffffffffffffffffffffffffffffffbfff02ff16ffffdf0000ff, value: 0x0
+
+==== Transaction Order Dependence ====
+SWC ID: 114
+Severity: Medium
+Contract: CryptoPunksMarket
+Function name: withdraw()
+PC address: 5395
+Estimated Gas Usage: 7957 - 62948
+The value of the call is dependent on balance or storage write
+This can lead to race conditions. An attacker may be able to run a transaction after our transaction which can change the value of the call
+--------------------
+In file: ./contracts/CryptoPunksMarket.sol:193
+
+msg.sender.transfer(amount)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x100000000, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: allInitialOwnersAssigned(), txdata: 0x7ecedac9, value: 0x0
+Caller: [ATTACKER], function: withdraw(), txdata: 0x3ccfd60b, value: 0x0
+
+
+
+overall time used (seconds): 2021.4814732074738
+
+
+

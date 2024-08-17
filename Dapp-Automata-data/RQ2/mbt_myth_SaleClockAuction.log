@@ -1,0 +1,748 @@
+./contracts/SaleClockAuction.sol:301:3: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+  function Ownable() public {
+  ^ (Relevant source part starts here and spans across multiple lines).
+./contracts/SaleClockAuction.sol:378:5: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+    function ClockAuction(uint256 _cut) public {
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts/SaleClockAuction.sol:520:5: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+    function SaleClockAuction(uint256 _cut) public
+    ^ (Relevant source part starts here and spans across multiple lines).
+./contracts/SaleClockAuction.sol:116:9: Warning: Invoking events without "emit" prefix is deprecated.
+        AuctionCreated(
+        ^ (Relevant source part starts here and spans across multiple lines).
+./contracts/SaleClockAuction.sol:129:9: Warning: Invoking events without "emit" prefix is deprecated.
+        AuctionCancelled(_nft, _tokenId);
+        ^------------------------------^
+./contracts/SaleClockAuction.sol:180:9: Warning: Invoking events without "emit" prefix is deprecated.
+        AuctionSuccessful(_nft, _tokenId, price, msg.sender);
+        ^--------------------------------------------------^
+./contracts/SaleClockAuction.sol:321:5: Warning: Invoking events without "emit" prefix is deprecated.
+    OwnershipTransferred(owner, newOwner);
+    ^-----------------------------------^
+./contracts/SaleClockAuction.sol:359:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Pause();
+    ^-----^
+./contracts/SaleClockAuction.sol:367:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Unpause();
+    ^-------^
+./contracts/SaleClockAuction.sol:391:29: Warning: Using contract member "balance" inherited from the address type is deprecated. Convert the contract to "address" type to access the member, for example use "address(contract).balance" instead.
+        msg.sender.transfer(this.balance);
+                            ^----------^
+./contracts/SaleClockAuction.sol:561:9: Warning: Unused local variable.
+        address seller = nftToTokenIdToAuction[_nftAddress][_tokenId].seller;
+        ^------------^
+./contracts/SaleClockAuction.sol:562:9: Warning: Unused local variable.
+        uint256 price = _bid(_nftAddress, _tokenId, msg.value);
+        ^-----------^
+./contracts/SaleClockAuction.sol:277:5: Warning: Function state mutability can be restricted to pure
+    function _getNft(address _nft) internal view returns (ERC721) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+{'mbt': True, 'random': False, 'contract_name': 'SaleClockAuction', 'model_file': '../result/model-fix/0x1f52b87c3503e537853e160adbf7e330ea0be7c4/SaleClockAuction/FSM-3.json', 'abi_file': None, 'contract_file': './contracts/SaleClockAuction.sol'}
+solc ./contracts/SaleClockAuction.sol --overwrite --bin --abi -o Dapp-Automata-data/RQ2/artifacts
+0
+cancelAuctionWhenPaused(address,uint256) 0x1ae6b6ee
+unpause() 0x3f4ba83a
+bid(address,uint256) 0x59d667a5
+withdrawBalance() 0x5fd8c710
+pause() 0x8456cb59
+cancelAuction(address,uint256) 0x859b97fe
+createAuction(address,uint256,uint256,uint256,uint256) 0x961c9ae4
+createAuction(address,uint256,uint256,uint256,uint256,address) 0xe6effbe9
+transferOwnership(address) 0xf2fde38b
+myth -v 2 analyze ./contracts/SaleClockAuction.sol:SaleClockAuction --transaction-sequences "[['pause()'], ['createAuction(address,uint256,uint256,uint256,uint256)'], ['cancelAuction(address,uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/SaleClockAuction.sol:SaleClockAuction --transaction-sequences "[['pause()'], ['createAuction(address,uint256,uint256,uint256,uint256)'], ['cancelAuction(address,uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/SaleClockAuction.sol:SaleClockAuction --transaction-sequences "[[0x8456cb59],[0x961c9ae4],[0x859b97fe]]" --parallel-solving
+done! 
+Used 3965.052449941635 seconds
+coverage file: ./myth_code_coverage/d0379986-7bec-4571-a87f-be17f050725c.json
+==== External Call To User-Supplied Address ====
+SWC ID: 107
+Severity: Low
+Contract: SaleClockAuction
+Function name: createAuction(address,uint256,uint256,uint256,uint256)
+PC address: 5165
+Estimated Gas Usage: 39246 - 199630
+A call to a user-supplied address is executed.
+An external message call to an address specified by the caller is executed. Note that the callee account might contain arbitrary code and could re-enter any function within this contract. Reentering the contract in an intermediate state may lead to unexpected behaviour. Make sure that no state modifications are executed after this call and/or reentrancy guards are in place.
+--------------------
+In file: ./contracts/SaleClockAuction.sol:90
+
+nonFungibleContract.transferFrom(_owner, this, _tokenId)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: pause(), txdata: 0x8456cb59, value: 0x0
+Caller: [SOMEGUY], function: createAuction(address,uint256,uint256,uint256,uint256), txdata: 0x961c9ae4000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000080, decoded_data: ('0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef', 0, 0, 128, 9223372036854775808), value: 0x0
+
+==== State access after external call ====
+SWC ID: 107
+Severity: Medium
+Contract: SaleClockAuction
+Function name: createAuction(address,uint256,uint256,uint256,uint256)
+PC address: 5313
+Estimated Gas Usage: 39246 - 199630
+Read of persistent state following external call
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+--------------------
+In file: ./contracts/SaleClockAuction.sol:114
+
+nftToTokenIdToAuction[_nft][_tokenId] = _auction
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: pause(), txdata: 0x8456cb59, value: 0x0
+Caller: [SOMEGUY], function: createAuction(address,uint256,uint256,uint256,uint256), txdata: 0x961c9ae4000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000080, decoded_data: ('0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef', 0, 0, 128, 9223372036854775808), value: 0x0
+
+==== State access after external call ====
+SWC ID: 107
+Severity: Medium
+Contract: SaleClockAuction
+Function name: createAuction(address,uint256,uint256,uint256,uint256)
+PC address: 5366
+Estimated Gas Usage: 39246 - 199630
+Write to persistent state following external call
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+--------------------
+In file: ./contracts/SaleClockAuction.sol:114
+
+nftToTokenIdToAuction[_nft][_tokenId] = _auction
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: pause(), txdata: 0x8456cb59, value: 0x0
+Caller: [SOMEGUY], function: createAuction(address,uint256,uint256,uint256,uint256), txdata: 0x961c9ae4000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000080, decoded_data: ('0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef', 0, 0, 128, 9223372036854775808), value: 0x0
+
+==== State access after external call ====
+SWC ID: 107
+Severity: Medium
+Contract: SaleClockAuction
+Function name: createAuction(address,uint256,uint256,uint256,uint256)
+PC address: 5384
+Estimated Gas Usage: 39246 - 199630
+Read of persistent state following external call
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+--------------------
+In file: ./contracts/SaleClockAuction.sol:114
+
+nftToTokenIdToAuction[_nft][_tokenId] = _auction
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: pause(), txdata: 0x8456cb59, value: 0x0
+Caller: [SOMEGUY], function: createAuction(address,uint256,uint256,uint256,uint256), txdata: 0x961c9ae4000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000080, decoded_data: ('0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef', 0, 0, 128, 9223372036854775808), value: 0x0
+
+==== State access after external call ====
+SWC ID: 107
+Severity: Medium
+Contract: SaleClockAuction
+Function name: createAuction(address,uint256,uint256,uint256,uint256)
+PC address: 5437
+Estimated Gas Usage: 39246 - 199630
+Write to persistent state following external call
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+--------------------
+In file: ./contracts/SaleClockAuction.sol:114
+
+nftToTokenIdToAuction[_nft][_tokenId] = _auction
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: pause(), txdata: 0x8456cb59, value: 0x0
+Caller: [SOMEGUY], function: createAuction(address,uint256,uint256,uint256,uint256), txdata: 0x961c9ae4000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000080, decoded_data: ('0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef', 0, 0, 128, 9223372036854775808), value: 0x0
+
+==== State access after external call ====
+SWC ID: 107
+Severity: Medium
+Contract: SaleClockAuction
+Function name: createAuction(address,uint256,uint256,uint256,uint256)
+PC address: 5455
+Estimated Gas Usage: 39246 - 199630
+Read of persistent state following external call
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+--------------------
+In file: ./contracts/SaleClockAuction.sol:114
+
+nftToTokenIdToAuction[_nft][_tokenId] = _auction
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: pause(), txdata: 0x8456cb59, value: 0x0
+Caller: [SOMEGUY], function: createAuction(address,uint256,uint256,uint256,uint256), txdata: 0x961c9ae4000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000080, decoded_data: ('0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef', 0, 0, 128, 9223372036854775808), value: 0x0
+
+==== State access after external call ====
+SWC ID: 107
+Severity: Medium
+Contract: SaleClockAuction
+Function name: createAuction(address,uint256,uint256,uint256,uint256)
+PC address: 5500
+Estimated Gas Usage: 39246 - 199630
+Write to persistent state following external call
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+--------------------
+In file: ./contracts/SaleClockAuction.sol:114
+
+nftToTokenIdToAuction[_nft][_tokenId] = _auction
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: pause(), txdata: 0x8456cb59, value: 0x0
+Caller: [SOMEGUY], function: createAuction(address,uint256,uint256,uint256,uint256), txdata: 0x961c9ae4000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000080, decoded_data: ('0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef', 0, 0, 128, 9223372036854775808), value: 0x0
+
+==== State access after external call ====
+SWC ID: 107
+Severity: Medium
+Contract: SaleClockAuction
+Function name: createAuction(address,uint256,uint256,uint256,uint256)
+PC address: 5518
+Estimated Gas Usage: 39246 - 199630
+Read of persistent state following external call
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+--------------------
+In file: ./contracts/SaleClockAuction.sol:114
+
+nftToTokenIdToAuction[_nft][_tokenId] = _auction
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: pause(), txdata: 0x8456cb59, value: 0x0
+Caller: [SOMEGUY], function: createAuction(address,uint256,uint256,uint256,uint256), txdata: 0x961c9ae4000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000080, decoded_data: ('0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef', 0, 0, 128, 9223372036854775808), value: 0x0
+
+==== State access after external call ====
+SWC ID: 107
+Severity: Medium
+Contract: SaleClockAuction
+Function name: createAuction(address,uint256,uint256,uint256,uint256)
+PC address: 5563
+Estimated Gas Usage: 39246 - 199630
+Write to persistent state following external call
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+--------------------
+In file: ./contracts/SaleClockAuction.sol:114
+
+nftToTokenIdToAuction[_nft][_tokenId] = _auction
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: pause(), txdata: 0x8456cb59, value: 0x0
+Caller: [SOMEGUY], function: createAuction(address,uint256,uint256,uint256,uint256), txdata: 0x961c9ae4000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000080, decoded_data: ('0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef', 0, 0, 128, 9223372036854775808), value: 0x0
+
+==== State access after external call ====
+SWC ID: 107
+Severity: Medium
+Contract: SaleClockAuction
+Function name: createAuction(address,uint256,uint256,uint256,uint256)
+PC address: 5581
+Estimated Gas Usage: 39246 - 199630
+Read of persistent state following external call
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+--------------------
+In file: ./contracts/SaleClockAuction.sol:114
+
+nftToTokenIdToAuction[_nft][_tokenId] = _auction
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: pause(), txdata: 0x8456cb59, value: 0x0
+Caller: [SOMEGUY], function: createAuction(address,uint256,uint256,uint256,uint256), txdata: 0x961c9ae4000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000080, decoded_data: ('0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef', 0, 0, 128, 9223372036854775808), value: 0x0
+
+==== State access after external call ====
+SWC ID: 107
+Severity: Medium
+Contract: SaleClockAuction
+Function name: createAuction(address,uint256,uint256,uint256,uint256)
+PC address: 5610
+Estimated Gas Usage: 39246 - 199630
+Write to persistent state following external call
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+--------------------
+In file: ./contracts/SaleClockAuction.sol:114
+
+nftToTokenIdToAuction[_nft][_tokenId] = _auction
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: pause(), txdata: 0x8456cb59, value: 0x0
+Caller: [SOMEGUY], function: createAuction(address,uint256,uint256,uint256,uint256), txdata: 0x961c9ae4000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000080, decoded_data: ('0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef', 0, 0, 128, 9223372036854775808), value: 0x0
+
+==== State access after external call ====
+SWC ID: 107
+Severity: Medium
+Contract: SaleClockAuction
+Function name: createAuction(address,uint256,uint256,uint256,uint256)
+PC address: 5628
+Estimated Gas Usage: 39246 - 199630
+Read of persistent state following external call
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+--------------------
+In file: ./contracts/SaleClockAuction.sol:114
+
+nftToTokenIdToAuction[_nft][_tokenId] = _auction
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: pause(), txdata: 0x8456cb59, value: 0x0
+Caller: [SOMEGUY], function: createAuction(address,uint256,uint256,uint256,uint256), txdata: 0x961c9ae4000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000080, decoded_data: ('0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef', 0, 0, 128, 9223372036854775808), value: 0x0
+
+==== State access after external call ====
+SWC ID: 107
+Severity: Medium
+Contract: SaleClockAuction
+Function name: createAuction(address,uint256,uint256,uint256,uint256)
+PC address: 5657
+Estimated Gas Usage: 39246 - 199630
+Write to persistent state following external call
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+--------------------
+In file: ./contracts/SaleClockAuction.sol:114
+
+nftToTokenIdToAuction[_nft][_tokenId] = _auction
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: pause(), txdata: 0x8456cb59, value: 0x0
+Caller: [SOMEGUY], function: createAuction(address,uint256,uint256,uint256,uint256), txdata: 0x961c9ae4000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000080, decoded_data: ('0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef', 0, 0, 128, 9223372036854775808), value: 0x0
+
+
+
+overall time used (seconds): 3968.2323818206787
+
+
+
+Used 3965.052449941635 seconds
+coverage file: ./myth_code_coverage/d0379986-7bec-4571-a87f-be17f050725c.json
+==== External Call To User-Supplied Address ====
+SWC ID: 107
+Severity: Low
+Contract: SaleClockAuction
+Function name: createAuction(address,uint256,uint256,uint256,uint256)
+PC address: 5165
+Estimated Gas Usage: 39246 - 199630
+A call to a user-supplied address is executed.
+An external message call to an address specified by the caller is executed. Note that the callee account might contain arbitrary code and could re-enter any function within this contract. Reentering the contract in an intermediate state may lead to unexpected behaviour. Make sure that no state modifications are executed after this call and/or reentrancy guards are in place.
+--------------------
+In file: ./contracts/SaleClockAuction.sol:90
+
+nonFungibleContract.transferFrom(_owner, this, _tokenId)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: pause(), txdata: 0x8456cb59, value: 0x0
+Caller: [SOMEGUY], function: createAuction(address,uint256,uint256,uint256,uint256), txdata: 0x961c9ae4000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000080, decoded_data: ('0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef', 0, 0, 128, 9223372036854775808), value: 0x0
+
+==== State access after external call ====
+SWC ID: 107
+Severity: Medium
+Contract: SaleClockAuction
+Function name: createAuction(address,uint256,uint256,uint256,uint256)
+PC address: 5313
+Estimated Gas Usage: 39246 - 199630
+Read of persistent state following external call
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+--------------------
+In file: ./contracts/SaleClockAuction.sol:114
+
+nftToTokenIdToAuction[_nft][_tokenId] = _auction
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: pause(), txdata: 0x8456cb59, value: 0x0
+Caller: [SOMEGUY], function: createAuction(address,uint256,uint256,uint256,uint256), txdata: 0x961c9ae4000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000080, decoded_data: ('0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef', 0, 0, 128, 9223372036854775808), value: 0x0
+
+==== State access after external call ====
+SWC ID: 107
+Severity: Medium
+Contract: SaleClockAuction
+Function name: createAuction(address,uint256,uint256,uint256,uint256)
+PC address: 5366
+Estimated Gas Usage: 39246 - 199630
+Write to persistent state following external call
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+--------------------
+In file: ./contracts/SaleClockAuction.sol:114
+
+nftToTokenIdToAuction[_nft][_tokenId] = _auction
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: pause(), txdata: 0x8456cb59, value: 0x0
+Caller: [SOMEGUY], function: createAuction(address,uint256,uint256,uint256,uint256), txdata: 0x961c9ae4000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000080, decoded_data: ('0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef', 0, 0, 128, 9223372036854775808), value: 0x0
+
+==== State access after external call ====
+SWC ID: 107
+Severity: Medium
+Contract: SaleClockAuction
+Function name: createAuction(address,uint256,uint256,uint256,uint256)
+PC address: 5384
+Estimated Gas Usage: 39246 - 199630
+Read of persistent state following external call
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+--------------------
+In file: ./contracts/SaleClockAuction.sol:114
+
+nftToTokenIdToAuction[_nft][_tokenId] = _auction
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: pause(), txdata: 0x8456cb59, value: 0x0
+Caller: [SOMEGUY], function: createAuction(address,uint256,uint256,uint256,uint256), txdata: 0x961c9ae4000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000080, decoded_data: ('0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef', 0, 0, 128, 9223372036854775808), value: 0x0
+
+==== State access after external call ====
+SWC ID: 107
+Severity: Medium
+Contract: SaleClockAuction
+Function name: createAuction(address,uint256,uint256,uint256,uint256)
+PC address: 5437
+Estimated Gas Usage: 39246 - 199630
+Write to persistent state following external call
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+--------------------
+In file: ./contracts/SaleClockAuction.sol:114
+
+nftToTokenIdToAuction[_nft][_tokenId] = _auction
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: pause(), txdata: 0x8456cb59, value: 0x0
+Caller: [SOMEGUY], function: createAuction(address,uint256,uint256,uint256,uint256), txdata: 0x961c9ae4000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000080, decoded_data: ('0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef', 0, 0, 128, 9223372036854775808), value: 0x0
+
+==== State access after external call ====
+SWC ID: 107
+Severity: Medium
+Contract: SaleClockAuction
+Function name: createAuction(address,uint256,uint256,uint256,uint256)
+PC address: 5455
+Estimated Gas Usage: 39246 - 199630
+Read of persistent state following external call
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+--------------------
+In file: ./contracts/SaleClockAuction.sol:114
+
+nftToTokenIdToAuction[_nft][_tokenId] = _auction
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: pause(), txdata: 0x8456cb59, value: 0x0
+Caller: [SOMEGUY], function: createAuction(address,uint256,uint256,uint256,uint256), txdata: 0x961c9ae4000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000080, decoded_data: ('0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef', 0, 0, 128, 9223372036854775808), value: 0x0
+
+==== State access after external call ====
+SWC ID: 107
+Severity: Medium
+Contract: SaleClockAuction
+Function name: createAuction(address,uint256,uint256,uint256,uint256)
+PC address: 5500
+Estimated Gas Usage: 39246 - 199630
+Write to persistent state following external call
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+--------------------
+In file: ./contracts/SaleClockAuction.sol:114
+
+nftToTokenIdToAuction[_nft][_tokenId] = _auction
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: pause(), txdata: 0x8456cb59, value: 0x0
+Caller: [SOMEGUY], function: createAuction(address,uint256,uint256,uint256,uint256), txdata: 0x961c9ae4000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000080, decoded_data: ('0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef', 0, 0, 128, 9223372036854775808), value: 0x0
+
+==== State access after external call ====
+SWC ID: 107
+Severity: Medium
+Contract: SaleClockAuction
+Function name: createAuction(address,uint256,uint256,uint256,uint256)
+PC address: 5518
+Estimated Gas Usage: 39246 - 199630
+Read of persistent state following external call
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+--------------------
+In file: ./contracts/SaleClockAuction.sol:114
+
+nftToTokenIdToAuction[_nft][_tokenId] = _auction
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: pause(), txdata: 0x8456cb59, value: 0x0
+Caller: [SOMEGUY], function: createAuction(address,uint256,uint256,uint256,uint256), txdata: 0x961c9ae4000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000080, decoded_data: ('0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef', 0, 0, 128, 9223372036854775808), value: 0x0
+
+==== State access after external call ====
+SWC ID: 107
+Severity: Medium
+Contract: SaleClockAuction
+Function name: createAuction(address,uint256,uint256,uint256,uint256)
+PC address: 5563
+Estimated Gas Usage: 39246 - 199630
+Write to persistent state following external call
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+--------------------
+In file: ./contracts/SaleClockAuction.sol:114
+
+nftToTokenIdToAuction[_nft][_tokenId] = _auction
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: pause(), txdata: 0x8456cb59, value: 0x0
+Caller: [SOMEGUY], function: createAuction(address,uint256,uint256,uint256,uint256), txdata: 0x961c9ae4000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000080, decoded_data: ('0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef', 0, 0, 128, 9223372036854775808), value: 0x0
+
+==== State access after external call ====
+SWC ID: 107
+Severity: Medium
+Contract: SaleClockAuction
+Function name: createAuction(address,uint256,uint256,uint256,uint256)
+PC address: 5581
+Estimated Gas Usage: 39246 - 199630
+Read of persistent state following external call
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+--------------------
+In file: ./contracts/SaleClockAuction.sol:114
+
+nftToTokenIdToAuction[_nft][_tokenId] = _auction
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: pause(), txdata: 0x8456cb59, value: 0x0
+Caller: [SOMEGUY], function: createAuction(address,uint256,uint256,uint256,uint256), txdata: 0x961c9ae4000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000080, decoded_data: ('0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef', 0, 0, 128, 9223372036854775808), value: 0x0
+
+==== State access after external call ====
+SWC ID: 107
+Severity: Medium
+Contract: SaleClockAuction
+Function name: createAuction(address,uint256,uint256,uint256,uint256)
+PC address: 5610
+Estimated Gas Usage: 39246 - 199630
+Write to persistent state following external call
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+--------------------
+In file: ./contracts/SaleClockAuction.sol:114
+
+nftToTokenIdToAuction[_nft][_tokenId] = _auction
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: pause(), txdata: 0x8456cb59, value: 0x0
+Caller: [SOMEGUY], function: createAuction(address,uint256,uint256,uint256,uint256), txdata: 0x961c9ae4000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000080, decoded_data: ('0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef', 0, 0, 128, 9223372036854775808), value: 0x0
+
+==== State access after external call ====
+SWC ID: 107
+Severity: Medium
+Contract: SaleClockAuction
+Function name: createAuction(address,uint256,uint256,uint256,uint256)
+PC address: 5628
+Estimated Gas Usage: 39246 - 199630
+Read of persistent state following external call
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+--------------------
+In file: ./contracts/SaleClockAuction.sol:114
+
+nftToTokenIdToAuction[_nft][_tokenId] = _auction
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: pause(), txdata: 0x8456cb59, value: 0x0
+Caller: [SOMEGUY], function: createAuction(address,uint256,uint256,uint256,uint256), txdata: 0x961c9ae4000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000080, decoded_data: ('0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef', 0, 0, 128, 9223372036854775808), value: 0x0
+
+==== State access after external call ====
+SWC ID: 107
+Severity: Medium
+Contract: SaleClockAuction
+Function name: createAuction(address,uint256,uint256,uint256,uint256)
+PC address: 5657
+Estimated Gas Usage: 39246 - 199630
+Write to persistent state following external call
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+--------------------
+In file: ./contracts/SaleClockAuction.sol:114
+
+nftToTokenIdToAuction[_nft][_tokenId] = _auction
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: pause(), txdata: 0x8456cb59, value: 0x0
+Caller: [SOMEGUY], function: createAuction(address,uint256,uint256,uint256,uint256), txdata: 0x961c9ae4000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000080, decoded_data: ('0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef', 0, 0, 128, 9223372036854775808), value: 0x0
+
+
+
+overall time used (seconds): 3968.232873916626
+
+
+
+timeout!!! exceed 3600 seconds

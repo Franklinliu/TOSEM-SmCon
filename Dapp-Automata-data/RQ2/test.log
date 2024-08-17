@@ -1,0 +1,80 @@
+Used 182.72335386276245 seconds
+coverage file: ./myth_code_coverage/3cccddb0-2370-4dbf-bfd6-a148e6139367.json
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: joinGame(uint256,uint8)
+PC address: 7010
+Estimated Gas Usage: 7800 - 10065
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:243
+
+require(now < game.expireTime)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x40000000000, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
+Caller: [ATTACKER], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001, value: 0x0
+
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: RpsGame
+Function name: joinGame(uint256,uint8)
+PC address: 7145
+Estimated Gas Usage: 45043 - 169921
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./contracts/RpsGame.sol:249
+
+expireTimeLimit + now
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x4a000000000000000, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x51dc26f2f8002900c, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b0000000000002000010001000000000000000000010000000000002000000000000000000000000000000000aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, decoded_data: ('0000000000002000010001000000000000000000010000000000002000000000', '0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'), value: 0x0
+Caller: [SOMEGUY], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001202020202020202020202020202020202020202020202020202020202020201e, value: 0x0
+
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: RpsGame
+Function name: createGame(bytes32,address)
+PC address: 7773
+Estimated Gas Usage: 58022 - 241250
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./contracts/RpsGame.sol:227
+
+expireTimeLimit + now
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
+
+

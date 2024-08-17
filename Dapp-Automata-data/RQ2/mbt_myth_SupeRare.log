@@ -1,0 +1,110 @@
+./contracts/SupeRare.sol:295:3: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+  function Ownable() public {
+  ^ (Relevant source part starts here and spans across multiple lines).
+./contracts/SupeRare.sol:163:7: Warning: Invoking events without "emit" prefix is deprecated.
+      Approval(owner, _to, _tokenId);
+      ^----------------------------^
+./contracts/SupeRare.sol:184:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer(0x0, _to, _tokenId);
+    ^--------------------------^
+./contracts/SupeRare.sol:196:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer(msg.sender, 0x0, _tokenId);
+    ^---------------------------------^
+./contracts/SupeRare.sol:224:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer(_from, _to, _tokenId);
+    ^----------------------------^
+./contracts/SupeRare.sol:234:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Approval(_owner, 0, _tokenId);
+    ^---------------------------^
+./contracts/SupeRare.sol:313:5: Warning: Invoking events without "emit" prefix is deprecated.
+    OwnershipTransferred(owner, newOwner);
+    ^-----------------------------------^
+./contracts/SupeRare.sol:438:9: Warning: Invoking events without "emit" prefix is deprecated.
+        SalePriceSet(newId, _salePrice);
+        ^-----------------------------^
+./contracts/SupeRare.sol:451:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Bid(msg.sender, msg.value, _tokenId);
+        ^----------------------------------^
+./contracts/SupeRare.sol:466:9: Warning: Invoking events without "emit" prefix is deprecated.
+        AcceptBid(currentBidder, tokenOwner, currentBid, _tokenId);
+        ^--------------------------------------------------------^
+./contracts/SupeRare.sol:480:9: Warning: Invoking events without "emit" prefix is deprecated.
+        CancelBid(bidder, bidAmount, _tokenId);
+        ^------------------------------------^
+./contracts/SupeRare.sol:500:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Sold(buyer, tokenOwner, sentPrice, _tokenId);
+        ^------------------------------------------^
+./contracts/SupeRare.sol:511:9: Warning: Invoking events without "emit" prefix is deprecated.
+        SalePriceSet(_tokenId, _salePrice);
+        ^--------------------------------^
+./contracts/SupeRare.sol:520:7: Warning: Invoking events without "emit" prefix is deprecated.
+      WhitelistCreator(_creator);
+      ^------------------------^
+./contracts/SupeRare.sol:556:22: Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.
+    function approve(address _to, uint256 _tokenId) public {
+                     ^---------^
+./contracts/SupeRare.sol:556:35: Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.
+    function approve(address _to, uint256 _tokenId) public {
+                                  ^--------------^
+{'mbt': True, 'random': False, 'contract_name': 'SupeRare', 'model_file': '../result/model-fix/0x41a322b28d0ff354040e2cbc676f0320d8c8850d/SupeRare/FSM-17.json', 'abi_file': None, 'contract_file': './contracts/SupeRare.sol'}
+solc ./contracts/SupeRare.sol --overwrite --bin --abi -o Dapp-Automata-data/RQ2/artifacts
+0
+addNewTokenWithEditions(string,uint256,uint256) 0x019871e9
+setSalePrice(uint256,uint256) 0x053992c5
+approve(address,uint256) 0x095ea7b3
+acceptBid(uint256) 0x2b1fd58a
+bid(uint256) 0x454a2ab3
+setMaintainerPercentage(uint256) 0x5c68a557
+whitelistCreator(address) 0x62f11dd2
+cancelBid(uint256) 0x9703ef35
+transfer(address,uint256) 0xa9059cbb
+takeOwnership(uint256) 0xb2e6ceeb
+setCreatorPercentage(uint256) 0xc0ec93e7
+buy(uint256) 0xd96a094a
+addNewToken(string) 0xd9856c21
+transferOwnership(address) 0xf2fde38b
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['addNewTokenWithEditions(string,uint256,uint256)'], ['buy(uint256)'], ['bid(uint256)'], ['transfer(address,uint256)'], ['setSalePrice(uint256,uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['addNewTokenWithEditions(string,uint256,uint256)'], ['buy(uint256)'], ['bid(uint256)'], ['transfer(address,uint256)'], ['setSalePrice(uint256,uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[[0x019871e9],[0xd96a094a],[0x454a2ab3],[0xa9059cbb],[0x053992c5]]" --parallel-solving
+done! 
+Used 3293.8258090019226 seconds
+coverage file: ./myth_code_coverage/09e6c26d-8ba4-4e79-bc2b-a2c88aec6261.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 3297.1065316200256
+
+
+
+Used 3293.8258090019226 seconds
+coverage file: ./myth_code_coverage/09e6c26d-8ba4-4e79-bc2b-a2c88aec6261.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 3297.1067221164703
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['addNewTokenWithEditions(string,uint256,uint256)'], ['buy(uint256)'], ['addNewToken(string)'], ['bid(uint256)'], ['transfer(address,uint256)'], ['setSalePrice(uint256,uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['addNewTokenWithEditions(string,uint256,uint256)'], ['buy(uint256)'], ['addNewToken(string)'], ['bid(uint256)'], ['transfer(address,uint256)'], ['setSalePrice(uint256,uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[[0x019871e9],[0xd96a094a],[0xd9856c21],[0x454a2ab3],[0xa9059cbb],[0x053992c5]]" --parallel-solving
+done! 
+Used 3361.2974631786346 seconds
+coverage file: ./myth_code_coverage/172e56d2-ae7b-47b4-ba06-d52a2a70eed5.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 4279.8083300590515
+
+
+
+Used 3361.2974631786346 seconds
+coverage file: ./myth_code_coverage/172e56d2-ae7b-47b4-ba06-d52a2a70eed5.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 7576.915374994278
+
+
+
+timeout!!! exceed 3600 seconds
