@@ -235,7 +235,7 @@ contract RpsGame is SafeMath , AccessControl{
 
     /// @dev Join a game
     function joinGame(uint gameid, uint8 choice) public payable whenNotPaused returns (uint){
-        require(gameid == maxgame); // instrumentation for index constraints
+        // require(gameid == maxgame); // instrumentation for index constraints
 
         // Game storage game = games[gameid];
         Game storage game = games[maxgame];
@@ -260,7 +260,7 @@ contract RpsGame is SafeMath , AccessControl{
 
     /// @dev Creator reveals game choice
     function reveal(uint gameid, uint8 choice, bytes32 randomSecret) public returns (bool) {
-        require(gameid == maxgame); // instrumentation for index constraints
+        // require(gameid == maxgame); // instrumentation for index constraints
 
         // Game storage game = games[gameid];
         Game storage game = games[maxgame];
@@ -286,7 +286,7 @@ contract RpsGame is SafeMath , AccessControl{
 
     /// @dev Close game settlement rewards
     function close(uint gameid) public returns(bool) {
-        require(gameid == maxgame); // instrumentation for index constraints
+        // require(gameid == maxgame); // instrumentation for index constraints
 
         // Game storage game = games[gameid];
         Game storage game = games[maxgame];
