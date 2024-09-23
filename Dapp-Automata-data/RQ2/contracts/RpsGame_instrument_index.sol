@@ -186,7 +186,9 @@ contract RpsGame is SafeMath , AccessControl{
     mapping (address => uint[]) public gameidsOf;
 
     /// @dev Current game maximum id
-    uint public maxgame = 0;
+    // uint public maxgame = 0;
+    uint public constant maxgame = 0;
+
     uint public expireTimeLimit = 30 minutes;
 
     /// @dev Initialization contract
@@ -217,7 +219,7 @@ contract RpsGame is SafeMath , AccessControl{
     function createGame(bytes32 dealerHash, address player) public payable whenNotPaused returns (uint){
         require(dealerHash != 0x0);
 
-        maxgame += 1;
+        // maxgame += 1;
         Game storage game = games[maxgame];
         game.dealer = msg.sender;
         game.player = player;
