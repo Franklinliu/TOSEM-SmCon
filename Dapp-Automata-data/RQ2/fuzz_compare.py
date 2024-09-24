@@ -295,7 +295,7 @@ class TestCaseGen():
                                        contract_name=self.contract_name, transactions="["+",".join(['['+all_func_hashes[func_sig]+']' for func_sig in seq])+"]")
             print(real_cmd)
             my_cmd = shlex.split(real_cmd.strip())
-            result = run_with_timeout(my_cmd, timeout=2*60)
+            result = run_with_timeout(my_cmd, real_cmd, timeout=2*60)
             print(result)
             print("overall time used (seconds): " + str(time.time() - start))
             print("\n\n")
