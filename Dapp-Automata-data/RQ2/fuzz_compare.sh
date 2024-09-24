@@ -30,14 +30,10 @@ solc-select use 0.5.0
 timeout 1h python ./fuzz_compare.py --contract-name GameChannel --model-file ../result/gamechannel-fix/0xaec1f783b29aab2727d7c374aa55483fe299fefa/GameChannel/FSM-8.json --mbt ./contracts/GameChannel_instrument_index.sol > ./parametric_myth_GameChannel.log 2>&1
 done
 
-# for i in {1..5}
-# do 
-# echo $i
-# myth -v 2 analyze ./contracts/RpsGame_instrument_index.sol:RpsGame --transaction-sequences "[[0xfe1f6a0b], [0xca6649c5], [0x0aebeb4e]]" --parallel-solving >> ./mbt_index_myth_RpsGame.log 2>&1
-# done 
-
-# for i in {1..5}
-# do 
-# echo $i
-# myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0xfe1f6a0b], [0xca6649c5], [0x0aebeb4e]]" --parallel-solving >> ./mbt_non-index_myth_RpsGame.log 2>&1
-# done 
+#for i in {1..5}
+#do 
+#echo "$i round..."
+#myth -v 2 analyze ./contracts/RpsGame.sol:RpsGame --transaction-sequences "[[0xfe1f6a0b], [0xca6649c5], [0x0aebeb4e]]" --parallel-solving >> ./mbt_index_myth_RpsGame.log 2>&1
+#myth -v 2 analyze ./contracts/RpsGame_instrument_index.sol:RpsGame --transaction-sequences "[[0xfe1f6a0b], [0xca6649c5], [0x0aebeb4e]]" --parallel-solving >> ./mbt_index_myth_RpsGame.log 2>&1
+#done 
+echo "done!"

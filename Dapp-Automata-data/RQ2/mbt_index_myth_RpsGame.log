@@ -1,65 +1,15 @@
-Used 3423.23876285553 seconds
-coverage file: ./myth_code_coverage/85b7b4c9-87bc-4b9e-9fc0-6bdd5144d5e5.json
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: close(uint256)
-PC address: 2816
-Estimated Gas Usage: 2007 - 2622
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame.sol:286
-
-now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE)
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x29000000000040000, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x9020ca040030a18, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b40, value: 0x0
-Caller: [SOMEGUY], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000a, decoded_data: (1, 10), value: 0x0
-Caller: [ATTACKER], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
-
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: close(uint256)
-PC address: 2888
-Estimated Gas Usage: 2027 - 2642
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame.sol:286
-
-require(now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE))
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x100, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x1, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [ATTACKER], function: createGame(bytes32,address), txdata: 0xfe1f6a0b08, value: 0x0
-Caller: [CREATOR], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000a, decoded_data: (1, 10), value: 0x0
-Caller: [ATTACKER], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
-
+/home/ec2-user/.local/lib/python3.9/site-packages/eth_utils/network.py:44: UserWarning: Network 345 with name 'Yooldo Verse Mainnet' does not have a valid ChainId. eth-typing should be updated with the latest networks.
+  warnings.warn(
+/home/ec2-user/.local/lib/python3.9/site-packages/eth_utils/network.py:44: UserWarning: Network 12611 with name 'Astar zkEVM' does not have a valid ChainId. eth-typing should be updated with the latest networks.
+  warnings.warn(
+Used 2410.2142050266266 seconds
+coverage file: ./myth_code_coverage/e36049b3-cc83-4301-8362-10dd19bd02ea.json
 ==== Dependence on predictable environment variable ====
 SWC ID: 116
 Severity: Low
 Contract: RpsGame
 Function name: joinGame(uint256,uint8)
-PC address: 6497
+PC address: 7010
 Estimated Gas Usage: 7800 - 10065
 A control flow decision is made based on The block.timestamp environment variable.
 The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
@@ -71,147 +21,13 @@ require(now < game.expireTime)
 --------------------
 Initial State:
 
-Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x160800001241fffff, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [SOMEGUY], function: createGame(bytes32,address), txdata: 0xfe1f6a0b80, value: 0x0
-Caller: [ATTACKER], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001, value: 0x0
-
-==== Integer Arithmetic Bugs ====
-SWC ID: 101
-Severity: High
-Contract: RpsGame
-Function name: joinGame(uint256,uint8)
-PC address: 6632
-Estimated Gas Usage: 45043 - 169921
-The arithmetic operator can overflow.
-It is possible to cause an integer overflow or underflow in the arithmetic operation. 
---------------------
-In file: ./contracts/RpsGame.sol:250
-
-expireTimeLimit + now
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x3, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x100000000000, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b2002104000004001040202021040204002010204404001408001100840200202000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef, decoded_data: ('2002104000004001040202021040204002010204404001408001100840200202', '0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef'), value: 0x0
-Caller: [ATTACKER], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001404040404040404040404040404040404040404040404040404040404040401e, value: 0x0
-
-==== Integer Arithmetic Bugs ====
-SWC ID: 101
-Severity: High
-Contract: RpsGame
-Function name: createGame(bytes32,address)
-PC address: 7260
-Estimated Gas Usage: 58022 - 241250
-The arithmetic operator can overflow.
-It is possible to cause an integer overflow or underflow in the arithmetic operation. 
---------------------
-In file: ./contracts/RpsGame.sol:227
-
-expireTimeLimit + now
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+Account: [CREATOR], balance: 0x400000000000, nonce:0, storage:{}
 Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
 
 Transaction Sequence:
 
 Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
-
-
-Used 299.2505261898041 seconds
-coverage file: ./myth_code_coverage/ae95107b-df59-4d17-879c-6c0172f16f34.json
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: close(uint256)
-PC address: 2834
-Estimated Gas Usage: 3636 - 4251
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame_instrument_index.sol:295
-
-now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE)
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x554c7e10936a900da, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x800000000000000, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b80, value: 0x0
-Caller: [ATTACKER], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001404040404040404040404040404040404040404040404040404040404040400a, value: 0x0
-Caller: [SOMEGUY], function: close(uint256), txdata: 0x0aebeb4e0000000000000000000000000000000000000000000000000000000000000001, decoded_data: (1,), value: 0x0
-
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: close(uint256)
-PC address: 2906
-Estimated Gas Usage: 3656 - 4271
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame_instrument_index.sol:295
-
-require(now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE))
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x10040800, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x4000000000000000, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [SOMEGUY], function: createGame(bytes32,address), txdata: 0xfe1f6a0b80, value: 0x0
-Caller: [ATTACKER], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001040404040404040404040404040404040404040404040404040404040404040a, value: 0x0
-Caller: [CREATOR], function: close(uint256), txdata: 0x0aebeb4e0000000000000000000000000000000000000000000000000000000000000001, decoded_data: (1,), value: 0x0
-
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: joinGame(uint256,uint8)
-PC address: 6551
-Estimated Gas Usage: 9429 - 11694
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame_instrument_index.sol:246
-
-require(now < game.expireTime)
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x40000000000000000, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [ATTACKER], function: createGame(bytes32,address), txdata: 0xfe1f6a0b04, value: 0x0
+Caller: [SOMEGUY], function: createGame(bytes32,address), txdata: 0xfe1f6a0b08, value: 0x0
 Caller: [CREATOR], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001, value: 0x0
 
 ==== Integer Arithmetic Bugs ====
@@ -219,275 +35,7 @@ SWC ID: 101
 Severity: High
 Contract: RpsGame
 Function name: joinGame(uint256,uint8)
-PC address: 6686
-Estimated Gas Usage: 46672 - 171550
-The arithmetic operator can overflow.
-It is possible to cause an integer overflow or underflow in the arithmetic operation. 
---------------------
-In file: ./contracts/RpsGame_instrument_index.sol:252
-
-expireTimeLimit + now
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x100860, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x40000000000000010, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [SOMEGUY], function: createGame(bytes32,address), txdata: 0xfe1f6a0b8000000000000000000000000010108080808080808080800104808080004080000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef, decoded_data: ('8000000000000000000000000010108080808080808080800104808080004080', '0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef'), value: 0x0
-Caller: [ATTACKER], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001adadadadadadadadadadadadadadadadadadadadadadadadadadadadadadad1e, value: 0x0
-
-==== Integer Arithmetic Bugs ====
-SWC ID: 101
-Severity: High
-Contract: RpsGame
-Function name: createGame(bytes32,address)
-PC address: 7314
-Estimated Gas Usage: 58022 - 241250
-The arithmetic operator can overflow.
-It is possible to cause an integer overflow or underflow in the arithmetic operation. 
---------------------
-In file: ./contracts/RpsGame_instrument_index.sol:227
-
-expireTimeLimit + now
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
-
-
-Used 4575.960843086243 seconds
-coverage file: ./myth_code_coverage/3bb03351-2cdd-4437-85dc-ae6118cc480c.json
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: joinGame(uint256,uint8)
-PC address: 6497
-Estimated Gas Usage: 7800 - 10065
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame.sol:244
-
-require(now < game.expireTime)
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x44401044405000000, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x40000003080000000, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
-Caller: [SOMEGUY], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001, value: 0x0
-
-==== Integer Arithmetic Bugs ====
-SWC ID: 101
-Severity: High
-Contract: RpsGame
-Function name: joinGame(uint256,uint8)
-PC address: 6632
-Estimated Gas Usage: 45020 - 169898
-The arithmetic operator can overflow.
-It is possible to cause an integer overflow or underflow in the arithmetic operation. 
---------------------
-In file: ./contracts/RpsGame.sol:250
-
-expireTimeLimit + now
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x400000000, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [SOMEGUY], function: createGame(bytes32,address), txdata: 0xfe1f6a0b2000200100044002000000080008004001020000201002804000020002800008000000000000000000000000affeaffeaffeaffeaffeaffeaffeaffeaffeaffe, decoded_data: ('2000200100044002000000080008004001020000201002804000020002800008', '0xaffeaffeaffeaffeaffeaffeaffeaffeaffeaffe'), value: 0x0
-Caller: [CREATOR], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001afafafafafafafafafafafafafafafafafafafafafafafafafafafafafafaf14, value: 0x0
-
-==== Integer Arithmetic Bugs ====
-SWC ID: 101
-Severity: High
-Contract: RpsGame
-Function name: createGame(bytes32,address)
-PC address: 7260
-Estimated Gas Usage: 58022 - 241250
-The arithmetic operator can overflow.
-It is possible to cause an integer overflow or underflow in the arithmetic operation. 
---------------------
-In file: ./contracts/RpsGame.sol:227
-
-expireTimeLimit + now
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
-
-
-Used 5327.707282066345 seconds
-coverage file: ./myth_code_coverage/aa386cb7-1e59-461b-b5e7-932cbc02bd45.json
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: joinGame(uint256,uint8)
-PC address: 6551
-Estimated Gas Usage: 9429 - 11694
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame_instrument_index.sol:246
-
-require(now < game.expireTime)
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x2, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [ATTACKER], function: createGame(bytes32,address), txdata: 0xfe1f6a0b80, value: 0x0
-Caller: [CREATOR], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001, value: 0x0
-
-==== Integer Arithmetic Bugs ====
-SWC ID: 101
-Severity: High
-Contract: RpsGame
-Function name: createGame(bytes32,address)
-PC address: 7314
-Estimated Gas Usage: 58022 - 241250
-The arithmetic operator can overflow.
-It is possible to cause an integer overflow or underflow in the arithmetic operation. 
---------------------
-In file: ./contracts/RpsGame_instrument_index.sol:227
-
-expireTimeLimit + now
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
-
-
-Used 510.0471520423889 seconds
-coverage file: ./myth_code_coverage/e4282efa-bef2-4734-a413-0b4ebad5413e.json
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: close(uint256)
-PC address: 2816
-Estimated Gas Usage: 2007 - 2622
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame.sol:286
-
-now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE)
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x56017800880000000, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x22020b50370888200, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [SOMEGUY], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
-Caller: [CREATOR], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001101010101010101010101010101010101010101010101010101010101010100a, value: 0x0
-Caller: [CREATOR], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
-
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: close(uint256)
-PC address: 2888
-Estimated Gas Usage: 2027 - 2642
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame.sol:286
-
-require(now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE))
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x1000084008000200, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [SOMEGUY], function: createGame(bytes32,address), txdata: 0xfe1f6a0b20, value: 0x0
-Caller: [CREATOR], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000a, decoded_data: (1, 10), value: 0x0
-Caller: [CREATOR], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
-
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: joinGame(uint256,uint8)
-PC address: 6497
-Estimated Gas Usage: 7800 - 10065
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame.sol:244
-
-require(now < game.expireTime)
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x40280005280200000, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b20, value: 0x0
-Caller: [SOMEGUY], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001, value: 0x0
-
-==== Integer Arithmetic Bugs ====
-SWC ID: 101
-Severity: High
-Contract: RpsGame
-Function name: joinGame(uint256,uint8)
-PC address: 6632
+PC address: 7145
 Estimated Gas Usage: 45043 - 169921
 The arithmetic operator can overflow.
 It is possible to cause an integer overflow or underflow in the arithmetic operation. 
@@ -499,557 +47,21 @@ expireTimeLimit + now
 --------------------
 Initial State:
 
-Account: [CREATOR], balance: 0x8000000000000, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b0001018001010202801001018040400200010201100001400002000040000200000000000000000000000000aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, decoded_data: ('0001018001010202801001018040400200010201100001400002000040000200', '0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'), value: 0x0
-Caller: [SOMEGUY], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001020202020202020202020202020202020202020202020202020202020202021e, value: 0x0
-
-==== Integer Arithmetic Bugs ====
-SWC ID: 101
-Severity: High
-Contract: RpsGame
-Function name: createGame(bytes32,address)
-PC address: 7260
-Estimated Gas Usage: 58022 - 241250
-The arithmetic operator can overflow.
-It is possible to cause an integer overflow or underflow in the arithmetic operation. 
---------------------
-In file: ./contracts/RpsGame.sol:227
-
-expireTimeLimit + now
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
-
-
-Used 297.4913070201874 seconds
-coverage file: ./myth_code_coverage/00874342-aa8a-4e20-ab88-43df45d94a6c.json
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: close(uint256)
-PC address: 2834
-Estimated Gas Usage: 3636 - 4251
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame_instrument_index.sol:295
-
-now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE)
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x1, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [SOMEGUY], function: createGame(bytes32,address), txdata: 0xfe1f6a0b40, value: 0x0
-Caller: [ATTACKER], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001202020202020202020202020202020202020202020202020202020202020200a, value: 0x0
-Caller: [CREATOR], function: close(uint256), txdata: 0x0aebeb4e0000000000000000000000000000000000000000000000000000000000000001, decoded_data: (1,), value: 0x0
-
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: close(uint256)
-PC address: 2906
-Estimated Gas Usage: 3656 - 4271
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame_instrument_index.sol:295
-
-require(now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE))
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x20100000000000000, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x18000000010200000, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b80, value: 0x0
-Caller: [SOMEGUY], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001808080808080808080808080808080808080808080808080808080808080800a, value: 0x0
-Caller: [SOMEGUY], function: close(uint256), txdata: 0x0aebeb4e0000000000000000000000000000000000000000000000000000000000000001, decoded_data: (1,), value: 0x0
-
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: joinGame(uint256,uint8)
-PC address: 6551
-Estimated Gas Usage: 9429 - 11694
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame_instrument_index.sol:246
-
-require(now < game.expireTime)
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x1, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [ATTACKER], function: createGame(bytes32,address), txdata: 0xfe1f6a0b80, value: 0x0
-Caller: [SOMEGUY], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001, value: 0x0
-
-==== Integer Arithmetic Bugs ====
-SWC ID: 101
-Severity: High
-Contract: RpsGame
-Function name: joinGame(uint256,uint8)
-PC address: 6686
-Estimated Gas Usage: 46672 - 171550
-The arithmetic operator can overflow.
-It is possible to cause an integer overflow or underflow in the arithmetic operation. 
---------------------
-In file: ./contracts/RpsGame_instrument_index.sol:252
-
-expireTimeLimit + now
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x80080000, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [SOMEGUY], function: createGame(bytes32,address), txdata: 0xfe1f6a0b8080800080808080008080808080808080808080808080808080400100808080000000000000000000000000affeaffeaffeaffeaffeaffeaffeaffeaffeaffe, decoded_data: ('8080800080808080008080808080808080808080808080808080400100808080', '0xaffeaffeaffeaffeaffeaffeaffeaffeaffeaffe'), value: 0x0
-Caller: [CREATOR], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001afafafafafafafafafafafafafafafafafafafafafafafafafafafafafafaf1e, value: 0x0
-
-==== Integer Arithmetic Bugs ====
-SWC ID: 101
-Severity: High
-Contract: RpsGame
-Function name: createGame(bytes32,address)
-PC address: 7314
-Estimated Gas Usage: 58022 - 241250
-The arithmetic operator can overflow.
-It is possible to cause an integer overflow or underflow in the arithmetic operation. 
---------------------
-In file: ./contracts/RpsGame_instrument_index.sol:227
-
-expireTimeLimit + now
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
-
-
-Used 470.954617023468 seconds
-coverage file: ./myth_code_coverage/08b42eaa-a01a-409f-ba46-d1739aadc1b0.json
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: close(uint256)
-PC address: 2816
-Estimated Gas Usage: 2007 - 2622
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame.sol:286
-
-now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE)
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x23001490e8050, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x4010000000000010, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b02, value: 0x0
-Caller: [SOMEGUY], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001808080808080808080808080808080808080808080808080808080808080800a, value: 0x0
-Caller: [SOMEGUY], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
-
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: close(uint256)
-PC address: 2888
-Estimated Gas Usage: 2027 - 2642
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame.sol:286
-
-require(now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE))
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x3c81c08000000390, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x45ce5e7ac8c0c0db2, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [SOMEGUY], function: createGame(bytes32,address), txdata: 0xfe1f6a0b80, value: 0x0
-Caller: [CREATOR], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001101010101010101010101010101010101010101010101010101010101010100a, value: 0x0
-Caller: [SOMEGUY], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
-
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: joinGame(uint256,uint8)
-PC address: 6497
-Estimated Gas Usage: 7800 - 10065
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame.sol:244
-
-require(now < game.expireTime)
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x400000001020000a9, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x20000000000000000, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b20, value: 0x0
-Caller: [ATTACKER], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001, value: 0x0
-
-==== Integer Arithmetic Bugs ====
-SWC ID: 101
-Severity: High
-Contract: RpsGame
-Function name: joinGame(uint256,uint8)
-PC address: 6632
-Estimated Gas Usage: 45043 - 169921
-The arithmetic operator can overflow.
-It is possible to cause an integer overflow or underflow in the arithmetic operation. 
---------------------
-In file: ./contracts/RpsGame.sol:250
-
-expireTimeLimit + now
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x100000412, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x209b103ffbff00000, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [ATTACKER], function: createGame(bytes32,address), txdata: 0xfe1f6a0b8001200101010101010101010120010880000000004001010102010100080401000000000000000000000000aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, decoded_data: ('8001200101010101010101010120010880000000004001010102010100080401', '0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'), value: 0x0
-Caller: [SOMEGUY], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001020202020202020202020202020202020202020202020202020202020202021e, value: 0x0
-
-==== Integer Arithmetic Bugs ====
-SWC ID: 101
-Severity: High
-Contract: RpsGame
-Function name: createGame(bytes32,address)
-PC address: 7260
-Estimated Gas Usage: 58022 - 241250
-The arithmetic operator can overflow.
-It is possible to cause an integer overflow or underflow in the arithmetic operation. 
---------------------
-In file: ./contracts/RpsGame.sol:227
-
-expireTimeLimit + now
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
-
-
-Used 285.5972008705139 seconds
-coverage file: ./myth_code_coverage/ff6cfc4f-bde9-4cf5-9707-8f73b288315b.json
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: close(uint256)
-PC address: 2834
-Estimated Gas Usage: 3636 - 4251
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame_instrument_index.sol:295
-
-now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE)
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x40000000000000000, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x20000000000000000, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b80, value: 0x0
-Caller: [SOMEGUY], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001020202020202020202020202020202020202020202020202020202020202020a, value: 0x0
-Caller: [SOMEGUY], function: close(uint256), txdata: 0x0aebeb4e0000000000000000000000000000000000000000000000000000000000000001, decoded_data: (1,), value: 0x0
-
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: close(uint256)
-PC address: 2906
-Estimated Gas Usage: 3656 - 4271
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame_instrument_index.sol:295
-
-require(now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE))
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x748, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x600, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [SOMEGUY], function: createGame(bytes32,address), txdata: 0xfe1f6a0b80, value: 0x0
-Caller: [ATTACKER], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001020202020202020202020202020202020202020202020202020202020202020a, value: 0x0
-Caller: [ATTACKER], function: close(uint256), txdata: 0x0aebeb4e0000000000000000000000000000000000000000000000000000000000000001, decoded_data: (1,), value: 0x0
-
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: joinGame(uint256,uint8)
-PC address: 6551
-Estimated Gas Usage: 9429 - 11694
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame_instrument_index.sol:246
-
-require(now < game.expireTime)
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x10000, nonce:0, storage:{}
+Account: [CREATOR], balance: 0x4ffffffffffffffff, nonce:0, storage:{}
 Account: [ATTACKER], balance: 0x10000000000000000, nonce:0, storage:{}
 
 Transaction Sequence:
 
 Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [ATTACKER], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
-Caller: [CREATOR], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001, value: 0x0
-
-==== Integer Arithmetic Bugs ====
-SWC ID: 101
-Severity: High
-Contract: RpsGame
-Function name: joinGame(uint256,uint8)
-PC address: 6686
-Estimated Gas Usage: 46672 - 171550
-The arithmetic operator can overflow.
-It is possible to cause an integer overflow or underflow in the arithmetic operation. 
---------------------
-In file: ./contracts/RpsGame_instrument_index.sol:252
-
-expireTimeLimit + now
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x5015f54f500a4fd6a, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x26100, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [SOMEGUY], function: createGame(bytes32,address), txdata: 0xfe1f6a0b0000000000808000000000000000000080804040808080808080808080808080000000000000000000000000affeaffeaffeaffeaffeaffeaffeaffeaffeaffe, decoded_data: ('0000000000808000000000000000000080804040808080808080808080808080', '0xaffeaffeaffeaffeaffeaffeaffeaffeaffeaffe'), value: 0x0
-Caller: [CREATOR], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001afafafafafafafafafafafafafafafafafafafafafafafafafafafafafafaf1e, value: 0x0
+Caller: [ATTACKER], function: createGame(bytes32,address), txdata: 0xfe1f6a0b0001010201010280010801801004008001010808028000204004082010004001000000000000000000000000affeaffeaffeaffeaffeaffeaffeaffeaffeaffe, decoded_data: ('0001010201010280010801801004008001010808028000204004082010004001', '0xaffeaffeaffeaffeaffeaffeaffeaffeaffeaffe'), value: 0x0
+Caller: [CREATOR], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001101010101010101010101010101010101010101010101010101010101010101e, value: 0x0
 
 ==== Integer Arithmetic Bugs ====
 SWC ID: 101
 Severity: High
 Contract: RpsGame
 Function name: createGame(bytes32,address)
-PC address: 7314
-Estimated Gas Usage: 58022 - 241250
-The arithmetic operator can overflow.
-It is possible to cause an integer overflow or underflow in the arithmetic operation. 
---------------------
-In file: ./contracts/RpsGame_instrument_index.sol:227
-
-expireTimeLimit + now
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
-
-
-Used 502.76276183128357 seconds
-coverage file: ./myth_code_coverage/9f40081e-4f80-4657-bb86-ea5c9926e714.json
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: close(uint256)
-PC address: 2816
-Estimated Gas Usage: 2007 - 2622
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame.sol:286
-
-now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE)
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x48560cf7200000001, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x561a0134000000001, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [SOMEGUY], function: createGame(bytes32,address), txdata: 0xfe1f6a0b20, value: 0x0
-Caller: [CREATOR], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001808080808080808080808080808080808080808080808080808080808080800a, value: 0x0
-Caller: [ATTACKER], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
-
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: close(uint256)
-PC address: 2888
-Estimated Gas Usage: 2027 - 2642
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame.sol:286
-
-require(now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE))
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x400004, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x800000000208, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [SOMEGUY], function: createGame(bytes32,address), txdata: 0xfe1f6a0b40, value: 0x0
-Caller: [CREATOR], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000a, decoded_data: (1, 10), value: 0x0
-Caller: [ATTACKER], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
-
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: joinGame(uint256,uint8)
-PC address: 6497
-Estimated Gas Usage: 7800 - 10065
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame.sol:244
-
-require(now < game.expireTime)
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x3ff0000000000703b, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x40000000000000000, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [ATTACKER], function: createGame(bytes32,address), txdata: 0xfe1f6a0b40, value: 0x0
-Caller: [CREATOR], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001, value: 0x0
-
-==== Integer Arithmetic Bugs ====
-SWC ID: 101
-Severity: High
-Contract: RpsGame
-Function name: joinGame(uint256,uint8)
-PC address: 6632
-Estimated Gas Usage: 45043 - 169921
-The arithmetic operator can overflow.
-It is possible to cause an integer overflow or underflow in the arithmetic operation. 
---------------------
-In file: ./contracts/RpsGame.sol:250
-
-expireTimeLimit + now
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x20000000000000000, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b8010040440101040200010800404404000801040801001401000020101001080000000000000000000000000aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, decoded_data: ('8010040440101040200010800404404000801040801001401000020101001080', '0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'), value: 0x0
-Caller: [SOMEGUY], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001020202020202020202020202020202020202020202020202020202020202021e, value: 0x0
-
-==== Integer Arithmetic Bugs ====
-SWC ID: 101
-Severity: High
-Contract: RpsGame
-Function name: createGame(bytes32,address)
-PC address: 7260
+PC address: 7773
 Estimated Gas Usage: 58022 - 241250
 The arithmetic operator can overflow.
 It is possible to cause an integer overflow or underflow in the arithmetic operation. 
@@ -1070,62 +82,12 @@ Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
 Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
 
 
-Used 2368.5887110233307 seconds
-coverage file: ./myth_code_coverage/b07e00fa-9262-476f-858f-267549f789db.json
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: close(uint256)
-PC address: 2834
-Estimated Gas Usage: 3636 - 4251
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame_instrument_index.sol:295
-
-now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE)
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x40000132000000020, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b08, value: 0x0
-Caller: [SOMEGUY], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001020202020202020202020202020202020202020202020202020202020202020a, value: 0x0
-Caller: [ATTACKER], function: close(uint256), txdata: 0x0aebeb4e0000000000000000000000000000000000000000000000000000000000000001, decoded_data: (1,), value: 0x0
-
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: close(uint256)
-PC address: 2906
-Estimated Gas Usage: 3656 - 4271
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame_instrument_index.sol:295
-
-require(now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE))
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x10, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [SOMEGUY], function: createGame(bytes32,address), txdata: 0xfe1f6a0b80, value: 0x0
-Caller: [ATTACKER], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001020202020202020202020202020202020202020202020202020202020202020a, value: 0x0
-Caller: [CREATOR], function: close(uint256), txdata: 0x0aebeb4e0000000000000000000000000000000000000000000000000000000000000001, decoded_data: (1,), value: 0x0
-
+/home/ec2-user/.local/lib/python3.9/site-packages/eth_utils/network.py:44: UserWarning: Network 345 with name 'Yooldo Verse Mainnet' does not have a valid ChainId. eth-typing should be updated with the latest networks.
+  warnings.warn(
+/home/ec2-user/.local/lib/python3.9/site-packages/eth_utils/network.py:44: UserWarning: Network 12611 with name 'Astar zkEVM' does not have a valid ChainId. eth-typing should be updated with the latest networks.
+  warnings.warn(
+Used 3014.9699375629425 seconds
+coverage file: ./myth_code_coverage/d7555dd2-5bf0-4cbb-b2bd-caef7836f3cc.json
 ==== Dependence on predictable environment variable ====
 SWC ID: 116
 Severity: Low
@@ -1143,14 +105,14 @@ require(now < game.expireTime)
 --------------------
 Initial State:
 
-Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [CREATOR], balance: 0x142408ac000000000, nonce:0, storage:{}
 Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
 
 Transaction Sequence:
 
 Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [SOMEGUY], function: createGame(bytes32,address), txdata: 0xfe1f6a0b80, value: 0x0
-Caller: [CREATOR], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001, value: 0x0
+Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b80, value: 0x0
+Caller: [SOMEGUY], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001, value: 0x0
 
 ==== Integer Arithmetic Bugs ====
 SWC ID: 101
@@ -1169,14 +131,14 @@ expireTimeLimit + now
 --------------------
 Initial State:
 
-Account: [CREATOR], balance: 0x20000000000000000, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x24000040041, nonce:0, storage:{}
+Account: [CREATOR], balance: 0xb7f1a2c400000002, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x44c10240400012a70, nonce:0, storage:{}
 
 Transaction Sequence:
 
 Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [SOMEGUY], function: createGame(bytes32,address), txdata: 0xfe1f6a0b0000008000000000000000014080088080008080808080808080808080808080000000000000000000000000affeaffeaffeaffeaffeaffeaffeaffeaffeaffe, decoded_data: ('0000008000000000000000014080088080008080808080808080808080808080', '0xaffeaffeaffeaffeaffeaffeaffeaffeaffeaffe'), value: 0x0
-Caller: [CREATOR], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001afafafafafafafafafafafafafafafafafafafafafafafafafafafafafafaf1e, value: 0x0
+Caller: [ATTACKER], function: createGame(bytes32,address), txdata: 0xfe1f6a0b0000000100000000000000000000000000000000002080808080808080808080000000000000000000000000aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, decoded_data: ('0000000100000000000000000000000000000000002080808080808080808080', '0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'), value: 0x0
+Caller: [SOMEGUY], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000001e, decoded_data: (1, 30), value: 0x0
 
 ==== Integer Arithmetic Bugs ====
 SWC ID: 101
@@ -1204,62 +166,12 @@ Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
 Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
 
 
-Used 2256.349117040634 seconds
-coverage file: ./myth_code_coverage/82fb8f0e-d6bd-4ba3-8da3-2436272a9c92.json
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: close(uint256)
-PC address: 2816
-Estimated Gas Usage: 2007 - 2622
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame.sol:286
-
-now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE)
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [ATTACKER], function: createGame(bytes32,address), txdata: 0xfe1f6a0b10, value: 0x0
-Caller: [SOMEGUY], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000a, decoded_data: (1, 10), value: 0x0
-Caller: [ATTACKER], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
-
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: close(uint256)
-PC address: 2888
-Estimated Gas Usage: 2027 - 2642
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame.sol:286
-
-require(now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE))
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x22200, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x50400, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [ATTACKER], function: createGame(bytes32,address), txdata: 0xfe1f6a0b02, value: 0x0
-Caller: [SOMEGUY], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001020202020202020202020202020202020202020202020202020202020202020a, value: 0x0
-Caller: [SOMEGUY], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
-
+/home/ec2-user/.local/lib/python3.9/site-packages/eth_utils/network.py:44: UserWarning: Network 345 with name 'Yooldo Verse Mainnet' does not have a valid ChainId. eth-typing should be updated with the latest networks.
+  warnings.warn(
+/home/ec2-user/.local/lib/python3.9/site-packages/eth_utils/network.py:44: UserWarning: Network 12611 with name 'Astar zkEVM' does not have a valid ChainId. eth-typing should be updated with the latest networks.
+  warnings.warn(
+Used 2329.7678422927856 seconds
+coverage file: ./myth_code_coverage/e2f02b52-ee0c-447d-bc49-120b7ff7f602.json
 ==== Dependence on predictable environment variable ====
 SWC ID: 116
 Severity: Low
@@ -1277,14 +189,14 @@ require(now < game.expireTime)
 --------------------
 Initial State:
 
-Account: [CREATOR], balance: 0x820000000002, nonce:0, storage:{}
+Account: [CREATOR], balance: 0x40000000000000000, nonce:0, storage:{}
 Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
 
 Transaction Sequence:
 
 Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b80, value: 0x0
-Caller: [SOMEGUY], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001, value: 0x0
+Caller: [SOMEGUY], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
+Caller: [CREATOR], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001, value: 0x0
 
 ==== Integer Arithmetic Bugs ====
 SWC ID: 101
@@ -1303,13 +215,97 @@ expireTimeLimit + now
 --------------------
 Initial State:
 
-Account: [CREATOR], balance: 0x400800080200c00, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x3408, nonce:0, storage:{}
+Account: [CREATOR], balance: 0x20400cc040ac00010, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x4026968db0148000, nonce:0, storage:{}
 
 Transaction Sequence:
 
 Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b0040808020028002108008100204014008000200080010400104200802808010000000000000000000000000aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, decoded_data: ('0040808020028002108008100204014008000200080010400104200802808010', '0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'), value: 0x0
+Caller: [ATTACKER], function: createGame(bytes32,address), txdata: 0xfe1f6a0b0000000000200000000000000001000040800080808040008004000480800004000000000000000000000000affeaffeaffeaffeaffeaffeaffeaffeaffeaffe, decoded_data: ('0000000000200000000000000001000040800080808040008004000480800004', '0xaffeaffeaffeaffeaffeaffeaffeaffeaffeaffe'), value: 0x0
+Caller: [CREATOR], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001404040404040404040404040404040404040404040404040404040404040401e, value: 0x0
+
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: RpsGame
+Function name: createGame(bytes32,address)
+PC address: 7773
+Estimated Gas Usage: 58022 - 241250
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./contracts/RpsGame.sol:227
+
+expireTimeLimit + now
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
+
+
+/home/ec2-user/.local/lib/python3.9/site-packages/eth_utils/network.py:44: UserWarning: Network 345 with name 'Yooldo Verse Mainnet' does not have a valid ChainId. eth-typing should be updated with the latest networks.
+  warnings.warn(
+/home/ec2-user/.local/lib/python3.9/site-packages/eth_utils/network.py:44: UserWarning: Network 12611 with name 'Astar zkEVM' does not have a valid ChainId. eth-typing should be updated with the latest networks.
+  warnings.warn(
+Used 3591.203631401062 seconds
+coverage file: ./myth_code_coverage/c003345a-594f-4933-b584-3ec4c0abac56.json
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: joinGame(uint256,uint8)
+PC address: 7064
+Estimated Gas Usage: 9429 - 11694
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame_instrument_index.sol:246
+
+require(now < game.expireTime)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x2, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: createGame(bytes32,address), txdata: 0xfe1f6a0b80, value: 0x0
+Caller: [ATTACKER], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001, value: 0x0
+
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: RpsGame
+Function name: joinGame(uint256,uint8)
+PC address: 7199
+Estimated Gas Usage: 46672 - 171550
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./contracts/RpsGame_instrument_index.sol:252
+
+expireTimeLimit + now
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x4, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x4, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b0001000000000000000000800000008080080001000001800480018080808080000000000000000000000000aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, decoded_data: ('0001000000000000000000800000008080080001000001800480018080808080', '0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'), value: 0x0
 Caller: [SOMEGUY], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001080808080808080808080808080808080808080808080808080808080808081e, value: 0x0
 
 ==== Integer Arithmetic Bugs ====
@@ -1317,6 +313,453 @@ SWC ID: 101
 Severity: High
 Contract: RpsGame
 Function name: createGame(bytes32,address)
+PC address: 7827
+Estimated Gas Usage: 58022 - 241250
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./contracts/RpsGame_instrument_index.sol:227
+
+expireTimeLimit + now
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
+
+
+/home/ec2-user/.local/lib/python3.9/site-packages/eth_utils/network.py:44: UserWarning: Network 345 with name 'Yooldo Verse Mainnet' does not have a valid ChainId. eth-typing should be updated with the latest networks.
+  warnings.warn(
+/home/ec2-user/.local/lib/python3.9/site-packages/eth_utils/network.py:44: UserWarning: Network 12611 with name 'Astar zkEVM' does not have a valid ChainId. eth-typing should be updated with the latest networks.
+  warnings.warn(
+Used 2296.0864675045013 seconds
+coverage file: ./myth_code_coverage/8c4c594f-70bb-4302-8e57-5206d6449b85.json
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: joinGame(uint256,uint8)
+PC address: 7010
+Estimated Gas Usage: 7800 - 10065
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:244
+
+require(now < game.expireTime)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: createGame(bytes32,address), txdata: 0xfe1f6a0b40, value: 0x0
+Caller: [ATTACKER], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001, value: 0x0
+
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: RpsGame
+Function name: joinGame(uint256,uint8)
+PC address: 7145
+Estimated Gas Usage: 45043 - 169921
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./contracts/RpsGame.sol:250
+
+expireTimeLimit + now
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x1600846010000100, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x55f83400402c0ded1, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b0000000200010101010008204001200140000008400004800400004002200000000000000000000000000000aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, decoded_data: ('0000000200010101010008204001200140000008400004800400004002200000', '0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'), value: 0x0
+Caller: [SOMEGUY], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001404040404040404040404040404040404040404040404040404040404040401e, value: 0x0
+
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: RpsGame
+Function name: createGame(bytes32,address)
+PC address: 7773
+Estimated Gas Usage: 58022 - 241250
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./contracts/RpsGame.sol:227
+
+expireTimeLimit + now
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
+
+
+/home/ec2-user/.local/lib/python3.9/site-packages/eth_utils/network.py:44: UserWarning: Network 345 with name 'Yooldo Verse Mainnet' does not have a valid ChainId. eth-typing should be updated with the latest networks.
+  warnings.warn(
+/home/ec2-user/.local/lib/python3.9/site-packages/eth_utils/network.py:44: UserWarning: Network 12611 with name 'Astar zkEVM' does not have a valid ChainId. eth-typing should be updated with the latest networks.
+  warnings.warn(
+Used 3384.209503173828 seconds
+coverage file: ./myth_code_coverage/18e39818-724b-4c98-9345-60f41a0531d9.json
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: joinGame(uint256,uint8)
+PC address: 7064
+Estimated Gas Usage: 9429 - 11694
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame_instrument_index.sol:246
+
+require(now < game.expireTime)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
+Caller: [ATTACKER], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001, value: 0x0
+
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: RpsGame
+Function name: joinGame(uint256,uint8)
+PC address: 7199
+Estimated Gas Usage: 46672 - 171550
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./contracts/RpsGame_instrument_index.sol:252
+
+expireTimeLimit + now
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x1000000000000, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x200058118060cc008, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [ATTACKER], function: createGame(bytes32,address), txdata: 0xfe1f6a0b0100000000000000000000000000000000000002808001808080808080808080000000000000000000000000aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, decoded_data: ('0100000000000000000000000000000000000002808001808080808080808080', '0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'), value: 0x0
+Caller: [SOMEGUY], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000001e, decoded_data: (1, 30), value: 0x0
+
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: RpsGame
+Function name: createGame(bytes32,address)
+PC address: 7827
+Estimated Gas Usage: 58022 - 241250
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./contracts/RpsGame_instrument_index.sol:227
+
+expireTimeLimit + now
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
+
+
+/home/ec2-user/.local/lib/python3.9/site-packages/eth_utils/network.py:44: UserWarning: Network 345 with name 'Yooldo Verse Mainnet' does not have a valid ChainId. eth-typing should be updated with the latest networks.
+  warnings.warn(
+/home/ec2-user/.local/lib/python3.9/site-packages/eth_utils/network.py:44: UserWarning: Network 12611 with name 'Astar zkEVM' does not have a valid ChainId. eth-typing should be updated with the latest networks.
+  warnings.warn(
+Used 2257.76722407341 seconds
+coverage file: ./myth_code_coverage/4a348886-0e05-4081-82de-d12a70fa1a10.json
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: joinGame(uint256,uint8)
+PC address: 7010
+Estimated Gas Usage: 7800 - 10065
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:244
+
+require(now < game.expireTime)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x50005480000000000, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x519c62a629e825d90, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b80, value: 0x0
+Caller: [SOMEGUY], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001, value: 0x0
+
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: RpsGame
+Function name: joinGame(uint256,uint8)
+PC address: 7145
+Estimated Gas Usage: 45043 - 169921
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./contracts/RpsGame.sol:250
+
+expireTimeLimit + now
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x1000000000000, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [ATTACKER], function: createGame(bytes32,address), txdata: 0xfe1f6a0b0204000108202040002080022004800480010100400880200008044001100108000000000000000000000000aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, decoded_data: ('0204000108202040002080022004800480010100400880200008044001100108', '0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'), value: 0x0
+Caller: [SOMEGUY], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001101010101010101010101010101010101010101010101010101010101010101e, value: 0x0
+
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: RpsGame
+Function name: createGame(bytes32,address)
+PC address: 7773
+Estimated Gas Usage: 58022 - 241250
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./contracts/RpsGame.sol:227
+
+expireTimeLimit + now
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
+
+
+/home/ec2-user/.local/lib/python3.9/site-packages/eth_utils/network.py:44: UserWarning: Network 345 with name 'Yooldo Verse Mainnet' does not have a valid ChainId. eth-typing should be updated with the latest networks.
+  warnings.warn(
+/home/ec2-user/.local/lib/python3.9/site-packages/eth_utils/network.py:44: UserWarning: Network 12611 with name 'Astar zkEVM' does not have a valid ChainId. eth-typing should be updated with the latest networks.
+  warnings.warn(
+Used 3601.0757336616516 seconds
+coverage file: ./myth_code_coverage/f05f3a9d-5d71-42d7-a9a2-d49215ef2956.json
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: close(uint256)
+PC address: 2834
+Estimated Gas Usage: 3636 - 4251
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame_instrument_index.sol:295
+
+now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x2, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
+Caller: [SOMEGUY], function: joinGame(uint256,uint8), txdata: 0xca6649c500000000000000000000000000000000000000000000000000000000000000016a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a1e, value: 0x0
+Caller: [ATTACKER], function: close(uint256), txdata: 0x0aebeb4e0000000000000000000000000000000000000000000000000000000000000001, decoded_data: (1,), value: 0x0
+
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: joinGame(uint256,uint8)
+PC address: 7064
+Estimated Gas Usage: 9429 - 11694
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame_instrument_index.sol:246
+
+require(now < game.expireTime)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x40000000000000000, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [ATTACKER], function: createGame(bytes32,address), txdata: 0xfe1f6a0b80, value: 0x0
+Caller: [SOMEGUY], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001, value: 0x0
+
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: RpsGame
+Function name: joinGame(uint256,uint8)
+PC address: 7199
+Estimated Gas Usage: 46672 - 171550
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./contracts/RpsGame_instrument_index.sol:252
+
+expireTimeLimit + now
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x2200200000040000, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [ATTACKER], function: createGame(bytes32,address), txdata: 0xfe1f6a0b2000808004808080808001808080108080808080808080808080808080808080000000000000000000000000aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, decoded_data: ('2000808004808080808001808080108080808080808080808080808080808080', '0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'), value: 0x0
+Caller: [SOMEGUY], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001101010101010101010101010101010101010101010101010101010101010101e, value: 0x0
+
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: RpsGame
+Function name: createGame(bytes32,address)
+PC address: 7827
+Estimated Gas Usage: 58022 - 241250
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./contracts/RpsGame_instrument_index.sol:227
+
+expireTimeLimit + now
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
+
+
+/home/ec2-user/.local/lib/python3.9/site-packages/eth_utils/network.py:44: UserWarning: Network 345 with name 'Yooldo Verse Mainnet' does not have a valid ChainId. eth-typing should be updated with the latest networks.
+  warnings.warn(
+/home/ec2-user/.local/lib/python3.9/site-packages/eth_utils/network.py:44: UserWarning: Network 12611 with name 'Astar zkEVM' does not have a valid ChainId. eth-typing should be updated with the latest networks.
+  warnings.warn(
+Used 2186.0956625938416 seconds
+coverage file: ./myth_code_coverage/749ff833-4730-4bdc-aa4e-49a08bb0e121.json
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: RpsGame
+Function name: joinGame(uint256,uint8)
+PC address: 7010
+Estimated Gas Usage: 7800 - 10065
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/RpsGame.sol:244
+
+require(now < game.expireTime)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x45000000000000000, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
+Caller: [SOMEGUY], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001, value: 0x0
+
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: RpsGame
+Function name: joinGame(uint256,uint8)
+PC address: 7145
+Estimated Gas Usage: 45043 - 169921
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./contracts/RpsGame.sol:250
+
+expireTimeLimit + now
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x50000000000000000, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [ATTACKER], function: createGame(bytes32,address), txdata: 0xfe1f6a0b0200001000000800000000000001084000000100000000000000000000000000000000000000000000000000affeaffeaffeaffeaffeaffeaffeaffeaffeaffe, decoded_data: ('0200001000000800000000000001084000000100000000000000000000000000', '0xaffeaffeaffeaffeaffeaffeaffeaffeaffeaffe'), value: 0x0
+Caller: [CREATOR], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001101010101010101010101010101010101010101010101010101010101010101e, value: 0x0
+
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: RpsGame
+Function name: createGame(bytes32,address)
 PC address: 7773
 Estimated Gas Usage: 58022 - 241250
 The arithmetic operator can overflow.
@@ -1338,62 +781,12 @@ Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
 Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
 
 
-Used 2674.605005979538 seconds
-coverage file: ./myth_code_coverage/a9f3df76-743f-41ae-b5f7-0cbd2b065325.json
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: close(uint256)
-PC address: 2834
-Estimated Gas Usage: 3636 - 4251
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame_instrument_index.sol:295
-
-now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE)
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x1000000000000000, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x2, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [ATTACKER], function: createGame(bytes32,address), txdata: 0xfe1f6a0b80, value: 0x0
-Caller: [CREATOR], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001808080808080808080808080808080808080808080808080808080808080800a, value: 0x0
-Caller: [SOMEGUY], function: close(uint256), txdata: 0x0aebeb4e0000000000000000000000000000000000000000000000000000000000000001, decoded_data: (1,), value: 0x0
-
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: close(uint256)
-PC address: 2906
-Estimated Gas Usage: 3656 - 4271
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame_instrument_index.sol:295
-
-require(now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE))
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x80000, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [SOMEGUY], function: createGame(bytes32,address), txdata: 0xfe1f6a0b80, value: 0x0
-Caller: [CREATOR], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001808080808080808080808080808080808080808080808080808080808080800a, value: 0x0
-Caller: [SOMEGUY], function: close(uint256), txdata: 0x0aebeb4e0000000000000000000000000000000000000000000000000000000000000001, decoded_data: (1,), value: 0x0
-
+/home/ec2-user/.local/lib/python3.9/site-packages/eth_utils/network.py:44: UserWarning: Network 345 with name 'Yooldo Verse Mainnet' does not have a valid ChainId. eth-typing should be updated with the latest networks.
+  warnings.warn(
+/home/ec2-user/.local/lib/python3.9/site-packages/eth_utils/network.py:44: UserWarning: Network 12611 with name 'Astar zkEVM' does not have a valid ChainId. eth-typing should be updated with the latest networks.
+  warnings.warn(
+Used 2823.9936838150024 seconds
+coverage file: ./myth_code_coverage/99507f46-1c2d-419d-a6fd-784479048313.json
 ==== Dependence on predictable environment variable ====
 SWC ID: 116
 Severity: Low
@@ -1437,470 +830,14 @@ expireTimeLimit + now
 --------------------
 Initial State:
 
-Account: [CREATOR], balance: 0x2000000000004401, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x4000800004003, nonce:0, storage:{}
+Account: [CREATOR], balance: 0x20000040000000000, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x40000000000, nonce:0, storage:{}
 
 Transaction Sequence:
 
 Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b0000000000000000000000000000000000008080808080208080018080808080000000000000000000000000aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, decoded_data: ('0000000000000000000000000000000000008080808080208080018080808080', '0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'), value: 0x0
-Caller: [SOMEGUY], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001202020202020202020202020202020202020202020202020202020202020201e, value: 0x0
-
-==== Integer Arithmetic Bugs ====
-SWC ID: 101
-Severity: High
-Contract: RpsGame
-Function name: createGame(bytes32,address)
-PC address: 7827
-Estimated Gas Usage: 58022 - 241250
-The arithmetic operator can overflow.
-It is possible to cause an integer overflow or underflow in the arithmetic operation. 
---------------------
-In file: ./contracts/RpsGame_instrument_index.sol:227
-
-expireTimeLimit + now
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
-
-
-Used 2344.037360906601 seconds
-coverage file: ./myth_code_coverage/5152c126-a5c4-4b69-8ad0-927976d20c3b.json
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: close(uint256)
-PC address: 2816
-Estimated Gas Usage: 2007 - 2622
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame.sol:286
-
-now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE)
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x8440000000000, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [ATTACKER], function: createGame(bytes32,address), txdata: 0xfe1f6a0b04, value: 0x0
-Caller: [SOMEGUY], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001040404040404040404040404040404040404040404040404040404040404040a, value: 0x0
-Caller: [SOMEGUY], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
-
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: close(uint256)
-PC address: 2888
-Estimated Gas Usage: 2027 - 2642
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame.sol:286
-
-require(now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE))
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x504000000040041, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x4000004000, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [ATTACKER], function: createGame(bytes32,address), txdata: 0xfe1f6a0b20, value: 0x0
-Caller: [CREATOR], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001101010101010101010101010101010101010101010101010101010101010100a, value: 0x0
-Caller: [SOMEGUY], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
-
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: joinGame(uint256,uint8)
-PC address: 7010
-Estimated Gas Usage: 7800 - 10065
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame.sol:244
-
-require(now < game.expireTime)
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x10000e0000000002, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b02, value: 0x0
-Caller: [SOMEGUY], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001, value: 0x0
-
-==== Integer Arithmetic Bugs ====
-SWC ID: 101
-Severity: High
-Contract: RpsGame
-Function name: joinGame(uint256,uint8)
-PC address: 7145
-Estimated Gas Usage: 45043 - 169921
-The arithmetic operator can overflow.
-It is possible to cause an integer overflow or underflow in the arithmetic operation. 
---------------------
-In file: ./contracts/RpsGame.sol:250
-
-expireTimeLimit + now
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x200000000000000, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [ATTACKER], function: createGame(bytes32,address), txdata: 0xfe1f6a0b1000000000008000800100000000000000000000000000000000000000000001000000000000000000000000affeaffeaffeaffeaffeaffeaffeaffeaffeaffe, decoded_data: ('1000000000008000800100000000000000000000000000000000000000000001', '0xaffeaffeaffeaffeaffeaffeaffeaffeaffeaffe'), value: 0x0
-Caller: [CREATOR], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001afafafafafafafafafafafafafafafafafafafafafafafafafafafafafafaf1e, value: 0x0
-
-==== Integer Arithmetic Bugs ====
-SWC ID: 101
-Severity: High
-Contract: RpsGame
-Function name: createGame(bytes32,address)
-PC address: 7773
-Estimated Gas Usage: 58022 - 241250
-The arithmetic operator can overflow.
-It is possible to cause an integer overflow or underflow in the arithmetic operation. 
---------------------
-In file: ./contracts/RpsGame.sol:227
-
-expireTimeLimit + now
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
-
-
-Used 3146.5449731349945 seconds
-coverage file: ./myth_code_coverage/6519a091-884c-4720-ae47-660c8bd042ca.json
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: close(uint256)
-PC address: 2834
-Estimated Gas Usage: 3636 - 4251
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame_instrument_index.sol:295
-
-now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE)
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x4000080420040204a, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b08, value: 0x0
-Caller: [SOMEGUY], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001020202020202020202020202020202020202020202020202020202020202020a, value: 0x0
-Caller: [CREATOR], function: close(uint256), txdata: 0x0aebeb4e0000000000000000000000000000000000000000000000000000000000000001, decoded_data: (1,), value: 0x0
-
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: close(uint256)
-PC address: 2906
-Estimated Gas Usage: 3656 - 4271
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame_instrument_index.sol:295
-
-require(now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE))
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x2000000000000000, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [SOMEGUY], function: createGame(bytes32,address), txdata: 0xfe1f6a0b80, value: 0x0
-Caller: [ATTACKER], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001808080808080808080808080808080808080808080808080808080808080800a, value: 0x0
-Caller: [ATTACKER], function: close(uint256), txdata: 0x0aebeb4e0000000000000000000000000000000000000000000000000000000000000001, decoded_data: (1,), value: 0x0
-
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: joinGame(uint256,uint8)
-PC address: 7064
-Estimated Gas Usage: 9429 - 11694
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame_instrument_index.sol:246
-
-require(now < game.expireTime)
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x80000000005, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b40, value: 0x0
-Caller: [SOMEGUY], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001, value: 0x0
-
-==== Integer Arithmetic Bugs ====
-SWC ID: 101
-Severity: High
-Contract: RpsGame
-Function name: joinGame(uint256,uint8)
-PC address: 7199
-Estimated Gas Usage: 46672 - 171550
-The arithmetic operator can overflow.
-It is possible to cause an integer overflow or underflow in the arithmetic operation. 
---------------------
-In file: ./contracts/RpsGame_instrument_index.sol:252
-
-expireTimeLimit + now
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x8000000000000000, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [SOMEGUY], function: createGame(bytes32,address), txdata: 0xfe1f6a0b0001000000000000000000008000000000008000018080018080808080808080000000000000000000000000affeaffeaffeaffeaffeaffeaffeaffeaffeaffe, decoded_data: ('0001000000000000000000008000000000008000018080018080808080808080', '0xaffeaffeaffeaffeaffeaffeaffeaffeaffeaffe'), value: 0x0
-Caller: [CREATOR], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001808080808080808080808080808080808080808080808080808080808080801e, value: 0x0
-
-==== Integer Arithmetic Bugs ====
-SWC ID: 101
-Severity: High
-Contract: RpsGame
-Function name: createGame(bytes32,address)
-PC address: 7827
-Estimated Gas Usage: 58022 - 241250
-The arithmetic operator can overflow.
-It is possible to cause an integer overflow or underflow in the arithmetic operation. 
---------------------
-In file: ./contracts/RpsGame_instrument_index.sol:227
-
-expireTimeLimit + now
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
-
-
-Used 5992.130523920059 seconds
-coverage file: ./myth_code_coverage/89291354-4170-4541-abde-2c7d11475c73.json
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: close(uint256)
-PC address: 2816
-Estimated Gas Usage: 2007 - 2622
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame.sol:286
-
-now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE)
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x38001040000000000, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [SOMEGUY], function: createGame(bytes32,address), txdata: 0xfe1f6a0b08, value: 0x0
-Caller: [CREATOR], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000a, decoded_data: (1, 10), value: 0x0
-Caller: [CREATOR], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
-
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: close(uint256)
-PC address: 2888
-Estimated Gas Usage: 2027 - 2642
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame.sol:286
-
-require(now > game.expireTime || (game.dealerChoice != NONE && game.playerChoice != NONE))
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x80040000041, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [ATTACKER], function: createGame(bytes32,address), txdata: 0xfe1f6a0b80, value: 0x0
-Caller: [SOMEGUY], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000a, decoded_data: (1, 10), value: 0x0
-Caller: [SOMEGUY], function: close(uint256), txdata: 0x0aebeb4e, value: 0x0
-
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: joinGame(uint256,uint8)
-PC address: 7010
-Estimated Gas Usage: 7800 - 10065
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame.sol:244
-
-require(now < game.expireTime)
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x400000000000000, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x10000000000, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [SOMEGUY], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
-Caller: [CREATOR], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001, value: 0x0
-
-==== Integer Arithmetic Bugs ====
-SWC ID: 101
-Severity: High
-Contract: RpsGame
-Function name: joinGame(uint256,uint8)
-PC address: 7145
-Estimated Gas Usage: 45043 - 169921
-The arithmetic operator can overflow.
-It is possible to cause an integer overflow or underflow in the arithmetic operation. 
---------------------
-In file: ./contracts/RpsGame.sol:250
-
-expireTimeLimit + now
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x50000000000000000, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [SOMEGUY], function: createGame(bytes32,address), txdata: 0xfe1f6a0b2002800001808000018080800808048040102002008080088040004040040040000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef, decoded_data: ('2002800001808000018080800808048040102002008080088040004040040040', '0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef'), value: 0x0
-Caller: [ATTACKER], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001fefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefe1e, value: 0x0
-
-==== Integer Arithmetic Bugs ====
-SWC ID: 101
-Severity: High
-Contract: RpsGame
-Function name: createGame(bytes32,address)
-PC address: 7773
-Estimated Gas Usage: 58022 - 241250
-The arithmetic operator can overflow.
-It is possible to cause an integer overflow or underflow in the arithmetic operation. 
---------------------
-In file: ./contracts/RpsGame.sol:227
-
-expireTimeLimit + now
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: createGame(bytes32,address), txdata: 0xfe1f6a0b01, value: 0x0
-
-
-Used 4079.707822084427 seconds
-coverage file: ./myth_code_coverage/dccb8ae7-cf88-4850-a5b5-fcfeb9c00bdb.json
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: RpsGame
-Function name: joinGame(uint256,uint8)
-PC address: 7064
-Estimated Gas Usage: 9429 - 11694
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/RpsGame_instrument_index.sol:246
-
-require(now < game.expireTime)
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x17098000000000000, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [ATTACKER], function: createGame(bytes32,address), txdata: 0xfe1f6a0b80, value: 0x0
-Caller: [SOMEGUY], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001, value: 0x0
+Caller: [SOMEGUY], function: createGame(bytes32,address), txdata: 0xfe1f6a0b0000000000000000040000010008010040800001048080808080808080808080000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef, decoded_data: ('0000000000000000040000010008010040800001048080808080808080808080', '0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef'), value: 0x0
+Caller: [ATTACKER], function: joinGame(uint256,uint8), txdata: 0xca6649c50000000000000000000000000000000000000000000000000000000000000001404040404040404040404040404040404040404040404040404040404040401e, value: 0x0
 
 ==== Integer Arithmetic Bugs ====
 SWC ID: 101
