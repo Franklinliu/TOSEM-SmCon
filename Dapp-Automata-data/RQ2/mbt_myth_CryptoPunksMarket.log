@@ -248,92 +248,56 @@ offerPunkForSaleToAddress(uint256,uint256,address) 0xbf31196f
 offerPunkForSale(uint256,uint256) 0xc44193c3
 getPunk(uint256) 0xc81d1d5b
 punkNoLongerForSale(uint256) 0xf6eeff1e
-myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['setInitialOwner(address,uint256)'], ['setInitialOwner(address,uint256)'], ['setInitialOwners(address[],uint256[])'], ['transferPunk(address,uint256)'], ['offerPunkForSale(uint256,uint256)'], ['enterBidForPunk(uint256)'], ['punkNoLongerForSale(uint256)'], ['withdrawBidForPunk(uint256)']]" --parallel-solving
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['withdraw()']]" --parallel-solving
+Used 21.387194633483887 seconds
+coverage file: ./myth_code_coverage/111cbebc-0540-4d80-a95b-d6b81c116ada.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 24.540465354919434
+
+
+
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['allInitialOwnersAssigned()']]" --parallel-solving
+Used 21.751296758651733 seconds
+coverage file: ./myth_code_coverage/a7aa3a76-4333-4131-96f3-d979de68facf.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 49.516408920288086
+
+
+
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['setInitialOwner(address,uint256)']]" --parallel-solving
+Used 23.796011686325073 seconds
+coverage file: ./myth_code_coverage/47c1fdd8-2734-47ac-81bd-af8615089cdf.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 76.50004816055298
+
+
+
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['setInitialOwners(address[],uint256[])'], ['offerPunkForSale(uint256,uint256)'], ['transferPunk(address,uint256)'], ['enterBidForPunk(uint256)'], ['acceptBidForPunk(uint256,uint256)'], ['punkNoLongerForSale(uint256)']]" --parallel-solving
 Process killed due to timeout!
 Process timed out and was killed.
-overall time used (seconds): 600.0931041240692
+overall time used (seconds): 676.558507680893
 
 
 
-myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['setInitialOwners(address[],uint256[])'], ['enterBidForPunk(uint256)'], ['acceptBidForPunk(uint256,uint256)'], ['punkNoLongerForSale(uint256)'], ['buyPunk(uint256)'], ['offerPunkForSale(uint256,uint256)']]" --parallel-solving
-Process killed due to timeout!
-Process timed out and was killed.
-overall time used (seconds): 1200.183336019516
-
-
-
-myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['getPunk(uint256)'], ['offerPunkForSaleToAddress(uint256,uint256,address)'], ['buyPunk(uint256)'], ['enterBidForPunk(uint256)'], ['withdrawBidForPunk(uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['getPunk(uint256)'], ['offerPunkForSaleToAddress(uint256,uint256,address)'], ['buyPunk(uint256)'], ['enterBidForPunk(uint256)'], ['withdrawBidForPunk(uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[[0xc81d1d5b],[0xbf31196f],[0x8264fe98],[0x091dbfd2],[0x979bc638]]" --parallel-solving
-done! 
-Used 15.238598108291626 seconds
-coverage file: ./myth_code_coverage/771b0c4b-8212-4e85-bdea-034ce24eb29d.json
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['withdraw()'], ['setInitialOwners(address[],uint256[])'], ['offerPunkForSale(uint256,uint256)'], ['transferPunk(address,uint256)'], ['enterBidForPunk(uint256)'], ['acceptBidForPunk(uint256,uint256)'], ['punkNoLongerForSale(uint256)']]" --parallel-solving
+Used 21.3758487701416 seconds
+coverage file: ./myth_code_coverage/84c79065-3df9-4252-9b6b-ec1591fee4d3.json
 The analysis was completed successfully. No issues were detected.
 
 
-overall time used (seconds): 18.415781021118164
+overall time used (seconds): 701.0726568698883
 
 
 
-Used 15.238598108291626 seconds
-coverage file: ./myth_code_coverage/771b0c4b-8212-4e85-bdea-034ce24eb29d.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 1218.5993852615356
-
-
-
-myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['getPunk(uint256)'], ['offerPunkForSaleToAddress(uint256,uint256,address)'], ['buyPunk(uint256)'], ['enterBidForPunk(uint256)'], ['offerPunkForSale(uint256,uint256)'], ['transferPunk(address,uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['getPunk(uint256)'], ['offerPunkForSaleToAddress(uint256,uint256,address)'], ['buyPunk(uint256)'], ['enterBidForPunk(uint256)'], ['offerPunkForSale(uint256,uint256)'], ['transferPunk(address,uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[[0xc81d1d5b],[0xbf31196f],[0x8264fe98],[0x091dbfd2],[0xc44193c3],[0x8b72a2ec]]" --parallel-solving
-done! 
-Used 15.015008926391602 seconds
-coverage file: ./myth_code_coverage/e4dda760-ee51-4ed5-8031-c78f5735fcbc.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 17.766996145248413
-
-
-
-Used 15.015008926391602 seconds
-coverage file: ./myth_code_coverage/e4dda760-ee51-4ed5-8031-c78f5735fcbc.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 1236.3666660785675
-
-
-
-myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['getPunk(uint256)'], ['enterBidForPunk(uint256)'], ['offerPunkForSale(uint256,uint256)'], ['withdrawBidForPunk(uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['getPunk(uint256)'], ['enterBidForPunk(uint256)'], ['offerPunkForSale(uint256,uint256)'], ['withdrawBidForPunk(uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[[0xc81d1d5b],[0x091dbfd2],[0xc44193c3],[0x979bc638]]" --parallel-solving
-done! 
-Used 15.130346059799194 seconds
-coverage file: ./myth_code_coverage/303de8ad-3225-4d64-9221-9881a72cd16f.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 17.88063907623291
-
-
-
-Used 15.130346059799194 seconds
-coverage file: ./myth_code_coverage/303de8ad-3225-4d64-9221-9881a72cd16f.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 1254.247584104538
-
-
-
-myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['allInitialOwnersAssigned()'], ['allInitialOwnersAssigned()'], ['setInitialOwners(address[],uint256[])'], ['offerPunkForSale(uint256,uint256)'], ['buyPunk(uint256)'], ['offerPunkForSaleToAddress(uint256,uint256,address)']]" --parallel-solving
-myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['allInitialOwnersAssigned()'], ['allInitialOwnersAssigned()'], ['setInitialOwners(address[],uint256[])'], ['offerPunkForSale(uint256,uint256)'], ['buyPunk(uint256)'], ['offerPunkForSaleToAddress(uint256,uint256,address)']]" --parallel-solving
-myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[[0x7ecedac9],[0x7ecedac9],[0x39c5dde6],[0xc44193c3],[0x8264fe98],[0xbf31196f]]" --parallel-solving
-done! 
-Used 19.76791286468506 seconds
-coverage file: ./myth_code_coverage/c7b7886c-8d7c-439b-891b-24d2113f152e.json
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['allInitialOwnersAssigned()'], ['withdraw()'], ['setInitialOwners(address[],uint256[])'], ['offerPunkForSale(uint256,uint256)'], ['transferPunk(address,uint256)'], ['enterBidForPunk(uint256)'], ['acceptBidForPunk(uint256,uint256)'], ['punkNoLongerForSale(uint256)']]" --parallel-solving
+Used 46.380122423172 seconds
+coverage file: ./myth_code_coverage/fb80bc38-0df9-482a-b969-a8e712576a70.json
 ==== Exception State ====
 SWC ID: 110
 Severity: Medium
@@ -357,240 +321,15 @@ function setInitialOwners(address[] addresses, uint[] indices) {
 --------------------
 Initial State:
 
-Account: [CREATOR], balance: 0x42081600000408060, nonce:0, storage:{}
+Account: [CREATOR], balance: 0x41041000008000000, nonce:0, storage:{}
 Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
 
 Transaction Sequence:
 
 Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
 Caller: [CREATOR], function: allInitialOwnersAssigned(), txdata: 0x7ecedac9, value: 0x0
-Caller: [CREATOR], function: allInitialOwnersAssigned(), txdata: 0x7ecedac9, value: 0x0
-Caller: [CREATOR], function: setInitialOwners(address[],uint256[]), txdata: 0x39c5dde68000000000000000000000000000000000000000000000000000000000000000ff, value: 0x0
-
-
-
-overall time used (seconds): 22.602071046829224
-
-
-
-Used 19.76791286468506 seconds
-coverage file: ./myth_code_coverage/c7b7886c-8d7c-439b-891b-24d2113f152e.json
-==== Exception State ====
-SWC ID: 110
-Severity: Medium
-Contract: CryptoPunksMarket
-Function name: setInitialOwners(address[],uint256[])
-PC address: 5148
-Estimated Gas Usage: 1700 - 7671
-An assertion violation was triggered.
-It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
---------------------
-In file: ./contracts/CryptoPunksMarket.sol:86
-
-function setInitialOwners(address[] addresses, uint[] indices) {
-        if (msg.sender != owner) throw;
-        uint n = addresses.length;
-        for (uint i = 0; i < n; i++) {
-            setInitialOwner(addresses[i], indices[i]);
-        }
-    }
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x42081600000408060, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: allInitialOwnersAssigned(), txdata: 0x7ecedac9, value: 0x0
-Caller: [CREATOR], function: allInitialOwnersAssigned(), txdata: 0x7ecedac9, value: 0x0
-Caller: [CREATOR], function: setInitialOwners(address[],uint256[]), txdata: 0x39c5dde68000000000000000000000000000000000000000000000000000000000000000ff, value: 0x0
-
-
-
-overall time used (seconds): 1276.8509728908539
-
-
-
-myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['setInitialOwner(address,uint256)'], ['setInitialOwners(address[],uint256[])'], ['enterBidForPunk(uint256)'], ['offerPunkForSaleToAddress(uint256,uint256,address)'], ['offerPunkForSale(uint256,uint256)'], ['transferPunk(address,uint256)'], ['acceptBidForPunk(uint256,uint256)']]" --parallel-solving
-Process killed due to timeout!
-Process timed out and was killed.
-overall time used (seconds): 1876.9354271888733
-
-
-
-myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['getPunk(uint256)'], ['offerPunkForSale(uint256,uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['getPunk(uint256)'], ['offerPunkForSale(uint256,uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[[0xc81d1d5b],[0xc44193c3]]" --parallel-solving
-done! 
-Used 15.130651950836182 seconds
-coverage file: ./myth_code_coverage/0622ffe9-8fd8-4346-a18a-24683be4dbcd.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 18.302634954452515
-
-
-
-Used 15.130651950836182 seconds
-coverage file: ./myth_code_coverage/0622ffe9-8fd8-4346-a18a-24683be4dbcd.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 1895.238296031952
-
-
-
-myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['withdraw()'], ['allInitialOwnersAssigned()'], ['setInitialOwners(address[],uint256[])'], ['offerPunkForSale(uint256,uint256)'], ['punkNoLongerForSale(uint256)'], ['transferPunk(address,uint256)'], ['enterBidForPunk(uint256)'], ['acceptBidForPunk(uint256,uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['withdraw()'], ['allInitialOwnersAssigned()'], ['setInitialOwners(address[],uint256[])'], ['offerPunkForSale(uint256,uint256)'], ['punkNoLongerForSale(uint256)'], ['transferPunk(address,uint256)'], ['enterBidForPunk(uint256)'], ['acceptBidForPunk(uint256,uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[[0x3ccfd60b],[0x7ecedac9],[0x39c5dde6],[0xc44193c3],[0xf6eeff1e],[0x8b72a2ec],[0x091dbfd2],[0x23165b75]]" --parallel-solving
-done! 
-Used 13.861325025558472 seconds
-coverage file: ./myth_code_coverage/91fd49de-d78d-44cd-bcd5-833decf8151f.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 16.58565402030945
-
-
-
-Used 13.861325025558472 seconds
-coverage file: ./myth_code_coverage/91fd49de-d78d-44cd-bcd5-833decf8151f.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 1911.824243068695
-
-
-
-myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['getPunk(uint256)'], ['offerPunkForSaleToAddress(uint256,uint256,address)'], ['offerPunkForSale(uint256,uint256)'], ['enterBidForPunk(uint256)'], ['withdrawBidForPunk(uint256)'], ['transferPunk(address,uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['getPunk(uint256)'], ['offerPunkForSaleToAddress(uint256,uint256,address)'], ['offerPunkForSale(uint256,uint256)'], ['enterBidForPunk(uint256)'], ['withdrawBidForPunk(uint256)'], ['transferPunk(address,uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[[0xc81d1d5b],[0xbf31196f],[0xc44193c3],[0x091dbfd2],[0x979bc638],[0x8b72a2ec]]" --parallel-solving
-done! 
-Used 14.544753313064575 seconds
-coverage file: ./myth_code_coverage/b34acd28-eb8d-46c2-9cc7-01d660e8d7b0.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 17.296699047088623
-
-
-
-Used 14.544753313064575 seconds
-coverage file: ./myth_code_coverage/b34acd28-eb8d-46c2-9cc7-01d660e8d7b0.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 1929.1212010383606
-
-
-
-myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['withdraw()'], ['withdraw()'], ['getPunk(uint256)'], ['offerPunkForSaleToAddress(uint256,uint256,address)'], ['offerPunkForSale(uint256,uint256)'], ['enterBidForPunk(uint256)'], ['transferPunk(address,uint256)'], ['acceptBidForPunk(uint256,uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['withdraw()'], ['withdraw()'], ['getPunk(uint256)'], ['offerPunkForSaleToAddress(uint256,uint256,address)'], ['offerPunkForSale(uint256,uint256)'], ['enterBidForPunk(uint256)'], ['transferPunk(address,uint256)'], ['acceptBidForPunk(uint256,uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[[0x3ccfd60b],[0x3ccfd60b],[0xc81d1d5b],[0xbf31196f],[0xc44193c3],[0x091dbfd2],[0x8b72a2ec],[0x23165b75]]" --parallel-solving
-done! 
-Used 15.165767908096313 seconds
-coverage file: ./myth_code_coverage/f799e4f7-6967-48e4-a848-1f116cca8eb4.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 17.926281929016113
-
-
-
-Used 15.165767908096313 seconds
-coverage file: ./myth_code_coverage/f799e4f7-6967-48e4-a848-1f116cca8eb4.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 1947.047816991806
-
-
-
-myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['setInitialOwner(address,uint256)'], ['withdraw()'], ['getPunk(uint256)'], ['offerPunkForSale(uint256,uint256)'], ['buyPunk(uint256)'], ['transferPunk(address,uint256)'], ['punkNoLongerForSale(uint256)'], ['enterBidForPunk(uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['setInitialOwner(address,uint256)'], ['withdraw()'], ['getPunk(uint256)'], ['offerPunkForSale(uint256,uint256)'], ['buyPunk(uint256)'], ['transferPunk(address,uint256)'], ['punkNoLongerForSale(uint256)'], ['enterBidForPunk(uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[[0xa75a9049],[0x3ccfd60b],[0xc81d1d5b],[0xc44193c3],[0x8264fe98],[0x8b72a2ec],[0xf6eeff1e],[0x091dbfd2]]" --parallel-solving
-done! 
-Used 16.638850927352905 seconds
-coverage file: ./myth_code_coverage/93de9745-081c-4959-8fd1-5527f390d345.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 19.45779585838318
-
-
-
-Used 16.638850927352905 seconds
-coverage file: ./myth_code_coverage/93de9745-081c-4959-8fd1-5527f390d345.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 1966.5059552192688
-
-
-
-myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['setInitialOwner(address,uint256)'], ['setInitialOwner(address,uint256)'], ['getPunk(uint256)'], ['enterBidForPunk(uint256)'], ['acceptBidForPunk(uint256,uint256)'], ['offerPunkForSaleToAddress(uint256,uint256,address)']]" --parallel-solving
-myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['setInitialOwner(address,uint256)'], ['setInitialOwner(address,uint256)'], ['getPunk(uint256)'], ['enterBidForPunk(uint256)'], ['acceptBidForPunk(uint256,uint256)'], ['offerPunkForSaleToAddress(uint256,uint256,address)']]" --parallel-solving
-myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[[0xa75a9049],[0xa75a9049],[0xc81d1d5b],[0x091dbfd2],[0x23165b75],[0xbf31196f]]" --parallel-solving
-done! 
-Used 27.99150586128235 seconds
-coverage file: ./myth_code_coverage/ca9c438a-70d4-4fb2-9bee-dd3a672bb3f7.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 30.773504972457886
-
-
-
-Used 27.99150586128235 seconds
-coverage file: ./myth_code_coverage/ca9c438a-70d4-4fb2-9bee-dd3a672bb3f7.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 1997.2797601222992
-
-
-
-myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['allInitialOwnersAssigned()'], ['withdraw()'], ['setInitialOwners(address[],uint256[])'], ['enterBidForPunk(uint256)'], ['offerPunkForSale(uint256,uint256)'], ['punkNoLongerForSale(uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['allInitialOwnersAssigned()'], ['withdraw()'], ['setInitialOwners(address[],uint256[])'], ['enterBidForPunk(uint256)'], ['offerPunkForSale(uint256,uint256)'], ['punkNoLongerForSale(uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[[0x7ecedac9],[0x3ccfd60b],[0x39c5dde6],[0x091dbfd2],[0xc44193c3],[0xf6eeff1e]]" --parallel-solving
-done! 
-Used 21.430321216583252 seconds
-coverage file: ./myth_code_coverage/5b960d4b-7dcf-4e0a-aaa3-f19ab04dbfa8.json
-==== Exception State ====
-SWC ID: 110
-Severity: Medium
-Contract: CryptoPunksMarket
-Function name: setInitialOwners(address[],uint256[])
-PC address: 5148
-Estimated Gas Usage: 1700 - 7671
-An assertion violation was triggered.
-It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
---------------------
-In file: ./contracts/CryptoPunksMarket.sol:86
-
-function setInitialOwners(address[] addresses, uint[] indices) {
-        if (msg.sender != owner) throw;
-        uint n = addresses.length;
-        for (uint i = 0; i < n; i++) {
-            setInitialOwner(addresses[i], indices[i]);
-        }
-    }
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x330006825816c63a2, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: allInitialOwnersAssigned(), txdata: 0x7ecedac9, value: 0x0
-Caller: [CREATOR], function: withdraw(), txdata: 0x3ccfd60b, value: 0x0
-Caller: [CREATOR], function: setInitialOwners(address[],uint256[]), txdata: 0x39c5dde6ffffffffffffffffffffffffffffffffffffffffffffbfff02ff16ffffdf0000ff, value: 0x0
+Caller: [SOMEGUY], function: withdraw(), txdata: 0x3ccfd60b, value: 0x0
+Caller: [CREATOR], function: setInitialOwners(address[],uint256[]), txdata: 0x39c5dde6ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffdffc7f, value: 0x0
 
 ==== Transaction Order Dependence ====
 SWC ID: 114
@@ -609,7 +348,7 @@ msg.sender.transfer(amount)
 --------------------
 Initial State:
 
-Account: [CREATOR], balance: 0x100000000, nonce:0, storage:{}
+Account: [CREATOR], balance: 0x800000000001, nonce:0, storage:{}
 Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
 
 Transaction Sequence:
@@ -620,12 +359,107 @@ Caller: [ATTACKER], function: withdraw(), txdata: 0x3ccfd60b, value: 0x0
 
 
 
-overall time used (seconds): 24.2013943195343
+overall time used (seconds): 750.6522104740143
 
 
 
-Used 21.430321216583252 seconds
-coverage file: ./myth_code_coverage/5b960d4b-7dcf-4e0a-aaa3-f19ab04dbfa8.json
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['setInitialOwners(address[],uint256[])'], ['offerPunkForSale(uint256,uint256)'], ['buyPunk(uint256)'], ['punkNoLongerForSale(uint256)']]" --parallel-solving
+Process killed due to timeout!
+Process timed out and was killed.
+overall time used (seconds): 1350.7093842029572
+
+
+
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['withdraw()'], ['setInitialOwners(address[],uint256[])'], ['offerPunkForSale(uint256,uint256)'], ['buyPunk(uint256)'], ['punkNoLongerForSale(uint256)']]" --parallel-solving
+Used 21.516326189041138 seconds
+coverage file: ./myth_code_coverage/d235e98d-5ce9-4ea4-8d45-7a4f7489a1dd.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1375.4597840309143
+
+
+
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['setInitialOwner(address,uint256)'], ['withdraw()'], ['setInitialOwners(address[],uint256[])'], ['offerPunkForSale(uint256,uint256)'], ['buyPunk(uint256)'], ['punkNoLongerForSale(uint256)']]" --parallel-solving
+Used 25.98763394355774 seconds
+coverage file: ./myth_code_coverage/769aab4d-64c2-4886-9985-54f661683d23.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1404.6120834350586
+
+
+
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['getPunk(uint256)'], ['offerPunkForSale(uint256,uint256)'], ['punkNoLongerForSale(uint256)'], ['transferPunk(address,uint256)']]" --parallel-solving
+Used 22.298203468322754 seconds
+coverage file: ./myth_code_coverage/25d7bf58-49ad-4a9d-a41f-29f23e4e751b.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1430.0654554367065
+
+
+
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['allInitialOwnersAssigned()'], ['getPunk(uint256)'], ['offerPunkForSale(uint256,uint256)'], ['punkNoLongerForSale(uint256)'], ['transferPunk(address,uint256)']]" --parallel-solving
+Used 95.86352467536926 seconds
+coverage file: ./myth_code_coverage/c62a5f05-c724-42df-a8d1-79a9369ba14e.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1529.344119310379
+
+
+
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['allInitialOwnersAssigned()'], ['allInitialOwnersAssigned()'], ['getPunk(uint256)'], ['offerPunkForSale(uint256,uint256)'], ['punkNoLongerForSale(uint256)'], ['transferPunk(address,uint256)']]" --parallel-solving
+Used 91.41321992874146 seconds
+coverage file: ./myth_code_coverage/0e6a1024-8306-41e3-93d5-62bfa68462e6.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1624.1348321437836
+
+
+
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['getPunk(uint256)'], ['setInitialOwners(address[],uint256[])'], ['offerPunkForSaleToAddress(uint256,uint256,address)'], ['transferPunk(address,uint256)'], ['punkNoLongerForSale(uint256)'], ['offerPunkForSale(uint256,uint256)']]" --parallel-solving
+Used 22.280808687210083 seconds
+coverage file: ./myth_code_coverage/7d00d266-a4ae-4b58-a908-22bbb915dfab.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1649.5660619735718
+
+
+
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['withdraw()'], ['getPunk(uint256)'], ['setInitialOwners(address[],uint256[])'], ['offerPunkForSaleToAddress(uint256,uint256,address)'], ['transferPunk(address,uint256)'], ['punkNoLongerForSale(uint256)'], ['offerPunkForSale(uint256,uint256)']]" --parallel-solving
+Used 21.39406156539917 seconds
+coverage file: ./myth_code_coverage/4c7c2ea2-9ff4-4871-9a8f-7504ee84a8b6.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1674.0963716506958
+
+
+
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['withdraw()'], ['withdraw()'], ['getPunk(uint256)'], ['setInitialOwners(address[],uint256[])'], ['offerPunkForSaleToAddress(uint256,uint256,address)'], ['transferPunk(address,uint256)'], ['punkNoLongerForSale(uint256)'], ['offerPunkForSale(uint256,uint256)']]" --parallel-solving
+Used 21.37633776664734 seconds
+coverage file: ./myth_code_coverage/e75b4a0a-b818-451c-814c-3888100cc93f.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1698.632423400879
+
+
+
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['setInitialOwners(address[],uint256[])'], ['transferPunk(address,uint256)'], ['enterBidForPunk(uint256)'], ['offerPunkForSaleToAddress(uint256,uint256,address)']]" --parallel-solving
+Process killed due to timeout!
+Process timed out and was killed.
+overall time used (seconds): 2298.6879992485046
+
+
+
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['allInitialOwnersAssigned()'], ['setInitialOwners(address[],uint256[])'], ['transferPunk(address,uint256)'], ['enterBidForPunk(uint256)'], ['offerPunkForSaleToAddress(uint256,uint256,address)']]" --parallel-solving
+Used 33.67804479598999 seconds
+coverage file: ./myth_code_coverage/7ec3349f-2645-4e09-990d-1dabc0071f66.json
 ==== Exception State ====
 SWC ID: 110
 Severity: Medium
@@ -649,45 +483,71 @@ function setInitialOwners(address[] addresses, uint[] indices) {
 --------------------
 Initial State:
 
-Account: [CREATOR], balance: 0x330006825816c63a2, nonce:0, storage:{}
+Account: [CREATOR], balance: 0x2, nonce:0, storage:{}
 Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
 
 Transaction Sequence:
 
 Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
 Caller: [CREATOR], function: allInitialOwnersAssigned(), txdata: 0x7ecedac9, value: 0x0
-Caller: [CREATOR], function: withdraw(), txdata: 0x3ccfd60b, value: 0x0
-Caller: [CREATOR], function: setInitialOwners(address[],uint256[]), txdata: 0x39c5dde6ffffffffffffffffffffffffffffffffffffffffffffbfff02ff16ffffdf0000ff, value: 0x0
+Caller: [CREATOR], function: setInitialOwners(address[],uint256[]), txdata: 0x39c5dde6ffffffffffffffffffffffff000001ff40ffffff00c0bffffffffffffffffff8ff, value: 0x0
 
-==== Transaction Order Dependence ====
-SWC ID: 114
+
+
+overall time used (seconds): 2335.544359445572
+
+
+
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['allInitialOwnersAssigned()'], ['allInitialOwnersAssigned()'], ['setInitialOwners(address[],uint256[])'], ['transferPunk(address,uint256)'], ['enterBidForPunk(uint256)'], ['offerPunkForSaleToAddress(uint256,uint256,address)']]" --parallel-solving
+Used 40.056546688079834 seconds
+coverage file: ./myth_code_coverage/105cd239-8c0f-4d4b-aba7-d4a5d0fb162f.json
+==== Exception State ====
+SWC ID: 110
 Severity: Medium
 Contract: CryptoPunksMarket
-Function name: withdraw()
-PC address: 5395
-Estimated Gas Usage: 7957 - 62948
-The value of the call is dependent on balance or storage write
-This can lead to race conditions. An attacker may be able to run a transaction after our transaction which can change the value of the call
+Function name: setInitialOwners(address[],uint256[])
+PC address: 5148
+Estimated Gas Usage: 1700 - 7671
+An assertion violation was triggered.
+It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
 --------------------
-In file: ./contracts/CryptoPunksMarket.sol:193
+In file: ./contracts/CryptoPunksMarket.sol:86
 
-msg.sender.transfer(amount)
+function setInitialOwners(address[] addresses, uint[] indices) {
+        if (msg.sender != owner) throw;
+        uint n = addresses.length;
+        for (uint i = 0; i < n; i++) {
+            setInitialOwner(addresses[i], indices[i]);
+        }
+    }
 
 --------------------
 Initial State:
 
-Account: [CREATOR], balance: 0x100000000, nonce:0, storage:{}
+Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
 Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
 
 Transaction Sequence:
 
 Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
 Caller: [CREATOR], function: allInitialOwnersAssigned(), txdata: 0x7ecedac9, value: 0x0
-Caller: [ATTACKER], function: withdraw(), txdata: 0x3ccfd60b, value: 0x0
+Caller: [CREATOR], function: allInitialOwnersAssigned(), txdata: 0x7ecedac9, value: 0x0
+Caller: [CREATOR], function: setInitialOwners(address[],uint256[]), txdata: 0x39c5dde6ffffffffffffffffffffffffffffffffffffffff20ffffffffffffffffffffec3f, value: 0x0
 
 
 
-overall time used (seconds): 2021.4814732074738
+overall time used (seconds): 2378.8206839561462
 
 
 
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['getPunk(uint256)'], ['setInitialOwners(address[],uint256[])'], ['enterBidForPunk(uint256)'], ['withdrawBidForPunk(uint256)'], ['transferPunk(address,uint256)']]" --parallel-solving
+Used 22.52983260154724 seconds
+coverage file: ./myth_code_coverage/37a150a3-4966-4c4d-a69f-5d01e3093ad6.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2404.5153489112854
+
+
+
+myth -v 2 analyze ./contracts/CryptoPunksMarket.sol:CryptoPunksMarket --transaction-sequences "[['allInitialOwnersAssigned()'], ['getPunk(uint256)'], ['setInitialOwners(address[],uint256[])'], ['enterBidForPunk(uint256)'], ['withdrawBidForPunk(uint256)'], ['transferPunk(address,uint256)']]" --parallel-solving

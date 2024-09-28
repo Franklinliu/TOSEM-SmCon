@@ -1,7 +1,7 @@
 #!/bin/bash
 for i in {1..5}
 do 
-echo $i
+echo "$i round..."
 # solc-select use 0.4.25
 # timeout 1h python ./fuzz_compare.py --contract-name RpsGame --random ./contracts/RpsGame.sol > ./random_myth_RpsGame.log 2>&1
 # timeout 1h python ./fuzz_compare.py --contract-name CryptoPunksMarket --random ./contracts/CryptoPunksMarket.sol > ./random_myth_CryptoPunksMarket.log 2>&1
@@ -28,7 +28,10 @@ timeout 1h python ./fuzz_compare.py --contract-name SaleClockAuction --model-fil
 timeout 1h python ./fuzz_compare.py --contract-name SupeRare --model-file ../result/model-fix/0x41a322b28d0ff354040e2cbc676f0320d8c8850d/SupeRare/FSM-17.json --mbt ./contracts/SupeRare_instrument_index.sol > ./parametric_myth_SupeRare.log 2>&1
 solc-select use 0.5.0
 timeout 1h python ./fuzz_compare.py --contract-name GameChannel --model-file ../result/gamechannel-fix/0xaec1f783b29aab2727d7c374aa55483fe299fefa/GameChannel/FSM-8.json --mbt ./contracts/GameChannel_instrument_index.sol > ./parametric_myth_GameChannel.log 2>&1
-done
+
+python coverage_count.py 
+tar -czvf trial-$i.tar.gz *.log 
+done 
 
 #for i in {1..5}
 #do 

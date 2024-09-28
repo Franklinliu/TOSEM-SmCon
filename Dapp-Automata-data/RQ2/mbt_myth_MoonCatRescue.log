@@ -132,122 +132,19 @@ makeAdoptionOfferToAddress(bytes5,uint256,address) 0xa4202615
 acceptAdoptionRequest(bytes5) 0xd4a03f60
 makeAdoptionRequest(bytes5) 0xe65bbceb
 giveCat(bytes5,address) 0xf884e54a
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['activateInTestMode()'], ['addGenesisCatGroup()'], ['acceptAdoptionOffer(bytes5)'], ['nameCat(bytes5,bytes32)'], ['giveCat(bytes5,address)'], ['makeAdoptionOffer(bytes5,uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['activateInTestMode()'], ['addGenesisCatGroup()'], ['acceptAdoptionOffer(bytes5)'], ['nameCat(bytes5,bytes32)'], ['giveCat(bytes5,address)'], ['makeAdoptionOffer(bytes5,uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[[0x76b39cf9],[0xa40c8ad0],[0x1be70510],[0x74fe6dea],[0xf884e54a],[0x05ca3557]]" --parallel-solving
-done! 
-Used 47.182263135910034 seconds
-coverage file: ./myth_code_coverage/60d5244c-35da-4a51-bc27-f975e21822d1.json
+myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['activate()']]" --parallel-solving
+Used 68.0371823310852 seconds
+coverage file: ./myth_code_coverage/1b9b58ce-8398-4922-a07e-652896db6208.json
 The analysis was completed successfully. No issues were detected.
 
 
-overall time used (seconds): 50.58522272109985
+overall time used (seconds): 71.6744601726532
 
 
 
-Used 47.182263135910034 seconds
-coverage file: ./myth_code_coverage/60d5244c-35da-4a51-bc27-f975e21822d1.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 50.58542013168335
-
-
-
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['activateInTestMode()'], ['makeAdoptionOfferToAddress(bytes5,uint256,address)'], ['addGenesisCatGroup()'], ['acceptAdoptionOffer(bytes5)'], ['giveCat(bytes5,address)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['activateInTestMode()'], ['makeAdoptionOfferToAddress(bytes5,uint256,address)'], ['addGenesisCatGroup()'], ['acceptAdoptionOffer(bytes5)'], ['giveCat(bytes5,address)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[[0x76b39cf9],[0xa4202615],[0xa40c8ad0],[0x1be70510],[0xf884e54a]]" --parallel-solving
-done! 
-Used 48.85311698913574 seconds
-coverage file: ./myth_code_coverage/9ed4e8f1-49b1-47bf-b093-995022a35ebd.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 52.018938064575195
-
-
-
-Used 48.85311698913574 seconds
-coverage file: ./myth_code_coverage/9ed4e8f1-49b1-47bf-b093-995022a35ebd.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 102.60462808609009
-
-
-
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['disableBeforeActivation()'], ['rescueCat(bytes5)'], ['nameCat(bytes5,bytes32)'], ['makeAdoptionRequest(bytes5)'], ['cancelAdoptionRequest(bytes5)'], ['makeAdoptionOffer(bytes5,uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['disableBeforeActivation()'], ['rescueCat(bytes5)'], ['nameCat(bytes5,bytes32)'], ['makeAdoptionRequest(bytes5)'], ['cancelAdoptionRequest(bytes5)'], ['makeAdoptionOffer(bytes5,uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[[0xa318d521],[0x59ede867],[0x74fe6dea],[0xe65bbceb],[0x9d8df6dd],[0x05ca3557]]" --parallel-solving
-done! 
-Used 48.1968629360199 seconds
-coverage file: ./myth_code_coverage/93b80327-817f-4e9c-8dff-8a23edd284ed.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 51.38371992111206
-
-
-
-Used 48.1968629360199 seconds
-coverage file: ./myth_code_coverage/93b80327-817f-4e9c-8dff-8a23edd284ed.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 153.9886269569397
-
-
-
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['activate()'], ['disableBeforeActivation()'], ['addGenesisCatGroup()'], ['acceptAdoptionOffer(bytes5)'], ['makeAdoptionRequest(bytes5)'], ['acceptAdoptionRequest(bytes5)'], ['giveCat(bytes5,address)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['activate()'], ['disableBeforeActivation()'], ['addGenesisCatGroup()'], ['acceptAdoptionOffer(bytes5)'], ['makeAdoptionRequest(bytes5)'], ['acceptAdoptionRequest(bytes5)'], ['giveCat(bytes5,address)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[[0x0f15f4c0],[0xa318d521],[0xa40c8ad0],[0x1be70510],[0xe65bbceb],[0xd4a03f60],[0xf884e54a]]" --parallel-solving
-done! 
-Used 47.23419427871704 seconds
-coverage file: ./myth_code_coverage/0313e6eb-97c4-4a8f-b202-73ee4c1527c2.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 50.40554904937744
-
-
-
-Used 47.23419427871704 seconds
-coverage file: ./myth_code_coverage/0313e6eb-97c4-4a8f-b202-73ee4c1527c2.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 204.39445614814758
-
-
-
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['activate()'], ['rescueCat(bytes5)'], ['nameCat(bytes5,bytes32)'], ['makeAdoptionOffer(bytes5,uint256)'], ['acceptAdoptionOffer(bytes5)'], ['giveCat(bytes5,address)'], ['makeAdoptionRequest(bytes5)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['activate()'], ['rescueCat(bytes5)'], ['nameCat(bytes5,bytes32)'], ['makeAdoptionOffer(bytes5,uint256)'], ['acceptAdoptionOffer(bytes5)'], ['giveCat(bytes5,address)'], ['makeAdoptionRequest(bytes5)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[[0x0f15f4c0],[0x59ede867],[0x74fe6dea],[0x05ca3557],[0x1be70510],[0xf884e54a],[0xe65bbceb]]" --parallel-solving
-done! 
-Used 593.6979048252106 seconds
-coverage file: ./myth_code_coverage/04e0e9e7-dd4b-4c6c-ba0c-8ffe3be6ca9c.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 598.2398409843445
-
-
-
-Used 593.6979048252106 seconds
-coverage file: ./myth_code_coverage/04e0e9e7-dd4b-4c6c-ba0c-8ffe3be6ca9c.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 802.6345751285553
-
-
-
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['withdraw()'], ['disableBeforeActivation()'], ['addGenesisCatGroup()'], ['acceptAdoptionOffer(bytes5)'], ['makeAdoptionRequest(bytes5)'], ['nameCat(bytes5,bytes32)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['withdraw()'], ['disableBeforeActivation()'], ['addGenesisCatGroup()'], ['acceptAdoptionOffer(bytes5)'], ['makeAdoptionRequest(bytes5)'], ['nameCat(bytes5,bytes32)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[[0x3ccfd60b],[0xa318d521],[0xa40c8ad0],[0x1be70510],[0xe65bbceb],[0x74fe6dea]]" --parallel-solving
-done! 
-Used 49.78733587265015 seconds
-coverage file: ./myth_code_coverage/0503c278-9ad7-4dda-9ab5-a6162d1f056a.json
+myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['withdraw()']]" --parallel-solving
+Used 70.02028727531433 seconds
+coverage file: ./myth_code_coverage/6c3b0a80-e0e9-4270-a43b-230caeec677c.json
 ==== Transaction Order Dependence ====
 SWC ID: 114
 Severity: Medium
@@ -265,7 +162,7 @@ msg.sender.transfer(amount)
 --------------------
 Initial State:
 
-Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+Account: [CREATOR], balance: 0x4, nonce:0, storage:{}
 Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
 
 Transaction Sequence:
@@ -275,12 +172,93 @@ Caller: [ATTACKER], function: withdraw(), txdata: 0x3ccfd60b, value: 0x0
 
 
 
-overall time used (seconds): 53.23067307472229
+overall time used (seconds): 145.34569478034973
 
 
 
-Used 49.78733587265015 seconds
-coverage file: ./myth_code_coverage/0503c278-9ad7-4dda-9ab5-a6162d1f056a.json
+myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['activateInTestMode()']]" --parallel-solving
+Used 68.24207997322083 seconds
+coverage file: ./myth_code_coverage/727ff5ea-db7b-4bae-b1e8-d7e30e8c3ac7.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 217.26016521453857
+
+
+
+myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['disableBeforeActivation()']]" --parallel-solving
+Used 68.54457521438599 seconds
+coverage file: ./myth_code_coverage/97d09468-9c0f-4b3d-b814-8c99d35497de.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 289.51125049591064
+
+
+
+myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['makeAdoptionOfferToAddress(bytes5,uint256,address)']]" --parallel-solving
+Used 69.36184310913086 seconds
+coverage file: ./myth_code_coverage/c845407b-247b-466e-8d9d-974e809c93d0.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 362.68773651123047
+
+
+
+myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['addGenesisCatGroup()'], ['acceptAdoptionOffer(bytes5)'], ['makeAdoptionRequest(bytes5)'], ['acceptAdoptionRequest(bytes5)'], ['giveCat(bytes5,address)'], ['makeAdoptionOffer(bytes5,uint256)']]" --parallel-solving
+Used 68.74776911735535 seconds
+coverage file: ./myth_code_coverage/0a43b695-0fbb-4b8d-a246-51aabdda4ae4.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 435.1110155582428
+
+
+
+myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['makeAdoptionOfferToAddress(bytes5,uint256,address)'], ['addGenesisCatGroup()'], ['acceptAdoptionOffer(bytes5)'], ['makeAdoptionRequest(bytes5)'], ['acceptAdoptionRequest(bytes5)'], ['giveCat(bytes5,address)'], ['makeAdoptionOffer(bytes5,uint256)']]" --parallel-solving
+Used 70.14282298088074 seconds
+coverage file: ./myth_code_coverage/97a5143d-67db-498e-a7b3-bd15dec5ff5c.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 508.9033570289612
+
+
+
+myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['makeAdoptionOfferToAddress(bytes5,uint256,address)'], ['makeAdoptionOfferToAddress(bytes5,uint256,address)'], ['addGenesisCatGroup()'], ['acceptAdoptionOffer(bytes5)'], ['makeAdoptionRequest(bytes5)'], ['acceptAdoptionRequest(bytes5)'], ['giveCat(bytes5,address)'], ['makeAdoptionOffer(bytes5,uint256)']]" --parallel-solving
+Used 69.37662124633789 seconds
+coverage file: ./myth_code_coverage/3a5e04a5-4259-4a64-a8b2-51f1ab5ab874.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 581.9140405654907
+
+
+
+myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['rescueCat(bytes5)'], ['giveCat(bytes5,address)']]" --parallel-solving
+Used 68.91079306602478 seconds
+coverage file: ./myth_code_coverage/2488a0f2-e1ef-469d-a918-29253e00a47a.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 654.4394545555115
+
+
+
+myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['activateInTestMode()'], ['rescueCat(bytes5)'], ['giveCat(bytes5,address)']]" --parallel-solving
+Used 90.12965559959412 seconds
+coverage file: ./myth_code_coverage/3c3d4de1-ca3d-4fb0-9fe1-8d9f998786b9.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 748.7909557819366
+
+
+
+myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['withdraw()'], ['activateInTestMode()'], ['rescueCat(bytes5)'], ['giveCat(bytes5,address)']]" --parallel-solving
+Used 108.95048427581787 seconds
+coverage file: ./myth_code_coverage/9e545d86-095c-47aa-b851-0b9811416e2e.json
 ==== Transaction Order Dependence ====
 SWC ID: 114
 Severity: Medium
@@ -298,7 +276,7 @@ msg.sender.transfer(amount)
 --------------------
 Initial State:
 
-Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+Account: [CREATOR], balance: 0x8000000000082, nonce:0, storage:{}
 Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
 
 Transaction Sequence:
@@ -308,16 +286,23 @@ Caller: [ATTACKER], function: withdraw(), txdata: 0x3ccfd60b, value: 0x0
 
 
 
-overall time used (seconds): 855.8655240535736
+overall time used (seconds): 861.9689338207245
 
 
 
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['withdraw()'], ['disableBeforeActivation()'], ['addGenesisCatGroup()'], ['acceptAdoptionOffer(bytes5)'], ['giveCat(bytes5,address)'], ['makeAdoptionRequest(bytes5)'], ['acceptAdoptionRequest(bytes5)'], ['makeAdoptionOffer(bytes5,uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['withdraw()'], ['disableBeforeActivation()'], ['addGenesisCatGroup()'], ['acceptAdoptionOffer(bytes5)'], ['giveCat(bytes5,address)'], ['makeAdoptionRequest(bytes5)'], ['acceptAdoptionRequest(bytes5)'], ['makeAdoptionOffer(bytes5,uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[[0x3ccfd60b],[0xa318d521],[0xa40c8ad0],[0x1be70510],[0xf884e54a],[0xe65bbceb],[0xd4a03f60],[0x05ca3557]]" --parallel-solving
-done! 
-Used 49.87228798866272 seconds
-coverage file: ./myth_code_coverage/985f2252-8756-4c7a-b60e-63059defc3f6.json
+myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['rescueCat(bytes5)'], ['nameCat(bytes5,bytes32)'], ['makeAdoptionOffer(bytes5,uint256)'], ['acceptAdoptionOffer(bytes5)'], ['giveCat(bytes5,address)']]" --parallel-solving
+Used 69.03599500656128 seconds
+coverage file: ./myth_code_coverage/40faa6d1-8220-48f7-80f8-3d1781659e02.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 934.6313138008118
+
+
+
+myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['withdraw()'], ['rescueCat(bytes5)'], ['nameCat(bytes5,bytes32)'], ['makeAdoptionOffer(bytes5,uint256)'], ['acceptAdoptionOffer(bytes5)'], ['giveCat(bytes5,address)']]" --parallel-solving
+Used 72.0545334815979 seconds
+coverage file: ./myth_code_coverage/0ea46c77-a767-4f97-b2a3-cd71f54c0f43.json
 ==== Transaction Order Dependence ====
 SWC ID: 114
 Severity: Medium
@@ -335,7 +320,7 @@ msg.sender.transfer(amount)
 --------------------
 Initial State:
 
-Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+Account: [CREATOR], balance: 0x4, nonce:0, storage:{}
 Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
 
 Transaction Sequence:
@@ -345,12 +330,13 @@ Caller: [ATTACKER], function: withdraw(), txdata: 0x3ccfd60b, value: 0x0
 
 
 
-overall time used (seconds): 53.39747595787048
+overall time used (seconds): 1010.3450429439545
 
 
 
-Used 49.87228798866272 seconds
-coverage file: ./myth_code_coverage/985f2252-8756-4c7a-b60e-63059defc3f6.json
+myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['withdraw()'], ['withdraw()'], ['rescueCat(bytes5)'], ['nameCat(bytes5,bytes32)'], ['makeAdoptionOffer(bytes5,uint256)'], ['acceptAdoptionOffer(bytes5)'], ['giveCat(bytes5,address)']]" --parallel-solving
+Used 80.21616864204407 seconds
+coverage file: ./myth_code_coverage/c619473e-17f5-4782-bb89-c3fa094a2183.json
 ==== Transaction Order Dependence ====
 SWC ID: 114
 Severity: Medium
@@ -368,7 +354,7 @@ msg.sender.transfer(amount)
 --------------------
 Initial State:
 
-Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+Account: [CREATOR], balance: 0x4, nonce:0, storage:{}
 Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
 
 Transaction Sequence:
@@ -378,60 +364,33 @@ Caller: [ATTACKER], function: withdraw(), txdata: 0x3ccfd60b, value: 0x0
 
 
 
-overall time used (seconds): 909.263347864151
+overall time used (seconds): 1094.277914762497
 
 
 
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['disableBeforeActivation()'], ['activateInTestMode()'], ['rescueCat(bytes5)'], ['makeAdoptionRequest(bytes5)'], ['acceptAdoptionRequest(bytes5)'], ['makeAdoptionOffer(bytes5,uint256)'], ['acceptAdoptionOffer(bytes5)'], ['giveCat(bytes5,address)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['disableBeforeActivation()'], ['activateInTestMode()'], ['rescueCat(bytes5)'], ['makeAdoptionRequest(bytes5)'], ['acceptAdoptionRequest(bytes5)'], ['makeAdoptionOffer(bytes5,uint256)'], ['acceptAdoptionOffer(bytes5)'], ['giveCat(bytes5,address)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[[0xa318d521],[0x76b39cf9],[0x59ede867],[0xe65bbceb],[0xd4a03f60],[0x05ca3557],[0x1be70510],[0xf884e54a]]" --parallel-solving
-done! 
-Used 47.630656003952026 seconds
-coverage file: ./myth_code_coverage/435393b3-3b18-4940-9b66-60db7b78a33d.json
+myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['rescueCat(bytes5)'], ['makeAdoptionOffer(bytes5,uint256)'], ['giveCat(bytes5,address)'], ['makeAdoptionRequest(bytes5)'], ['nameCat(bytes5,bytes32)'], ['cancelAdoptionRequest(bytes5)']]" --parallel-solving
+Used 68.28974938392639 seconds
+coverage file: ./myth_code_coverage/480b0cd8-76e4-4454-8431-aa0f762eb3f9.json
 The analysis was completed successfully. No issues were detected.
 
 
-overall time used (seconds): 51.2046320438385
+overall time used (seconds): 1166.1969466209412
 
 
 
-Used 47.630656003952026 seconds
-coverage file: ./myth_code_coverage/435393b3-3b18-4940-9b66-60db7b78a33d.json
+myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['makeAdoptionOfferToAddress(bytes5,uint256,address)'], ['rescueCat(bytes5)'], ['makeAdoptionOffer(bytes5,uint256)'], ['giveCat(bytes5,address)'], ['makeAdoptionRequest(bytes5)'], ['nameCat(bytes5,bytes32)'], ['cancelAdoptionRequest(bytes5)']]" --parallel-solving
+Used 70.38851952552795 seconds
+coverage file: ./myth_code_coverage/6ba4ea3b-92c8-4f00-8307-2bf25dc5227f.json
 The analysis was completed successfully. No issues were detected.
 
 
-overall time used (seconds): 960.4682309627533
+overall time used (seconds): 1240.2488992214203
 
 
 
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['activate()'], ['rescueCat(bytes5)'], ['nameCat(bytes5,bytes32)'], ['makeAdoptionOffer(bytes5,uint256)'], ['cancelAdoptionOffer(bytes5)'], ['makeAdoptionRequest(bytes5)'], ['acceptAdoptionRequest(bytes5)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['activate()'], ['rescueCat(bytes5)'], ['nameCat(bytes5,bytes32)'], ['makeAdoptionOffer(bytes5,uint256)'], ['cancelAdoptionOffer(bytes5)'], ['makeAdoptionRequest(bytes5)'], ['acceptAdoptionRequest(bytes5)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[[0x0f15f4c0],[0x59ede867],[0x74fe6dea],[0x05ca3557],[0x5281947d],[0xe65bbceb],[0xd4a03f60]]" --parallel-solving
-done! 
-Used 175.94756817817688 seconds
-coverage file: ./myth_code_coverage/45735b2f-2d71-4bb5-8c51-c796456b5992.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 180.31798768043518
-
-
-
-Used 175.94756817817688 seconds
-coverage file: ./myth_code_coverage/45735b2f-2d71-4bb5-8c51-c796456b5992.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 1140.7865121364594
-
-
-
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['activateInTestMode()'], ['withdraw()'], ['addGenesisCatGroup()'], ['acceptAdoptionOffer(bytes5)'], ['makeAdoptionRequest(bytes5)'], ['acceptAdoptionRequest(bytes5)'], ['makeAdoptionOffer(bytes5,uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['activateInTestMode()'], ['withdraw()'], ['addGenesisCatGroup()'], ['acceptAdoptionOffer(bytes5)'], ['makeAdoptionRequest(bytes5)'], ['acceptAdoptionRequest(bytes5)'], ['makeAdoptionOffer(bytes5,uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[[0x76b39cf9],[0x3ccfd60b],[0xa40c8ad0],[0x1be70510],[0xe65bbceb],[0xd4a03f60],[0x05ca3557]]" --parallel-solving
-done! 
-Used 50.7355592250824 seconds
-coverage file: ./myth_code_coverage/8d8d0be0-3eb4-4e20-9bac-244f3231eeb0.json
+myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['withdraw()'], ['makeAdoptionOfferToAddress(bytes5,uint256,address)'], ['rescueCat(bytes5)'], ['makeAdoptionOffer(bytes5,uint256)'], ['giveCat(bytes5,address)'], ['makeAdoptionRequest(bytes5)'], ['nameCat(bytes5,bytes32)'], ['cancelAdoptionRequest(bytes5)']]" --parallel-solving
+Used 74.34108567237854 seconds
+coverage file: ./myth_code_coverage/bd33a29f-ca86-4641-915f-cdf6bec13b96.json
 ==== Transaction Order Dependence ====
 SWC ID: 114
 Severity: Medium
@@ -449,101 +408,7 @@ msg.sender.transfer(amount)
 --------------------
 Initial State:
 
-Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: activateInTestMode(), txdata: 0x76b39cf9, value: 0x0
-Caller: [ATTACKER], function: withdraw(), txdata: 0x3ccfd60b, value: 0x0
-
-
-
-overall time used (seconds): 54.68541693687439
-
-
-
-Used 50.7355592250824 seconds
-coverage file: ./myth_code_coverage/8d8d0be0-3eb4-4e20-9bac-244f3231eeb0.json
-==== Transaction Order Dependence ====
-SWC ID: 114
-Severity: Medium
-Contract: MoonCatRescue
-Function name: withdraw()
-PC address: 6867
-Estimated Gas Usage: 7193 - 61854
-The value of the call is dependent on balance or storage write
-This can lead to race conditions. An attacker may be able to run a transaction after our transaction which can change the value of the call
---------------------
-In file: ./contracts/MoonCatRescue.sol:180
-
-msg.sender.transfer(amount)
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: activateInTestMode(), txdata: 0x76b39cf9, value: 0x0
-Caller: [ATTACKER], function: withdraw(), txdata: 0x3ccfd60b, value: 0x0
-
-
-
-overall time used (seconds): 1195.472239971161
-
-
-
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['rescueCat(bytes5)'], ['makeAdoptionRequest(bytes5)'], ['cancelAdoptionRequest(bytes5)'], ['makeAdoptionOffer(bytes5,uint256)'], ['acceptAdoptionOffer(bytes5)'], ['giveCat(bytes5,address)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['rescueCat(bytes5)'], ['makeAdoptionRequest(bytes5)'], ['cancelAdoptionRequest(bytes5)'], ['makeAdoptionOffer(bytes5,uint256)'], ['acceptAdoptionOffer(bytes5)'], ['giveCat(bytes5,address)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[[0x59ede867],[0xe65bbceb],[0x9d8df6dd],[0x05ca3557],[0x1be70510],[0xf884e54a]]" --parallel-solving
-done! 
-Used 48.56071710586548 seconds
-coverage file: ./myth_code_coverage/319ac420-7b01-4c6a-a489-4f1aa74514ed.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 52.19686508178711
-
-
-
-Used 48.56071710586548 seconds
-coverage file: ./myth_code_coverage/319ac420-7b01-4c6a-a489-4f1aa74514ed.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 1247.6694028377533
-
-
-
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['withdraw()'], ['rescueCat(bytes5)'], ['nameCat(bytes5,bytes32)'], ['makeAdoptionOffer(bytes5,uint256)'], ['giveCat(bytes5,address)'], ['makeAdoptionRequest(bytes5)'], ['acceptAdoptionRequest(bytes5)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['withdraw()'], ['rescueCat(bytes5)'], ['nameCat(bytes5,bytes32)'], ['makeAdoptionOffer(bytes5,uint256)'], ['giveCat(bytes5,address)'], ['makeAdoptionRequest(bytes5)'], ['acceptAdoptionRequest(bytes5)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[[0x3ccfd60b],[0x59ede867],[0x74fe6dea],[0x05ca3557],[0xf884e54a],[0xe65bbceb],[0xd4a03f60]]" --parallel-solving
-done! 
-Used 49.79049777984619 seconds
-coverage file: ./myth_code_coverage/d9c52530-ad12-4a85-9e2b-80b065c6d0f3.json
-==== Transaction Order Dependence ====
-SWC ID: 114
-Severity: Medium
-Contract: MoonCatRescue
-Function name: withdraw()
-PC address: 6867
-Estimated Gas Usage: 7193 - 61854
-The value of the call is dependent on balance or storage write
-This can lead to race conditions. An attacker may be able to run a transaction after our transaction which can change the value of the call
---------------------
-In file: ./contracts/MoonCatRescue.sol:180
-
-msg.sender.transfer(amount)
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+Account: [CREATOR], balance: 0x4, nonce:0, storage:{}
 Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
 
 Transaction Sequence:
@@ -553,303 +418,77 @@ Caller: [ATTACKER], function: withdraw(), txdata: 0x3ccfd60b, value: 0x0
 
 
 
-overall time used (seconds): 53.047091245651245
+overall time used (seconds): 1318.259724855423
 
 
 
-Used 49.79049777984619 seconds
-coverage file: ./myth_code_coverage/d9c52530-ad12-4a85-9e2b-80b065c6d0f3.json
-==== Transaction Order Dependence ====
-SWC ID: 114
-Severity: Medium
-Contract: MoonCatRescue
-Function name: withdraw()
-PC address: 6867
-Estimated Gas Usage: 7193 - 61854
-The value of the call is dependent on balance or storage write
-This can lead to race conditions. An attacker may be able to run a transaction after our transaction which can change the value of the call
---------------------
-In file: ./contracts/MoonCatRescue.sol:180
-
-msg.sender.transfer(amount)
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [ATTACKER], function: withdraw(), txdata: 0x3ccfd60b, value: 0x0
-
-
-
-overall time used (seconds): 1300.7167768478394
-
-
-
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['rescueCat(bytes5)'], ['makeAdoptionOffer(bytes5,uint256)'], ['acceptAdoptionOffer(bytes5)'], ['nameCat(bytes5,bytes32)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['rescueCat(bytes5)'], ['makeAdoptionOffer(bytes5,uint256)'], ['acceptAdoptionOffer(bytes5)'], ['nameCat(bytes5,bytes32)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[[0x59ede867],[0x05ca3557],[0x1be70510],[0x74fe6dea]]" --parallel-solving
-done! 
-Used 47.115975856781006 seconds
-coverage file: ./myth_code_coverage/af97cf26-a4a8-4c9f-b498-badd3d57dd37.json
+myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['rescueCat(bytes5)'], ['makeAdoptionOffer(bytes5,uint256)'], ['acceptAdoptionOffer(bytes5)'], ['giveCat(bytes5,address)']]" --parallel-solving
+Used 69.84197998046875 seconds
+coverage file: ./myth_code_coverage/35ad7d1a-902b-404e-89b8-c3ada236f276.json
 The analysis was completed successfully. No issues were detected.
 
 
-overall time used (seconds): 50.647197008132935
+overall time used (seconds): 1391.7300970554352
 
 
 
-Used 47.115975856781006 seconds
-coverage file: ./myth_code_coverage/af97cf26-a4a8-4c9f-b498-badd3d57dd37.json
+myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['activateInTestMode()'], ['rescueCat(bytes5)'], ['makeAdoptionOffer(bytes5,uint256)'], ['acceptAdoptionOffer(bytes5)'], ['giveCat(bytes5,address)']]" --parallel-solving
+Used 494.0524833202362 seconds
+coverage file: ./myth_code_coverage/e642bf7e-d12e-43eb-a865-efa935dee6fe.json
 The analysis was completed successfully. No issues were detected.
 
 
-overall time used (seconds): 1351.364226102829
+overall time used (seconds): 1891.3036601543427
 
 
 
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['disableBeforeActivation()'], ['activate()'], ['rescueCat(bytes5)'], ['nameCat(bytes5,bytes32)'], ['makeAdoptionOffer(bytes5,uint256)'], ['cancelAdoptionOffer(bytes5)'], ['makeAdoptionRequest(bytes5)'], ['cancelAdoptionRequest(bytes5)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['disableBeforeActivation()'], ['activate()'], ['rescueCat(bytes5)'], ['nameCat(bytes5,bytes32)'], ['makeAdoptionOffer(bytes5,uint256)'], ['cancelAdoptionOffer(bytes5)'], ['makeAdoptionRequest(bytes5)'], ['cancelAdoptionRequest(bytes5)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[[0xa318d521],[0x0f15f4c0],[0x59ede867],[0x74fe6dea],[0x05ca3557],[0x5281947d],[0xe65bbceb],[0x9d8df6dd]]" --parallel-solving
-done! 
-Used 48.8827588558197 seconds
-coverage file: ./myth_code_coverage/a4578ab0-beb3-4095-ba2b-379221247e3b.json
+myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['activateInTestMode()'], ['activateInTestMode()'], ['rescueCat(bytes5)'], ['makeAdoptionOffer(bytes5,uint256)'], ['acceptAdoptionOffer(bytes5)'], ['giveCat(bytes5,address)']]" --parallel-solving
+Used 69.52321124076843 seconds
+coverage file: ./myth_code_coverage/7b583faf-05c9-4ce1-b881-5f577f3162ec.json
 The analysis was completed successfully. No issues were detected.
 
 
-overall time used (seconds): 52.70492172241211
+overall time used (seconds): 1964.618356704712
 
 
 
-Used 48.8827588558197 seconds
-coverage file: ./myth_code_coverage/a4578ab0-beb3-4095-ba2b-379221247e3b.json
+myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['rescueCat(bytes5)'], ['makeAdoptionOffer(bytes5,uint256)'], ['acceptAdoptionOffer(bytes5)'], ['giveCat(bytes5,address)'], ['makeAdoptionRequest(bytes5)'], ['cancelAdoptionRequest(bytes5)']]" --parallel-solving
+Used 69.37666583061218 seconds
+coverage file: ./myth_code_coverage/9ec12b06-3497-48fb-82d0-da3d0eeab6b4.json
 The analysis was completed successfully. No issues were detected.
 
 
-overall time used (seconds): 1404.0702910423279
+overall time used (seconds): 2037.6528878211975
 
 
 
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['activate()'], ['rescueCat(bytes5)'], ['giveCat(bytes5,address)'], ['makeAdoptionRequest(bytes5)'], ['nameCat(bytes5,bytes32)'], ['cancelAdoptionRequest(bytes5)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['activate()'], ['rescueCat(bytes5)'], ['giveCat(bytes5,address)'], ['makeAdoptionRequest(bytes5)'], ['nameCat(bytes5,bytes32)'], ['cancelAdoptionRequest(bytes5)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[[0x0f15f4c0],[0x59ede867],[0xf884e54a],[0xe65bbceb],[0x74fe6dea],[0x9d8df6dd]]" --parallel-solving
-done! 
-Used 235.8045039176941 seconds
-coverage file: ./myth_code_coverage/8beb4207-1967-4644-bb05-5ba521aba377.json
-==== Transaction Order Dependence ====
-SWC ID: 114
-Severity: Medium
-Contract: MoonCatRescue
-Function name: cancelAdoptionRequest(bytes5)
-PC address: 11202
-Estimated Gas Usage: 28252 - 145945
-The value of the call is dependent on balance or storage write
-This can lead to race conditions. An attacker may be able to run a transaction after our transaction which can change the value of the call
---------------------
-In file: ./contracts/MoonCatRescue.sol:171
-
-msg.sender.transfer(price)
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x2000000, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x1000000, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: activate(), txdata: 0x0f15f4c0, value: 0x0
-Caller: [SOMEGUY], function: rescueCat(bytes5), txdata: 0x59ede867, value: 0x0
-Caller: [SOMEGUY], function: giveCat(bytes5,address), txdata: 0xf884e54a00000000000f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0faffeaffeaffeaffeaffeaffeaffeaffeaffeaffe, value: 0x0
-Caller: [ATTACKER], function: makeAdoptionRequest(bytes5), txdata: 0xe65bbceb, value: 0x1
-Caller: [CREATOR], function: nameCat(bytes5,bytes32), txdata: 0x74fe6dea, value: 0x0
-Caller: [ATTACKER], function: cancelAdoptionRequest(bytes5), txdata: 0x9d8df6dd, value: 0x0
-
-
-
-overall time used (seconds): 240.23896503448486
-
-
-
-Used 235.8045039176941 seconds
-coverage file: ./myth_code_coverage/8beb4207-1967-4644-bb05-5ba521aba377.json
-==== Transaction Order Dependence ====
-SWC ID: 114
-Severity: Medium
-Contract: MoonCatRescue
-Function name: cancelAdoptionRequest(bytes5)
-PC address: 11202
-Estimated Gas Usage: 28252 - 145945
-The value of the call is dependent on balance or storage write
-This can lead to race conditions. An attacker may be able to run a transaction after our transaction which can change the value of the call
---------------------
-In file: ./contracts/MoonCatRescue.sol:171
-
-msg.sender.transfer(price)
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x2000000, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x1000000, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: activate(), txdata: 0x0f15f4c0, value: 0x0
-Caller: [SOMEGUY], function: rescueCat(bytes5), txdata: 0x59ede867, value: 0x0
-Caller: [SOMEGUY], function: giveCat(bytes5,address), txdata: 0xf884e54a00000000000f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0faffeaffeaffeaffeaffeaffeaffeaffeaffeaffe, value: 0x0
-Caller: [ATTACKER], function: makeAdoptionRequest(bytes5), txdata: 0xe65bbceb, value: 0x1
-Caller: [CREATOR], function: nameCat(bytes5,bytes32), txdata: 0x74fe6dea, value: 0x0
-Caller: [ATTACKER], function: cancelAdoptionRequest(bytes5), txdata: 0x9d8df6dd, value: 0x0
-
-
-
-overall time used (seconds): 1644.309551000595
-
-
-
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['activate()'], ['rescueCat(bytes5)'], ['makeAdoptionRequest(bytes5)'], ['nameCat(bytes5,bytes32)'], ['acceptAdoptionRequest(bytes5)'], ['giveCat(bytes5,address)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['activate()'], ['rescueCat(bytes5)'], ['makeAdoptionRequest(bytes5)'], ['nameCat(bytes5,bytes32)'], ['acceptAdoptionRequest(bytes5)'], ['giveCat(bytes5,address)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[[0x0f15f4c0],[0x59ede867],[0xe65bbceb],[0x74fe6dea],[0xd4a03f60],[0xf884e54a]]" --parallel-solving
-done! 
-Used 245.29578924179077 seconds
-coverage file: ./myth_code_coverage/d82fdfc9-b54f-40d4-b07d-806d61853641.json
+myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['activate()'], ['rescueCat(bytes5)'], ['makeAdoptionOffer(bytes5,uint256)'], ['acceptAdoptionOffer(bytes5)'], ['giveCat(bytes5,address)'], ['makeAdoptionRequest(bytes5)'], ['cancelAdoptionRequest(bytes5)']]" --parallel-solving
+Used 453.73912930488586 seconds
+coverage file: ./myth_code_coverage/dce7e44e-7efb-469e-8987-06f0bf4a6e35.json
 The analysis was completed successfully. No issues were detected.
 
 
-overall time used (seconds): 249.58817505836487
+overall time used (seconds): 2496.621583223343
 
 
 
-Used 245.29578924179077 seconds
-coverage file: ./myth_code_coverage/d82fdfc9-b54f-40d4-b07d-806d61853641.json
+myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['activateInTestMode()'], ['activate()'], ['rescueCat(bytes5)'], ['makeAdoptionOffer(bytes5,uint256)'], ['acceptAdoptionOffer(bytes5)'], ['giveCat(bytes5,address)'], ['makeAdoptionRequest(bytes5)'], ['cancelAdoptionRequest(bytes5)']]" --parallel-solving
+Used 69.06405591964722 seconds
+coverage file: ./myth_code_coverage/71471eb6-4c37-4c52-bf86-c6eb307255f5.json
 The analysis was completed successfully. No issues were detected.
 
 
-overall time used (seconds): 1893.897978067398
+overall time used (seconds): 2569.373638153076
 
 
 
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['addGenesisCatGroup()'], ['acceptAdoptionOffer(bytes5)'], ['makeAdoptionRequest(bytes5)'], ['acceptAdoptionRequest(bytes5)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['addGenesisCatGroup()'], ['acceptAdoptionOffer(bytes5)'], ['makeAdoptionRequest(bytes5)'], ['acceptAdoptionRequest(bytes5)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[[0xa40c8ad0],[0x1be70510],[0xe65bbceb],[0xd4a03f60]]" --parallel-solving
-done! 
-Used 46.59742593765259 seconds
-coverage file: ./myth_code_coverage/18bb8876-b8f7-46e8-8856-3f08afdeac06.json
+myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['rescueCat(bytes5)'], ['giveCat(bytes5,address)'], ['nameCat(bytes5,bytes32)'], ['makeAdoptionOffer(bytes5,uint256)'], ['acceptAdoptionOffer(bytes5)'], ['makeAdoptionRequest(bytes5)']]" --parallel-solving
+Used 68.13088870048523 seconds
+coverage file: ./myth_code_coverage/1f4a06db-73c1-4120-8824-061c49f4e763.json
 The analysis was completed successfully. No issues were detected.
 
 
-overall time used (seconds): 49.811582803726196
+overall time used (seconds): 2641.184807062149
 
 
 
-Used 46.59742593765259 seconds
-coverage file: ./myth_code_coverage/18bb8876-b8f7-46e8-8856-3f08afdeac06.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 1943.7098009586334
-
-
-
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['rescueCat(bytes5)'], ['makeAdoptionOffer(bytes5,uint256)'], ['acceptAdoptionOffer(bytes5)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['rescueCat(bytes5)'], ['makeAdoptionOffer(bytes5,uint256)'], ['acceptAdoptionOffer(bytes5)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[[0x59ede867],[0x05ca3557],[0x1be70510]]" --parallel-solving
-done! 
-Used 46.42801880836487 seconds
-coverage file: ./myth_code_coverage/bbbae1d7-d342-4320-bda3-0f4ab5f6ae22.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 49.55974793434143
-
-
-
-Used 46.42801880836487 seconds
-coverage file: ./myth_code_coverage/bbbae1d7-d342-4320-bda3-0f4ab5f6ae22.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 1993.269779920578
-
-
-
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['disableBeforeActivation()'], ['withdraw()'], ['rescueCat(bytes5)'], ['makeAdoptionOffer(bytes5,uint256)'], ['cancelAdoptionOffer(bytes5)'], ['giveCat(bytes5,address)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[['disableBeforeActivation()'], ['withdraw()'], ['rescueCat(bytes5)'], ['makeAdoptionOffer(bytes5,uint256)'], ['cancelAdoptionOffer(bytes5)'], ['giveCat(bytes5,address)']]" --parallel-solving
-myth -v 2 analyze ./contracts/MoonCatRescue.sol:MoonCatRescue --transaction-sequences "[[0xa318d521],[0x3ccfd60b],[0x59ede867],[0x05ca3557],[0x5281947d],[0xf884e54a]]" --parallel-solving
-done! 
-Used 2825.321578025818 seconds
-coverage file: ./myth_code_coverage/0dc85f59-34e0-4d9d-953b-f55441f3b8be.json
-==== Transaction Order Dependence ====
-SWC ID: 114
-Severity: Medium
-Contract: MoonCatRescue
-Function name: withdraw()
-PC address: 6867
-Estimated Gas Usage: 7193 - 61854
-The value of the call is dependent on balance or storage write
-This can lead to race conditions. An attacker may be able to run a transaction after our transaction which can change the value of the call
---------------------
-In file: ./contracts/MoonCatRescue.sol:180
-
-msg.sender.transfer(amount)
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x4000000000000, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: disableBeforeActivation(), txdata: 0xa318d521, value: 0x0
-Caller: [ATTACKER], function: withdraw(), txdata: 0x3ccfd60b, value: 0x0
-
-
-
-overall time used (seconds): 2828.6122920513153
-
-
-
-Used 2825.321578025818 seconds
-coverage file: ./myth_code_coverage/0dc85f59-34e0-4d9d-953b-f55441f3b8be.json
-==== Transaction Order Dependence ====
-SWC ID: 114
-Severity: Medium
-Contract: MoonCatRescue
-Function name: withdraw()
-PC address: 6867
-Estimated Gas Usage: 7193 - 61854
-The value of the call is dependent on balance or storage write
-This can lead to race conditions. An attacker may be able to run a transaction after our transaction which can change the value of the call
---------------------
-In file: ./contracts/MoonCatRescue.sol:180
-
-msg.sender.transfer(amount)
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x4000000000000, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
-Caller: [CREATOR], function: disableBeforeActivation(), txdata: 0xa318d521, value: 0x0
-Caller: [ATTACKER], function: withdraw(), txdata: 0x3ccfd60b, value: 0x0
-
-
-
-overall time used (seconds): 4821.88232088089
-
-
-
-timeout!!! exceed 3600 seconds

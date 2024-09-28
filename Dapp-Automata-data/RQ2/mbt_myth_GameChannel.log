@@ -72,34 +72,103 @@ userEndGame(uint32,int256,bytes32,bytes32,uint256,address,bytes) 0xe60a33aa
 setHouseAddress(address) 0xef3aaf54
 transferOwnership(address) 0xf2fde38b
 transferProfitToHouse() 0xfd306ca7
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['userCancelActiveGame(uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['userCancelActiveGame(uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[[0xafc81953],[0x9b29f133]]" --parallel-solving
-done! 
-Used 52.113250970840454 seconds
-coverage file: ./myth_code_coverage/f37a47bf-8bbb-41f6-9499-eb65cc9bec6d.json
+myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['activate()']]" --parallel-solving
+Used 72.9884684085846 seconds
+coverage file: ./myth_code_coverage/4c762854-8966-4dcf-83cb-4fb9f822b016.json
 The analysis was completed successfully. No issues were detected.
 
 
-overall time used (seconds): 55.81720995903015
+overall time used (seconds): 76.81186985969543
 
 
 
-Used 52.113250970840454 seconds
-coverage file: ./myth_code_coverage/f37a47bf-8bbb-41f6-9499-eb65cc9bec6d.json
+myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['setGameIdCntr(uint256)']]" --parallel-solving
+Used 73.85090661048889 seconds
+coverage file: ./myth_code_coverage/69ee6e17-4502-49b1-9f23-aeae2e66b25a.json
 The analysis was completed successfully. No issues were detected.
 
 
-overall time used (seconds): 55.81737017631531
+overall time used (seconds): 154.53632521629333
 
 
 
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['setStakeRequirements(uint128,uint128)'], ['destroy()'], ['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['serverCancelActiveGame(address,uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['setStakeRequirements(uint128,uint128)'], ['destroy()'], ['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['serverCancelActiveGame(address,uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[[0xd6e5fe98],[0x83197ef0],[0xafc81953],[0xa8182cd3]]" --parallel-solving
-done! 
-Used 53.17034292221069 seconds
-coverage file: ./myth_code_coverage/11d00dd1-effa-4891-96ae-ab118223eddc.json
+myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['withdraw()']]" --parallel-solving
+Used 73.59562873840332 seconds
+coverage file: ./myth_code_coverage/604fd8c5-0a2d-4fd2-8cc7-570d6d335208.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 231.98023414611816
+
+
+
+myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['unpause()']]" --parallel-solving
+Used 73.25840091705322 seconds
+coverage file: ./myth_code_coverage/d1b4f07c-7370-4fb5-bac5-6c1e15077308.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 309.10785818099976
+
+
+
+myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['claimOwnership()']]" --parallel-solving
+Used 73.24288606643677 seconds
+coverage file: ./myth_code_coverage/814e0570-aaed-4053-8e06-fbeb50cd88f3.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 386.2109839916229
+
+
+
+myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['addHouseStake()']]" --parallel-solving
+Used 73.33325624465942 seconds
+coverage file: ./myth_code_coverage/fd1f3daa-58ce-4b15-b755-7196fef9bc43.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 463.4001932144165
+
+
+
+myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['withdrawHouseStake(uint256)']]" --parallel-solving
+Used 80.67864775657654 seconds
+coverage file: ./myth_code_coverage/faadcc91-389a-4fd4-9dee-17b42e8d3e00.json
+==== Exception State ====
+SWC ID: 110
+Severity: Medium
+Contract: GameChannel
+Function name: withdrawHouseStake(uint256)
+PC address: 14924
+Estimated Gas Usage: 2395 - 2820
+An assertion violation was triggered.
+It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
+--------------------
+In file: ./contracts/GameChannel.sol:518
+
+houseStake.sub(value)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010201804004040810208020202040080000000000000000000000000000000020, decoded_data: , value: 0x0
+Caller: [CREATOR], function: withdrawHouseStake(uint256), txdata: 0x81efc01d0101010101010101010101010101010101010101010101010101010101010101, decoded_data: (454086624460063511464984254936031011189294057512315937409637584344757371137,), value: 0x0
+
+
+
+overall time used (seconds): 548.015706539154
+
+
+
+myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['destroy()']]" --parallel-solving
+Used 78.36332869529724 seconds
+coverage file: ./myth_code_coverage/7a7f8378-ded8-4d5b-bfc8-78d28c874e47.json
 ==== Dependence on predictable environment variable ====
 SWC ID: 116
 Severity: Low
@@ -122,8 +191,7 @@ Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
 
 Transaction Sequence:
 
-Caller: [CREATOR], calldata: 010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101028040400280200420100108408008040101010101010101010101010101010180, decoded_data: , value: 0x0
-Caller: [CREATOR], function: setStakeRequirements(uint128,uint128), txdata: 0xd6e5fe9800000000000000000000000000000000000000000000000000000000808001410000000000000000000000000000000008000000000000000000000080800140, decoded_data: (2155872577, 10633823966279326983230456484398629184), value: 0x0
+Caller: [CREATOR], calldata: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000018080080210024002401020010801410000000000000000000000000000000080, decoded_data: , value: 0x0
 Caller: [CREATOR], function: destroy(), txdata: 0x83197ef0, value: 0x0
 
 ==== Exception State ====
@@ -148,25 +216,35 @@ Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
 
 Transaction Sequence:
 
-Caller: [CREATOR], calldata: 010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101042002800480080102200840401080010101010101010101010101010101010140, decoded_data: , value: 0x0
-Caller: [CREATOR], function: setStakeRequirements(uint128,uint128), txdata: 0xd6e5fe9800000000000000000000000000000000000008000000000004000400000040000000000000000000000000000000000040000000000000000800041040000100, decoded_data: (162259276829213651626352208527360, 85070591730234615866420117078085206272), value: 0x0
+Caller: [CREATOR], calldata: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000108004800140800101400240020480120000000000000000000000000000000080, decoded_data: , value: 0x0
 Caller: [CREATOR], function: destroy(), txdata: 0x83197ef0, value: 0x0
 
 
 
-overall time used (seconds): 56.886916637420654
+overall time used (seconds): 630.3088128566742
 
 
 
-Used 53.17034292221069 seconds
-coverage file: ./myth_code_coverage/11d00dd1-effa-4891-96ae-ab118223eddc.json
+myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['pause()']]" --parallel-solving
+Used 74.3762891292572 seconds
+coverage file: ./myth_code_coverage/766cb496-ec2f-40de-89ed-148e0ad6f6dd.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 708.5523660182953
+
+
+
+myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['withdrawAll()']]" --parallel-solving
+Used 80.24002695083618 seconds
+coverage file: ./myth_code_coverage/aeb6c401-a924-4667-adca-f9cdb33e26b6.json
 ==== Dependence on predictable environment variable ====
 SWC ID: 116
 Severity: Low
 Contract: GameChannel
-Function name: destroy()
-PC address: 7293
-Estimated Gas Usage: 3255 - 4010
+Function name: withdrawAll()
+PC address: 7962
+Estimated Gas Usage: 3321 - 4076
 A control flow decision is made based on The block.timestamp environment variable.
 The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
 --------------------
@@ -182,17 +260,16 @@ Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
 
 Transaction Sequence:
 
-Caller: [CREATOR], calldata: 010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101028040400280200420100108408008040101010101010101010101010101010180, decoded_data: , value: 0x0
-Caller: [CREATOR], function: setStakeRequirements(uint128,uint128), txdata: 0xd6e5fe9800000000000000000000000000000000000000000000000000000000808001410000000000000000000000000000000008000000000000000000000080800140, decoded_data: (2155872577, 10633823966279326983230456484398629184), value: 0x0
-Caller: [CREATOR], function: destroy(), txdata: 0x83197ef0, value: 0x0
+Caller: [CREATOR], calldata: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000104040102001802008400220204020010000000000000000000000000000000080, decoded_data: , value: 0x0
+Caller: [CREATOR], function: withdrawAll(), txdata: 0x853828b6, value: 0x0
 
 ==== Exception State ====
 SWC ID: 110
 Severity: Medium
 Contract: GameChannel
-Function name: destroy()
+Function name: withdrawAll()
 PC address: 14901
-Estimated Gas Usage: 3211 - 3966
+Estimated Gas Usage: 3277 - 4032
 An assertion violation was triggered.
 It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
 --------------------
@@ -208,101 +285,111 @@ Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
 
 Transaction Sequence:
 
-Caller: [CREATOR], calldata: 010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101042002800480080102200840401080010101010101010101010101010101010140, decoded_data: , value: 0x0
-Caller: [CREATOR], function: setStakeRequirements(uint128,uint128), txdata: 0xd6e5fe9800000000000000000000000000000000000008000000000004000400000040000000000000000000000000000000000040000000000000000800041040000100, decoded_data: (162259276829213651626352208527360, 85070591730234615866420117078085206272), value: 0x0
-Caller: [CREATOR], function: destroy(), txdata: 0x83197ef0, value: 0x0
+Caller: [CREATOR], calldata: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000400102100140088002800402404001010000000000000000000000000000000080, decoded_data: , value: 0x0
+Caller: [CREATOR], function: withdrawAll(), txdata: 0x853828b6, value: 0x0
 
 
 
-overall time used (seconds): 112.70490002632141
+overall time used (seconds): 792.7659618854523
 
 
 
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['serverCancelActiveGame(address,uint256)'], ['serverForceGameEnd(address,uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['serverCancelActiveGame(address,uint256)'], ['serverForceGameEnd(address,uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[[0xafc81953],[0xa8182cd3],[0xd1e9dcbf]]" --parallel-solving
-done! 
-Used 54.004332065582275 seconds
-coverage file: ./myth_code_coverage/528a9baa-2d00-41f3-a16c-b6014d0b7b31.json
+myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['setProfitTransferTimeSpan(uint256)']]" --parallel-solving
+Used 75.5630452632904 seconds
+coverage file: ./myth_code_coverage/798bb97c-b973-4040-8017-ecec1bf15cc4.json
 The analysis was completed successfully. No issues were detected.
 
 
-overall time used (seconds): 57.977678060531616
+overall time used (seconds): 872.2021448612213
 
 
 
-Used 54.004332065582275 seconds
-coverage file: ./myth_code_coverage/528a9baa-2d00-41f3-a16c-b6014d0b7b31.json
+myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['activateConflictResolution()']]" --parallel-solving
+Used 74.24728965759277 seconds
+coverage file: ./myth_code_coverage/71f608e0-1878-4497-9a71-18044b3e194b.json
 The analysis was completed successfully. No issues were detected.
 
 
-overall time used (seconds): 170.68280696868896
+overall time used (seconds): 950.3122172355652
 
 
 
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['userEndGame(uint32,int256,bytes32,bytes32,uint256,address,bytes)'], ['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['serverCancelActiveGame(address,uint256)'], ['userCancelActiveGame(uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['userEndGame(uint32,int256,bytes32,bytes32,uint256,address,bytes)'], ['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['serverCancelActiveGame(address,uint256)'], ['userCancelActiveGame(uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[[0xe60a33aa],[0xafc81953],[0xa8182cd3],[0x9b29f133]]" --parallel-solving
-done! 
-Used 56.48352098464966 seconds
-coverage file: ./myth_code_coverage/dd962f73-143a-4b48-8bbd-b2f92dbe9dee.json
+myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['userForceGameEnd(uint256)']]" --parallel-solving
+Used 75.51972985267639 seconds
+coverage file: ./myth_code_coverage/e594f2ae-967e-4ff4-bdd8-f0d013a97b63.json
 The analysis was completed successfully. No issues were detected.
 
 
-overall time used (seconds): 60.65559387207031
+overall time used (seconds): 1029.7840971946716
 
 
 
-Used 56.48352098464966 seconds
-coverage file: ./myth_code_coverage/dd962f73-143a-4b48-8bbd-b2f92dbe9dee.json
+myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['updateConflictResolution(address)']]" --parallel-solving
+Used 74.8092052936554 seconds
+coverage file: ./myth_code_coverage/d2b919be-2e35-439c-a5a6-7844e9c2d317.json
 The analysis was completed successfully. No issues were detected.
 
 
-overall time used (seconds): 231.33868408203125
+overall time used (seconds): 1108.48312997818
 
 
 
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['serverEndGame(uint32,int256,bytes32,bytes32,uint256,address,address,bytes)']]" --parallel-solving
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['serverEndGame(uint32,int256,bytes32,bytes32,uint256,address,address,bytes)']]" --parallel-solving
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[[0xafc81953],[0x410453ae]]" --parallel-solving
-done! 
-Used 53.932758808135986 seconds
-coverage file: ./myth_code_coverage/208ed638-0891-4a00-8856-f102883c4eac.json
+myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['setStakeRequirements(uint128,uint128)']]" --parallel-solving
+Used 76.08542561531067 seconds
+coverage file: ./myth_code_coverage/72a4b4c5-b20e-4ea1-9dcd-8d7700b6d89e.json
 The analysis was completed successfully. No issues were detected.
 
 
-overall time used (seconds): 57.88880896568298
+overall time used (seconds): 1188.4789516925812
 
 
 
-Used 53.932758808135986 seconds
-coverage file: ./myth_code_coverage/208ed638-0891-4a00-8856-f102883c4eac.json
+myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['userEndGame(uint32,int256,bytes32,bytes32,uint256,address,bytes)']]" --parallel-solving
+Used 83.7066605091095 seconds
+coverage file: ./myth_code_coverage/71d2b45d-24f4-4fcd-9b3d-28fed74cc73a.json
 The analysis was completed successfully. No issues were detected.
 
 
-overall time used (seconds): 289.2277581691742
+overall time used (seconds): 1276.1967043876648
 
 
 
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['destroy()'], ['destroy()'], ['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['userEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,bytes32)'], ['serverEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,address,bytes32,bytes32)']]" --parallel-solving
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['destroy()'], ['destroy()'], ['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['userEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,bytes32)'], ['serverEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,address,bytes32,bytes32)']]" --parallel-solving
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[[0x83197ef0],[0x83197ef0],[0xafc81953],[0x878de0ae],[0x9399dd7e]]" --parallel-solving
-done! 
-Used 50.90219283103943 seconds
-coverage file: ./myth_code_coverage/c92e3253-4930-4791-b557-247c32690c71.json
+myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['setHouseAddress(address)']]" --parallel-solving
+Used 75.14195466041565 seconds
+coverage file: ./myth_code_coverage/fa50bdce-8fe1-4808-959a-a9ae7baf6091.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1355.2175419330597
+
+
+
+myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['transferOwnership(address)']]" --parallel-solving
+Used 75.08618640899658 seconds
+coverage file: ./myth_code_coverage/7ad2706b-e99c-4777-b145-b4d3c687394a.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1434.2088656425476
+
+
+
+myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['transferProfitToHouse()']]" --parallel-solving
+Used 78.84100794792175 seconds
+coverage file: ./myth_code_coverage/6a3cf669-bd5a-4357-b61c-2aaa754fd72b.json
 ==== Dependence on predictable environment variable ====
 SWC ID: 116
 Severity: Low
 Contract: GameChannel
-Function name: destroy()
-PC address: 7293
-Estimated Gas Usage: 3255 - 4010
+Function name: transferProfitToHouse()
+PC address: 13924
+Estimated Gas Usage: 3041 - 3136
 A control flow decision is made based on The block.timestamp environment variable.
 The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
 --------------------
-In file: ./contracts/GameChannel.sol:236
+In file: ./contracts/GameChannel.sol:477
 
-require(paused && (timePaused.add(timeSpan) <= block.timestamp))
+require(lastProfitTransferTimestamp.add(profitTransferTimeSpan) <= block.timestamp)
 
 --------------------
 Initial State:
@@ -312,55 +399,22 @@ Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
 
 Transaction Sequence:
 
-Caller: [CREATOR], calldata: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000404010012040102040020204022020010000000000000000000000000000000080, decoded_data: , value: 0x0
-Caller: [CREATOR], function: destroy(), txdata: 0x83197ef0, value: 0x0
+Caller: [CREATOR], calldata: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020820011004040210808001082010010000000000000000000000000000000081, decoded_data: , value: 0x0
+Caller: [ATTACKER], function: transferProfitToHouse(), txdata: 0xfd306ca7, value: 0x0
 
 ==== Exception State ====
 SWC ID: 110
 Severity: Medium
 Contract: GameChannel
-Function name: destroy()
+Function name: transferProfitToHouse()
 PC address: 14901
-Estimated Gas Usage: 3211 - 3966
+Estimated Gas Usage: 2998 - 3093
 An assertion violation was triggered.
 It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
 --------------------
-In file: ./contracts/GameChannel.sol:236
+In file: ./contracts/GameChannel.sol:477
 
-timePaused.add(timeSpan)
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000080804400802024001040840042001010000000000000000000000000000000040, decoded_data: , value: 0x0
-Caller: [CREATOR], function: destroy(), txdata: 0x83197ef0, value: 0x0
-
-
-
-overall time used (seconds): 54.734867811203
-
-
-
-Used 50.90219283103943 seconds
-coverage file: ./myth_code_coverage/c92e3253-4930-4791-b557-247c32690c71.json
-==== Dependence on predictable environment variable ====
-SWC ID: 116
-Severity: Low
-Contract: GameChannel
-Function name: destroy()
-PC address: 7293
-Estimated Gas Usage: 3255 - 4010
-A control flow decision is made based on The block.timestamp environment variable.
-The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
---------------------
-In file: ./contracts/GameChannel.sol:236
-
-require(paused && (timePaused.add(timeSpan) <= block.timestamp))
+lastProfitTransferTimestamp.add(profitTransferTimeSpan)
 
 --------------------
 Initial State:
@@ -370,257 +424,251 @@ Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
 
 Transaction Sequence:
 
-Caller: [CREATOR], calldata: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000404010012040102040020204022020010000000000000000000000000000000080, decoded_data: , value: 0x0
-Caller: [CREATOR], function: destroy(), txdata: 0x83197ef0, value: 0x0
-
-==== Exception State ====
-SWC ID: 110
-Severity: Medium
-Contract: GameChannel
-Function name: destroy()
-PC address: 14901
-Estimated Gas Usage: 3211 - 3966
-An assertion violation was triggered.
-It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
---------------------
-In file: ./contracts/GameChannel.sol:236
-
-timePaused.add(timeSpan)
-
---------------------
-Initial State:
-
-Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
-Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
-
-Transaction Sequence:
-
-Caller: [CREATOR], calldata: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000080804400802024001040840042001010000000000000000000000000000000040, decoded_data: , value: 0x0
-Caller: [CREATOR], function: destroy(), txdata: 0x83197ef0, value: 0x0
+Caller: [CREATOR], calldata: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100404204001800420014002201004080000000000000000000000000000000080, decoded_data: , value: 0x0
+Caller: [ATTACKER], function: transferProfitToHouse(), txdata: 0xfd306ca7, value: 0x0
 
 
 
-overall time used (seconds): 343.9629192352295
+overall time used (seconds): 1516.9641168117523
 
 
 
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['transferOwnership(address)'], ['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['serverEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,address,bytes32,bytes32)'], ['serverForceGameEnd(address,uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['transferOwnership(address)'], ['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['serverEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,address,bytes32,bytes32)'], ['serverForceGameEnd(address,uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[[0xf2fde38b],[0xafc81953],[0x9399dd7e],[0xd1e9dcbf]]" --parallel-solving
-done! 
-Used 56.795249938964844 seconds
-coverage file: ./myth_code_coverage/33cea2e9-31fe-4926-89d6-1c68a397d91a.json
+myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['serverCancelActiveGame(address,uint256)']]" --parallel-solving
+Used 78.91719222068787 seconds
+coverage file: ./myth_code_coverage/de8f2b7f-2eb2-4544-8c13-fc08473d4707.json
 The analysis was completed successfully. No issues were detected.
 
 
-overall time used (seconds): 60.866899251937866
+overall time used (seconds): 1599.8825523853302
 
 
 
-Used 56.795249938964844 seconds
-coverage file: ./myth_code_coverage/33cea2e9-31fe-4926-89d6-1c68a397d91a.json
+myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['unpause()'], ['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['serverCancelActiveGame(address,uint256)']]" --parallel-solving
+Used 73.23127436637878 seconds
+coverage file: ./myth_code_coverage/d45ffdc0-a06c-406a-b8f1-f0a6fc05697d.json
 The analysis was completed successfully. No issues were detected.
 
 
-overall time used (seconds): 404.8300721645355
+overall time used (seconds): 1676.9671165943146
 
 
 
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['userCancelActiveGame(uint256)'], ['serverCancelActiveGame(address,uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['userCancelActiveGame(uint256)'], ['serverCancelActiveGame(address,uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[[0xafc81953],[0x9b29f133],[0xa8182cd3]]" --parallel-solving
-done! 
-Used 53.81485414505005 seconds
-coverage file: ./myth_code_coverage/2587c1e6-563d-43af-834d-212ea5e65e17.json
+myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['pause()'], ['unpause()'], ['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['serverCancelActiveGame(address,uint256)']]" --parallel-solving
+Used 74.62871241569519 seconds
+coverage file: ./myth_code_coverage/e1f13c7c-b215-4f74-835f-92dabe84a7fb.json
 The analysis was completed successfully. No issues were detected.
 
 
-overall time used (seconds): 57.8271701335907
+overall time used (seconds): 1755.4681191444397
 
 
 
-Used 53.81485414505005 seconds
-coverage file: ./myth_code_coverage/2587c1e6-563d-43af-834d-212ea5e65e17.json
+myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['userEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,bytes32)']]" --parallel-solving
+Used 79.09801840782166 seconds
+coverage file: ./myth_code_coverage/fd2b50c9-dc0d-4f65-b236-d07d8c59db85.json
 The analysis was completed successfully. No issues were detected.
 
 
-overall time used (seconds): 462.6575081348419
+overall time used (seconds): 1838.547877073288
+
+
+
+myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['addHouseStake()'], ['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['userEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,bytes32)']]" --parallel-solving
+Used 81.77979516983032 seconds
+coverage file: ./myth_code_coverage/90eb95e8-4af6-42f6-a056-e2c55c08a5a7.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1924.3448116779327
+
+
+
+myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['setProfitTransferTimeSpan(uint256)'], ['addHouseStake()'], ['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['userEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,bytes32)']]" --parallel-solving
+Used 87.10004234313965 seconds
+coverage file: ./myth_code_coverage/48837913-ea7a-4106-892c-39cedcbe9922.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2015.5351104736328
 
 
 
 myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['userCancelActiveGame(uint256)'], ['serverEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,address,bytes32,bytes32)'], ['userEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,bytes32)']]" --parallel-solving
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['userCancelActiveGame(uint256)'], ['serverEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,address,bytes32,bytes32)'], ['userEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,bytes32)']]" --parallel-solving
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[[0xafc81953],[0x9b29f133],[0x9399dd7e],[0x878de0ae]]" --parallel-solving
-done! 
-Used 53.083609104156494 seconds
-coverage file: ./myth_code_coverage/4e9e0066-d02e-4f53-98b7-8c9a2395ac21.json
+Used 78.57908177375793 seconds
+coverage file: ./myth_code_coverage/199340d1-866d-4d4c-a7c7-df989bc90204.json
 The analysis was completed successfully. No issues were detected.
 
 
-overall time used (seconds): 56.98530197143555
+overall time used (seconds): 2098.118358373642
 
 
 
-Used 53.083609104156494 seconds
-coverage file: ./myth_code_coverage/4e9e0066-d02e-4f53-98b7-8c9a2395ac21.json
+myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['userEndGame(uint32,int256,bytes32,bytes32,uint256,address,bytes)'], ['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['userCancelActiveGame(uint256)'], ['serverEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,address,bytes32,bytes32)'], ['userEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,bytes32)']]" --parallel-solving
+Used 83.44765424728394 seconds
+coverage file: ./myth_code_coverage/cfe2c1a8-a969-4649-80b2-508d90512481.json
 The analysis was completed successfully. No issues were detected.
 
 
-overall time used (seconds): 519.6431691646576
+overall time used (seconds): 2185.599392414093
 
 
 
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['addHouseStake()'], ['activateConflictResolution()'], ['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['serverEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,address,bytes32,bytes32)'], ['userEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,bytes32)']]" --parallel-solving
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['addHouseStake()'], ['activateConflictResolution()'], ['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['serverEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,address,bytes32,bytes32)'], ['userEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,bytes32)']]" --parallel-solving
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[[0x4f739ff0],[0x9f34ce14],[0xafc81953],[0x9399dd7e],[0x878de0ae]]" --parallel-solving
-done! 
-Used 50.28492474555969 seconds
-coverage file: ./myth_code_coverage/f449f3c5-8124-4c84-818a-d584607f083a.json
+myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['activateConflictResolution()'], ['userEndGame(uint32,int256,bytes32,bytes32,uint256,address,bytes)'], ['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['userCancelActiveGame(uint256)'], ['serverEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,address,bytes32,bytes32)'], ['userEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,bytes32)']]" --parallel-solving
+Used 74.80669713020325 seconds
+coverage file: ./myth_code_coverage/c153144b-afc9-488a-a208-681ec1453d10.json
 The analysis was completed successfully. No issues were detected.
 
 
-overall time used (seconds): 54.18730425834656
+overall time used (seconds): 2264.242931365967
 
 
 
-Used 50.28492474555969 seconds
-coverage file: ./myth_code_coverage/f449f3c5-8124-4c84-818a-d584607f083a.json
+myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['serverCancelActiveGame(address,uint256)'], ['serverForceGameEnd(address,uint256)']]" --parallel-solving
+Used 79.16192126274109 seconds
+coverage file: ./myth_code_coverage/f86bfb05-cbc1-4d19-a036-29a82fe5a7a2.json
 The analysis was completed successfully. No issues were detected.
 
 
-overall time used (seconds): 573.8307242393494
+overall time used (seconds): 2347.408119916916
 
 
 
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['updateConflictResolution(address)'], ['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['userEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,bytes32)']]" --parallel-solving
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['updateConflictResolution(address)'], ['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['userEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,bytes32)']]" --parallel-solving
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[[0xcbffb1ae],[0xafc81953],[0x878de0ae]]" --parallel-solving
-done! 
-Used 57.238216161727905 seconds
-coverage file: ./myth_code_coverage/80111589-1bf9-4b0f-a363-2727b3c9ea64.json
+myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['setGameIdCntr(uint256)'], ['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['serverCancelActiveGame(address,uint256)'], ['serverForceGameEnd(address,uint256)']]" --parallel-solving
+Used 81.40359711647034 seconds
+coverage file: ./myth_code_coverage/2e458118-4fa0-4fe6-b0e4-e8db824eb82f.json
 The analysis was completed successfully. No issues were detected.
 
 
-overall time used (seconds): 61.19947576522827
+overall time used (seconds): 2432.85271191597
 
 
 
-Used 57.238216161727905 seconds
-coverage file: ./myth_code_coverage/80111589-1bf9-4b0f-a363-2727b3c9ea64.json
+myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['withdrawAll()'], ['setGameIdCntr(uint256)'], ['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['serverCancelActiveGame(address,uint256)'], ['serverForceGameEnd(address,uint256)']]" --parallel-solving
+Used 91.25641560554504 seconds
+coverage file: ./myth_code_coverage/03593d79-743e-453e-858d-f8e7f0eafba1.json
+==== Dependence on predictable environment variable ====
+SWC ID: 116
+Severity: Low
+Contract: GameChannel
+Function name: withdrawAll()
+PC address: 7962
+Estimated Gas Usage: 3321 - 4076
+A control flow decision is made based on The block.timestamp environment variable.
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./contracts/GameChannel.sol:236
+
+require(paused && (timePaused.add(timeSpan) <= block.timestamp))
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010120104004040102804020408010010000000000000000000000000000000080, decoded_data: , value: 0x0
+Caller: [CREATOR], function: withdrawAll(), txdata: 0x853828b6, value: 0x0
+
+==== Exception State ====
+SWC ID: 110
+Severity: Medium
+Contract: GameChannel
+Function name: withdrawAll()
+PC address: 14901
+Estimated Gas Usage: 3277 - 4032
+An assertion violation was triggered.
+It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
+--------------------
+In file: ./contracts/GameChannel.sol:236
+
+timePaused.add(timeSpan)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040108104020200208102002200101420000000000000000000000000000000040, decoded_data: , value: 0x0
+Caller: [CREATOR], function: withdrawAll(), txdata: 0x853828b6, value: 0x0
+
+
+
+overall time used (seconds): 2528.218364238739
+
+
+
+myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['userEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,bytes32)'], ['serverEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,address,bytes32,bytes32)']]" --parallel-solving
+Used 79.54174733161926 seconds
+coverage file: ./myth_code_coverage/760100dd-2751-4a49-a3d1-bf0d930b0508.json
 The analysis was completed successfully. No issues were detected.
 
 
-overall time used (seconds): 635.0307741165161
+overall time used (seconds): 2611.7620244026184
+
+
+
+myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['setGameIdCntr(uint256)'], ['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['userEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,bytes32)'], ['serverEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,address,bytes32,bytes32)']]" --parallel-solving
+Used 82.15254068374634 seconds
+coverage file: ./myth_code_coverage/c13f8d94-f86a-482b-b9d0-b7d831257e93.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2697.8923709392548
+
+
+
+myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['claimOwnership()'], ['setGameIdCntr(uint256)'], ['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['userEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,bytes32)'], ['serverEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,address,bytes32,bytes32)']]" --parallel-solving
+Used 74.19425797462463 seconds
+coverage file: ./myth_code_coverage/f015ea61-6a81-4e0d-837d-e943ed5b3ae3.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2775.9356746673584
 
 
 
 myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['userCancelActiveGame(uint256)'], ['serverEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,address,bytes32,bytes32)'], ['serverForceGameEnd(address,uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['userCancelActiveGame(uint256)'], ['serverEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,address,bytes32,bytes32)'], ['serverForceGameEnd(address,uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[[0xafc81953],[0x9b29f133],[0x9399dd7e],[0xd1e9dcbf]]" --parallel-solving
-done! 
-Used 54.7542519569397 seconds
-coverage file: ./myth_code_coverage/118467d5-34e9-40ab-a987-bb3107d2aec9.json
+Used 78.94311928749084 seconds
+coverage file: ./myth_code_coverage/7bbaeadd-8da2-4f93-a5c9-2ed374fc1e54.json
 The analysis was completed successfully. No issues were detected.
 
 
-overall time used (seconds): 59.03897500038147
+overall time used (seconds): 2858.8316848278046
 
 
 
-Used 54.7542519569397 seconds
-coverage file: ./myth_code_coverage/118467d5-34e9-40ab-a987-bb3107d2aec9.json
+myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['updateConflictResolution(address)'], ['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['userCancelActiveGame(uint256)'], ['serverEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,address,bytes32,bytes32)'], ['serverForceGameEnd(address,uint256)']]" --parallel-solving
+Used 82.73297023773193 seconds
+coverage file: ./myth_code_coverage/f40c6016-b007-42a1-929e-8b13d1b8c1ca.json
 The analysis was completed successfully. No issues were detected.
 
 
-overall time used (seconds): 694.0703711509705
+overall time used (seconds): 2945.624284029007
 
 
 
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['claimOwnership()'], ['userForceGameEnd(uint256)'], ['createGame(bytes32,uint256,uint256,bytes32,bytes)']]" --parallel-solving
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['claimOwnership()'], ['userForceGameEnd(uint256)'], ['createGame(bytes32,uint256,uint256,bytes32,bytes)']]" --parallel-solving
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[[0x4e71e0c8],[0xb064ca18],[0xafc81953]]" --parallel-solving
-done! 
-Used 49.79726481437683 seconds
-coverage file: ./myth_code_coverage/ca2c6370-43c5-435c-bb15-b1c94634d613.json
+myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['addHouseStake()'], ['updateConflictResolution(address)'], ['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['userCancelActiveGame(uint256)'], ['serverEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,address,bytes32,bytes32)'], ['serverForceGameEnd(address,uint256)']]" --parallel-solving
+Used 85.53778004646301 seconds
+coverage file: ./myth_code_coverage/a082f74e-b946-4e95-8af6-d02d18c73fc7.json
 The analysis was completed successfully. No issues were detected.
 
 
-overall time used (seconds): 53.87061095237732
+overall time used (seconds): 3035.2459242343903
 
 
 
-Used 49.79726481437683 seconds
-coverage file: ./myth_code_coverage/ca2c6370-43c5-435c-bb15-b1c94634d613.json
+myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['userCancelActiveGame(uint256)'], ['serverCancelActiveGame(address,uint256)']]" --parallel-solving
+Used 78.91480708122253 seconds
+coverage file: ./myth_code_coverage/5a0505a5-b961-4a6a-a887-d46fd5f661c8.json
 The analysis was completed successfully. No issues were detected.
 
 
-overall time used (seconds): 747.9412243366241
-
-
-
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['userEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,bytes32)'], ['serverEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,address,bytes32,bytes32)'], ['serverForceGameEnd(address,uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['userEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,bytes32)'], ['serverEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,address,bytes32,bytes32)'], ['serverForceGameEnd(address,uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[[0xafc81953],[0x878de0ae],[0x9399dd7e],[0xd1e9dcbf]]" --parallel-solving
-done! 
-Used 53.40203809738159 seconds
-coverage file: ./myth_code_coverage/cfb39c5e-2489-4bb8-82b6-5db5a0dd7485.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 57.14681696891785
-
-
-
-Used 53.40203809738159 seconds
-coverage file: ./myth_code_coverage/cfb39c5e-2489-4bb8-82b6-5db5a0dd7485.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 805.0883090496063
-
-
-
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['userCancelActiveGame(uint256)'], ['serverEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,address,bytes32,bytes32)']]" --parallel-solving
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['userCancelActiveGame(uint256)'], ['serverEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,address,bytes32,bytes32)']]" --parallel-solving
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[[0xafc81953],[0x9b29f133],[0x9399dd7e]]" --parallel-solving
-done! 
-Used 53.94545578956604 seconds
-coverage file: ./myth_code_coverage/2b1f0473-0012-40e5-8ca7-1d297aff3f8f.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 57.74638485908508
-
-
-
-Used 53.94545578956604 seconds
-coverage file: ./myth_code_coverage/2b1f0473-0012-40e5-8ca7-1d297aff3f8f.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 862.835036277771
-
-
-
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['serverEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,address,bytes32,bytes32)']]" --parallel-solving
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[['createGame(bytes32,uint256,uint256,bytes32,bytes)'], ['serverEndGameConflict(uint32,uint8,uint256,uint256,int256,bytes32,bytes32,uint256,address,bytes,address,bytes32,bytes32)']]" --parallel-solving
-myth -v 2 analyze ./contracts/GameChannel.sol:GameChannel --transaction-sequences "[[0xafc81953],[0x9399dd7e]]" --parallel-solving
-done! 
-Used 54.054728269577026 seconds
-coverage file: ./myth_code_coverage/0ce1dd51-b608-46f6-9c88-41cd203d871e.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 57.944339990615845
-
-
-
-Used 54.054728269577026 seconds
-coverage file: ./myth_code_coverage/0ce1dd51-b608-46f6-9c88-41cd203d871e.json
-The analysis was completed successfully. No issues were detected.
-
-
-overall time used (seconds): 920.7796201705933
+overall time used (seconds): 3118.123170375824
 
 
 

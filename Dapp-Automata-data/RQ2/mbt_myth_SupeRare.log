@@ -63,48 +63,800 @@ setCreatorPercentage(uint256) 0xc0ec93e7
 buy(uint256) 0xd96a094a
 addNewToken(string) 0xd9856c21
 transferOwnership(address) 0xf2fde38b
-myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['addNewTokenWithEditions(string,uint256,uint256)'], ['buy(uint256)'], ['bid(uint256)'], ['transfer(address,uint256)'], ['setSalePrice(uint256,uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['addNewTokenWithEditions(string,uint256,uint256)'], ['buy(uint256)'], ['bid(uint256)'], ['transfer(address,uint256)'], ['setSalePrice(uint256,uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[[0x019871e9],[0xd96a094a],[0x454a2ab3],[0xa9059cbb],[0x053992c5]]" --parallel-solving
-done! 
-Used 3293.8258090019226 seconds
-coverage file: ./myth_code_coverage/09e6c26d-8ba4-4e79-bc2b-a2c88aec6261.json
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['approve(address,uint256)']]" --parallel-solving
+Used 28.405877590179443 seconds
+coverage file: ./myth_code_coverage/cb3447ff-d510-41e7-9f75-cc4494510f6e.json
 The analysis was completed successfully. No issues were detected.
 
 
-overall time used (seconds): 3297.1065316200256
+overall time used (seconds): 31.779752016067505
 
 
 
-Used 3293.8258090019226 seconds
-coverage file: ./myth_code_coverage/09e6c26d-8ba4-4e79-bc2b-a2c88aec6261.json
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['setMaintainerPercentage(uint256)']]" --parallel-solving
+Used 27.863877773284912 seconds
+coverage file: ./myth_code_coverage/2796ca0f-e754-4d19-a5f5-4f4641721c90.json
 The analysis was completed successfully. No issues were detected.
 
 
-overall time used (seconds): 3297.1067221164703
+overall time used (seconds): 63.01314616203308
 
 
 
-myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['addNewTokenWithEditions(string,uint256,uint256)'], ['buy(uint256)'], ['addNewToken(string)'], ['bid(uint256)'], ['transfer(address,uint256)'], ['setSalePrice(uint256,uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['addNewTokenWithEditions(string,uint256,uint256)'], ['buy(uint256)'], ['addNewToken(string)'], ['bid(uint256)'], ['transfer(address,uint256)'], ['setSalePrice(uint256,uint256)']]" --parallel-solving
-myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[[0x019871e9],[0xd96a094a],[0xd9856c21],[0x454a2ab3],[0xa9059cbb],[0x053992c5]]" --parallel-solving
-done! 
-Used 3361.2974631786346 seconds
-coverage file: ./myth_code_coverage/172e56d2-ae7b-47b4-ba06-d52a2a70eed5.json
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['whitelistCreator(address)']]" --parallel-solving
+Used 27.927708387374878 seconds
+coverage file: ./myth_code_coverage/b88b6783-1cac-4247-a7c4-28c8d9d1117a.json
 The analysis was completed successfully. No issues were detected.
 
 
-overall time used (seconds): 4279.8083300590515
+overall time used (seconds): 94.35785031318665
 
 
 
-Used 3361.2974631786346 seconds
-coverage file: ./myth_code_coverage/172e56d2-ae7b-47b4-ba06-d52a2a70eed5.json
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['takeOwnership(uint256)']]" --parallel-solving
+Used 28.31826663017273 seconds
+coverage file: ./myth_code_coverage/d616e741-4628-439b-b89d-3f2361ea7716.json
 The analysis was completed successfully. No issues were detected.
 
 
-overall time used (seconds): 7576.915374994278
+overall time used (seconds): 126.06051301956177
 
 
 
-timeout!!! exceed 3600 seconds
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['setCreatorPercentage(uint256)']]" --parallel-solving
+Used 28.01553511619568 seconds
+coverage file: ./myth_code_coverage/f9e18f2e-f309-4e2e-ad15-e50674e4c21c.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 157.4417200088501
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['transferOwnership(address)']]" --parallel-solving
+Used 28.588614463806152 seconds
+coverage file: ./myth_code_coverage/50d9d197-a4de-42a7-88a0-620fbc8695df.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 189.40538001060486
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['buy(uint256)'], ['setSalePrice(uint256,uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['addNewToken(string)'], ['transfer(address,uint256)']]" --parallel-solving
+Used 28.187041997909546 seconds
+coverage file: ./myth_code_coverage/bd422dfe-6d05-47a7-9929-9effd50e550d.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 221.00959372520447
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['setCreatorPercentage(uint256)'], ['buy(uint256)'], ['setSalePrice(uint256,uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['addNewToken(string)'], ['transfer(address,uint256)']]" --parallel-solving
+Used 30.368497610092163 seconds
+coverage file: ./myth_code_coverage/f620cfcb-f542-4152-9b80-5c104ff01440.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 254.75428295135498
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['setMaintainerPercentage(uint256)'], ['setCreatorPercentage(uint256)'], ['buy(uint256)'], ['setSalePrice(uint256,uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['addNewToken(string)'], ['transfer(address,uint256)']]" --parallel-solving
+Used 29.533893585205078 seconds
+coverage file: ./myth_code_coverage/e6b17a63-742c-4eca-8028-070d593df691.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 287.7173025608063
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['setSalePrice(uint256,uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['buy(uint256)'], ['bid(uint256)'], ['cancelBid(uint256)'], ['addNewToken(string)']]" --parallel-solving
+Used 28.2542941570282 seconds
+coverage file: ./myth_code_coverage/0e4f1f43-38e5-44d3-aa2d-86ae5c01211f.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 319.34380412101746
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['approve(address,uint256)'], ['setSalePrice(uint256,uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['buy(uint256)'], ['bid(uint256)'], ['cancelBid(uint256)'], ['addNewToken(string)']]" --parallel-solving
+Used 28.38613748550415 seconds
+coverage file: ./myth_code_coverage/e34a70de-201d-4b46-856a-791aa2c83680.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 351.13196301460266
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['whitelistCreator(address)'], ['approve(address,uint256)'], ['setSalePrice(uint256,uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['buy(uint256)'], ['bid(uint256)'], ['cancelBid(uint256)'], ['addNewToken(string)']]" --parallel-solving
+Used 29.603578090667725 seconds
+coverage file: ./myth_code_coverage/61fab434-867f-483e-981f-bc18cad95f47.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 384.10522174835205
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['addNewTokenWithEditions(string,uint256,uint256)'], ['buy(uint256)'], ['bid(uint256)'], ['setSalePrice(uint256,uint256)'], ['cancelBid(uint256)']]" --parallel-solving
+Used 34.02354335784912 seconds
+coverage file: ./myth_code_coverage/72c25a75-55e0-4a3e-b382-f1715a221bff.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 421.5694372653961
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['transferOwnership(address)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['buy(uint256)'], ['bid(uint256)'], ['setSalePrice(uint256,uint256)'], ['cancelBid(uint256)']]" --parallel-solving
+Used 34.95169138908386 seconds
+coverage file: ./myth_code_coverage/84f3418c-807c-4ea5-a6f6-a68dec059b1f.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 459.9619286060333
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['approve(address,uint256)'], ['transferOwnership(address)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['buy(uint256)'], ['bid(uint256)'], ['setSalePrice(uint256,uint256)'], ['cancelBid(uint256)']]" --parallel-solving
+Used 28.22585153579712 seconds
+coverage file: ./myth_code_coverage/e436f83b-d9b5-479c-839c-b1d0ccd6e142.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 491.6340093612671
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['addNewToken(string)'], ['setSalePrice(uint256,uint256)'], ['buy(uint256)'], ['transfer(address,uint256)'], ['bid(uint256)']]" --parallel-solving
+Used 34.02078366279602 seconds
+coverage file: ./myth_code_coverage/f34a0706-631c-47f0-ac56-391d0e4e393b.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 529.1294696331024
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['transferOwnership(address)'], ['addNewToken(string)'], ['setSalePrice(uint256,uint256)'], ['buy(uint256)'], ['transfer(address,uint256)'], ['bid(uint256)']]" --parallel-solving
+Used 34.97554397583008 seconds
+coverage file: ./myth_code_coverage/40c48e0d-2c79-4a6d-b49d-cc0df700e4b1.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 567.573468208313
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['approve(address,uint256)'], ['transferOwnership(address)'], ['addNewToken(string)'], ['setSalePrice(uint256,uint256)'], ['buy(uint256)'], ['transfer(address,uint256)'], ['bid(uint256)']]" --parallel-solving
+Used 28.263423919677734 seconds
+coverage file: ./myth_code_coverage/fdcbfb86-1aba-4790-9b58-bebac64a2cb6.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 599.2346370220184
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['buy(uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['setSalePrice(uint256,uint256)'], ['bid(uint256)'], ['acceptBid(uint256)'], ['transfer(address,uint256)']]" --parallel-solving
+Used 28.258666515350342 seconds
+coverage file: ./myth_code_coverage/8ca726af-2703-4e3f-9340-677745d32769.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 630.8875756263733
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['setMaintainerPercentage(uint256)'], ['buy(uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['setSalePrice(uint256,uint256)'], ['bid(uint256)'], ['acceptBid(uint256)'], ['transfer(address,uint256)']]" --parallel-solving
+Used 29.60620427131653 seconds
+coverage file: ./myth_code_coverage/a38b9d35-015c-47a4-a31a-c63be626ad21.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 663.8796083927155
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['setCreatorPercentage(uint256)'], ['setMaintainerPercentage(uint256)'], ['buy(uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['setSalePrice(uint256,uint256)'], ['bid(uint256)'], ['acceptBid(uint256)'], ['transfer(address,uint256)']]" --parallel-solving
+Used 29.70100998878479 seconds
+coverage file: ./myth_code_coverage/bc50a784-b645-40e9-8c22-26c43b86ad15.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 696.9450521469116
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['buy(uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['bid(uint256)'], ['acceptBid(uint256)'], ['setSalePrice(uint256,uint256)'], ['transfer(address,uint256)']]" --parallel-solving
+Used 28.13123607635498 seconds
+coverage file: ./myth_code_coverage/bdbff755-aae5-4683-8c53-01d478acba03.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 728.425656080246
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['takeOwnership(uint256)'], ['buy(uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['bid(uint256)'], ['acceptBid(uint256)'], ['setSalePrice(uint256,uint256)'], ['transfer(address,uint256)']]" --parallel-solving
+Used 28.53351640701294 seconds
+coverage file: ./myth_code_coverage/4ea4a168-10a7-4409-abd1-9302f2147896.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 760.3348009586334
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['setCreatorPercentage(uint256)'], ['takeOwnership(uint256)'], ['buy(uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['bid(uint256)'], ['acceptBid(uint256)'], ['setSalePrice(uint256,uint256)'], ['transfer(address,uint256)']]" --parallel-solving
+Used 29.96214199066162 seconds
+coverage file: ./myth_code_coverage/4486a1b1-a0b6-48c3-8c0a-819182363c12.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 793.669840335846
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['transfer(address,uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['bid(uint256)'], ['setSalePrice(uint256,uint256)']]" --parallel-solving
+Used 28.535958528518677 seconds
+coverage file: ./myth_code_coverage/9548aff0-6800-49fe-843b-b8f985175d0d.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 825.5492508411407
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['setMaintainerPercentage(uint256)'], ['transfer(address,uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['bid(uint256)'], ['setSalePrice(uint256,uint256)']]" --parallel-solving
+Used 30.03145122528076 seconds
+coverage file: ./myth_code_coverage/a4b8e52e-53a8-468a-affd-3b7bd1233ff4.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 858.986127614975
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['whitelistCreator(address)'], ['setMaintainerPercentage(uint256)'], ['transfer(address,uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['bid(uint256)'], ['setSalePrice(uint256,uint256)']]" --parallel-solving
+Used 31.955143690109253 seconds
+coverage file: ./myth_code_coverage/8088b251-36af-46d8-aebc-77c1008969d5.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 894.3599951267242
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['addNewToken(string)'], ['setSalePrice(uint256,uint256)'], ['buy(uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['bid(uint256)'], ['acceptBid(uint256)']]" --parallel-solving
+Used 33.91995286941528 seconds
+coverage file: ./myth_code_coverage/6a3b440c-e98a-411b-a061-3b41081e51ab.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 931.725335597992
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['setMaintainerPercentage(uint256)'], ['addNewToken(string)'], ['setSalePrice(uint256,uint256)'], ['buy(uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['bid(uint256)'], ['acceptBid(uint256)']]" --parallel-solving
+Used 34.04077935218811 seconds
+coverage file: ./myth_code_coverage/c280cb51-2a58-4fca-89d5-66c041d5dd3c.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 969.2168488502502
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['setMaintainerPercentage(uint256)'], ['setMaintainerPercentage(uint256)'], ['addNewToken(string)'], ['setSalePrice(uint256,uint256)'], ['buy(uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['bid(uint256)'], ['acceptBid(uint256)']]" --parallel-solving
+Used 29.09060311317444 seconds
+coverage file: ./myth_code_coverage/3be2c850-0b89-4b2b-ae8a-9427b8fa80af.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1001.6941666603088
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['transfer(address,uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['buy(uint256)'], ['addNewToken(string)'], ['setSalePrice(uint256,uint256)'], ['bid(uint256)']]" --parallel-solving
+Used 28.83380627632141 seconds
+coverage file: ./myth_code_coverage/b08f14ad-8807-405c-8be4-6bad4f664d41.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1033.9189162254333
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['whitelistCreator(address)'], ['transfer(address,uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['buy(uint256)'], ['addNewToken(string)'], ['setSalePrice(uint256,uint256)'], ['bid(uint256)']]" --parallel-solving
+Used 30.593088626861572 seconds
+coverage file: ./myth_code_coverage/300e6f69-2cb3-4998-b9b7-9003bb2a7a71.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1067.9101812839508
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['takeOwnership(uint256)'], ['whitelistCreator(address)'], ['transfer(address,uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['buy(uint256)'], ['addNewToken(string)'], ['setSalePrice(uint256,uint256)'], ['bid(uint256)']]" --parallel-solving
+Used 28.408282041549683 seconds
+coverage file: ./myth_code_coverage/08280191-602d-4883-8bd6-e6cf1895ea2f.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1099.6979053020477
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['buy(uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['bid(uint256)'], ['acceptBid(uint256)']]" --parallel-solving
+Used 28.080946445465088 seconds
+coverage file: ./myth_code_coverage/ab7e98f9-c01d-451e-81e0-a99f02908074.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1131.1586775779724
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['transferOwnership(address)'], ['buy(uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['bid(uint256)'], ['acceptBid(uint256)']]" --parallel-solving
+Used 30.585549116134644 seconds
+coverage file: ./myth_code_coverage/7ecce4ba-b660-4485-9031-f8cc782a8db3.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1165.1456499099731
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['takeOwnership(uint256)'], ['transferOwnership(address)'], ['buy(uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['bid(uint256)'], ['acceptBid(uint256)']]" --parallel-solving
+Used 28.178847074508667 seconds
+coverage file: ./myth_code_coverage/c19b1c58-ce7d-4d1e-bb59-811d954074dd.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1196.700849056244
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['transfer(address,uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['bid(uint256)'], ['cancelBid(uint256)'], ['addNewToken(string)'], ['setSalePrice(uint256,uint256)']]" --parallel-solving
+Used 28.64671802520752 seconds
+coverage file: ./myth_code_coverage/2523ff65-954f-494d-a9bb-97d646781c47.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1228.7318258285522
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['approve(address,uint256)'], ['transfer(address,uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['bid(uint256)'], ['cancelBid(uint256)'], ['addNewToken(string)'], ['setSalePrice(uint256,uint256)']]" --parallel-solving
+Used 28.22771644592285 seconds
+coverage file: ./myth_code_coverage/64c0784c-52d6-4e73-9fe8-c4756c86a5db.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1260.333914756775
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['setCreatorPercentage(uint256)'], ['approve(address,uint256)'], ['transfer(address,uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['bid(uint256)'], ['cancelBid(uint256)'], ['addNewToken(string)'], ['setSalePrice(uint256,uint256)']]" --parallel-solving
+Used 29.552600622177124 seconds
+coverage file: ./myth_code_coverage/76dc62c8-a995-4ee5-9654-30537efc5728.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1293.2651691436768
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['buy(uint256)'], ['addNewToken(string)'], ['bid(uint256)'], ['setSalePrice(uint256,uint256)'], ['acceptBid(uint256)']]" --parallel-solving
+Used 28.310063362121582 seconds
+coverage file: ./myth_code_coverage/bfa83b87-f331-4297-8b80-6f2663af7fa6.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1324.9424562454224
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['whitelistCreator(address)'], ['buy(uint256)'], ['addNewToken(string)'], ['bid(uint256)'], ['setSalePrice(uint256,uint256)'], ['acceptBid(uint256)']]" --parallel-solving
+Used 29.98073172569275 seconds
+coverage file: ./myth_code_coverage/273d41ab-152b-4cb5-987f-f891cbf83fb8.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1358.298360824585
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['takeOwnership(uint256)'], ['whitelistCreator(address)'], ['buy(uint256)'], ['addNewToken(string)'], ['bid(uint256)'], ['setSalePrice(uint256,uint256)'], ['acceptBid(uint256)']]" --parallel-solving
+Used 28.34301471710205 seconds
+coverage file: ./myth_code_coverage/59e6cbaf-1cc3-483f-8731-6ba90834ab7c.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1390.0107431411743
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['setSalePrice(uint256,uint256)'], ['transfer(address,uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['buy(uint256)'], ['addNewToken(string)']]" --parallel-solving
+Used 28.214804649353027 seconds
+coverage file: ./myth_code_coverage/0e00c684-fdab-4013-b297-66b3fed66a38.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1421.6058778762817
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['whitelistCreator(address)'], ['setSalePrice(uint256,uint256)'], ['transfer(address,uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['buy(uint256)'], ['addNewToken(string)']]" --parallel-solving
+Used 29.947630405426025 seconds
+coverage file: ./myth_code_coverage/9bd35d9b-d521-4c3f-9481-da6b03dda7d4.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1454.973530292511
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['takeOwnership(uint256)'], ['whitelistCreator(address)'], ['setSalePrice(uint256,uint256)'], ['transfer(address,uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['buy(uint256)'], ['addNewToken(string)']]" --parallel-solving
+Used 28.758097648620605 seconds
+coverage file: ./myth_code_coverage/888151ee-b8fc-4a8b-8322-15b97b39021b.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1487.1265788078308
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['buy(uint256)'], ['bid(uint256)'], ['cancelBid(uint256)']]" --parallel-solving
+Used 28.135932683944702 seconds
+coverage file: ./myth_code_coverage/915920d6-6374-40f3-903a-51a2bc840f2d.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1518.6178982257843
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['takeOwnership(uint256)'], ['buy(uint256)'], ['bid(uint256)'], ['cancelBid(uint256)']]" --parallel-solving
+Used 28.438427209854126 seconds
+coverage file: ./myth_code_coverage/9f30d04b-10ab-47f2-915e-ea39d76b5779.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1550.4060900211334
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['takeOwnership(uint256)'], ['takeOwnership(uint256)'], ['buy(uint256)'], ['bid(uint256)'], ['cancelBid(uint256)']]" --parallel-solving
+Used 28.34281611442566 seconds
+coverage file: ./myth_code_coverage/c644c642-e3eb-4154-a1aa-fdeae5394e2f.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1582.1343636512756
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['setSalePrice(uint256,uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['transfer(address,uint256)'], ['bid(uint256)'], ['cancelBid(uint256)'], ['addNewToken(string)']]" --parallel-solving
+Used 28.171103477478027 seconds
+coverage file: ./myth_code_coverage/388b6770-6df3-4af7-9cc1-9e6195f6b14d.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1613.6542401313782
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['setCreatorPercentage(uint256)'], ['setSalePrice(uint256,uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['transfer(address,uint256)'], ['bid(uint256)'], ['cancelBid(uint256)'], ['addNewToken(string)']]" --parallel-solving
+Used 29.746663331985474 seconds
+coverage file: ./myth_code_coverage/43e42274-2e7a-47a0-a290-691a34b5f22b.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1646.7623131275177
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['setCreatorPercentage(uint256)'], ['setCreatorPercentage(uint256)'], ['setSalePrice(uint256,uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['transfer(address,uint256)'], ['bid(uint256)'], ['cancelBid(uint256)'], ['addNewToken(string)']]" --parallel-solving
+Used 29.855855226516724 seconds
+coverage file: ./myth_code_coverage/d29f11fc-29eb-4641-8e2f-b2c42ec7ecf8.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1680.0058615207672
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['addNewTokenWithEditions(string,uint256,uint256)'], ['addNewToken(string)'], ['bid(uint256)'], ['setSalePrice(uint256,uint256)'], ['acceptBid(uint256)']]" --parallel-solving
+Used 34.103288888931274 seconds
+coverage file: ./myth_code_coverage/93a765cd-74b8-4f6c-b8a9-d19ff17b7499.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 1717.554673910141
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['whitelistCreator(address)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['addNewToken(string)'], ['bid(uint256)'], ['setSalePrice(uint256,uint256)'], ['acceptBid(uint256)']]" --parallel-solving
+Process killed due to timeout!
+Process timed out and was killed.
+overall time used (seconds): 2317.601366519928
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['approve(address,uint256)'], ['whitelistCreator(address)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['addNewToken(string)'], ['bid(uint256)'], ['setSalePrice(uint256,uint256)'], ['acceptBid(uint256)']]" --parallel-solving
+Used 28.166089296340942 seconds
+coverage file: ./myth_code_coverage/4870db90-8d4e-434a-acc7-b2663ae40950.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2349.136866092682
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['buy(uint256)'], ['setSalePrice(uint256,uint256)'], ['transfer(address,uint256)'], ['bid(uint256)'], ['cancelBid(uint256)'], ['addNewToken(string)']]" --parallel-solving
+Used 28.475799798965454 seconds
+coverage file: ./myth_code_coverage/b88424a0-e8de-4b56-a8d6-c273b4b8a5f3.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2381.062614440918
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['whitelistCreator(address)'], ['buy(uint256)'], ['setSalePrice(uint256,uint256)'], ['transfer(address,uint256)'], ['bid(uint256)'], ['cancelBid(uint256)'], ['addNewToken(string)']]" --parallel-solving
+Used 30.308414220809937 seconds
+coverage file: ./myth_code_coverage/a0b3d723-2bac-4c65-b5ba-d8c8251d6cd4.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2414.9541313648224
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['setCreatorPercentage(uint256)'], ['whitelistCreator(address)'], ['buy(uint256)'], ['setSalePrice(uint256,uint256)'], ['transfer(address,uint256)'], ['bid(uint256)'], ['cancelBid(uint256)'], ['addNewToken(string)']]" --parallel-solving
+Used 32.125534534454346 seconds
+coverage file: ./myth_code_coverage/d0b52458-ad94-4aa0-a83e-a74970aecc34.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2450.4886996746063
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['buy(uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['bid(uint256)'], ['transfer(address,uint256)'], ['setSalePrice(uint256,uint256)'], ['acceptBid(uint256)']]" --parallel-solving
+Used 28.33846879005432 seconds
+coverage file: ./myth_code_coverage/4f9b53e2-3999-4518-972a-c085594379bd.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2482.1898691654205
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['setCreatorPercentage(uint256)'], ['buy(uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['bid(uint256)'], ['transfer(address,uint256)'], ['setSalePrice(uint256,uint256)'], ['acceptBid(uint256)']]" --parallel-solving
+Used 29.991421937942505 seconds
+coverage file: ./myth_code_coverage/e5fab834-d4d8-467c-b441-06be0ca90147.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2515.5472633838654
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['takeOwnership(uint256)'], ['setCreatorPercentage(uint256)'], ['buy(uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['bid(uint256)'], ['transfer(address,uint256)'], ['setSalePrice(uint256,uint256)'], ['acceptBid(uint256)']]" --parallel-solving
+Used 28.187416553497314 seconds
+coverage file: ./myth_code_coverage/6217beb8-59a7-40c6-a9b1-6169f1b7f8c5.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2547.121797323227
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['addNewTokenWithEditions(string,uint256,uint256)'], ['transfer(address,uint256)'], ['buy(uint256)'], ['bid(uint256)'], ['cancelBid(uint256)']]" --parallel-solving
+Used 34.02836012840271 seconds
+coverage file: ./myth_code_coverage/22a51de5-b05c-49a6-8b86-bdd84674e061.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2584.5957469940186
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['takeOwnership(uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['transfer(address,uint256)'], ['buy(uint256)'], ['bid(uint256)'], ['cancelBid(uint256)']]" --parallel-solving
+Used 28.27580213546753 seconds
+coverage file: ./myth_code_coverage/2b78a144-d4ea-4131-9b1b-e87d2398ab49.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2616.2352204322815
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['setCreatorPercentage(uint256)'], ['takeOwnership(uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['transfer(address,uint256)'], ['buy(uint256)'], ['bid(uint256)'], ['cancelBid(uint256)']]" --parallel-solving
+Used 30.037533283233643 seconds
+coverage file: ./myth_code_coverage/8e96cb81-1105-40bd-a4ea-267d046b0f8a.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2649.6720016002655
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['bid(uint256)'], ['cancelBid(uint256)'], ['transfer(address,uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['buy(uint256)']]" --parallel-solving
+Used 28.0741126537323 seconds
+coverage file: ./myth_code_coverage/5137d714-02d7-4276-9fe5-b3737969958b.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2681.1820273399353
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['takeOwnership(uint256)'], ['bid(uint256)'], ['cancelBid(uint256)'], ['transfer(address,uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['buy(uint256)']]" --parallel-solving
+Used 28.349934577941895 seconds
+coverage file: ./myth_code_coverage/1de19493-b86e-4621-8702-45973963b1f8.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2712.9173312187195
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['setMaintainerPercentage(uint256)'], ['takeOwnership(uint256)'], ['bid(uint256)'], ['cancelBid(uint256)'], ['transfer(address,uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['buy(uint256)']]" --parallel-solving
+Used 29.702046155929565 seconds
+coverage file: ./myth_code_coverage/587382f7-6060-4fe1-a966-65f043dd39d9.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2746.0104269981384
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['buy(uint256)'], ['setSalePrice(uint256,uint256)'], ['addNewToken(string)'], ['bid(uint256)'], ['transfer(address,uint256)'], ['cancelBid(uint256)']]" --parallel-solving
+Used 28.119315147399902 seconds
+coverage file: ./myth_code_coverage/0eeb025b-2990-4fc1-af23-9f0cc6d8cbb8.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2777.477842092514
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['setCreatorPercentage(uint256)'], ['buy(uint256)'], ['setSalePrice(uint256,uint256)'], ['addNewToken(string)'], ['bid(uint256)'], ['transfer(address,uint256)'], ['cancelBid(uint256)']]" --parallel-solving
+Used 30.077840566635132 seconds
+coverage file: ./myth_code_coverage/70002c30-ab2c-4f64-9264-885b57b6bdc6.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2810.932518720627
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['whitelistCreator(address)'], ['setCreatorPercentage(uint256)'], ['buy(uint256)'], ['setSalePrice(uint256,uint256)'], ['addNewToken(string)'], ['bid(uint256)'], ['transfer(address,uint256)'], ['cancelBid(uint256)']]" --parallel-solving
+Used 30.886987447738647 seconds
+coverage file: ./myth_code_coverage/2be0cf28-c5a3-4adb-abd0-c29c1eb1d2b6.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2845.2007281780243
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['addNewTokenWithEditions(string,uint256,uint256)'], ['addNewToken(string)'], ['bid(uint256)'], ['setSalePrice(uint256,uint256)'], ['cancelBid(uint256)'], ['transfer(address,uint256)']]" --parallel-solving
+Used 33.872416496276855 seconds
+coverage file: ./myth_code_coverage/535d8d61-8dee-4774-94c9-0e0696123a46.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2882.4979474544525
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['setMaintainerPercentage(uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['addNewToken(string)'], ['bid(uint256)'], ['setSalePrice(uint256,uint256)'], ['cancelBid(uint256)'], ['transfer(address,uint256)']]" --parallel-solving
+Used 34.17360854148865 seconds
+coverage file: ./myth_code_coverage/c55ba4a7-a32a-4381-87e7-6465d08f7954.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2920.1092717647552
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['approve(address,uint256)'], ['setMaintainerPercentage(uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['addNewToken(string)'], ['bid(uint256)'], ['setSalePrice(uint256,uint256)'], ['cancelBid(uint256)'], ['transfer(address,uint256)']]" --parallel-solving
+Used 27.95607352256775 seconds
+coverage file: ./myth_code_coverage/54441e28-8151-4bff-89ae-488ae4ccf2d9.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2951.457626581192
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['transfer(address,uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['bid(uint256)'], ['cancelBid(uint256)'], ['addNewToken(string)']]" --parallel-solving
+Used 28.740247011184692 seconds
+coverage file: ./myth_code_coverage/1b59a3c3-45d4-4e48-82d2-6af3fa48f5d4.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 2983.652209043503
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['setCreatorPercentage(uint256)'], ['transfer(address,uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['bid(uint256)'], ['cancelBid(uint256)'], ['addNewToken(string)']]" --parallel-solving
+Used 30.08511233329773 seconds
+coverage file: ./myth_code_coverage/510928bc-ad70-47b8-9571-10f273e6e11e.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 3017.1240017414093
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['takeOwnership(uint256)'], ['setCreatorPercentage(uint256)'], ['transfer(address,uint256)'], ['addNewTokenWithEditions(string,uint256,uint256)'], ['bid(uint256)'], ['cancelBid(uint256)'], ['addNewToken(string)']]" --parallel-solving
+Used 28.5816969871521 seconds
+coverage file: ./myth_code_coverage/1ecdb696-af61-43c1-8db0-1bfc110ad28f.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 3049.06880736351
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['addNewToken(string)'], ['setSalePrice(uint256,uint256)'], ['bid(uint256)'], ['buy(uint256)'], ['transfer(address,uint256)']]" --parallel-solving
+Used 33.87569713592529 seconds
+coverage file: ./myth_code_coverage/a5d2efed-2859-49f3-b361-d44f3e434968.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 3086.3773667812347
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['approve(address,uint256)'], ['addNewToken(string)'], ['setSalePrice(uint256,uint256)'], ['bid(uint256)'], ['buy(uint256)'], ['transfer(address,uint256)']]" --parallel-solving
+Used 28.11489772796631 seconds
+coverage file: ./myth_code_coverage/816c7f9b-4a0b-477d-ae35-ab91eb20e961.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 3117.8460965156555
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['whitelistCreator(address)'], ['approve(address,uint256)'], ['addNewToken(string)'], ['setSalePrice(uint256,uint256)'], ['bid(uint256)'], ['buy(uint256)'], ['transfer(address,uint256)']]" --parallel-solving
+Used 29.567335605621338 seconds
+coverage file: ./myth_code_coverage/10e4f317-38d4-4e46-a0ca-fc88f25060ed.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 3150.7689530849457
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['setSalePrice(uint256,uint256)'], ['transfer(address,uint256)'], ['buy(uint256)'], ['addNewToken(string)']]" --parallel-solving
+Used 28.11479926109314 seconds
+coverage file: ./myth_code_coverage/4fc16d47-2cdf-4b4c-bab2-f308e00d4a23.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 3182.2455022335052
+
+
+
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[['setCreatorPercentage(uint256)'], ['setSalePrice(uint256,uint256)'], ['transfer(address,uint256)'], ['buy(uint256)'], ['addNewToken(string)']]" --parallel-solving
+Used 29.624238967895508 seconds
+coverage file: ./myth_code_coverage/af1f5faa-faf7-4443-a4da-09f5945fd49e.json
+The analysis was completed successfully. No issues were detected.
+
+
+overall time used (seconds): 3215.236640930176
+
+
+
