@@ -1,3 +1,6 @@
+// TODO: This contract uses index encompassing a pair between (nftTokenAddress, tokenId)
+// which poses a problem with the index setting.
+
 pragma solidity ^0.4.18;
 
 
@@ -89,6 +92,7 @@ contract ClockAuctionBase {
 
         // it will throw if transfer fails
         // nonFungibleContract.transferFrom(_owner, this, _tokenId);
+        return true;
     }
 
     /// @dev Transfers an NFT owned by this contract to another address.
@@ -101,6 +105,7 @@ contract ClockAuctionBase {
 
         // it will throw if transfer fails
         // nonFungibleContract.transfer(_receiver, _tokenId);
+        return true;
     }
 
     /// @dev Adds an auction to the list of open auctions. Also fires the
@@ -371,6 +376,8 @@ contract Pausable is Ownable {
 
 /// @title Clock auction for non-fungible tokens.
 contract ClockAuction is Pausable, ClockAuctionBase {
+    address public constant nftAddress = address(0x0);
+    uint256 public constant tokenId = 0;
 
     /// @dev Constructor creates a reference to the NFT ownership contract
     ///  and verifies the owner cut is in the valid range.
@@ -415,6 +422,7 @@ contract ClockAuction is Pausable, ClockAuctionBase {
         canBeStoredWith128Bits(_endingPrice)
         canBeStoredWith64Bits(_duration)
     {
+        require(_nftAddress == nftAddress&& _tokenId == tokenId);
         require(_owns(_nftAddress, msg.sender, _tokenId));
         _escrow(_nftAddress, msg.sender, _tokenId);
         Auction memory auction = Auction(
@@ -438,6 +446,7 @@ contract ClockAuction is Pausable, ClockAuctionBase {
         payable
         whenNotPaused
     {
+        require(_nftAddress == nftAddress&& _tokenId == tokenId);
         // _bid will throw if the bid or funds transfer fails
         _bid(_nftAddress, _tokenId, msg.value);
         _transfer(_nftAddress, msg.sender, _tokenId);
@@ -452,6 +461,7 @@ contract ClockAuction is Pausable, ClockAuctionBase {
     function cancelAuction(address _nftAddress, uint256 _tokenId)
         public
     {
+        require(_nftAddress == nftAddress&& _tokenId == tokenId);
         Auction storage auction = nftToTokenIdToAuction[_nftAddress][_tokenId];
         require(_isOnAuction(auction));
         address seller = auction.seller;
@@ -488,6 +498,7 @@ contract ClockAuction is Pausable, ClockAuctionBase {
         uint256 duration,
         uint256 startedAt
     ) {
+        require(_nftAddress == nftAddress&& _tokenId == tokenId);
         Auction storage auction = nftToTokenIdToAuction[_nftAddress][_tokenId];
         require(_isOnAuction(auction));
         return (
@@ -507,6 +518,7 @@ contract ClockAuction is Pausable, ClockAuctionBase {
         view
         returns (uint256)
     {
+        require(_nftAddress == nftAddress&& _tokenId == tokenId);
         Auction storage auction = nftToTokenIdToAuction[_nftAddress][_tokenId];
         require(_isOnAuction(auction));
         return _currentPrice(auction);
@@ -539,6 +551,7 @@ contract SaleClockAuction is ClockAuction {
         canBeStoredWith128Bits(_endingPrice)
         canBeStoredWith64Bits(_duration)
     {
+        require(_nftAddress == nftAddress&& _tokenId == tokenId);
         address seller = msg.sender;
         _escrow(_nftAddress, seller, _tokenId);
         Auction memory auction = Auction(
@@ -558,6 +571,7 @@ contract SaleClockAuction is ClockAuction {
         public
         payable
     {
+        require(_nftAddress == nftAddress&& _tokenId == tokenId);
         // _bid verifies token ID size
         address seller = nftToTokenIdToAuction[_nftAddress][_tokenId].seller;
         uint256 price = _bid(_nftAddress, _tokenId, msg.value);
