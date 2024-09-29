@@ -92,7 +92,6 @@ contract ClockAuctionBase {
 
         // it will throw if transfer fails
         // nonFungibleContract.transferFrom(_owner, this, _tokenId);
-        return true;
     }
 
     /// @dev Transfers an NFT owned by this contract to another address.
@@ -105,7 +104,6 @@ contract ClockAuctionBase {
 
         // it will throw if transfer fails
         // nonFungibleContract.transfer(_receiver, _tokenId);
-        return true;
     }
 
     /// @dev Adds an auction to the list of open auctions. Also fires the
