@@ -840,7 +840,7 @@ contract GameChannelConflict is GameChannelBase {
                 _userHash,
                 _serverSeed,
                 _userSeed,
-                _gameId,
+                totalSupply,
                 _userAddress
         );
     }
@@ -896,7 +896,7 @@ contract GameChannelConflict is GameChannelBase {
             _balance,
             _userHash,
             _userSeed,
-            _gameId,
+            totalSupply,
             msg.sender
         );
     }
@@ -920,7 +920,7 @@ contract GameChannelConflict is GameChannelBase {
 
             emit LogUserRequestedEnd(msg.sender, gameId);
         } else if (game.status == GameStatus.SERVER_INITIATED_END && game.roundId == 0) {
-            cancelActiveGame(game, gameId, userAddress);
+            cancelActiveGame(game, totalSupply, userAddress);
         } else {
             revert();
         }
@@ -945,7 +945,7 @@ contract GameChannelConflict is GameChannelBase {
 
             emit LogServerRequestedEnd(msg.sender, gameId);
         } else if (game.status == GameStatus.USER_INITIATED_END && game.roundId == 0) {
-            cancelActiveGame(game, gameId, _userAddress);
+            cancelActiveGame(game, totalSupply, _userAddress);
         } else {
             revert();
         }
@@ -979,7 +979,7 @@ contract GameChannelConflict is GameChannelBase {
         // );
         int newBalance = 0;
 
-        closeGame(game, gameId, game.roundId, _userAddress, ReasonEnded.SERVER_FORCED_END, newBalance);
+        closeGame(game, totalSupply, game.roundId, _userAddress, ReasonEnded.SERVER_FORCED_END, newBalance);
     }
 
     /**
@@ -1007,7 +1007,7 @@ contract GameChannelConflict is GameChannelBase {
 
         int newBalance = 0;
 
-        closeGame(game, gameId, game.roundId, userAddress, ReasonEnded.USER_FORCED_END, newBalance);
+        closeGame(game, totalSupply, game.roundId, userAddress, ReasonEnded.USER_FORCED_END, newBalance);
     }
 
     /**
@@ -1295,7 +1295,7 @@ contract GameChannel is GameChannelConflict {
         //         _userAddress
         // );
 
-        regularEndGame(_userAddress, _roundId, _balance, _gameId, _contractAddress);
+        regularEndGame(_userAddress, _roundId, _balance, totalSupply, _contractAddress);
     }
 
     /**
@@ -1335,7 +1335,7 @@ contract GameChannel is GameChannelConflict {
         //         serverAddress
         // );
 
-        regularEndGame(msg.sender, _roundId, _balance, _gameId, _contractAddress);
+        regularEndGame(msg.sender, _roundId, _balance, totalSupply, _contractAddress);
     }
 
     /**
@@ -1397,7 +1397,7 @@ contract GameChannel is GameChannelConflict {
 
         assert(_contractAddress == address(this));
 
-        closeGame(game, gameId, _roundId, _userAddress, ReasonEnded.REGULAR_ENDED, _balance);
+        closeGame(game, totalSupply, _roundId, _userAddress, ReasonEnded.REGULAR_ENDED, _balance);
     }
 }
 
