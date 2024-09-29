@@ -57,7 +57,7 @@ contract MoonCatRescue {
   event AdoptionRequestCancelled(bytes5 indexed catId);
   event GenesisCatsAdded(bytes5[16] catIds);
 
-  bytes public constant cat_indexed = 0xffffffff;
+  bytes5 public constant cat_indexed = bytes5(0xffffffff);
 
   function MoonCatRescue() payable {
     owner = msg.sender;
@@ -74,20 +74,20 @@ contract MoonCatRescue {
   //   bytes5 catId = bytes5((catIdHash & 0xffffffff) << 216); // one byte to indicate genesis, and the last 4 bytes of the catIdHash
   //   /* registers and validates cats that are found */
   function rescueCat(bytes5 catId) activeMode returns (bytes5) {
-    require(catId == 0xffffffff);
+    require(catId == cat_indexed);
     require(remainingCats > 0); // cannot register any cats once supply limit is reached
-    require(catOwners[catId] == 0x0); // if the cat is already registered, throw an error. All cats are unique.
+    require(catOwners[cat_indexed] == 0x0); // if the cat is already registered, throw an error. All cats are unique.
 
-    rescueOrder[rescueIndex] = catId;
+    rescueOrder[rescueIndex] = cat_indexed;
     rescueIndex++;
 
-    catOwners[catId] = msg.sender;
+    catOwners[cat_indexed] = msg.sender;
     balanceOf[msg.sender]++;
     remainingCats--;
 
-    CatRescued(msg.sender, catId);
+    CatRescued(msg.sender, cat_indexed);
 
-    return catId;
+    return cat_indexed;
   }
 
   /* assigns a name to a cat, once a name is assigned it cannot be changed */
