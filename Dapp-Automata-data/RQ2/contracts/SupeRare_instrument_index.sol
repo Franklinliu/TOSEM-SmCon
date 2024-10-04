@@ -72,7 +72,7 @@ contract ERC721Token is ERC721 {
   using SafeMath for uint256;
 
   // Total amount of tokens
-  uint256 private constant totalTokens = 0;
+  uint256 public constant totalTokens = 1;
 
   // Mapping from token ID to owner
   mapping (uint256 => address) private tokenOwner;
@@ -214,14 +214,15 @@ contract ERC721Token is ERC721 {
   * @param _tokenId uint256 ID of the token to be transferred
   */
   function clearApprovalAndTransfer(address _from, address _to, uint256 _tokenId) internal {
+    require(_tokenId == totalTokens);
     require(_to != address(0));
-    require(_to != ownerOf(_tokenId));
-    require(ownerOf(_tokenId) == _from);
+    require(_to != ownerOf(totalTokens));
+    require(ownerOf(totalTokens) == _from);
 
-    clearApproval(_from, _tokenId);
-    removeToken(_from, _tokenId);
-    addToken(_to, _tokenId);
-    Transfer(_from, _to, _tokenId);
+    clearApproval(_from, totalTokens);
+    removeToken(_from, totalTokens);
+    addToken(_to, totalTokens);
+    Transfer(_from, _to, totalTokens);
   }
 
   /**
@@ -229,9 +230,10 @@ contract ERC721Token is ERC721 {
   * @param _tokenId uint256 ID of the token to be transferred
   */
   function clearApproval(address _owner, uint256 _tokenId) private {
-    require(ownerOf(_tokenId) == _owner);
-    tokenApprovals[_tokenId] = 0;
-    Approval(_owner, 0, _tokenId);
+    require(_tokenId == totalTokens);
+    require(ownerOf(totalTokens) == _owner);
+    tokenApprovals[totalTokens] = 0;
+    Approval(_owner, 0, totalTokens);
   }
 
   /**
@@ -240,11 +242,12 @@ contract ERC721Token is ERC721 {
   * @param _tokenId uint256 ID of the token to be added to the tokens list of the given address
   */
   function addToken(address _to, uint256 _tokenId) private {
-    require(tokenOwner[_tokenId] == address(0));
-    tokenOwner[_tokenId] = _to;
+    require(_tokenId == totalTokens);
+    require(tokenOwner[totalTokens] == address(0));
+    tokenOwner[totalTokens] = _to;
     uint256 length = balanceOf(_to);
-    ownedTokens[_to].push(_tokenId);
-    ownedTokensIndex[_tokenId] = length;
+    ownedTokens[_to].push(totalTokens);
+    ownedTokensIndex[totalTokens] = length;
     // totalTokens = totalTokens.add(1);
   }
 
@@ -254,13 +257,14 @@ contract ERC721Token is ERC721 {
   * @param _tokenId uint256 ID of the token to be removed from the tokens list of the given address
   */
   function removeToken(address _from, uint256 _tokenId) private {
-    require(ownerOf(_tokenId) == _from);
+    require(_tokenId == totalTokens);
+    require(ownerOf(totalTokens) == _from);
 
-    uint256 tokenIndex = ownedTokensIndex[_tokenId];
+    uint256 tokenIndex = ownedTokensIndex[totalTokens];
     uint256 lastTokenIndex = balanceOf(_from).sub(1);
     uint256 lastToken = ownedTokens[_from][lastTokenIndex];
 
-    tokenOwner[_tokenId] = 0;
+    tokenOwner[totalTokens] = 0;
     ownedTokens[_from][tokenIndex] = lastToken;
     ownedTokens[_from][lastTokenIndex] = 0;
     // Note that this will handle single-element arrays. In that case, both tokenIndex and lastTokenIndex are going to
@@ -408,9 +412,10 @@ contract SupeRare is ERC721Token, Ownable, ERC721Metadata {
      * @param _tokenId uint256 ID of the token to be transferred
      */
     function transfer(address _to, uint256 _tokenId) public onlyOwnerOf(_tokenId) {
-        tokenSold[_tokenId] = true;
-        tokenSalePrice[_tokenId] = 0;
-        clearApprovalAndTransfer(msg.sender, _to, _tokenId);
+        require(_tokenId == totalTokens);
+        tokenSold[totalTokens] = true;
+        tokenSalePrice[totalTokens] = 0;
+        clearApprovalAndTransfer(msg.sender, _to, totalTokens);
     }
 
     /**
@@ -444,11 +449,12 @@ contract SupeRare is ERC721Token, Ownable, ERC721Metadata {
     * @param _tokenId uint256 ID of the token to bid on
     */
     function bid(uint256 _tokenId) public payable notOwnerOf(_tokenId) {
-        require(isGreaterBid(_tokenId));
-        returnCurrentBid(_tokenId);
-        tokenBidder[_tokenId] = msg.sender;
-        tokenCurrentBid[_tokenId] = msg.value;
-        Bid(msg.sender, msg.value, _tokenId);
+        require(_tokenId == totalTokens);
+        require(isGreaterBid(totalTokens));
+        returnCurrentBid(totalTokens);
+        tokenBidder[totalTokens] = msg.sender;
+        tokenCurrentBid[totalTokens] = msg.value;
+        Bid(msg.sender, msg.value, totalTokens);
     }
 
     /**
@@ -456,15 +462,16 @@ contract SupeRare is ERC721Token, Ownable, ERC721Metadata {
      * @param _tokenId uint256 ID of the token with the standing bid
      */
     function acceptBid(uint256 _tokenId) public onlyOwnerOf(_tokenId) {
-        uint256 currentBid = tokenCurrentBid[_tokenId];
-        address currentBidder = tokenBidder[_tokenId];
-        address tokenOwner = ownerOf(_tokenId);
-        address creator = tokenCreator[_tokenId];
-        clearApprovalAndTransfer(msg.sender, currentBidder, _tokenId);
-        payout(currentBid, owner, creator, tokenOwner, _tokenId);
-        clearBid(_tokenId);
-        AcceptBid(currentBidder, tokenOwner, currentBid, _tokenId);
-        tokenSalePrice[_tokenId] = 0;
+        require(_tokenId == totalTokens);
+        uint256 currentBid = tokenCurrentBid[totalTokens];
+        address currentBidder = tokenBidder[totalTokens];
+        address tokenOwner = ownerOf(totalTokens);
+        address creator = tokenCreator[totalTokens];
+        clearApprovalAndTransfer(msg.sender, currentBidder, totalTokens);
+        payout(currentBid, owner, creator, tokenOwner, totalTokens);
+        clearBid(totalTokens);
+        AcceptBid(currentBidder, tokenOwner, currentBid, totalTokens);
+        tokenSalePrice[totalTokens] = 0;
     }
     
     /**
@@ -472,12 +479,13 @@ contract SupeRare is ERC721Token, Ownable, ERC721Metadata {
      * @param _tokenId uint256 ID of the token with a bid
      */
     function cancelBid(uint256 _tokenId) public {
-        address bidder = tokenBidder[_tokenId];
+        require(_tokenId == totalTokens);
+        address bidder = tokenBidder[totalTokens];
         require(msg.sender == bidder);
-        uint256 bidAmount = tokenCurrentBid[_tokenId];
+        uint256 bidAmount = tokenCurrentBid[totalTokens];
         msg.sender.transfer(bidAmount);
-        clearBid(_tokenId);
-        CancelBid(bidder, bidAmount, _tokenId);
+        clearBid(totalTokens);
+        CancelBid(bidder, bidAmount, totalTokens);
     }
     
     /**
@@ -485,19 +493,20 @@ contract SupeRare is ERC721Token, Ownable, ERC721Metadata {
      * @param _tokenId uint256 ID of the token to be purchased
      */
     function buy(uint256 _tokenId) public payable notOwnerOf(_tokenId) {
-        uint256 salePrice = tokenSalePrice[_tokenId];
+        require(_tokenId == totalTokens);
+        uint256 salePrice = tokenSalePrice[totalTokens];
         uint256 sentPrice = msg.value;
         address buyer = msg.sender;
-        address tokenOwner = ownerOf(_tokenId);
-        address creator = tokenCreator[_tokenId];
+        address tokenOwner = ownerOf(totalTokens);
+        address creator = tokenCreator[totalTokens];
         require(salePrice > 0);
         require(sentPrice >= salePrice);
-        returnCurrentBid(_tokenId);
-        clearBid(_tokenId);
-        clearApprovalAndTransfer(tokenOwner, buyer, _tokenId);
-        payout(sentPrice, owner, creator, tokenOwner, _tokenId);
-        tokenSalePrice[_tokenId] = 0;
-        Sold(buyer, tokenOwner, sentPrice, _tokenId);
+        returnCurrentBid(totalTokens);
+        clearBid(totalTokens);
+        clearApprovalAndTransfer(tokenOwner, buyer, totalTokens);
+        payout(sentPrice, owner, creator, tokenOwner, totalTokens);
+        tokenSalePrice[totalTokens] = 0;
+        Sold(buyer, tokenOwner, sentPrice, totalTokens);
     }
 
     /**
@@ -505,10 +514,11 @@ contract SupeRare is ERC721Token, Ownable, ERC721Metadata {
      * @param _tokenId uint256 ID of the token with the standing bid
      */
     function setSalePrice(uint256 _tokenId, uint256 _salePrice) public onlyOwnerOf(_tokenId) {
-        uint256 currentBid = tokenCurrentBid[_tokenId];
+        require(_tokenId == totalTokens);
+        uint256 currentBid = tokenCurrentBid[totalTokens];
         require(_salePrice > currentBid);
-        tokenSalePrice[_tokenId] = _salePrice;
-        SalePriceSet(_tokenId, _salePrice);
+        tokenSalePrice[totalTokens] = _salePrice;
+        SalePriceSet(totalTokens, _salePrice);
     }
 
     /**
@@ -678,7 +688,8 @@ contract SupeRare is ERC721Token, Ownable, ERC721Metadata {
      * @param _uri string metadata uri associated with the token
      */
     function createToken(string _uri, address _creator) private  returns (uint256){
-      uint256 newId = totalSupply() + 1;
+      // uint256 newId = totalSupply() + 1;
+      uint256 newId = totalSupply();
       _mint(_creator, newId);
       tokenCreator[newId] = _creator;
       tokenToURI[newId] = _uri;
