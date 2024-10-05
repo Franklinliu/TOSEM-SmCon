@@ -448,7 +448,7 @@ contract SupeRare is ERC721Token, Ownable, ERC721Metadata {
     * @dev Bids on the token, replacing the bid if the bid is higher than the current bid. You cannot bid on a token you already own.
     * @param _tokenId uint256 ID of the token to bid on
     */
-    function bid(uint256 _tokenId) public payable notOwnerOf(_tokenId) {
+    function bid(uint256 _tokenId) public payable notOwnerOf(totalTokens) {
         require(_tokenId == totalTokens);
         require(isGreaterBid(totalTokens));
         returnCurrentBid(totalTokens);
@@ -461,7 +461,7 @@ contract SupeRare is ERC721Token, Ownable, ERC721Metadata {
      * @dev Accept the bid on the token, transferring ownership to the current bidder and paying out the owner.
      * @param _tokenId uint256 ID of the token with the standing bid
      */
-    function acceptBid(uint256 _tokenId) public onlyOwnerOf(_tokenId) {
+    function acceptBid(uint256 _tokenId) public onlyOwnerOf(totalTokens) {
         require(_tokenId == totalTokens);
         uint256 currentBid = tokenCurrentBid[totalTokens];
         address currentBidder = tokenBidder[totalTokens];

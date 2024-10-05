@@ -25,8 +25,8 @@ solc-select use 0.4.25
 
 
 echo "SupeRare" >> ./test_seq_ablationstudy.log
-myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[[0x62f11dd2], [0xd9856c21], [0x454a2ab3],[0x2b1fd58a]]" --parallel-solving >> ./test_seq_ablationstudy.log 2>&1
-myth -v 2 analyze ./contracts/SupeRare_instrument_index.sol:SupeRare --transaction-sequences "[[0x62f11dd2], [0xd9856c21], [0x454a2ab3],[0x2b1fd58a]]" --parallel-solving >> ./test_seq_ablationstudy.log 2>&1
+myth -v 2 analyze ./contracts/SupeRare.sol:SupeRare --transaction-sequences "[[0x62f11dd2], [0xd9856c21], [0x454a2ab3],[0x9703ef35]]" --parallel-solving >> ./test_seq_ablationstudy.log 2>&1
+myth -v 2 analyze ./contracts/SupeRare_instrument_index.sol:SupeRare --transaction-sequences "[[0x62f11dd2], [0xd9856c21], [0x454a2ab3],[0x9703ef35]]" --parallel-solving >> ./test_seq_ablationstudy.log 2>&1
 
 # solc-select use 0.5.0
 # echo "GameChannel" >> ./test_seq_ablationstudy.log
