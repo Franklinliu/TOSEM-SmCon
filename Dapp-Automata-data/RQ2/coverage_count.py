@@ -6,10 +6,10 @@ import os
 import pandas as pd
 
 cov_seq_csv = dict()
-cov_seq_csv["random"] = []
-cov_seq_csv["mbt"] = []
 
 for log in glob.glob("./random_myth_*.log"):
+    cov_seq_csv[log+ "-random"] = []
+    cov_seqs = cov_seq_csv[log+ "-random"]
     log_name = os.path.basename(log)
     print(log_name)
     cat_cmd = "cat {0}.log|grep coverage > {0}.cov.list".format(
@@ -34,7 +34,7 @@ for log in glob.glob("./random_myth_*.log"):
         code_cov[1] = [cur_code_cov[1][i] or code_cov[1][i]
                        for i in range(code_cov[0])]
         # print("current test coverage: {0}%".format(cov_info["cov_percentage"]))
-        cov_seq_csv["random"].append(sum(code_cov[1])/float(code_cov[0])*100)
+        cov_seqs.append(sum(code_cov[1])/float(code_cov[0])*100)
     print("Achieved coverage: {0}%".format(
         sum(code_cov[1])/float(code_cov[0])*100))
 
@@ -42,6 +42,8 @@ for log in glob.glob("./random_myth_*.log"):
 
 
 for log in glob.glob("./mbt_myth_*.log"):
+    cov_seq_csv[log+ "-mbt"] = []
+    cov_seqs = cov_seq_csv[log+ "-mbt"]
     log_name = os.path.basename(log)
     print(log_name)
     cat_cmd = "cat {0}.log|grep coverage > {0}.cov.list".format(
@@ -66,15 +68,16 @@ for log in glob.glob("./mbt_myth_*.log"):
         code_cov[1] = [cur_code_cov[1][i] or code_cov[1][i]
                        for i in range(code_cov[0])]
         # print("current test coverage: {0}%".format(cov_info["cov_percentage"]))
-        cov_seq_csv["mbt"].append(sum(code_cov[1])/float(code_cov[0])*100)
+        cov_seqs.append(sum(code_cov[1])/float(code_cov[0])*100)
     print("Achieved coverage: {0}%".format(
         sum(code_cov[1])/float(code_cov[0])*100))
 
     print("****************************************************************")
 
-df = pd.DataFrame.from_dict(cov_seq_csv)
+df = pd.DataFrame(dict([(key, pd.Series(value)) for key, value in cov_seq_csv.items()]))
 print(df)
-print(df.to_csv())
+print(df.to_csv("cov_seq.csv"))
+
 # for log in glob.glob("./parametric_myth_*.log"):
 #     log_name = os.path.basename(log)
 #     print(log_name)
